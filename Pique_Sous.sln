@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestBudget", "GestBudget\GestBudget.csproj", "{9AB7CD2B-9A81-4BD0-BA21-908E08D1BF59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pique_Sous", "GestBudget\Pique_Sous.csproj", "{9AB7CD2B-9A81-4BD0-BA21-908E08D1BF59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

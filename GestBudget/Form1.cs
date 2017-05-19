@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GestBudget
 {
-    public partial class Form1 : Form
+    public partial class frmBudgetMois : Form
     {
-        public Form1()
+        public frmBudgetMois()
         {
             InitializeComponent();
         }
