@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBudgetMois));
             this.tcBudgetMois = new System.Windows.Forms.TabControl();
             this.tpNewTransaction = new System.Windows.Forms.TabPage();
             this.tpSuite = new System.Windows.Forms.TabPage();
@@ -72,8 +73,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(926, 514);
             this.Controls.Add(this.tcBudgetMois);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBudgetMois";
             this.Text = "Budget du mois";
+            this.Load += new System.EventHandler(this.frmBudgetMois_Load);
             this.tcBudgetMois.ResumeLayout(false);
             this.ResumeLayout(false);
 

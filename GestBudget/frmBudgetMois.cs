@@ -16,5 +16,10 @@ namespace GestBudget
         {
             InitializeComponent();
         }
+
+        private void frmBudgetMois_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
