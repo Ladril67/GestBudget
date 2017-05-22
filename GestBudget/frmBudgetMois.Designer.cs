@@ -32,7 +32,6 @@
             this.tcBudgetMois = new System.Windows.Forms.TabControl();
             this.tpAffichage1a1 = new System.Windows.Forms.TabPage();
             this.tpNewTransaction = new System.Windows.Forms.TabPage();
-            this.grpRecettePercu = new System.Windows.Forms.GroupBox();
             this.btnAjouterPersonneTransa = new System.Windows.Forms.Button();
             this.grpParticipantsTransa = new System.Windows.Forms.GroupBox();
             this.btnAjoutTransa = new System.Windows.Forms.Button();
@@ -45,11 +44,17 @@
             this.lblDescripionTransa = new System.Windows.Forms.Label();
             this.dtpTransa = new System.Windows.Forms.DateTimePicker();
             this.lblDateTransa = new System.Windows.Forms.Label();
+            this.grpRecettePercu = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.tpDeleteTransaction = new System.Windows.Forms.TabPage();
             this.tpModifTransaction = new System.Windows.Forms.TabPage();
             this.tpRecap = new System.Windows.Forms.TabPage();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.btnPremier = new System.Windows.Forms.Button();
+            this.btnAvant = new System.Windows.Forms.Button();
+            this.btnSuivant = new System.Windows.Forms.Button();
+            this.btnDernier = new System.Windows.Forms.Button();
             this.tcBudgetMois.SuspendLayout();
+            this.tpAffichage1a1.SuspendLayout();
             this.tpNewTransaction.SuspendLayout();
             this.grpRecettePercu.SuspendLayout();
             this.SuspendLayout();
@@ -72,13 +77,17 @@
             // 
             // tpAffichage1a1
             // 
+            this.tpAffichage1a1.Controls.Add(this.btnDernier);
+            this.tpAffichage1a1.Controls.Add(this.btnSuivant);
+            this.tpAffichage1a1.Controls.Add(this.btnAvant);
+            this.tpAffichage1a1.Controls.Add(this.btnPremier);
             this.tpAffichage1a1.Location = new System.Drawing.Point(4, 25);
-            this.tpAffichage1a1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpAffichage1a1.Margin = new System.Windows.Forms.Padding(2);
             this.tpAffichage1a1.Name = "tpAffichage1a1";
-            this.tpAffichage1a1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpAffichage1a1.Padding = new System.Windows.Forms.Padding(2);
             this.tpAffichage1a1.Size = new System.Drawing.Size(686, 389);
             this.tpAffichage1a1.TabIndex = 1;
-            this.tpAffichage1a1.Text = "Affichage 1 à 1";
+            this.tpAffichage1a1.Text = "S";
             this.tpAffichage1a1.UseVisualStyleBackColor = true;
             // 
             // tpNewTransaction
@@ -96,7 +105,6 @@
             this.tpNewTransaction.Controls.Add(this.dtpTransa);
             this.tpNewTransaction.Controls.Add(this.lblDateTransa);
             this.tpNewTransaction.Controls.Add(this.grpRecettePercu);
-            this.tpNewTransaction.Location = new System.Drawing.Point(4, 28);
             this.tpNewTransaction.Location = new System.Drawing.Point(4, 25);
             this.tpNewTransaction.Margin = new System.Windows.Forms.Padding(2);
             this.tpNewTransaction.Name = "tpNewTransaction";
@@ -105,17 +113,6 @@
             this.tpNewTransaction.TabIndex = 0;
             this.tpNewTransaction.Text = "Ajout d\'une transaction";
             this.tpNewTransaction.UseVisualStyleBackColor = true;
-            // 
-            // grpRecettePercu
-            // 
-            this.grpRecettePercu.Controls.Add(this.radioButton1);
-            this.grpRecettePercu.Location = new System.Drawing.Point(36, 127);
-            this.grpRecettePercu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grpRecettePercu.Name = "grpRecettePercu";
-            this.grpRecettePercu.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grpRecettePercu.Size = new System.Drawing.Size(276, 55);
-            this.grpRecettePercu.TabIndex = 12;
-            this.grpRecettePercu.TabStop = false;
             // 
             // btnAjouterPersonneTransa
             // 
@@ -220,6 +217,28 @@
             this.lblDateTransa.TabIndex = 0;
             this.lblDateTransa.Text = "Date de la transaction";
             // 
+            // grpRecettePercu
+            // 
+            this.grpRecettePercu.Controls.Add(this.radioButton1);
+            this.grpRecettePercu.Location = new System.Drawing.Point(36, 127);
+            this.grpRecettePercu.Margin = new System.Windows.Forms.Padding(2);
+            this.grpRecettePercu.Name = "grpRecettePercu";
+            this.grpRecettePercu.Padding = new System.Windows.Forms.Padding(2);
+            this.grpRecettePercu.Size = new System.Drawing.Size(276, 55);
+            this.grpRecettePercu.TabIndex = 12;
+            this.grpRecettePercu.TabStop = false;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(5, 18);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(63, 17);
+            this.radioButton1.TabIndex = 7;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Recette";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // tpDeleteTransaction
             // 
             this.tpDeleteTransaction.Location = new System.Drawing.Point(4, 25);
@@ -234,7 +253,7 @@
             // tpModifTransaction
             // 
             this.tpModifTransaction.Location = new System.Drawing.Point(4, 25);
-            this.tpModifTransaction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpModifTransaction.Margin = new System.Windows.Forms.Padding(2);
             this.tpModifTransaction.Name = "tpModifTransaction";
             this.tpModifTransaction.Size = new System.Drawing.Size(686, 389);
             this.tpModifTransaction.TabIndex = 2;
@@ -244,23 +263,48 @@
             // tpRecap
             // 
             this.tpRecap.Location = new System.Drawing.Point(4, 25);
-            this.tpRecap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpRecap.Margin = new System.Windows.Forms.Padding(2);
             this.tpRecap.Name = "tpRecap";
             this.tpRecap.Size = new System.Drawing.Size(686, 389);
             this.tpRecap.TabIndex = 3;
             this.tpRecap.Text = "Récapitulatif";
             this.tpRecap.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // btnPremier
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(5, 18);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(63, 17);
-            this.radioButton1.TabIndex = 7;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Recette";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.btnPremier.Location = new System.Drawing.Point(8, 355);
+            this.btnPremier.Name = "btnPremier";
+            this.btnPremier.Size = new System.Drawing.Size(133, 26);
+            this.btnPremier.TabIndex = 0;
+            this.btnPremier.Text = "<<";
+            this.btnPremier.UseVisualStyleBackColor = true;
+            // 
+            // btnAvant
+            // 
+            this.btnAvant.Location = new System.Drawing.Point(147, 355);
+            this.btnAvant.Name = "btnAvant";
+            this.btnAvant.Size = new System.Drawing.Size(133, 26);
+            this.btnAvant.TabIndex = 1;
+            this.btnAvant.Text = "<";
+            this.btnAvant.UseVisualStyleBackColor = true;
+            // 
+            // btnSuivant
+            // 
+            this.btnSuivant.Location = new System.Drawing.Point(286, 355);
+            this.btnSuivant.Name = "btnSuivant";
+            this.btnSuivant.Size = new System.Drawing.Size(133, 26);
+            this.btnSuivant.TabIndex = 2;
+            this.btnSuivant.Text = ">";
+            this.btnSuivant.UseVisualStyleBackColor = true;
+            // 
+            // btnDernier
+            // 
+            this.btnDernier.Location = new System.Drawing.Point(425, 355);
+            this.btnDernier.Name = "btnDernier";
+            this.btnDernier.Size = new System.Drawing.Size(133, 26);
+            this.btnDernier.TabIndex = 3;
+            this.btnDernier.Text = ">>";
+            this.btnDernier.UseVisualStyleBackColor = true;
             // 
             // frmBudgetMois
             // 
@@ -274,6 +318,7 @@
             this.Text = "Budget du mois";
             this.Load += new System.EventHandler(this.frmBudgetMois_Load);
             this.tcBudgetMois.ResumeLayout(false);
+            this.tpAffichage1a1.ResumeLayout(false);
             this.tpNewTransaction.ResumeLayout(false);
             this.tpNewTransaction.PerformLayout();
             this.grpRecettePercu.ResumeLayout(false);
@@ -308,6 +353,10 @@
         private System.Windows.Forms.TabPage tpModifTransaction;
         private System.Windows.Forms.TabPage tpRecap;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button btnDernier;
+        private System.Windows.Forms.Button btnSuivant;
+        private System.Windows.Forms.Button btnAvant;
+        private System.Windows.Forms.Button btnPremier;
     }
 }
 
