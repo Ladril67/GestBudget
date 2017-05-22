@@ -14,7 +14,6 @@ namespace GestBudget
     public partial class frmBudgetMois : Form
     {
         OleDbConnection connec = new OleDbConnection();
-        DataSet ds = new DataSet();
 
         public frmBudgetMois()
         {
@@ -23,29 +22,7 @@ namespace GestBudget
 
         private void frmBudgetMois_Load(object sender, EventArgs e)
         {
-            try
-            {
-                connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source="+Application.StartupPath+"\\budget.mdb";
-                connec.Open();
-                DataTable schema = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
 
-            }
-            catch (InvalidOperationException erreur)
-            {
-                MessageBox.Show("Erreur de chaine de connexion !");
-            }
-            catch (OleDbException erreur)
-            {
-                MessageBox.Show("Erreur de requete SQL !");
-            }
-            finally
-            {
-            }
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-            
         }
 
         private void btnAjoutTransa_Click(object sender, EventArgs e)

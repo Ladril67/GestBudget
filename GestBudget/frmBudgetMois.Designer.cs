@@ -36,11 +36,8 @@
             this.btnAvant = new System.Windows.Forms.Button();
             this.btnPremier = new System.Windows.Forms.Button();
             this.tpNewTransaction = new System.Windows.Forms.TabPage();
-<<<<<<< HEAD
-            this.grpRecettePercu = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-=======
->>>>>>> c2f03505122d76b0449160b6b35436b3ccec955d
+            this.cbPercu = new System.Windows.Forms.CheckBox();
+            this.cbRecette = new System.Windows.Forms.CheckBox();
             this.btnAjouterPersonneTransa = new System.Windows.Forms.Button();
             this.grpParticipantsTransa = new System.Windows.Forms.GroupBox();
             this.btnAjoutTransa = new System.Windows.Forms.Button();
@@ -56,12 +53,6 @@
             this.tpDeleteTransaction = new System.Windows.Forms.TabPage();
             this.tpModifTransaction = new System.Windows.Forms.TabPage();
             this.tpRecap = new System.Windows.Forms.TabPage();
-<<<<<<< HEAD
-            this.btnPercu = new System.Windows.Forms.RadioButton();
-=======
-            this.cbRecette = new System.Windows.Forms.CheckBox();
-            this.cbPercu = new System.Windows.Forms.CheckBox();
->>>>>>> c2f03505122d76b0449160b6b35436b3ccec955d
             this.tcBudgetMois.SuspendLayout();
             this.tpAffichage1a1.SuspendLayout();
             this.tpNewTransaction.SuspendLayout();
@@ -85,13 +76,6 @@
             // 
             // tpAffichage1a1
             // 
-<<<<<<< HEAD
-            this.tpAffichage1a1.Location = new System.Drawing.Point(4, 25);
-            this.tpAffichage1a1.Margin = new System.Windows.Forms.Padding(2);
-            this.tpAffichage1a1.Name = "tpAffichage1a1";
-            this.tpAffichage1a1.Padding = new System.Windows.Forms.Padding(2);
-            this.tpAffichage1a1.Size = new System.Drawing.Size(686, 389);
-=======
             this.tpAffichage1a1.Controls.Add(this.btnDernier);
             this.tpAffichage1a1.Controls.Add(this.btnSuivant);
             this.tpAffichage1a1.Controls.Add(this.btnAvant);
@@ -101,7 +85,6 @@
             this.tpAffichage1a1.Name = "tpAffichage1a1";
             this.tpAffichage1a1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpAffichage1a1.Size = new System.Drawing.Size(917, 482);
->>>>>>> c2f03505122d76b0449160b6b35436b3ccec955d
             this.tpAffichage1a1.TabIndex = 1;
             this.tpAffichage1a1.Text = "Affichage 1 à 1";
             this.tpAffichage1a1.UseVisualStyleBackColor = true;
@@ -109,7 +92,7 @@
             // btnDernier
             // 
             this.btnDernier.Location = new System.Drawing.Point(567, 437);
-            this.btnDernier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDernier.Margin = new System.Windows.Forms.Padding(4);
             this.btnDernier.Name = "btnDernier";
             this.btnDernier.Size = new System.Drawing.Size(177, 32);
             this.btnDernier.TabIndex = 3;
@@ -119,7 +102,7 @@
             // btnSuivant
             // 
             this.btnSuivant.Location = new System.Drawing.Point(381, 437);
-            this.btnSuivant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSuivant.Margin = new System.Windows.Forms.Padding(4);
             this.btnSuivant.Name = "btnSuivant";
             this.btnSuivant.Size = new System.Drawing.Size(177, 32);
             this.btnSuivant.TabIndex = 2;
@@ -129,7 +112,7 @@
             // btnAvant
             // 
             this.btnAvant.Location = new System.Drawing.Point(196, 437);
-            this.btnAvant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAvant.Margin = new System.Windows.Forms.Padding(4);
             this.btnAvant.Name = "btnAvant";
             this.btnAvant.Size = new System.Drawing.Size(177, 32);
             this.btnAvant.TabIndex = 1;
@@ -139,7 +122,7 @@
             // btnPremier
             // 
             this.btnPremier.Location = new System.Drawing.Point(11, 437);
-            this.btnPremier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPremier.Margin = new System.Windows.Forms.Padding(4);
             this.btnPremier.Name = "btnPremier";
             this.btnPremier.Size = new System.Drawing.Size(177, 32);
             this.btnPremier.TabIndex = 0;
@@ -171,58 +154,51 @@
             this.tpNewTransaction.Text = "Ajout d\'une transaction";
             this.tpNewTransaction.UseVisualStyleBackColor = true;
             // 
-<<<<<<< HEAD
-            // grpRecettePercu
+            // cbPercu
             // 
-            this.grpRecettePercu.Controls.Add(this.btnPercu);
-            this.grpRecettePercu.Controls.Add(this.radioButton1);
-            this.grpRecettePercu.Location = new System.Drawing.Point(36, 127);
-            this.grpRecettePercu.Margin = new System.Windows.Forms.Padding(2);
-            this.grpRecettePercu.Name = "grpRecettePercu";
-            this.grpRecettePercu.Padding = new System.Windows.Forms.Padding(2);
-            this.grpRecettePercu.Size = new System.Drawing.Size(276, 55);
-            this.grpRecettePercu.TabIndex = 12;
-            this.grpRecettePercu.TabStop = false;
+            this.cbPercu.AutoSize = true;
+            this.cbPercu.Location = new System.Drawing.Point(290, 168);
+            this.cbPercu.Name = "cbPercu";
+            this.cbPercu.Size = new System.Drawing.Size(67, 21);
+            this.cbPercu.TabIndex = 13;
+            this.cbPercu.Text = "Perçu";
+            this.cbPercu.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // cbRecette
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(5, 18);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(70, 19);
-            this.radioButton1.TabIndex = 7;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Recette";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.cbRecette.AutoSize = true;
+            this.cbRecette.Location = new System.Drawing.Point(112, 168);
+            this.cbRecette.Name = "cbRecette";
+            this.cbRecette.Size = new System.Drawing.Size(79, 21);
+            this.cbRecette.TabIndex = 12;
+            this.cbRecette.Text = "Recette";
+            this.cbRecette.UseVisualStyleBackColor = true;
             // 
-=======
->>>>>>> c2f03505122d76b0449160b6b35436b3ccec955d
             // btnAjouterPersonneTransa
             // 
-            this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(589, 34);
-            this.btnAjouterPersonneTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(756, 18);
+            this.btnAjouterPersonneTransa.Margin = new System.Windows.Forms.Padding(4);
             this.btnAjouterPersonneTransa.Name = "btnAjouterPersonneTransa";
-            this.btnAjouterPersonneTransa.Size = new System.Drawing.Size(75, 62);
+            this.btnAjouterPersonneTransa.Size = new System.Drawing.Size(112, 82);
             this.btnAjouterPersonneTransa.TabIndex = 0;
             this.btnAjouterPersonneTransa.Text = "Ajouter une personne";
             this.btnAjouterPersonneTransa.UseVisualStyleBackColor = true;
             // 
             // grpParticipantsTransa
             // 
-            this.grpParticipantsTransa.Location = new System.Drawing.Point(445, 18);
-            this.grpParticipantsTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpParticipantsTransa.Location = new System.Drawing.Point(580, 18);
+            this.grpParticipantsTransa.Margin = new System.Windows.Forms.Padding(4);
             this.grpParticipantsTransa.Name = "grpParticipantsTransa";
-            this.grpParticipantsTransa.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpParticipantsTransa.Size = new System.Drawing.Size(131, 362);
+            this.grpParticipantsTransa.Padding = new System.Windows.Forms.Padding(4);
+            this.grpParticipantsTransa.Size = new System.Drawing.Size(154, 455);
             this.grpParticipantsTransa.TabIndex = 11;
             this.grpParticipantsTransa.TabStop = false;
             this.grpParticipantsTransa.Text = "Participants : ";
-            this.grpParticipantsTransa.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnAjoutTransa
             // 
-            this.btnAjoutTransa.Location = new System.Drawing.Point(108, 263);
-            this.btnAjoutTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAjoutTransa.Location = new System.Drawing.Point(144, 306);
+            this.btnAjoutTransa.Margin = new System.Windows.Forms.Padding(4);
             this.btnAjoutTransa.Name = "btnAjoutTransa";
             this.btnAjoutTransa.Size = new System.Drawing.Size(213, 91);
             this.btnAjoutTransa.TabIndex = 10;
@@ -233,7 +209,7 @@
             // btnAjoutType
             // 
             this.btnAjoutType.Location = new System.Drawing.Point(325, 230);
-            this.btnAjoutType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAjoutType.Margin = new System.Windows.Forms.Padding(4);
             this.btnAjoutType.Name = "btnAjoutType";
             this.btnAjoutType.Size = new System.Drawing.Size(32, 23);
             this.btnAjoutType.TabIndex = 9;
@@ -244,7 +220,7 @@
             // 
             this.cbTypeTransa.FormattingEnabled = true;
             this.cbTypeTransa.Location = new System.Drawing.Point(195, 230);
-            this.cbTypeTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbTypeTransa.Margin = new System.Windows.Forms.Padding(4);
             this.cbTypeTransa.Name = "cbTypeTransa";
             this.cbTypeTransa.Size = new System.Drawing.Size(121, 24);
             this.cbTypeTransa.TabIndex = 8;
@@ -255,20 +231,16 @@
             this.lblTypeTransa.Location = new System.Drawing.Point(145, 230);
             this.lblTypeTransa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTypeTransa.Name = "lblTypeTransa";
-<<<<<<< HEAD
-            this.lblTypeTransa.Size = new System.Drawing.Size(33, 15);
-=======
             this.lblTypeTransa.Size = new System.Drawing.Size(40, 17);
->>>>>>> c2f03505122d76b0449160b6b35436b3ccec955d
             this.lblTypeTransa.TabIndex = 7;
             this.lblTypeTransa.Text = "Type";
             // 
             // txtMontantTransa
             // 
             this.txtMontantTransa.Location = new System.Drawing.Point(199, 119);
-            this.txtMontantTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMontantTransa.Margin = new System.Windows.Forms.Padding(4);
             this.txtMontantTransa.Name = "txtMontantTransa";
-            this.txtMontantTransa.Size = new System.Drawing.Size(100, 22);
+            this.txtMontantTransa.Size = new System.Drawing.Size(221, 22);
             this.txtMontantTransa.TabIndex = 4;
             // 
             // lblMontantTransa
@@ -277,20 +249,16 @@
             this.lblMontantTransa.Location = new System.Drawing.Point(44, 124);
             this.lblMontantTransa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMontantTransa.Name = "lblMontantTransa";
-<<<<<<< HEAD
-            this.lblMontantTransa.Size = new System.Drawing.Size(52, 15);
-=======
             this.lblMontantTransa.Size = new System.Drawing.Size(59, 17);
->>>>>>> c2f03505122d76b0449160b6b35436b3ccec955d
             this.lblMontantTransa.TabIndex = 3;
             this.lblMontantTransa.Text = "Montant";
             // 
             // txtDescriptionTransa
             // 
             this.txtDescriptionTransa.Location = new System.Drawing.Point(199, 78);
-            this.txtDescriptionTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescriptionTransa.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescriptionTransa.Name = "txtDescriptionTransa";
-            this.txtDescriptionTransa.Size = new System.Drawing.Size(100, 22);
+            this.txtDescriptionTransa.Size = new System.Drawing.Size(221, 22);
             this.txtDescriptionTransa.TabIndex = 3;
             // 
             // lblDescripionTransa
@@ -299,18 +267,14 @@
             this.lblDescripionTransa.Location = new System.Drawing.Point(44, 82);
             this.lblDescripionTransa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescripionTransa.Name = "lblDescripionTransa";
-<<<<<<< HEAD
-            this.lblDescripionTransa.Size = new System.Drawing.Size(69, 15);
-=======
             this.lblDescripionTransa.Size = new System.Drawing.Size(79, 17);
->>>>>>> c2f03505122d76b0449160b6b35436b3ccec955d
             this.lblDescripionTransa.TabIndex = 2;
             this.lblDescripionTransa.Text = "Description";
             // 
             // dtpTransa
             // 
             this.dtpTransa.Location = new System.Drawing.Point(199, 34);
-            this.dtpTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpTransa.Margin = new System.Windows.Forms.Padding(4);
             this.dtpTransa.Name = "dtpTransa";
             this.dtpTransa.Size = new System.Drawing.Size(221, 22);
             this.dtpTransa.TabIndex = 1;
@@ -321,11 +285,7 @@
             this.lblDateTransa.Location = new System.Drawing.Point(44, 34);
             this.lblDateTransa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateTransa.Name = "lblDateTransa";
-<<<<<<< HEAD
-            this.lblDateTransa.Size = new System.Drawing.Size(126, 15);
-=======
             this.lblDateTransa.Size = new System.Drawing.Size(147, 17);
->>>>>>> c2f03505122d76b0449160b6b35436b3ccec955d
             this.lblDateTransa.TabIndex = 0;
             this.lblDateTransa.Text = "Date de la transaction";
             // 
@@ -342,66 +302,23 @@
             // 
             // tpModifTransaction
             // 
-<<<<<<< HEAD
-            this.tpModifTransaction.Location = new System.Drawing.Point(4, 25);
-            this.tpModifTransaction.Margin = new System.Windows.Forms.Padding(2);
-=======
             this.tpModifTransaction.Location = new System.Drawing.Point(4, 28);
             this.tpModifTransaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> c2f03505122d76b0449160b6b35436b3ccec955d
             this.tpModifTransaction.Name = "tpModifTransaction";
             this.tpModifTransaction.Size = new System.Drawing.Size(917, 482);
             this.tpModifTransaction.TabIndex = 2;
-            this.tpModifTransaction.Text = "Modificationd \'une transaction";
+            this.tpModifTransaction.Text = "Modification d\'une transaction";
             this.tpModifTransaction.UseVisualStyleBackColor = true;
             // 
             // tpRecap
             // 
-<<<<<<< HEAD
-            this.tpRecap.Location = new System.Drawing.Point(4, 25);
-            this.tpRecap.Margin = new System.Windows.Forms.Padding(2);
-=======
             this.tpRecap.Location = new System.Drawing.Point(4, 28);
             this.tpRecap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> c2f03505122d76b0449160b6b35436b3ccec955d
             this.tpRecap.Name = "tpRecap";
             this.tpRecap.Size = new System.Drawing.Size(917, 482);
             this.tpRecap.TabIndex = 3;
             this.tpRecap.Text = "Récapitulatif";
             this.tpRecap.UseVisualStyleBackColor = true;
-            // 
-<<<<<<< HEAD
-            // btnPercu
-            // 
-            this.btnPercu.AutoSize = true;
-            this.btnPercu.Location = new System.Drawing.Point(162, 18);
-            this.btnPercu.Name = "btnPercu";
-            this.btnPercu.Size = new System.Drawing.Size(60, 19);
-            this.btnPercu.TabIndex = 8;
-            this.btnPercu.TabStop = true;
-            this.btnPercu.Text = "Perçu";
-            this.btnPercu.UseVisualStyleBackColor = true;
-=======
-            // cbRecette
-            // 
-            this.cbRecette.AutoSize = true;
-            this.cbRecette.Location = new System.Drawing.Point(60, 172);
-            this.cbRecette.Name = "cbRecette";
-            this.cbRecette.Size = new System.Drawing.Size(79, 21);
-            this.cbRecette.TabIndex = 12;
-            this.cbRecette.Text = "Recette";
-            this.cbRecette.UseVisualStyleBackColor = true;
-            // 
-            // cbPercu
-            // 
-            this.cbPercu.AutoSize = true;
-            this.cbPercu.Location = new System.Drawing.Point(238, 172);
-            this.cbPercu.Name = "cbPercu";
-            this.cbPercu.Size = new System.Drawing.Size(67, 21);
-            this.cbPercu.TabIndex = 13;
-            this.cbPercu.Text = "Perçu";
-            this.cbPercu.UseVisualStyleBackColor = true;
->>>>>>> c2f03505122d76b0449160b6b35436b3ccec955d
             // 
             // frmBudgetMois
             // 
@@ -442,17 +359,12 @@
         private System.Windows.Forms.Button btnAjouterPersonneTransa;
         private System.Windows.Forms.TabPage tpModifTransaction;
         private System.Windows.Forms.TabPage tpRecap;
-<<<<<<< HEAD
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton btnPercu;
-=======
         private System.Windows.Forms.Button btnDernier;
         private System.Windows.Forms.Button btnSuivant;
         private System.Windows.Forms.Button btnAvant;
         private System.Windows.Forms.Button btnPremier;
         private System.Windows.Forms.CheckBox cbPercu;
         private System.Windows.Forms.CheckBox cbRecette;
->>>>>>> c2f03505122d76b0449160b6b35436b3ccec955d
     }
 }
 
