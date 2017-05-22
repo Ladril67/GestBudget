@@ -45,12 +45,24 @@
             this.lblDescripionTransa = new System.Windows.Forms.Label();
             this.dtpTransa = new System.Windows.Forms.DateTimePicker();
             this.lblDateTransa = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.tpAffichage1a1 = new System.Windows.Forms.TabPage();
             this.tpSupprTransac = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+=======
+<<<<<<< HEAD
+            this.tpDeleteTransaction = new System.Windows.Forms.TabPage();
+            this.grpRecettePercu = new System.Windows.Forms.GroupBox();
+            this.tpModifTransaction = new System.Windows.Forms.TabPage();
+            this.tpRecap = new System.Windows.Forms.TabPage();
+=======
+            this.tpSuite = new System.Windows.Forms.TabPage();
+>>>>>>> e866203cb7beff370cb66da4e49d28188018102f
+>>>>>>> 712a260a03016f707d8d763faf9f6b0c5f0e669b
             this.tcBudgetMois.SuspendLayout();
             this.tpNewTransaction.SuspendLayout();
+            this.grpRecettePercu.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcBudgetMois
@@ -58,12 +70,21 @@
             this.tcBudgetMois.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tcBudgetMois.Controls.Add(this.tpAffichage1a1);
             this.tcBudgetMois.Controls.Add(this.tpNewTransaction);
+<<<<<<< HEAD
             this.tcBudgetMois.Controls.Add(this.tpSupprTransac);
             this.tcBudgetMois.Controls.Add(this.tabPage2);
             this.tcBudgetMois.Controls.Add(this.tabPage3);
             this.tcBudgetMois.Cursor = System.Windows.Forms.Cursors.Default;
             this.tcBudgetMois.Location = new System.Drawing.Point(0, 0);
             this.tcBudgetMois.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.tcBudgetMois.Controls.Add(this.tpDeleteTransaction);
+            this.tcBudgetMois.Controls.Add(this.tpModifTransaction);
+            this.tcBudgetMois.Controls.Add(this.tpRecap);
+            this.tcBudgetMois.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tcBudgetMois.Location = new System.Drawing.Point(0, 0);
+            this.tcBudgetMois.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> 712a260a03016f707d8d763faf9f6b0c5f0e669b
             this.tcBudgetMois.Name = "tcBudgetMois";
             this.tcBudgetMois.SelectedIndex = 0;
             this.tcBudgetMois.Size = new System.Drawing.Size(925, 514);
@@ -71,46 +92,65 @@
             // 
             // tpNewTransaction
             // 
+            this.tpNewTransaction.Controls.Add(this.grpRecettePercu);
             this.tpNewTransaction.Controls.Add(this.btnAjouterPersonneTransa);
             this.tpNewTransaction.Controls.Add(this.grpParticipantsTransa);
             this.tpNewTransaction.Controls.Add(this.btnAjoutTransa);
             this.tpNewTransaction.Controls.Add(this.btnAjoutType);
             this.tpNewTransaction.Controls.Add(this.cbTypeTransa);
             this.tpNewTransaction.Controls.Add(this.lblTypeTransa);
-            this.tpNewTransaction.Controls.Add(this.rdbPerçu);
-            this.tpNewTransaction.Controls.Add(this.rdbRecette);
             this.tpNewTransaction.Controls.Add(this.txtMontantTransa);
             this.tpNewTransaction.Controls.Add(this.lblMontantTransa);
             this.tpNewTransaction.Controls.Add(this.txtDescriptionTransa);
             this.tpNewTransaction.Controls.Add(this.lblDescripionTransa);
             this.tpNewTransaction.Controls.Add(this.dtpTransa);
             this.tpNewTransaction.Controls.Add(this.lblDateTransa);
+<<<<<<< HEAD
             this.tpNewTransaction.Location = new System.Drawing.Point(4, 28);
             this.tpNewTransaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpNewTransaction.Name = "tpNewTransaction";
             this.tpNewTransaction.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpNewTransaction.Size = new System.Drawing.Size(917, 482);
+=======
+            this.tpNewTransaction.Location = new System.Drawing.Point(4, 25);
+            this.tpNewTransaction.Margin = new System.Windows.Forms.Padding(2);
+            this.tpNewTransaction.Name = "tpNewTransaction";
+            this.tpNewTransaction.Padding = new System.Windows.Forms.Padding(2);
+            this.tpNewTransaction.Size = new System.Drawing.Size(686, 389);
+>>>>>>> 712a260a03016f707d8d763faf9f6b0c5f0e669b
             this.tpNewTransaction.TabIndex = 0;
             this.tpNewTransaction.Text = "Ajout d\'une transaction";
             this.tpNewTransaction.UseVisualStyleBackColor = true;
             // 
             // btnAjouterPersonneTransa
             // 
+<<<<<<< HEAD
             this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(787, 43);
             this.btnAjouterPersonneTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAjouterPersonneTransa.Name = "btnAjouterPersonneTransa";
             this.btnAjouterPersonneTransa.Size = new System.Drawing.Size(100, 76);
+=======
+            this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(590, 35);
+            this.btnAjouterPersonneTransa.Name = "btnAjouterPersonneTransa";
+            this.btnAjouterPersonneTransa.Size = new System.Drawing.Size(75, 62);
+>>>>>>> 712a260a03016f707d8d763faf9f6b0c5f0e669b
             this.btnAjouterPersonneTransa.TabIndex = 0;
             this.btnAjouterPersonneTransa.Text = "Ajouter une personne";
             this.btnAjouterPersonneTransa.UseVisualStyleBackColor = true;
             // 
             // grpParticipantsTransa
             // 
+<<<<<<< HEAD
             this.grpParticipantsTransa.Location = new System.Drawing.Point(593, 23);
             this.grpParticipantsTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpParticipantsTransa.Name = "grpParticipantsTransa";
             this.grpParticipantsTransa.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpParticipantsTransa.Size = new System.Drawing.Size(173, 446);
+=======
+            this.grpParticipantsTransa.Location = new System.Drawing.Point(445, 19);
+            this.grpParticipantsTransa.Name = "grpParticipantsTransa";
+            this.grpParticipantsTransa.Size = new System.Drawing.Size(130, 362);
+>>>>>>> 712a260a03016f707d8d763faf9f6b0c5f0e669b
             this.grpParticipantsTransa.TabIndex = 11;
             this.grpParticipantsTransa.TabStop = false;
             this.grpParticipantsTransa.Text = "Participants : ";
@@ -118,6 +158,7 @@
             // 
             // btnAjoutTransa
             // 
+<<<<<<< HEAD
             this.btnAjoutTransa.Location = new System.Drawing.Point(112, 324);
             this.btnAjoutTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAjoutTransa.Name = "btnAjoutTransa";
@@ -132,6 +173,24 @@
             this.btnAjoutType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAjoutType.Name = "btnAjoutType";
             this.btnAjoutType.Size = new System.Drawing.Size(43, 28);
+=======
+            this.btnAjoutTransa.Location = new System.Drawing.Point(84, 263);
+            this.btnAjoutTransa.Name = "btnAjoutTransa";
+            this.btnAjoutTransa.Size = new System.Drawing.Size(214, 91);
+            this.btnAjoutTransa.TabIndex = 10;
+            this.btnAjoutTransa.Text = "Ajouter";
+            this.btnAjoutTransa.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
+=======
+            this.btnAjoutTransa.Click += new System.EventHandler(this.btnAjoutTransa_Click);
+>>>>>>> e866203cb7beff370cb66da4e49d28188018102f
+            // 
+            // btnAjoutType
+            // 
+            this.btnAjoutType.Location = new System.Drawing.Point(326, 203);
+            this.btnAjoutType.Name = "btnAjoutType";
+            this.btnAjoutType.Size = new System.Drawing.Size(32, 23);
+>>>>>>> 712a260a03016f707d8d763faf9f6b0c5f0e669b
             this.btnAjoutType.TabIndex = 9;
             this.btnAjoutType.Text = "...";
             this.btnAjoutType.UseVisualStyleBackColor = true;
@@ -139,11 +198,74 @@
             // cbTypeTransa
             // 
             this.cbTypeTransa.FormattingEnabled = true;
+<<<<<<< HEAD
             this.cbTypeTransa.Location = new System.Drawing.Point(265, 250);
             this.cbTypeTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbTypeTransa.Name = "cbTypeTransa";
             this.cbTypeTransa.Size = new System.Drawing.Size(160, 24);
             this.cbTypeTransa.TabIndex = 8;
+=======
+            this.cbTypeTransa.Location = new System.Drawing.Point(199, 203);
+            this.cbTypeTransa.Name = "cbTypeTransa";
+            this.cbTypeTransa.Size = new System.Drawing.Size(121, 21);
+            this.cbTypeTransa.TabIndex = 8;
+            // 
+            // lblTypeTransa
+            // 
+            this.lblTypeTransa.AutoSize = true;
+            this.lblTypeTransa.Location = new System.Drawing.Point(44, 209);
+            this.lblTypeTransa.Name = "lblTypeTransa";
+<<<<<<< HEAD
+            this.lblTypeTransa.Size = new System.Drawing.Size(33, 15);
+=======
+            this.lblTypeTransa.Size = new System.Drawing.Size(31, 13);
+>>>>>>> e866203cb7beff370cb66da4e49d28188018102f
+            this.lblTypeTransa.TabIndex = 7;
+            this.lblTypeTransa.Text = "Type";
+            // 
+            // rdbPerçu
+            // 
+            this.rdbPerçu.AutoSize = true;
+<<<<<<< HEAD
+            this.rdbPerçu.Location = new System.Drawing.Point(179, 11);
+            this.rdbPerçu.Name = "rdbPerçu";
+            this.rdbPerçu.Size = new System.Drawing.Size(60, 19);
+            this.rdbPerçu.TabIndex = 6;
+            this.rdbPerçu.TabStop = true;
+            this.rdbPerçu.Text = "Perçu";
+=======
+            this.rdbPerçu.Location = new System.Drawing.Point(199, 167);
+            this.rdbPerçu.Name = "rdbPerçu";
+            this.rdbPerçu.Size = new System.Drawing.Size(85, 17);
+            this.rdbPerçu.TabIndex = 6;
+            this.rdbPerçu.TabStop = true;
+            this.rdbPerçu.Text = "radioButton2";
+>>>>>>> e866203cb7beff370cb66da4e49d28188018102f
+            this.rdbPerçu.UseVisualStyleBackColor = true;
+            // 
+            // rdbRecette
+            // 
+            this.rdbRecette.AutoSize = true;
+            this.rdbRecette.Location = new System.Drawing.Point(27, 11);
+            this.rdbRecette.Name = "rdbRecette";
+<<<<<<< HEAD
+            this.rdbRecette.Size = new System.Drawing.Size(70, 19);
+=======
+            this.rdbRecette.Size = new System.Drawing.Size(85, 17);
+>>>>>>> e866203cb7beff370cb66da4e49d28188018102f
+            this.rdbRecette.TabIndex = 5;
+            this.rdbRecette.TabStop = true;
+            this.rdbRecette.Text = "Recette";
+            this.rdbRecette.UseVisualStyleBackColor = true;
+            // 
+            // txtMontantTransa
+<<<<<<< HEAD
+            // 
+            this.txtMontantTransa.Location = new System.Drawing.Point(199, 119);
+            this.txtMontantTransa.Name = "txtMontantTransa";
+            this.txtMontantTransa.Size = new System.Drawing.Size(100, 20);
+            this.txtMontantTransa.TabIndex = 4;
+>>>>>>> 712a260a03016f707d8d763faf9f6b0c5f0e669b
             // 
             // lblTypeTransa
             // 
@@ -155,6 +277,7 @@
             this.lblTypeTransa.TabIndex = 7;
             this.lblTypeTransa.Text = "Type";
             // 
+<<<<<<< HEAD
             // rdbPerçu
             // 
             this.rdbPerçu.AutoSize = true;
@@ -166,9 +289,18 @@
             this.rdbPerçu.TabStop = true;
             this.rdbPerçu.Text = "radioButton2";
             this.rdbPerçu.UseVisualStyleBackColor = true;
+=======
+            // txtDescriptionTransa
             // 
-            // rdbRecette
+            this.txtDescriptionTransa.Location = new System.Drawing.Point(199, 78);
+            this.txtDescriptionTransa.Name = "txtDescriptionTransa";
+            this.txtDescriptionTransa.Size = new System.Drawing.Size(100, 20);
+            this.txtDescriptionTransa.TabIndex = 3;
+>>>>>>> 712a260a03016f707d8d763faf9f6b0c5f0e669b
             // 
+            // lblDescripionTransa
+            // 
+<<<<<<< HEAD
             this.rdbRecette.AutoSize = true;
             this.rdbRecette.Location = new System.Drawing.Point(63, 206);
             this.rdbRecette.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -270,6 +402,128 @@
             this.tabPage3.TabIndex = 4;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
+=======
+            this.lblDescripionTransa.AutoSize = true;
+            this.lblDescripionTransa.Location = new System.Drawing.Point(44, 83);
+            this.lblDescripionTransa.Name = "lblDescripionTransa";
+            this.lblDescripionTransa.Size = new System.Drawing.Size(69, 15);
+            this.lblDescripionTransa.TabIndex = 2;
+            this.lblDescripionTransa.Text = "Description";
+            // 
+            // dtpTransa
+            // 
+            this.dtpTransa.Location = new System.Drawing.Point(199, 35);
+            this.dtpTransa.Name = "dtpTransa";
+            this.dtpTransa.Size = new System.Drawing.Size(221, 20);
+            this.dtpTransa.TabIndex = 1;
+            // 
+            // lblDateTransa
+            // 
+            this.lblDateTransa.AutoSize = true;
+            this.lblDateTransa.Location = new System.Drawing.Point(44, 35);
+            this.lblDateTransa.Name = "lblDateTransa";
+            this.lblDateTransa.Size = new System.Drawing.Size(126, 15);
+            this.lblDateTransa.TabIndex = 0;
+            this.lblDateTransa.Text = "Date de la transaction";
+            // 
+            // tpDeleteTransaction
+            // 
+            this.tpDeleteTransaction.Location = new System.Drawing.Point(4, 25);
+            this.tpDeleteTransaction.Margin = new System.Windows.Forms.Padding(2);
+            this.tpDeleteTransaction.Name = "tpDeleteTransaction";
+            this.tpDeleteTransaction.Padding = new System.Windows.Forms.Padding(2);
+            this.tpDeleteTransaction.Size = new System.Drawing.Size(686, 389);
+            this.tpDeleteTransaction.TabIndex = 1;
+            this.tpDeleteTransaction.Text = "Suppression d\'une transaction";
+            this.tpDeleteTransaction.UseVisualStyleBackColor = true;
+            // 
+            // grpRecettePercu
+            // 
+            this.grpRecettePercu.Controls.Add(this.rdbPerçu);
+            this.grpRecettePercu.Controls.Add(this.rdbRecette);
+            this.grpRecettePercu.Location = new System.Drawing.Point(20, 156);
+            this.grpRecettePercu.Name = "grpRecettePercu";
+            this.grpRecettePercu.Size = new System.Drawing.Size(368, 47);
+            this.grpRecettePercu.TabIndex = 12;
+            this.grpRecettePercu.TabStop = false;
+            // 
+            // tpModifTransaction
+            // 
+            this.tpModifTransaction.Location = new System.Drawing.Point(4, 25);
+            this.tpModifTransaction.Name = "tpModifTransaction";
+            this.tpModifTransaction.Size = new System.Drawing.Size(686, 389);
+            this.tpModifTransaction.TabIndex = 2;
+            this.tpModifTransaction.Text = "Modificationd \'une transaction";
+            this.tpModifTransaction.UseVisualStyleBackColor = true;
+            // 
+            // tpRecap
+            // 
+            this.tpRecap.Location = new System.Drawing.Point(4, 25);
+            this.tpRecap.Name = "tpRecap";
+            this.tpRecap.Size = new System.Drawing.Size(686, 389);
+            this.tpRecap.TabIndex = 3;
+            this.tpRecap.Text = "Récapitulatif";
+            this.tpRecap.UseVisualStyleBackColor = true;
+=======
+            // 
+            this.txtMontantTransa.Location = new System.Drawing.Point(199, 119);
+            this.txtMontantTransa.Name = "txtMontantTransa";
+            this.txtMontantTransa.Size = new System.Drawing.Size(100, 20);
+            this.txtMontantTransa.TabIndex = 4;
+            // 
+            // lblMontantTransa
+            // 
+            this.lblMontantTransa.AutoSize = true;
+            this.lblMontantTransa.Location = new System.Drawing.Point(44, 124);
+            this.lblMontantTransa.Name = "lblMontantTransa";
+            this.lblMontantTransa.Size = new System.Drawing.Size(46, 13);
+            this.lblMontantTransa.TabIndex = 3;
+            this.lblMontantTransa.Text = "Montant";
+            // 
+            // txtDescriptionTransa
+            // 
+            this.txtDescriptionTransa.Location = new System.Drawing.Point(199, 78);
+            this.txtDescriptionTransa.Name = "txtDescriptionTransa";
+            this.txtDescriptionTransa.Size = new System.Drawing.Size(100, 20);
+            this.txtDescriptionTransa.TabIndex = 3;
+            // 
+            // lblDescripionTransa
+            // 
+            this.lblDescripionTransa.AutoSize = true;
+            this.lblDescripionTransa.Location = new System.Drawing.Point(44, 83);
+            this.lblDescripionTransa.Name = "lblDescripionTransa";
+            this.lblDescripionTransa.Size = new System.Drawing.Size(60, 13);
+            this.lblDescripionTransa.TabIndex = 2;
+            this.lblDescripionTransa.Text = "Description";
+            // 
+            // dtpTransa
+            // 
+            this.dtpTransa.Location = new System.Drawing.Point(199, 35);
+            this.dtpTransa.Name = "dtpTransa";
+            this.dtpTransa.Size = new System.Drawing.Size(221, 20);
+            this.dtpTransa.TabIndex = 1;
+            // 
+            // lblDateTransa
+            // 
+            this.lblDateTransa.AutoSize = true;
+            this.lblDateTransa.Location = new System.Drawing.Point(44, 35);
+            this.lblDateTransa.Name = "lblDateTransa";
+            this.lblDateTransa.Size = new System.Drawing.Size(111, 13);
+            this.lblDateTransa.TabIndex = 0;
+            this.lblDateTransa.Text = "Date de la transaction";
+            // 
+            // tpSuite
+            // 
+            this.tpSuite.Location = new System.Drawing.Point(4, 25);
+            this.tpSuite.Margin = new System.Windows.Forms.Padding(2);
+            this.tpSuite.Name = "tpSuite";
+            this.tpSuite.Padding = new System.Windows.Forms.Padding(2);
+            this.tpSuite.Size = new System.Drawing.Size(686, 389);
+            this.tpSuite.TabIndex = 1;
+            this.tpSuite.Text = "Bijour";
+            this.tpSuite.UseVisualStyleBackColor = true;
+>>>>>>> e866203cb7beff370cb66da4e49d28188018102f
+>>>>>>> 712a260a03016f707d8d763faf9f6b0c5f0e669b
             // 
             // frmBudgetMois
             // 
@@ -278,13 +532,19 @@
             this.ClientSize = new System.Drawing.Size(925, 514);
             this.Controls.Add(this.tcBudgetMois);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> 712a260a03016f707d8d763faf9f6b0c5f0e669b
             this.Name = "frmBudgetMois";
             this.Text = "Budget du mois";
             this.Load += new System.EventHandler(this.frmBudgetMois_Load);
             this.tcBudgetMois.ResumeLayout(false);
             this.tpNewTransaction.ResumeLayout(false);
             this.tpNewTransaction.PerformLayout();
+            this.grpRecettePercu.ResumeLayout(false);
+            this.grpRecettePercu.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -293,7 +553,11 @@
 
         private System.Windows.Forms.TabControl tcBudgetMois;
         private System.Windows.Forms.TabPage tpNewTransaction;
+<<<<<<< HEAD
         private System.Windows.Forms.TabPage tpAffichage1a1;
+=======
+        private System.Windows.Forms.TabPage tpDeleteTransaction;
+>>>>>>> 712a260a03016f707d8d763faf9f6b0c5f0e669b
         private System.Windows.Forms.Label lblDateTransa;
         private System.Windows.Forms.GroupBox grpParticipantsTransa;
         private System.Windows.Forms.Button btnAjoutTransa;
@@ -308,9 +572,15 @@
         private System.Windows.Forms.Label lblDescripionTransa;
         private System.Windows.Forms.DateTimePicker dtpTransa;
         private System.Windows.Forms.Button btnAjouterPersonneTransa;
+<<<<<<< HEAD
         private System.Windows.Forms.TabPage tpSupprTransac;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
+=======
+        private System.Windows.Forms.GroupBox grpRecettePercu;
+        private System.Windows.Forms.TabPage tpModifTransaction;
+        private System.Windows.Forms.TabPage tpRecap;
+>>>>>>> 712a260a03016f707d8d763faf9f6b0c5f0e669b
     }
 }
 
