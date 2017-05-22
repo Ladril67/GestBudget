@@ -25,13 +25,9 @@ namespace GestBudget
         {
             try
             {
-<<<<<<< HEAD
-=======
                 connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source="+Application.StartupPath+"\\budget.mdb";
                 connec.Open();
                 DataTable schema = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
-                
->>>>>>> 13cce644852e86422778c2e0fde46e828f8daeb3
 
             }
             catch (InvalidOperationException erreur)
@@ -62,7 +58,6 @@ namespace GestBudget
                 DateTime date = dtpTransa.Value;
                 string desc = txtDescriptionTransa.Text;
                 string montant = txtMontantTransa.Text;
-
 
                 string requete = "select count(*) from Poste";
                 OleDbCommand cd1 = new OleDbCommand(requete, connec);
