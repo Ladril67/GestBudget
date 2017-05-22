@@ -32,7 +32,6 @@
             this.tcBudgetMois = new System.Windows.Forms.TabControl();
             this.tpAffichage1a1 = new System.Windows.Forms.TabPage();
             this.tpNewTransaction = new System.Windows.Forms.TabPage();
-            this.grpRecettePercu = new System.Windows.Forms.GroupBox();
             this.btnAjouterPersonneTransa = new System.Windows.Forms.Button();
             this.grpParticipantsTransa = new System.Windows.Forms.GroupBox();
             this.btnAjoutTransa = new System.Windows.Forms.Button();
@@ -48,10 +47,8 @@
             this.tpDeleteTransaction = new System.Windows.Forms.TabPage();
             this.tpModifTransaction = new System.Windows.Forms.TabPage();
             this.tpRecap = new System.Windows.Forms.TabPage();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.tcBudgetMois.SuspendLayout();
             this.tpNewTransaction.SuspendLayout();
-            this.grpRecettePercu.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcBudgetMois
@@ -95,7 +92,6 @@
             this.tpNewTransaction.Controls.Add(this.lblDescripionTransa);
             this.tpNewTransaction.Controls.Add(this.dtpTransa);
             this.tpNewTransaction.Controls.Add(this.lblDateTransa);
-            this.tpNewTransaction.Controls.Add(this.grpRecettePercu);
             this.tpNewTransaction.Location = new System.Drawing.Point(4, 28);
             this.tpNewTransaction.Location = new System.Drawing.Point(4, 25);
             this.tpNewTransaction.Margin = new System.Windows.Forms.Padding(2);
@@ -105,17 +101,6 @@
             this.tpNewTransaction.TabIndex = 0;
             this.tpNewTransaction.Text = "Ajout d\'une transaction";
             this.tpNewTransaction.UseVisualStyleBackColor = true;
-            // 
-            // grpRecettePercu
-            // 
-            this.grpRecettePercu.Controls.Add(this.radioButton1);
-            this.grpRecettePercu.Location = new System.Drawing.Point(36, 127);
-            this.grpRecettePercu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grpRecettePercu.Name = "grpRecettePercu";
-            this.grpRecettePercu.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grpRecettePercu.Size = new System.Drawing.Size(276, 55);
-            this.grpRecettePercu.TabIndex = 12;
-            this.grpRecettePercu.TabStop = false;
             // 
             // btnAjouterPersonneTransa
             // 
@@ -251,17 +236,6 @@
             this.tpRecap.Text = "Récapitulatif";
             this.tpRecap.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(5, 18);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(63, 17);
-            this.radioButton1.TabIndex = 7;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Recette";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
             // frmBudgetMois
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,8 +250,6 @@
             this.tcBudgetMois.ResumeLayout(false);
             this.tpNewTransaction.ResumeLayout(false);
             this.tpNewTransaction.PerformLayout();
-            this.grpRecettePercu.ResumeLayout(false);
-            this.grpRecettePercu.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -303,11 +275,8 @@
         private System.Windows.Forms.Label lblDescripionTransa;
         private System.Windows.Forms.DateTimePicker dtpTransa;
         private System.Windows.Forms.Button btnAjouterPersonneTransa;
-
-        private System.Windows.Forms.GroupBox grpRecettePercu;
         private System.Windows.Forms.TabPage tpModifTransaction;
         private System.Windows.Forms.TabPage tpRecap;
-        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
 
