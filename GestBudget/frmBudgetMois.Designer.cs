@@ -51,6 +51,8 @@
             this.tpDeleteTransaction = new System.Windows.Forms.TabPage();
             this.tpModifTransaction = new System.Windows.Forms.TabPage();
             this.tpRecap = new System.Windows.Forms.TabPage();
+            this.cbRecette = new System.Windows.Forms.CheckBox();
+            this.cbPercu = new System.Windows.Forms.CheckBox();
             this.tcBudgetMois.SuspendLayout();
             this.tpAffichage1a1.SuspendLayout();
             this.tpNewTransaction.SuspendLayout();
@@ -129,6 +131,8 @@
             // 
             // tpNewTransaction
             // 
+            this.tpNewTransaction.Controls.Add(this.cbPercu);
+            this.tpNewTransaction.Controls.Add(this.cbRecette);
             this.tpNewTransaction.Controls.Add(this.btnAjouterPersonneTransa);
             this.tpNewTransaction.Controls.Add(this.grpParticipantsTransa);
             this.tpNewTransaction.Controls.Add(this.btnAjoutTransa);
@@ -297,6 +301,26 @@
             this.tpRecap.Text = "Récapitulatif";
             this.tpRecap.UseVisualStyleBackColor = true;
             // 
+            // cbRecette
+            // 
+            this.cbRecette.AutoSize = true;
+            this.cbRecette.Location = new System.Drawing.Point(60, 172);
+            this.cbRecette.Name = "cbRecette";
+            this.cbRecette.Size = new System.Drawing.Size(79, 21);
+            this.cbRecette.TabIndex = 12;
+            this.cbRecette.Text = "Recette";
+            this.cbRecette.UseVisualStyleBackColor = true;
+            // 
+            // cbPercu
+            // 
+            this.cbPercu.AutoSize = true;
+            this.cbPercu.Location = new System.Drawing.Point(238, 172);
+            this.cbPercu.Name = "cbPercu";
+            this.cbPercu.Size = new System.Drawing.Size(67, 21);
+            this.cbPercu.TabIndex = 13;
+            this.cbPercu.Text = "Perçu";
+            this.cbPercu.UseVisualStyleBackColor = true;
+            // 
             // frmBudgetMois
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -340,6 +364,8 @@
         private System.Windows.Forms.Button btnSuivant;
         private System.Windows.Forms.Button btnAvant;
         private System.Windows.Forms.Button btnPremier;
+        private System.Windows.Forms.CheckBox cbPercu;
+        private System.Windows.Forms.CheckBox cbRecette;
     }
 }
 
