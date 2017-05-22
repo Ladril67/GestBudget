@@ -25,8 +25,10 @@ namespace GestBudget
         {
             try
             {
-                connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
+                connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source="+Application.StartupPath+"\\budget.mdb";
                 connec.Open();
+                DataTable schema = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
+                
 
                 string requete = "select count(*) from Poste";
                 OleDbCommand cd1 = new OleDbCommand(requete, connec);
