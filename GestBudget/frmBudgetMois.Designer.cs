@@ -84,7 +84,6 @@
             // 
             // tpNewTransaction
             // 
-            this.tpNewTransaction.Controls.Add(this.grpRecettePercu);
             this.tpNewTransaction.Controls.Add(this.btnAjouterPersonneTransa);
             this.tpNewTransaction.Controls.Add(this.grpParticipantsTransa);
             this.tpNewTransaction.Controls.Add(this.btnAjoutTransa);
@@ -97,6 +96,7 @@
             this.tpNewTransaction.Controls.Add(this.lblDescripionTransa);
             this.tpNewTransaction.Controls.Add(this.dtpTransa);
             this.tpNewTransaction.Controls.Add(this.lblDateTransa);
+            this.tpNewTransaction.Controls.Add(this.grpRecettePercu);
             this.tpNewTransaction.Location = new System.Drawing.Point(4, 28);
             this.tpNewTransaction.Margin = new System.Windows.Forms.Padding(2);
             this.tpNewTransaction.Name = "tpNewTransaction";
