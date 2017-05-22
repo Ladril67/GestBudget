@@ -95,12 +95,9 @@
             this.tpNewTransaction.Controls.Add(this.lblDescripionTransa);
             this.tpNewTransaction.Controls.Add(this.dtpTransa);
             this.tpNewTransaction.Controls.Add(this.lblDateTransa);
-<<<<<<< HEAD
             this.tpNewTransaction.Controls.Add(this.grpRecettePercu);
             this.tpNewTransaction.Location = new System.Drawing.Point(4, 28);
-=======
             this.tpNewTransaction.Location = new System.Drawing.Point(4, 25);
->>>>>>> 13cce644852e86422778c2e0fde46e828f8daeb3
             this.tpNewTransaction.Margin = new System.Windows.Forms.Padding(2);
             this.tpNewTransaction.Name = "tpNewTransaction";
             this.tpNewTransaction.Padding = new System.Windows.Forms.Padding(2);
