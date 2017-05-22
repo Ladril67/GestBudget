@@ -16,3 +16,12 @@ D:\Documents\DUT\S2\A21\MiniProjet\GestBudget\GestBudget\obj\Debug\Pique_Sous.Pr
 D:\Documents\DUT\S2\A21\MiniProjet\GestBudget\GestBudget\obj\Debug\Pique_Sous.csproj.GenerateResource.Cache
 D:\Documents\DUT\S2\A21\MiniProjet\GestBudget\GestBudget\obj\Debug\Pique_Sous.exe
 D:\Documents\DUT\S2\A21\MiniProjet\GestBudget\GestBudget\obj\Debug\Pique_Sous.pdb
+C:\Users\Miniyeti67\Desktop\Mini Projet\GestBudget\GestBudget\bin\Debug\Pique_Sous.exe.config
+C:\Users\Miniyeti67\Desktop\Mini Projet\GestBudget\GestBudget\bin\Debug\Pique_Sous.exe
+C:\Users\Miniyeti67\Desktop\Mini Projet\GestBudget\GestBudget\bin\Debug\Pique_Sous.pdb
+C:\Users\Miniyeti67\Desktop\Mini Projet\GestBudget\GestBudget\obj\Debug\Pique_Sous.csprojResolveAssemblyReference.cache
+C:\Users\Miniyeti67\Desktop\Mini Projet\GestBudget\GestBudget\obj\Debug\GestBudget.frmBudgetMois.resources
+C:\Users\Miniyeti67\Desktop\Mini Projet\GestBudget\GestBudget\obj\Debug\Pique_Sous.Properties.Resources.resources
+C:\Users\Miniyeti67\Desktop\Mini Projet\GestBudget\GestBudget\obj\Debug\Pique_Sous.csproj.GenerateResource.Cache
+C:\Users\Miniyeti67\Desktop\Mini Projet\GestBudget\GestBudget\obj\Debug\Pique_Sous.exe
+C:\Users\Miniyeti67\Desktop\Mini Projet\GestBudget\GestBudget\obj\Debug\Pique_Sous.pdb

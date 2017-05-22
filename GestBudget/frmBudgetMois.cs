@@ -22,7 +22,7 @@ namespace GestBudget
         }
 
         private void frmBudgetMois_Load(object sender, EventArgs e)
-        {
+        {/*
             try
             {
                 connec.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\ladri\DUT\A21\MINI_PROJET\GestBudget\budget.mdb";
@@ -57,7 +57,7 @@ namespace GestBudget
             }
             finally
             {
-            }
+            }*/
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
