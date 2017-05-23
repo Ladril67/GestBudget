@@ -36,13 +36,13 @@
             this.btnAvant = new System.Windows.Forms.Button();
             this.btnPremier = new System.Windows.Forms.Button();
             this.tpNewTransaction = new System.Windows.Forms.TabPage();
-            this.cbPercu = new System.Windows.Forms.CheckBox();
-            this.cbRecette = new System.Windows.Forms.CheckBox();
+            this.chkPercu = new System.Windows.Forms.CheckBox();
+            this.chkRecette = new System.Windows.Forms.CheckBox();
             this.btnAjouterPersonneTransa = new System.Windows.Forms.Button();
             this.grpParticipantsTransa = new System.Windows.Forms.GroupBox();
             this.btnAjoutTransa = new System.Windows.Forms.Button();
             this.btnAjoutType = new System.Windows.Forms.Button();
-            this.cbTypeTransa = new System.Windows.Forms.ComboBox();
+            this.cboTypeTransa = new System.Windows.Forms.ComboBox();
             this.lblTypeTransa = new System.Windows.Forms.Label();
             this.txtMontantTransa = new System.Windows.Forms.TextBox();
             this.lblMontantTransa = new System.Windows.Forms.Label();
@@ -131,13 +131,13 @@
             // 
             // tpNewTransaction
             // 
-            this.tpNewTransaction.Controls.Add(this.cbPercu);
-            this.tpNewTransaction.Controls.Add(this.cbRecette);
+            this.tpNewTransaction.Controls.Add(this.chkPercu);
+            this.tpNewTransaction.Controls.Add(this.chkRecette);
             this.tpNewTransaction.Controls.Add(this.btnAjouterPersonneTransa);
             this.tpNewTransaction.Controls.Add(this.grpParticipantsTransa);
             this.tpNewTransaction.Controls.Add(this.btnAjoutTransa);
             this.tpNewTransaction.Controls.Add(this.btnAjoutType);
-            this.tpNewTransaction.Controls.Add(this.cbTypeTransa);
+            this.tpNewTransaction.Controls.Add(this.cboTypeTransa);
             this.tpNewTransaction.Controls.Add(this.lblTypeTransa);
             this.tpNewTransaction.Controls.Add(this.txtMontantTransa);
             this.tpNewTransaction.Controls.Add(this.lblMontantTransa);
@@ -154,25 +154,25 @@
             this.tpNewTransaction.Text = "Ajout d\'une transaction";
             this.tpNewTransaction.UseVisualStyleBackColor = true;
             // 
-            // cbPercu
+            // chkPercu
             // 
-            this.cbPercu.AutoSize = true;
-            this.cbPercu.Location = new System.Drawing.Point(290, 168);
-            this.cbPercu.Name = "cbPercu";
-            this.cbPercu.Size = new System.Drawing.Size(67, 21);
-            this.cbPercu.TabIndex = 13;
-            this.cbPercu.Text = "Perçu";
-            this.cbPercu.UseVisualStyleBackColor = true;
+            this.chkPercu.AutoSize = true;
+            this.chkPercu.Location = new System.Drawing.Point(290, 168);
+            this.chkPercu.Name = "chkPercu";
+            this.chkPercu.Size = new System.Drawing.Size(67, 21);
+            this.chkPercu.TabIndex = 13;
+            this.chkPercu.Text = "Perçu";
+            this.chkPercu.UseVisualStyleBackColor = true;
             // 
-            // cbRecette
+            // chkRecette
             // 
-            this.cbRecette.AutoSize = true;
-            this.cbRecette.Location = new System.Drawing.Point(112, 168);
-            this.cbRecette.Name = "cbRecette";
-            this.cbRecette.Size = new System.Drawing.Size(79, 21);
-            this.cbRecette.TabIndex = 12;
-            this.cbRecette.Text = "Recette";
-            this.cbRecette.UseVisualStyleBackColor = true;
+            this.chkRecette.AutoSize = true;
+            this.chkRecette.Location = new System.Drawing.Point(112, 168);
+            this.chkRecette.Name = "chkRecette";
+            this.chkRecette.Size = new System.Drawing.Size(79, 21);
+            this.chkRecette.TabIndex = 12;
+            this.chkRecette.Text = "Recette";
+            this.chkRecette.UseVisualStyleBackColor = true;
             // 
             // btnAjouterPersonneTransa
             // 
@@ -216,14 +216,14 @@
             this.btnAjoutType.Text = "...";
             this.btnAjoutType.UseVisualStyleBackColor = true;
             // 
-            // cbTypeTransa
+            // cboTypeTransa
             // 
-            this.cbTypeTransa.FormattingEnabled = true;
-            this.cbTypeTransa.Location = new System.Drawing.Point(195, 230);
-            this.cbTypeTransa.Margin = new System.Windows.Forms.Padding(4);
-            this.cbTypeTransa.Name = "cbTypeTransa";
-            this.cbTypeTransa.Size = new System.Drawing.Size(121, 24);
-            this.cbTypeTransa.TabIndex = 8;
+            this.cboTypeTransa.FormattingEnabled = true;
+            this.cboTypeTransa.Location = new System.Drawing.Point(195, 230);
+            this.cboTypeTransa.Margin = new System.Windows.Forms.Padding(4);
+            this.cboTypeTransa.Name = "cboTypeTransa";
+            this.cboTypeTransa.Size = new System.Drawing.Size(121, 24);
+            this.cboTypeTransa.TabIndex = 8;
             // 
             // lblTypeTransa
             // 
@@ -349,7 +349,7 @@
         private System.Windows.Forms.GroupBox grpParticipantsTransa;
         private System.Windows.Forms.Button btnAjoutTransa;
         private System.Windows.Forms.Button btnAjoutType;
-        private System.Windows.Forms.ComboBox cbTypeTransa;
+        private System.Windows.Forms.ComboBox cboTypeTransa;
         private System.Windows.Forms.Label lblTypeTransa;
         private System.Windows.Forms.TextBox txtMontantTransa;
         private System.Windows.Forms.Label lblMontantTransa;
@@ -363,8 +363,8 @@
         private System.Windows.Forms.Button btnSuivant;
         private System.Windows.Forms.Button btnAvant;
         private System.Windows.Forms.Button btnPremier;
-        private System.Windows.Forms.CheckBox cbPercu;
-        private System.Windows.Forms.CheckBox cbRecette;
+        private System.Windows.Forms.CheckBox chkPercu;
+        private System.Windows.Forms.CheckBox chkRecette;
     }
 }
 
