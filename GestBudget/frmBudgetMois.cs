@@ -15,12 +15,9 @@ namespace GestBudget
     {
         OleDbConnection connec = new OleDbConnection();
         DataSet ds = new DataSet();
-<<<<<<< HEAD
         int lastCodeTransac=2;
         int nbVirgule = 0;
-=======
         int lastCodeTransac = 0;
->>>>>>> 233742b3665e2d40e6cdb73e7d4415bfe228eb85
 
         public frmBudgetMois()
         {
