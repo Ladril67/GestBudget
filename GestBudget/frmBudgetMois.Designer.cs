@@ -104,7 +104,7 @@
             this.tpAffichage1a1.TabIndex = 1;
             this.tpAffichage1a1.Text = "Affichage 1 à 1";
             this.tpAffichage1a1.UseVisualStyleBackColor = true;
-            this.tpAffichage1a1.Click += new System.EventHandler(this.tpAffichage1a1_Click);
+
             // 
             // btnDernier
             // 
@@ -200,17 +200,15 @@
             // 
             // grpParticipantsTransa
             // 
-<<<<<<< HEAD
             this.grpParticipantsTransa.Location = new System.Drawing.Point(483, 18);
             this.grpParticipantsTransa.Margin = new System.Windows.Forms.Padding(4);
             this.grpParticipantsTransa.Name = "grpParticipantsTransa";
             this.grpParticipantsTransa.Padding = new System.Windows.Forms.Padding(4);
             this.grpParticipantsTransa.Size = new System.Drawing.Size(251, 455);
-=======
+
             this.grpParticipantsTransa.Location = new System.Drawing.Point(435, 15);
             this.grpParticipantsTransa.Name = "grpParticipantsTransa";
             this.grpParticipantsTransa.Size = new System.Drawing.Size(116, 370);
->>>>>>> f933a79cbae5b9baaf97edc65ce50718af77ccb6
             this.grpParticipantsTransa.TabIndex = 11;
             this.grpParticipantsTransa.TabStop = false;
             this.grpParticipantsTransa.Text = "Participants : ";

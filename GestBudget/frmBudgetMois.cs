@@ -15,7 +15,7 @@ namespace GestBudget
     {
         OleDbConnection connec = new OleDbConnection();
         DataSet ds = new DataSet();
-        int lastCodeTransac=2;
+        int lastCodeTransac = 2;
 
         public frmBudgetMois()
         {
@@ -30,7 +30,7 @@ namespace GestBudget
                 connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
                 connec.Open();
                 DataTable schema = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
-                
+
 
                 string requete = @"select * from TypeTransaction";
                 OleDbCommand cd1 = new OleDbCommand(requete, connec);
@@ -97,16 +97,15 @@ namespace GestBudget
             cb.ValueMember = champCache;
         }
 
-<<<<<<< HEAD
         private void remplirParticipants()
         {
             connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
             connec.Open();
             DataTable tbl1 = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
                 new object[] { null, null, null, "TABLE" });
-            foreach(DataRow ds in tbl1.Rows)
+            foreach (DataRow ds in tbl1.Rows)
             {
-                if(ds[2].ToString() == "Personne")
+                if (ds[2].ToString() == "Personne")
                 {
                     OleDbCommand cd1 = new OleDbCommand();
                     cd1.Connection = connec;
@@ -124,7 +123,7 @@ namespace GestBudget
                         while (dr.Read())
                         {
                             CheckBox cbPersonne = new CheckBox();
-                            cbPersonne.Text = dr[nb].ToString() + " " + dr[nb+1].ToString();
+                            cbPersonne.Text = dr[nb].ToString() + " " + dr[nb + 1].ToString();
 
                             cbPersonne.Top = top + i * 10;
                             cbPersonne.Left = left;
@@ -139,11 +138,6 @@ namespace GestBudget
 
             }
             connec.Close();
-=======
-        private void tpAffichage1a1_Click(object sender, EventArgs e)
-        {
-
->>>>>>> f933a79cbae5b9baaf97edc65ce50718af77ccb6
         }
     }
 }
