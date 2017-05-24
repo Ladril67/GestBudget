@@ -249,6 +249,7 @@
             this.txtMontantTransa.Name = "txtMontantTransa";
             this.txtMontantTransa.Size = new System.Drawing.Size(167, 20);
             this.txtMontantTransa.TabIndex = 4;
+            this.txtMontantTransa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontantTransa_KeyPress);
             // 
             // lblMontantTransa
             // 

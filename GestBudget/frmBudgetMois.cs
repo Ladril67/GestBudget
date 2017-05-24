@@ -16,6 +16,7 @@ namespace GestBudget
         OleDbConnection connec = new OleDbConnection();
         DataSet ds = new DataSet();
         int lastCodeTransac=2;
+        int nbVirgule = 0;
 
         public frmBudgetMois()
         {
@@ -100,5 +101,39 @@ namespace GestBudget
         {
 
         }
+
+        private void txtMontantTransa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar))
+                {
+                    if (!txtMontantTransa.Text.Contains(","))
+                    {
+                        nbVirgule = 0;
+                    }
+                    e.Handled = false;
+                }
+                else
+                {
+                    if (e.KeyChar == ',' && nbVirgule < 1 )
+                    {
+                        nbVirgule = 1;
+                        e.Handled = false;
+                    }
+                    else
+                    {
+                    e.Handled = true;
+                    }
+                }
+            }
+        }
     }
 }
+
