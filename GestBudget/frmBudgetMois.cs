@@ -24,6 +24,7 @@ namespace GestBudget
 
         private void frmBudgetMois_Load(object sender, EventArgs e)
         {
+            remplirParticipants();
             try
             {
                 connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
@@ -94,6 +95,49 @@ namespace GestBudget
             cb.DataSource = ds.Tables[nomTable];
             cb.DisplayMember = champAffiche;
             cb.ValueMember = champCache;
+        }
+
+        private void remplirParticipants()
+        {
+            connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
+            connec.Open();
+            DataTable tbl1 = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
+                new object[] { null, null, null, "TABLE" });
+            foreach(DataRow ds in tbl1.Rows)
+            {
+                if(ds[2].ToString() == "Personne")
+                {
+                    OleDbCommand cd1 = new OleDbCommand();
+                    cd1.Connection = connec;
+                    cd1.CommandType = CommandType.Text;
+                    cd1.CommandText = "Select pnPersonne,nomPersonne from Personne";
+                    int nb = cd1.ExecuteNonQuery();
+
+                    OleDbDataReader dr = cd1.ExecuteReader();
+
+                    if (dr.HasRows)
+                    {
+                        int top = 25;
+                        int left = 15;
+                        int i = 0;
+                        while (dr.Read())
+                        {
+                            CheckBox cbPersonne = new CheckBox();
+                            cbPersonne.Text = dr[nb].ToString() + " " + dr[nb+1].ToString();
+
+                            cbPersonne.Top = top + i * 10;
+                            cbPersonne.Left = left;
+                            cbPersonne.AutoSize = true;
+
+                            i += 2;
+                            grpParticipantsTransa.Controls.Add(cbPersonne);
+
+                        }
+                    }
+                }
+
+            }
+            connec.Close();
         }
     }
 }

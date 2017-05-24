@@ -186,11 +186,11 @@
             // 
             // grpParticipantsTransa
             // 
-            this.grpParticipantsTransa.Location = new System.Drawing.Point(580, 18);
+            this.grpParticipantsTransa.Location = new System.Drawing.Point(483, 18);
             this.grpParticipantsTransa.Margin = new System.Windows.Forms.Padding(4);
             this.grpParticipantsTransa.Name = "grpParticipantsTransa";
             this.grpParticipantsTransa.Padding = new System.Windows.Forms.Padding(4);
-            this.grpParticipantsTransa.Size = new System.Drawing.Size(154, 455);
+            this.grpParticipantsTransa.Size = new System.Drawing.Size(251, 455);
             this.grpParticipantsTransa.TabIndex = 11;
             this.grpParticipantsTransa.TabStop = false;
             this.grpParticipantsTransa.Text = "Participants : ";
