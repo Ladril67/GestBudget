@@ -15,7 +15,7 @@ namespace GestBudget
     {
         OleDbConnection connec = new OleDbConnection();
         DataSet ds = new DataSet();
-        int lastCodeTransac = 2;
+        int lastCodeTransac = 0;
 
         public frmBudgetMois()
         {
@@ -37,10 +37,13 @@ namespace GestBudget
                 OleDbDataAdapter da = new OleDbDataAdapter();
                 da.SelectCommand = cd1;
 
-
                 da.Fill(ds, "TypeTransaction");
 
                 remplitCbo(cboTypeTransa, "TypeTransaction", "libType", "codeType");
+
+                OleDbCommand cd2 = new OleDbCommand("select * from Transaction", connec);
+                lastCodeTransac = (int)cd2.ExecuteNonQuery();
+                MessageBox.Show(""+lastCodeTransac);
                 connec.Close();
             }
             catch (InvalidOperationException erreur)
