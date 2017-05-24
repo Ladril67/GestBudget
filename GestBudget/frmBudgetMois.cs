@@ -15,8 +15,12 @@ namespace GestBudget
     {
         OleDbConnection connec = new OleDbConnection();
         DataSet ds = new DataSet();
+<<<<<<< HEAD
         int lastCodeTransac=2;
         int nbVirgule = 0;
+=======
+        int lastCodeTransac = 0;
+>>>>>>> 233742b3665e2d40e6cdb73e7d4415bfe228eb85
 
         public frmBudgetMois()
         {
@@ -25,22 +29,26 @@ namespace GestBudget
 
         private void frmBudgetMois_Load(object sender, EventArgs e)
         {
+            remplirParticipants();
             try
             {
                 connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
                 connec.Open();
                 DataTable schema = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
-                
+
 
                 string requete = @"select * from TypeTransaction";
                 OleDbCommand cd1 = new OleDbCommand(requete, connec);
                 OleDbDataAdapter da = new OleDbDataAdapter();
                 da.SelectCommand = cd1;
 
-
                 da.Fill(ds, "TypeTransaction");
 
                 remplitCbo(cboTypeTransa, "TypeTransaction", "libType", "codeType");
+
+                OleDbCommand cd2 = new OleDbCommand("select * from Transaction", connec);
+                lastCodeTransac = (int)cd2.ExecuteNonQuery();
+                MessageBox.Show(""+lastCodeTransac);
                 connec.Close();
             }
             catch (InvalidOperationException erreur)
@@ -97,9 +105,47 @@ namespace GestBudget
             cb.ValueMember = champCache;
         }
 
-        private void tpAffichage1a1_Click(object sender, EventArgs e)
+        private void remplirParticipants()
         {
+            connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
+            connec.Open();
+            DataTable tbl1 = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
+                new object[] { null, null, null, "TABLE" });
+            foreach (DataRow ds in tbl1.Rows)
+            {
+                if (ds[2].ToString() == "Personne")
+                {
+                    OleDbCommand cd1 = new OleDbCommand();
+                    cd1.Connection = connec;
+                    cd1.CommandType = CommandType.Text;
+                    cd1.CommandText = "Select pnPersonne,nomPersonne from Personne";
+                    int nb = cd1.ExecuteNonQuery();
 
+                    OleDbDataReader dr = cd1.ExecuteReader();
+
+                    if (dr.HasRows)
+                    {
+                        int top = 25;
+                        int left = 15;
+                        int i = 0;
+                        while (dr.Read())
+                        {
+                            CheckBox cbPersonne = new CheckBox();
+                            cbPersonne.Text = dr[nb].ToString() + " " + dr[nb + 1].ToString();
+
+                            cbPersonne.Top = top + i * 10;
+                            cbPersonne.Left = left;
+                            cbPersonne.AutoSize = true;
+
+                            i += 2;
+                            grpParticipantsTransa.Controls.Add(cbPersonne);
+
+                        }
+                    }
+                }
+
+            }
+            connec.Close();
         }
 
         private void txtMontantTransa_KeyPress(object sender, KeyPressEventArgs e)
