@@ -97,6 +97,7 @@ namespace GestBudget
             cb.ValueMember = champCache;
         }
 
+<<<<<<< HEAD
         private void remplirParticipants()
         {
             connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
@@ -138,6 +139,11 @@ namespace GestBudget
 
             }
             connec.Close();
+=======
+        private void tpAffichage1a1_Click(object sender, EventArgs e)
+        {
+
+>>>>>>> f933a79cbae5b9baaf97edc65ce50718af77ccb6
         }
     }
 }
