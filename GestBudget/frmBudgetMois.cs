@@ -15,7 +15,12 @@ namespace GestBudget
     {
         OleDbConnection connec = new OleDbConnection();
         DataSet ds = new DataSet();
-        int lastCodeTransac = 2;
+<<<<<<< HEAD
+        int lastCodeTransac=2;
+        int nbVirgule = 0;
+=======
+        int lastCodeTransac = 0;
+>>>>>>> 233742b3665e2d40e6cdb73e7d4415bfe228eb85
 
         public frmBudgetMois()
         {
@@ -37,10 +42,13 @@ namespace GestBudget
                 OleDbDataAdapter da = new OleDbDataAdapter();
                 da.SelectCommand = cd1;
 
-
                 da.Fill(ds, "TypeTransaction");
 
                 remplitCbo(cboTypeTransa, "TypeTransaction", "libType", "codeType");
+
+                OleDbCommand cd2 = new OleDbCommand("select * from Transaction", connec);
+                lastCodeTransac = (int)cd2.ExecuteNonQuery();
+                MessageBox.Show(""+lastCodeTransac);
                 connec.Close();
             }
             catch (InvalidOperationException erreur)
@@ -139,5 +147,39 @@ namespace GestBudget
             }
             connec.Close();
         }
+
+        private void txtMontantTransa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar))
+                {
+                    if (!txtMontantTransa.Text.Contains(","))
+                    {
+                        nbVirgule = 0;
+                    }
+                    e.Handled = false;
+                }
+                else
+                {
+                    if (e.KeyChar == ',' && nbVirgule < 1 )
+                    {
+                        nbVirgule = 1;
+                        e.Handled = false;
+                    }
+                    else
+                    {
+                    e.Handled = true;
+                    }
+                }
+            }
+        }
     }
 }
+

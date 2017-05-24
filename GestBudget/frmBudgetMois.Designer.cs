@@ -285,11 +285,19 @@
             // 
             // grpParticipantsTransa
             // 
+<<<<<<< HEAD
             this.grpParticipantsTransa.Location = new System.Drawing.Point(460, 18);
             this.grpParticipantsTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.grpParticipantsTransa.Name = "grpParticipantsTransa";
             this.grpParticipantsTransa.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.grpParticipantsTransa.Size = new System.Drawing.Size(275, 455);
+=======
+            this.grpParticipantsTransa.Location = new System.Drawing.Point(492, 18);
+            this.grpParticipantsTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpParticipantsTransa.Name = "grpParticipantsTransa";
+            this.grpParticipantsTransa.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpParticipantsTransa.Size = new System.Drawing.Size(243, 455);
+>>>>>>> 2c87a70cd780685be427ef527a5a63c79f7459c7
             this.grpParticipantsTransa.TabIndex = 11;
             this.grpParticipantsTransa.TabStop = false;
             this.grpParticipantsTransa.Text = "Participants : ";
@@ -341,6 +349,7 @@
             this.txtMontantTransa.Name = "txtMontantTransa";
             this.txtMontantTransa.Size = new System.Drawing.Size(221, 22);
             this.txtMontantTransa.TabIndex = 4;
+            this.txtMontantTransa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontantTransa_KeyPress);
             // 
             // lblMontantTransa
             // 
