@@ -104,5 +104,10 @@ namespace GestBudget
             cb.DisplayMember = champAffiche;
             cb.ValueMember = champCache;
         }
+
+        private void tpAffichage1a1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
