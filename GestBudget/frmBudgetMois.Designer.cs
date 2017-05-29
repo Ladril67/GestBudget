@@ -1,4 +1,4 @@
-﻿namespace GestBudget
+﻿namespace Pique_Sous
 {
     partial class frmBudgetMois
     {

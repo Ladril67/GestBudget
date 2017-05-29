@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GestBudget
+namespace Pique_Sous
 {
     public partial class frmBudgetMois : Form
     {

@@ -2,7 +2,6 @@ C:\Users\ladri\DUT\A21\MINI_PROJET\GestBudget\GestBudget\bin\Debug\Pique_Sous.ex
 C:\Users\ladri\DUT\A21\MINI_PROJET\GestBudget\GestBudget\bin\Debug\Pique_Sous.exe
 C:\Users\ladri\DUT\A21\MINI_PROJET\GestBudget\GestBudget\bin\Debug\Pique_Sous.pdb
 C:\Users\ladri\DUT\A21\MINI_PROJET\GestBudget\GestBudget\obj\Debug\Pique_Sous.csprojResolveAssemblyReference.cache
-C:\Users\ladri\DUT\A21\MINI_PROJET\GestBudget\GestBudget\obj\Debug\GestBudget.frmBudgetMois.resources
 C:\Users\ladri\DUT\A21\MINI_PROJET\GestBudget\GestBudget\obj\Debug\Pique_Sous.Properties.Resources.resources
 C:\Users\ladri\DUT\A21\MINI_PROJET\GestBudget\GestBudget\obj\Debug\Pique_Sous.csproj.GenerateResource.Cache
 C:\Users\ladri\DUT\A21\MINI_PROJET\GestBudget\GestBudget\obj\Debug\Pique_Sous.exe
@@ -25,3 +24,6 @@ C:\Users\Miniyeti67\Desktop\Mini Projet\GestBudget\GestBudget\obj\Debug\Pique_So
 C:\Users\Miniyeti67\Desktop\Mini Projet\GestBudget\GestBudget\obj\Debug\Pique_Sous.csproj.GenerateResource.Cache
 C:\Users\Miniyeti67\Desktop\Mini Projet\GestBudget\GestBudget\obj\Debug\Pique_Sous.exe
 C:\Users\Miniyeti67\Desktop\Mini Projet\GestBudget\GestBudget\obj\Debug\Pique_Sous.pdb
+C:\Users\ladri\DUT\A21\MINI_PROJET\GestBudget\GestBudget\obj\Debug\Pique_Sous.frmMenu.resources
+C:\Users\ladri\DUT\A21\MINI_PROJET\GestBudget\GestBudget\obj\Debug\Pique_Sous.frmPrevisionnel.resources
+C:\Users\ladri\DUT\A21\MINI_PROJET\GestBudget\GestBudget\obj\Debug\Pique_Sous.frmBudgetMois.resources
