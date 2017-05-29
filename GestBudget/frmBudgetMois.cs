@@ -15,7 +15,6 @@ namespace GestBudget
     {
         OleDbConnection connec = new OleDbConnection();
         DataSet ds = new DataSet();
-        int lastCodeTransac=2;
         int nbVirgule = 0;
         int lastCodeTransac = 0;
 
