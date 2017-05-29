@@ -43,7 +43,7 @@ namespace Pique_Sous
 
                 OleDbCommand cd2 = new OleDbCommand("select * from Transaction", connec);
                 lastCodeTransac = (int)cd2.ExecuteNonQuery();
-                MessageBox.Show(""+lastCodeTransac);
+                MessageBox.Show("" + lastCodeTransac);
                 connec.Close();
             }
             catch (InvalidOperationException erreur)
@@ -73,12 +73,12 @@ namespace Pique_Sous
                 string percu = chkPercu.Checked.ToString();
                 int type = (int)cboTypeTransa.SelectedValue;
 
-                string requete = "insert into Transaction values ("+(lastCodeTransac+1)+","+date+","+desc+","+montant+","+recette+","+percu+","+type+")";
+                string requete = "insert into Transaction values (" + (lastCodeTransac + 1) + "," + date + "," + desc + "," + montant + "," + recette + "," + percu + "," + type + ")";
                 OleDbCommand cd1 = new OleDbCommand(requete, connec);
                 int c = (int)cd1.ExecuteScalar();
                 MessageBox.Show(requete);
 
-                foreach(CheckBox chk in grpParticipantsTransa.Controls)
+                foreach (CheckBox chk in grpParticipantsTransa.Controls)
                 {
                     if (chk.Checked)
                     {
@@ -168,8 +168,8 @@ namespace Pique_Sous
         }
 
         private void txtMontantTransa_KeyPress(object sender, KeyPressEventArgs e)
-        {   
-            
+        {
+
             if (!txtMontantTransa.Text.Contains(",") && txtMontantTransa.Text != "")
             {
                 //Gestion de la virgule
@@ -189,6 +189,44 @@ namespace Pique_Sous
             {
                 //Gestion du reste des characteres
                 e.Handled = true;
+            }
+        }
+
+        private void btnSuivant_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAvant_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void init1a1()
+        {
+            try
+            {
+                connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
+                connec.Open();
+
+                OleDbCommand cd1 = new OleDbCommand("select * from Transaction", connec);
+                OleDbDataReader dr = cd1.ExecuteReader();
+                DataTable schemaTable = dr.GetSchemaTable();
+
+                lblCode.Text = schemaTable;
+
+                connec.Close();
+            }
+            catch (InvalidOperationException erreur)
+            {
+                MessageBox.Show("Erreur de chaine de connexion !");
+            }
+            catch (OleDbException erreur)
+            {
+                MessageBox.Show("Erreur de requete SQL !");
+            }
+            finally
+            {
             }
         }
     }
