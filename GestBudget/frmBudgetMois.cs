@@ -104,14 +104,18 @@ namespace GestBudget
 
         private void remplirParticipants()
         {
+            //Mise en place de la connection string et on ouvre la connection
             connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
             connec.Open();
+
+            //On récupère les données de la table pour travailler en mode déconnecté
             DataTable tbl1 = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
                 new object[] { null, null, null, "TABLE" });
             foreach (DataRow ds in tbl1.Rows)
             {
                 if (ds[2].ToString() == "Personne")
                 {
+                    //Création et execution de la requête SQL permettant de récupérer les noms et prénoms des participants
                     OleDbCommand cd1 = new OleDbCommand();
                     cd1.Connection = connec;
                     cd1.CommandType = CommandType.Text;
@@ -120,6 +124,8 @@ namespace GestBudget
 
                     OleDbDataReader dr = cd1.ExecuteReader();
 
+
+                    //création et indentation des checkbox générées dynamiquements
                     if (dr.HasRows)
                     {
                         int top = 25;
