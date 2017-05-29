@@ -24,7 +24,7 @@ namespace Pique_Sous
 
         private void btnBudgetMois_Click(object sender, EventArgs e)
         {
-            frmPrevisionnel form = new frmPrevisionnel();
+            frmBudgetMois form = new frmBudgetMois();
             form.ShowDialog();
         }
 
