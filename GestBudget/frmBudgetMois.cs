@@ -74,10 +74,28 @@ namespace GestBudget
                 string percu = chkPercu.Checked.ToString();
                 int type = (int)cboTypeTransa.SelectedValue;
 
-                //string requete = "insert into Transaction values ("+(lastCodeTransac+1)+","+date+","+desc+","+montant+","+recette+","+percu+","+type+")";
-                //OleDbCommand cd1 = new OleDbCommand(requete, connec);
-                //int c = (int)cd1.ExecuteScalar();
-                MessageBox.Show("insert into Transaction values (" + (lastCodeTransac + 1) + "," + date + "," + desc + "," + montant + "," + recette + "," + percu + "," + type + ")");
+                string requete = "insert into Transaction values ("+(lastCodeTransac+1)+","+date+","+desc+","+montant+","+recette+","+percu+","+type+")";
+                OleDbCommand cd1 = new OleDbCommand(requete, connec);
+                int c = (int)cd1.ExecuteScalar();
+                MessageBox.Show(requete);
+
+                foreach(CheckBox chk in grpParticipantsTransa.Controls)
+                {
+                    if (chk.Checked)
+                    {
+                        //recupération codePersonne
+                        string[] perso = chk.Text.ToLower().Split(' ');
+                        requete = "select codePersonne from Personne where lower(pnPersonne) = '" + perso[0] + "' and lower(nomPersonne) = '" + perso[1] + "'";
+                        OleDbCommand cd2 = new OleDbCommand(requete, connec);
+                        int codePerso = (int)cd2.ExecuteScalar();
+                        MessageBox.Show(requete);
+                        //ajout dans table Bénéficiaires
+                        requete = "insert into Beneficiaires values (" + (lastCodeTransac + 1) + "," + codePerso + ")";
+                        OleDbCommand cd3 = new OleDbCommand(requete, connec);
+                        cd3.ExecuteNonQuery();
+                        MessageBox.Show(requete);
+                    }
+                }
                 connec.Close();
 
             }
