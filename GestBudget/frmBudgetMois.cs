@@ -15,6 +15,7 @@ namespace Pique_Sous
     {
         OleDbConnection connec = new OleDbConnection();
         DataSet ds = new DataSet();
+        DataSet dsTransac = new DataSet();
         int lastCodeTransac = 0;
 
         public frmBudgetMois()
@@ -25,6 +26,7 @@ namespace Pique_Sous
         private void frmBudgetMois_Load(object sender, EventArgs e)
         {
             remplirParticipants();
+            remplirDGV();
             try
             {
                 connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
@@ -43,7 +45,7 @@ namespace Pique_Sous
 
                 OleDbCommand cd2 = new OleDbCommand("select * from Transaction", connec);
                 lastCodeTransac = (int)cd2.ExecuteNonQuery();
-                MessageBox.Show(""+lastCodeTransac);
+                MessageBox.Show("" + lastCodeTransac);
                 connec.Close();
             }
             catch (InvalidOperationException erreur)
@@ -73,12 +75,12 @@ namespace Pique_Sous
                 string percu = chkPercu.Checked.ToString();
                 int type = (int)cboTypeTransa.SelectedValue;
 
-                string requete = "insert into Transaction values ("+(lastCodeTransac+1)+","+date+","+desc+","+montant+","+recette+","+percu+","+type+")";
+                string requete = "insert into Transaction values (" + (lastCodeTransac + 1) + "," + date + "," + desc + "," + montant + "," + recette + "," + percu + "," + type + ")";
                 OleDbCommand cd1 = new OleDbCommand(requete, connec);
                 int c = (int)cd1.ExecuteScalar();
                 MessageBox.Show(requete);
 
-                foreach(CheckBox chk in grpParticipantsTransa.Controls)
+                foreach (CheckBox chk in grpParticipantsTransa.Controls)
                 {
                     if (chk.Checked)
                     {
@@ -105,9 +107,6 @@ namespace Pique_Sous
             catch (OleDbException erreur)
             {
                 MessageBox.Show("Erreur de requete SQL !");
-            }
-            finally
-            {
             }
         }
 
@@ -168,8 +167,8 @@ namespace Pique_Sous
         }
 
         private void txtMontantTransa_KeyPress(object sender, KeyPressEventArgs e)
-        {   
-            
+        {
+
             if (!txtMontantTransa.Text.Contains(",") && txtMontantTransa.Text != "")
             {
                 //Gestion de la virgule
@@ -190,6 +189,41 @@ namespace Pique_Sous
                 //Gestion du reste des characteres
                 e.Handled = true;
             }
+        }
+
+        //Remplit la dataGridView dans Suppression d'une transaction
+        private void remplirDGV()
+        {
+            try
+            {
+                connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
+                connec.Open();
+                DataTable schema = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
+                connec.Close();
+
+                string requete = "";
+
+                foreach (DataRow ligne in schema.Rows)
+                {
+                    if (ligne[2].ToString() == "Transaction")
+                    {
+                        requete = "select * from Transaction";
+                        OleDbCommand cd1 = new OleDbCommand(requete, connec);
+                        OleDbDataAdapter da = new OleDbDataAdapter();
+                        da.SelectCommand = cd1;
+                        da.Fill(dsTransac);
+                    }
+                }
+            }
+            catch (InvalidOperationException erreur)
+            {
+                MessageBox.Show("Erreur de chaine de connexion !");
+            }
+            catch (OleDbException erreur)
+            {
+                MessageBox.Show("Erreur de requete SQL !");
+            }
+
         }
     }
 }
