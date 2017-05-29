@@ -30,6 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpPosteFixe = new System.Windows.Forms.TabPage();
+            this.btnValider = new System.Windows.Forms.Button();
+            this.txtMontant = new System.Windows.Forms.TextBox();
+            this.tboJour = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cboPeriodicite = new System.Windows.Forms.ComboBox();
             this.btnAutre = new System.Windows.Forms.Button();
@@ -40,9 +43,6 @@
             this.lblPoste = new System.Windows.Forms.Label();
             this.tpPostePonctuel = new System.Windows.Forms.TabPage();
             this.tpRevenu = new System.Windows.Forms.TabPage();
-            this.tboJour = new System.Windows.Forms.TextBox();
-            this.tboMontant = new System.Windows.Forms.TextBox();
-            this.btnValider = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpPosteFixe.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +61,7 @@
             // tpPosteFixe
             // 
             this.tpPosteFixe.Controls.Add(this.btnValider);
-            this.tpPosteFixe.Controls.Add(this.tboMontant);
+            this.tpPosteFixe.Controls.Add(this.txtMontant);
             this.tpPosteFixe.Controls.Add(this.tboJour);
             this.tpPosteFixe.Controls.Add(this.label1);
             this.tpPosteFixe.Controls.Add(this.cboPeriodicite);
@@ -78,6 +78,30 @@
             this.tpPosteFixe.TabIndex = 0;
             this.tpPosteFixe.Text = "Poste Fixe";
             this.tpPosteFixe.UseVisualStyleBackColor = true;
+            // 
+            // btnValider
+            // 
+            this.btnValider.Location = new System.Drawing.Point(479, 309);
+            this.btnValider.Name = "btnValider";
+            this.btnValider.Size = new System.Drawing.Size(113, 30);
+            this.btnValider.TabIndex = 10;
+            this.btnValider.Text = "Valider";
+            this.btnValider.UseVisualStyleBackColor = true;
+            // 
+            // txtMontant
+            // 
+            this.txtMontant.Location = new System.Drawing.Point(175, 248);
+            this.txtMontant.Name = "txtMontant";
+            this.txtMontant.Size = new System.Drawing.Size(98, 22);
+            this.txtMontant.TabIndex = 9;
+            this.txtMontant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboMontant_KeyPress);
+            // 
+            // tboJour
+            // 
+            this.tboJour.Location = new System.Drawing.Point(203, 181);
+            this.tboJour.Name = "tboJour";
+            this.tboJour.Size = new System.Drawing.Size(34, 22);
+            this.tboJour.TabIndex = 8;
             // 
             // label1
             // 
@@ -168,29 +192,6 @@
             this.tpRevenu.Text = "Revenu";
             this.tpRevenu.UseVisualStyleBackColor = true;
             // 
-            // tboJour
-            // 
-            this.tboJour.Location = new System.Drawing.Point(203, 181);
-            this.tboJour.Name = "tboJour";
-            this.tboJour.Size = new System.Drawing.Size(34, 22);
-            this.tboJour.TabIndex = 8;
-            // 
-            // tboMontant
-            // 
-            this.tboMontant.Location = new System.Drawing.Point(175, 251);
-            this.tboMontant.Name = "tboMontant";
-            this.tboMontant.Size = new System.Drawing.Size(98, 22);
-            this.tboMontant.TabIndex = 9;
-            // 
-            // btnValider
-            // 
-            this.btnValider.Location = new System.Drawing.Point(479, 309);
-            this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(113, 30);
-            this.btnValider.TabIndex = 10;
-            this.btnValider.Text = "Valider";
-            this.btnValider.UseVisualStyleBackColor = true;
-            // 
             // frmPrevisionnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -199,6 +200,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "frmPrevisionnel";
             this.Text = "frmPrevisionnel";
+            this.Load += new System.EventHandler(this.frmPrevisionnel_Load);
             this.tabControl1.ResumeLayout(false);
             this.tpPosteFixe.ResumeLayout(false);
             this.tpPosteFixe.PerformLayout();
@@ -221,7 +223,7 @@
         private System.Windows.Forms.Button btnAutre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnValider;
-        private System.Windows.Forms.TextBox tboMontant;
+        private System.Windows.Forms.TextBox txtMontant;
         private System.Windows.Forms.TextBox tboJour;
     }
 }
