@@ -15,7 +15,6 @@ namespace GestBudget
     {
         OleDbConnection connec = new OleDbConnection();
         DataSet ds = new DataSet();
-        int nbVirgule = 0;
         int lastCodeTransac = 0;
 
         public frmBudgetMois()
@@ -121,14 +120,18 @@ namespace GestBudget
 
         private void remplirParticipants()
         {
+            //Mise en place de la connection string et on ouvre la connection
             connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
             connec.Open();
+
+            //On récupère les données de la table pour travailler en mode déconnecté
             DataTable tbl1 = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
                 new object[] { null, null, null, "TABLE" });
             foreach (DataRow ds in tbl1.Rows)
             {
                 if (ds[2].ToString() == "Personne")
                 {
+                    //Création et execution de la requête SQL permettant de récupérer les noms et prénoms des participants
                     OleDbCommand cd1 = new OleDbCommand();
                     cd1.Connection = connec;
                     cd1.CommandType = CommandType.Text;
@@ -137,6 +140,8 @@ namespace GestBudget
 
                     OleDbDataReader dr = cd1.ExecuteReader();
 
+
+                    //création et indentation des checkbox générées dynamiquements
                     if (dr.HasRows)
                     {
                         int top = 25;
@@ -163,35 +168,27 @@ namespace GestBudget
         }
 
         private void txtMontantTransa_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-
-            if (Char.IsDigit(e.KeyChar))
+        {   
+            
+            if (!txtMontantTransa.Text.Contains(",") && txtMontantTransa.Text != "")
             {
+                //Gestion de la virgule
+                e.Handled = false;
+            }
+            else if (Char.IsDigit(e.KeyChar))
+            {
+                //Gestion des chiffres
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                //Gestion du Backspace/sup
                 e.Handled = false;
             }
             else
             {
-                if (Char.IsControl(e.KeyChar))
-                {
-                    if (!txtMontantTransa.Text.Contains(","))
-                    {
-                        nbVirgule = 0;
-                    }
-                    e.Handled = false;
-                }
-                else
-                {
-                    if (e.KeyChar == ',' && nbVirgule < 1 )
-                    {
-                        nbVirgule = 1;
-                        e.Handled = false;
-                    }
-                    else
-                    {
-                    e.Handled = true;
-                    }
-                }
+                //Gestion du reste des characteres
+                e.Handled = true;
             }
         }
     }
