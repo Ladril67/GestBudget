@@ -15,6 +15,7 @@ namespace Pique_Sous
     {
         OleDbConnection connec = new OleDbConnection();
         DataSet ds = new DataSet();
+        DataSet dsTransac = new DataSet();
         int lastCodeTransac = 0;
 
         public frmBudgetMois()
@@ -25,6 +26,7 @@ namespace Pique_Sous
         private void frmBudgetMois_Load(object sender, EventArgs e)
         {
             remplirParticipants();
+            remplirDGV();
             try
             {
                 connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
@@ -105,9 +107,6 @@ namespace Pique_Sous
             catch (OleDbException erreur)
             {
                 MessageBox.Show("Erreur de requete SQL !");
-            }
-            finally
-            {
             }
         }
 
@@ -192,6 +191,7 @@ namespace Pique_Sous
             }
         }
 
+<<<<<<< HEAD
         private void btnSuivant_Click(object sender, EventArgs e)
         {
 
@@ -203,11 +203,16 @@ namespace Pique_Sous
         }
 
         private void init1a1()
+=======
+        //Remplit la dataGridView dans Suppression d'une transaction
+        private void remplirDGV()
+>>>>>>> 05d287950e50e847a3e837fb5d02aacac0fc19df
         {
             try
             {
                 connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
                 connec.Open();
+<<<<<<< HEAD
 
                 OleDbCommand cd1 = new OleDbCommand("select * from Transaction", connec);
                 OleDbDataReader dr = cd1.ExecuteReader();
@@ -216,6 +221,24 @@ namespace Pique_Sous
                 lblCode.Text = schemaTable;
 
                 connec.Close();
+=======
+                DataTable schema = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
+                connec.Close();
+
+                string requete = "";
+
+                foreach (DataRow ligne in schema.Rows)
+                {
+                    if (ligne[2].ToString() == "Transaction")
+                    {
+                        requete = "select * from Transaction";
+                        OleDbCommand cd1 = new OleDbCommand(requete, connec);
+                        OleDbDataAdapter da = new OleDbDataAdapter();
+                        da.SelectCommand = cd1;
+                        da.Fill(dsTransac);
+                    }
+                }
+>>>>>>> 05d287950e50e847a3e837fb5d02aacac0fc19df
             }
             catch (InvalidOperationException erreur)
             {
@@ -225,9 +248,13 @@ namespace Pique_Sous
             {
                 MessageBox.Show("Erreur de requete SQL !");
             }
+<<<<<<< HEAD
             finally
             {
             }
+=======
+
+>>>>>>> 05d287950e50e847a3e837fb5d02aacac0fc19df
         }
     }
 }
