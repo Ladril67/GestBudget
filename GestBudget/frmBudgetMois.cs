@@ -190,8 +190,6 @@ namespace Pique_Sous
                 e.Handled = true;
             }
         }
-
-<<<<<<< HEAD
         private void btnSuivant_Click(object sender, EventArgs e)
         {
 
@@ -203,17 +201,13 @@ namespace Pique_Sous
         }
 
         private void init1a1()
-=======
         //Remplit la dataGridView dans Suppression d'une transaction
         private void remplirDGV()
->>>>>>> 05d287950e50e847a3e837fb5d02aacac0fc19df
         {
             try
             {
                 connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
                 connec.Open();
-<<<<<<< HEAD
-
                 OleDbCommand cd1 = new OleDbCommand("select * from Transaction", connec);
                 OleDbDataReader dr = cd1.ExecuteReader();
                 DataTable schemaTable = dr.GetSchemaTable();
@@ -221,7 +215,6 @@ namespace Pique_Sous
                 lblCode.Text = schemaTable;
 
                 connec.Close();
-=======
                 DataTable schema = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
                 connec.Close();
 
@@ -238,7 +231,6 @@ namespace Pique_Sous
                         da.Fill(dsTransac);
                     }
                 }
->>>>>>> 05d287950e50e847a3e837fb5d02aacac0fc19df
             }
             catch (InvalidOperationException erreur)
             {
@@ -248,13 +240,9 @@ namespace Pique_Sous
             {
                 MessageBox.Show("Erreur de requete SQL !");
             }
-<<<<<<< HEAD
             finally
             {
             }
-=======
-
->>>>>>> 05d287950e50e847a3e837fb5d02aacac0fc19df
         }
     }
 }
