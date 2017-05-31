@@ -201,7 +201,10 @@ namespace Pique_Sous
         }
 
         private void init1a1()
-        //Remplit la dataGridView dans Suppression d'une transaction
+        {
+            //Remplit la dataGridView dans Suppression d'une transaction
+        }
+
         private void remplirDGV()
         {
             try
@@ -209,28 +212,16 @@ namespace Pique_Sous
                 connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
                 connec.Open();
                 OleDbCommand cd1 = new OleDbCommand("select * from Transaction", connec);
+
                 OleDbDataReader dr = cd1.ExecuteReader();
+
                 DataTable schemaTable = dr.GetSchemaTable();
 
-                lblCode.Text = schemaTable;
+                DataRow ligne;
+                ligne = schemaTable.Rows[0];
 
                 connec.Close();
-                DataTable schema = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
-                connec.Close();
 
-                string requete = "";
-
-                foreach (DataRow ligne in schema.Rows)
-                {
-                    if (ligne[2].ToString() == "Transaction")
-                    {
-                        requete = "select * from Transaction";
-                        OleDbCommand cd1 = new OleDbCommand(requete, connec);
-                        OleDbDataAdapter da = new OleDbDataAdapter();
-                        da.SelectCommand = cd1;
-                        da.Fill(dsTransac);
-                    }
-                }
             }
             catch (InvalidOperationException erreur)
             {
