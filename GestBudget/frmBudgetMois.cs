@@ -65,7 +65,6 @@ namespace Pique_Sous
         {
             try
             {
-                connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
                 connec.Open();
 
                 string date = dtpTransa.Value.ToString();
@@ -192,7 +191,7 @@ namespace Pique_Sous
         }
         private void btnSuivant_Click(object sender, EventArgs e)
         {
-
+            init1a1();
         }
 
         private void btnAvant_Click(object sender, EventArgs e)
@@ -204,18 +203,32 @@ namespace Pique_Sous
         {
             try
             {
-                connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
-                connec.Open();
-                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction]", connec);
+                int jointure = 0;
 
+                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction]", connec);
+                connec.Open();
                 OleDbDataReader dr = cd1.ExecuteReader();
 
-                DataTable schemaTable = dr.GetSchemaTable();
+                while (dr.Read())
+                {
+                    lblCode.Text = dr.GetInt32(0).ToString();
+                    dtp1a1.Value = dr.GetDateTime(1);
+                    lblDescription.Text = dr.GetString(2);
+                    lblValeur.Text = dr.GetValue(3).ToString();
+                    checkRecette.Checked = dr.GetBoolean(4);
+                    chkPercu.Checked = dr.GetBoolean(5);
+                    jointure = dr.GetInt32(6);
+                }
+                connec.Close();
 
-                DataRow ligne;
-                ligne = schemaTable.Rows[2];
-                lblCode.Text = ligne[0].ToString();
-
+                //Pour eviter de faire une requette avec une jointure
+                OleDbCommand cd2 = new OleDbCommand("SELECT [TypeTransaction].* FROM [TypeTransaction] where [codeType] = " + jointure, connec);
+                connec.Open();
+                OleDbDataReader dr2 = cd2.ExecuteReader();
+                while (dr2.Read())
+                {
+                    lblType.Text = dr2.GetString(1);
+                }
                 connec.Close();
 
             }
@@ -236,7 +249,6 @@ namespace Pique_Sous
         {
             try
             {
-                connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
                 connec.Open();
                 OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction]", connec);
 

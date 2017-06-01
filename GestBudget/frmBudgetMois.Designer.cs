@@ -32,7 +32,6 @@
             this.tcBudgetMois = new System.Windows.Forms.TabControl();
             this.tpAffichage1a1 = new System.Windows.Forms.TabPage();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.cboCalendrier = new System.Windows.Forms.ComboBox();
             this.lblValeur = new System.Windows.Forms.Label();
             this.checkRecette = new System.Windows.Forms.CheckBox();
             this.checkPercu = new System.Windows.Forms.CheckBox();
@@ -62,6 +61,7 @@
             this.dgvTransactions = new System.Windows.Forms.DataGridView();
             this.tpModifTransaction = new System.Windows.Forms.TabPage();
             this.tpRecap = new System.Windows.Forms.TabPage();
+            this.dtp1a1 = new System.Windows.Forms.DateTimePicker();
             this.tcBudgetMois.SuspendLayout();
             this.tpAffichage1a1.SuspendLayout();
             this.tpNewTransaction.SuspendLayout();
@@ -87,8 +87,8 @@
             // 
             // tpAffichage1a1
             // 
+            this.tpAffichage1a1.Controls.Add(this.dtp1a1);
             this.tpAffichage1a1.Controls.Add(this.listBox1);
-            this.tpAffichage1a1.Controls.Add(this.cboCalendrier);
             this.tpAffichage1a1.Controls.Add(this.lblValeur);
             this.tpAffichage1a1.Controls.Add(this.checkRecette);
             this.tpAffichage1a1.Controls.Add(this.checkPercu);
@@ -103,7 +103,7 @@
             this.tpAffichage1a1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpAffichage1a1.Name = "tpAffichage1a1";
             this.tpAffichage1a1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tpAffichage1a1.Size = new System.Drawing.Size(631, 424);
+            this.tpAffichage1a1.Size = new System.Drawing.Size(642, 424);
             this.tpAffichage1a1.TabIndex = 1;
             this.tpAffichage1a1.Text = "Affichage 1 à 1";
             this.tpAffichage1a1.UseVisualStyleBackColor = true;
@@ -117,15 +117,6 @@
             this.listBox1.Size = new System.Drawing.Size(556, 199);
             this.listBox1.TabIndex = 19;
             // 
-            // cboCalendrier
-            // 
-            this.cboCalendrier.FormattingEnabled = true;
-            this.cboCalendrier.Location = new System.Drawing.Point(313, 19);
-            this.cboCalendrier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cboCalendrier.Name = "cboCalendrier";
-            this.cboCalendrier.Size = new System.Drawing.Size(190, 21);
-            this.cboCalendrier.TabIndex = 17;
-            // 
             // lblValeur
             // 
             this.lblValeur.AutoSize = true;
@@ -138,6 +129,7 @@
             // checkRecette
             // 
             this.checkRecette.AutoSize = true;
+            this.checkRecette.Enabled = false;
             this.checkRecette.Location = new System.Drawing.Point(313, 72);
             this.checkRecette.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkRecette.Name = "checkRecette";
@@ -149,6 +141,7 @@
             // checkPercu
             // 
             this.checkPercu.AutoSize = true;
+            this.checkPercu.Enabled = false;
             this.checkPercu.Location = new System.Drawing.Point(313, 108);
             this.checkPercu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkPercu.Name = "checkPercu";
@@ -426,6 +419,14 @@
             this.tpRecap.Text = "Récapitulatif";
             this.tpRecap.UseVisualStyleBackColor = true;
             // 
+            // dtp1a1
+            // 
+            this.dtp1a1.Location = new System.Drawing.Point(313, 20);
+            this.dtp1a1.Margin = new System.Windows.Forms.Padding(4);
+            this.dtp1a1.Name = "dtp1a1";
+            this.dtp1a1.Size = new System.Drawing.Size(167, 20);
+            this.dtp1a1.TabIndex = 20;
+            // 
             // frmBudgetMois
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,9 +481,9 @@
         private System.Windows.Forms.CheckBox checkRecette;
         private System.Windows.Forms.CheckBox checkPercu;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ComboBox cboCalendrier;
         private System.Windows.Forms.Label lblValeur;
         private System.Windows.Forms.DataGridView dgvTransactions;
+        private System.Windows.Forms.DateTimePicker dtp1a1;
     }
 }
 
