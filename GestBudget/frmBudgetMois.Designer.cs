@@ -32,7 +32,6 @@
             this.tcBudgetMois = new System.Windows.Forms.TabControl();
             this.tpAffichage1a1 = new System.Windows.Forms.TabPage();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.cboCalendrier = new System.Windows.Forms.ComboBox();
             this.lblValeur = new System.Windows.Forms.Label();
             this.checkRecette = new System.Windows.Forms.CheckBox();
             this.checkPercu = new System.Windows.Forms.CheckBox();
@@ -62,9 +61,13 @@
             this.dgvTransactions = new System.Windows.Forms.DataGridView();
             this.tpModifTransaction = new System.Windows.Forms.TabPage();
             this.tpRecap = new System.Windows.Forms.TabPage();
+<<<<<<< HEAD
             this.lblCodeToSuppr = new System.Windows.Forms.Label();
             this.txtCodeToSuppr = new System.Windows.Forms.TextBox();
             this.btnSupprTransac = new System.Windows.Forms.Button();
+=======
+            this.dtp1a1 = new System.Windows.Forms.DateTimePicker();
+>>>>>>> a751c8aa14cd63ef151bb078aeea5bcda14a47e6
             this.tcBudgetMois.SuspendLayout();
             this.tpAffichage1a1.SuspendLayout();
             this.tpNewTransaction.SuspendLayout();
@@ -90,8 +93,8 @@
             // 
             // tpAffichage1a1
             // 
+            this.tpAffichage1a1.Controls.Add(this.dtp1a1);
             this.tpAffichage1a1.Controls.Add(this.listBox1);
-            this.tpAffichage1a1.Controls.Add(this.cboCalendrier);
             this.tpAffichage1a1.Controls.Add(this.lblValeur);
             this.tpAffichage1a1.Controls.Add(this.checkRecette);
             this.tpAffichage1a1.Controls.Add(this.checkPercu);
@@ -105,8 +108,13 @@
             this.tpAffichage1a1.Location = new System.Drawing.Point(4, 28);
             this.tpAffichage1a1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpAffichage1a1.Name = "tpAffichage1a1";
+<<<<<<< HEAD
             this.tpAffichage1a1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpAffichage1a1.Size = new System.Drawing.Size(859, 526);
+=======
+            this.tpAffichage1a1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpAffichage1a1.Size = new System.Drawing.Size(642, 424);
+>>>>>>> a751c8aa14cd63ef151bb078aeea5bcda14a47e6
             this.tpAffichage1a1.TabIndex = 1;
             this.tpAffichage1a1.Text = "Affichage 1 à 1";
             this.tpAffichage1a1.UseVisualStyleBackColor = true;
@@ -121,6 +129,7 @@
             this.listBox1.Size = new System.Drawing.Size(740, 244);
             this.listBox1.TabIndex = 19;
             // 
+<<<<<<< HEAD
             // cboCalendrier
             // 
             this.cboCalendrier.FormattingEnabled = true;
@@ -130,6 +139,8 @@
             this.cboCalendrier.Size = new System.Drawing.Size(252, 24);
             this.cboCalendrier.TabIndex = 17;
             // 
+=======
+>>>>>>> a751c8aa14cd63ef151bb078aeea5bcda14a47e6
             // lblValeur
             // 
             this.lblValeur.AutoSize = true;
@@ -143,8 +154,14 @@
             // checkRecette
             // 
             this.checkRecette.AutoSize = true;
+<<<<<<< HEAD
             this.checkRecette.Location = new System.Drawing.Point(417, 89);
             this.checkRecette.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.checkRecette.Enabled = false;
+            this.checkRecette.Location = new System.Drawing.Point(313, 72);
+            this.checkRecette.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> a751c8aa14cd63ef151bb078aeea5bcda14a47e6
             this.checkRecette.Name = "checkRecette";
             this.checkRecette.Size = new System.Drawing.Size(79, 21);
             this.checkRecette.TabIndex = 15;
@@ -154,8 +171,14 @@
             // checkPercu
             // 
             this.checkPercu.AutoSize = true;
+<<<<<<< HEAD
             this.checkPercu.Location = new System.Drawing.Point(417, 133);
             this.checkPercu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.checkPercu.Enabled = false;
+            this.checkPercu.Location = new System.Drawing.Point(313, 108);
+            this.checkPercu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> a751c8aa14cd63ef151bb078aeea5bcda14a47e6
             this.checkPercu.Name = "checkPercu";
             this.checkPercu.Size = new System.Drawing.Size(67, 21);
             this.checkPercu.TabIndex = 14;
@@ -442,6 +465,7 @@
             this.tpRecap.Text = "Récapitulatif";
             this.tpRecap.UseVisualStyleBackColor = true;
             // 
+<<<<<<< HEAD
             // lblCodeToSuppr
             // 
             this.lblCodeToSuppr.AutoSize = true;
@@ -468,6 +492,15 @@
             this.btnSupprTransac.Text = "Supprimer";
             this.btnSupprTransac.UseVisualStyleBackColor = true;
             this.btnSupprTransac.Click += new System.EventHandler(this.btnSupprTransac_Click);
+=======
+            // dtp1a1
+            // 
+            this.dtp1a1.Location = new System.Drawing.Point(313, 20);
+            this.dtp1a1.Margin = new System.Windows.Forms.Padding(4);
+            this.dtp1a1.Name = "dtp1a1";
+            this.dtp1a1.Size = new System.Drawing.Size(167, 20);
+            this.dtp1a1.TabIndex = 20;
+>>>>>>> a751c8aa14cd63ef151bb078aeea5bcda14a47e6
             // 
             // frmBudgetMois
             // 
@@ -524,12 +557,15 @@
         private System.Windows.Forms.CheckBox checkRecette;
         private System.Windows.Forms.CheckBox checkPercu;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ComboBox cboCalendrier;
         private System.Windows.Forms.Label lblValeur;
         private System.Windows.Forms.DataGridView dgvTransactions;
+<<<<<<< HEAD
         private System.Windows.Forms.TextBox txtCodeToSuppr;
         private System.Windows.Forms.Label lblCodeToSuppr;
         private System.Windows.Forms.Button btnSupprTransac;
+=======
+        private System.Windows.Forms.DateTimePicker dtp1a1;
+>>>>>>> a751c8aa14cd63ef151bb078aeea5bcda14a47e6
     }
 }
 
