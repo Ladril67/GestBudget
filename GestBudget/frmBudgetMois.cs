@@ -67,7 +67,6 @@ namespace Pique_Sous
             try
             {
                 connec.Open();
-
                 string date = dtpTransa.Value.ToString();
                 string desc = txtDescriptionTransa.Text;
                 string montant = txtMontantTransa.Text;
@@ -236,10 +235,10 @@ namespace Pique_Sous
             {
                 OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction]", connec);
 
-                OleDbDataReader dr = cd1.ExecuteReader();
+                OleDbDataAdapter da = new OleDbDataAdapter(cd1);
+                DataTable dt = new DataTable();
 
-                DataTable dt = dr.GetSchemaTable();
-
+                da.Fill(dt);
                 dgvTransactions.DataSource = dt;
                 
                 connec.Close();
@@ -255,6 +254,27 @@ namespace Pique_Sous
             }
             finally
             {
+            }
+        }
+
+        private void btnSupprTransac_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodeToSuppr_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }
