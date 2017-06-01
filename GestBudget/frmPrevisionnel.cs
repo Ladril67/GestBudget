@@ -24,6 +24,7 @@ namespace Pique_Sous
         {
             remplircboPoste();
             remplircboPeriodicite();
+            grpEcheances.Hide();
         }
 
         private void tboMontant_KeyPress(object sender, KeyPressEventArgs e)
@@ -134,6 +135,71 @@ namespace Pique_Sous
             }
             connec.Close();
         }
+
+
+        private void txtPrelevement_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                //Gestion des chiffres
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                //Gestion du Backspace/sup
+                e.Handled = false;
+            }
+            else
+            {
+                //Gestion des lettres
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrelevement_TextChanged(object sender, EventArgs e)
+        {
+            
+            int top = 15;
+            int left = 15;
+            grpEcheances.Show();
+            int nb = 0;
+            if(txtPrelevement.Text != "")
+            {
+                nb = int.Parse(txtPrelevement.Text);
+            }
+            for (int i = 0; i < nb; i++)
+            {
+                DateTimePicker dt = new DateTimePicker();
+                dt.Top = 30 * i + top;
+                dt.Left = left;
+                grpEcheances.Controls.Add(dt);
+            }
+
+            
+        }
+
+        public void RemplirDate()
+        {
+            {
+                foreach( DateTimePicker dt in grpEcheances.Controls)
+                {
+                    int i = 0;
+                    DateTime date = new DateTime();
+                    if (i == 0)
+                    {
+                        date = dt.Value;
+                    }
+                    else if (i != 0)
+                    {
+                        date = 
+                        dt.Value = new DateTime(date.Year, date.Month);
+                    }
+                }
+            }
+
+        }
+
+
     }
 }
 
