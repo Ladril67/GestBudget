@@ -73,7 +73,7 @@ namespace Pique_Sous
                     int nb = cd1.ExecuteNonQuery();
 
                     OleDbDataReader dr = cd1.ExecuteReader();
-                    Console.WriteLine("Table trouvée");
+                    
 
 
                     //création et indentation des checkbox générées dynamiquements
@@ -108,12 +108,11 @@ namespace Pique_Sous
             {
                 if (ds[2].ToString() == "Periodicite")
                 {
-                    Console.WriteLine("Table trouvée");
                     //Création et execution de la requête SQL permettant de récupérer les noms et prénoms des participants
                     OleDbCommand cd2 = new OleDbCommand();
                     cd2.Connection = connec;
                     cd2.CommandType = CommandType.Text;
-                    cd2.CommandText = "Select libPer from Periodicite";
+                    cd2.CommandText = "SELECT libPer FROM Periodicite";
                     int nb = cd2.ExecuteNonQuery();
 
                     OleDbDataReader dr = cd2.ExecuteReader();
@@ -124,7 +123,7 @@ namespace Pique_Sous
                     {
                         while (dr.Read())
                         {
-                            cboPoste.Items.Add(dr[nb]);
+                            cboPeriodicite.Items.Add(dr[nb]);
                         }
                     }
                     else
