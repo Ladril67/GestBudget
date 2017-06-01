@@ -202,10 +202,38 @@ namespace Pique_Sous
 
         private void init1a1()
         {
-            //Remplit la dataGridView dans Suppression d'une transaction
+            try
+            {
+                connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
+                connec.Open();
+                OleDbCommand cd1 = new OleDbCommand("select * from Transaction", connec);
+
+                OleDbDataReader dr = cd1.ExecuteReader();
+
+                DataTable schemaTable = dr.GetSchemaTable();
+
+                DataRow ligne;
+                ligne = schemaTable.Rows[0];
+                lblCode.Text = ligne[0].ToString();
+
+
+                connec.Close();
+
+            }
+            catch (InvalidOperationException erreur)
+            {
+                MessageBox.Show("Erreur de chaine de connexion !");
+            }
+            catch (OleDbException erreur)
+            {
+                MessageBox.Show("Erreur de requete SQL !");
+            }
+            finally
+            {
+            }
         }
 
-        private void remplirDGV()
+        private void remplirDGV() //Remplit la dataGridView dans Suppression d'une transaction
         {
             try
             {
