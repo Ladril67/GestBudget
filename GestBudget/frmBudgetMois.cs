@@ -25,11 +25,12 @@ namespace Pique_Sous
 
         private void frmBudgetMois_Load(object sender, EventArgs e)
         {
+            connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
             remplirParticipants();
             remplirDGV();
             try
             {
-                connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
+                
                 connec.Open();
                 DataTable schema = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
 
@@ -65,7 +66,6 @@ namespace Pique_Sous
         {
             try
             {
-                connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
                 connec.Open();
 
                 string date = dtpTransa.Value.ToString();
@@ -119,8 +119,7 @@ namespace Pique_Sous
 
         private void remplirParticipants()
         {
-            //Mise en place de la connection string et on ouvre la connection
-            connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
+            //On ouvre la connection
             connec.Open();
 
             //On récupère les données de la table pour travailler en mode déconnecté
@@ -204,7 +203,6 @@ namespace Pique_Sous
         {
             try
             {
-                connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
                 connec.Open();
                 OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction]", connec);
 
@@ -236,15 +234,13 @@ namespace Pique_Sous
         {
             try
             {
-                connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
-                connec.Open();
                 OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction]", connec);
 
                 OleDbDataReader dr = cd1.ExecuteReader();
 
-                DataTable schemaTable = dr.GetSchemaTable();
+                DataTable dt = dr.GetSchemaTable();
 
-                dgvTransactions.DataSource = schemaTable;
+                dgvTransactions.DataSource = dt;
                 
                 connec.Close();
 
