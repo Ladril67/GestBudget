@@ -42,9 +42,17 @@
             this.lblPeriodicite = new System.Windows.Forms.Label();
             this.lblPoste = new System.Windows.Forms.Label();
             this.tpPostePonctuel = new System.Windows.Forms.TabPage();
+            this.grpEcheances = new System.Windows.Forms.GroupBox();
+            this.txtPrelevement = new System.Windows.Forms.TextBox();
+            this.lblPrelevements = new System.Windows.Forms.Label();
+            this.txtCommentaire = new System.Windows.Forms.TextBox();
+            this.txtIntitule = new System.Windows.Forms.TextBox();
+            this.lblCommentaire = new System.Windows.Forms.Label();
+            this.lblIntitule = new System.Windows.Forms.Label();
             this.tpRevenu = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tpPosteFixe.SuspendLayout();
+            this.tpPostePonctuel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -175,6 +183,13 @@
             // 
             // tpPostePonctuel
             // 
+            this.tpPostePonctuel.Controls.Add(this.grpEcheances);
+            this.tpPostePonctuel.Controls.Add(this.txtPrelevement);
+            this.tpPostePonctuel.Controls.Add(this.lblPrelevements);
+            this.tpPostePonctuel.Controls.Add(this.txtCommentaire);
+            this.tpPostePonctuel.Controls.Add(this.txtIntitule);
+            this.tpPostePonctuel.Controls.Add(this.lblCommentaire);
+            this.tpPostePonctuel.Controls.Add(this.lblIntitule);
             this.tpPostePonctuel.Location = new System.Drawing.Point(4, 25);
             this.tpPostePonctuel.Name = "tpPostePonctuel";
             this.tpPostePonctuel.Padding = new System.Windows.Forms.Padding(3);
@@ -182,6 +197,65 @@
             this.tpPostePonctuel.TabIndex = 1;
             this.tpPostePonctuel.Text = "Poste Ponctuel ";
             this.tpPostePonctuel.UseVisualStyleBackColor = true;
+            // 
+            // grpEcheances
+            // 
+            this.grpEcheances.Location = new System.Drawing.Point(32, 186);
+            this.grpEcheances.Name = "grpEcheances";
+            this.grpEcheances.Size = new System.Drawing.Size(608, 293);
+            this.grpEcheances.TabIndex = 6;
+            this.grpEcheances.TabStop = false;
+            this.grpEcheances.Text = "Echéances prévues";
+            // 
+            // txtPrelevement
+            // 
+            this.txtPrelevement.Location = new System.Drawing.Point(210, 139);
+            this.txtPrelevement.Name = "txtPrelevement";
+            this.txtPrelevement.Size = new System.Drawing.Size(43, 22);
+            this.txtPrelevement.TabIndex = 5;
+            this.txtPrelevement.TextChanged += new System.EventHandler(this.txtPrelevement_TextChanged);
+            this.txtPrelevement.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrelevement_KeyPress);
+            // 
+            // lblPrelevements
+            // 
+            this.lblPrelevements.AutoSize = true;
+            this.lblPrelevements.Location = new System.Drawing.Point(29, 142);
+            this.lblPrelevements.Name = "lblPrelevements";
+            this.lblPrelevements.Size = new System.Drawing.Size(175, 17);
+            this.lblPrelevements.TabIndex = 4;
+            this.lblPrelevements.Text = "Nombre de prélèvements :";
+            // 
+            // txtCommentaire
+            // 
+            this.txtCommentaire.Location = new System.Drawing.Point(153, 79);
+            this.txtCommentaire.Name = "txtCommentaire";
+            this.txtCommentaire.Size = new System.Drawing.Size(100, 22);
+            this.txtCommentaire.TabIndex = 3;
+            // 
+            // txtIntitule
+            // 
+            this.txtIntitule.Location = new System.Drawing.Point(153, 33);
+            this.txtIntitule.Name = "txtIntitule";
+            this.txtIntitule.Size = new System.Drawing.Size(100, 22);
+            this.txtIntitule.TabIndex = 2;
+            // 
+            // lblCommentaire
+            // 
+            this.lblCommentaire.AutoSize = true;
+            this.lblCommentaire.Location = new System.Drawing.Point(29, 82);
+            this.lblCommentaire.Name = "lblCommentaire";
+            this.lblCommentaire.Size = new System.Drawing.Size(103, 17);
+            this.lblCommentaire.TabIndex = 1;
+            this.lblCommentaire.Text = "Commentaire : ";
+            // 
+            // lblIntitule
+            // 
+            this.lblIntitule.AutoSize = true;
+            this.lblIntitule.Location = new System.Drawing.Point(29, 36);
+            this.lblIntitule.Name = "lblIntitule";
+            this.lblIntitule.Size = new System.Drawing.Size(61, 17);
+            this.lblIntitule.TabIndex = 0;
+            this.lblIntitule.Text = "Intitulé : ";
             // 
             // tpRevenu
             // 
@@ -204,6 +278,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tpPosteFixe.ResumeLayout(false);
             this.tpPosteFixe.PerformLayout();
+            this.tpPostePonctuel.ResumeLayout(false);
+            this.tpPostePonctuel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -225,5 +301,12 @@
         private System.Windows.Forms.Button btnValider;
         private System.Windows.Forms.TextBox txtMontant;
         private System.Windows.Forms.TextBox tboJour;
+        private System.Windows.Forms.Label lblIntitule;
+        private System.Windows.Forms.Label lblPrelevements;
+        private System.Windows.Forms.TextBox txtCommentaire;
+        private System.Windows.Forms.TextBox txtIntitule;
+        private System.Windows.Forms.Label lblCommentaire;
+        private System.Windows.Forms.TextBox txtPrelevement;
+        private System.Windows.Forms.GroupBox grpEcheances;
     }
 }

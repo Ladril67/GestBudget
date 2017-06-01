@@ -119,51 +119,65 @@ namespace Pique_Sous
 
         private void remplirParticipants()
         {
-            //Mise en place de la connection string et on ouvre la connection
-            connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
-            connec.Open();
-
-            //On récupère les données de la table pour travailler en mode déconnecté
-            DataTable tbl1 = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
-                new object[] { null, null, null, "TABLE" });
-            foreach (DataRow ds in tbl1.Rows)
+            try
             {
-                if (ds[2].ToString() == "Personne")
+                //Mise en place de la connection string et on ouvre la connection
+                connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
+                connec.Open();
+
+                //On récupère les données de la table pour travailler en mode déconnecté
+                DataTable tbl1 = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
+                    new object[] { null, null, null, "TABLE" });
+                foreach (DataRow ds in tbl1.Rows)
                 {
-                    //Création et execution de la requête SQL permettant de récupérer les noms et prénoms des participants
-                    OleDbCommand cd1 = new OleDbCommand();
-                    cd1.Connection = connec;
-                    cd1.CommandType = CommandType.Text;
-                    cd1.CommandText = "Select pnPersonne,nomPersonne from Personne";
-                    int nb = cd1.ExecuteNonQuery();
-
-                    OleDbDataReader dr = cd1.ExecuteReader();
-
-
-                    //création et indentation des checkbox générées dynamiquements
-                    if (dr.HasRows)
+                    if (ds[2].ToString() == "Personne")
                     {
-                        int top = 25;
-                        int left = 15;
-                        int i = 0;
-                        while (dr.Read())
+                        //Création et execution de la requête SQL permettant de récupérer les noms et prénoms des participants
+                        OleDbCommand cd1 = new OleDbCommand();
+                        cd1.Connection = connec;
+                        cd1.CommandType = CommandType.Text;
+                        cd1.CommandText = "Select pnPersonne,nomPersonne from Personne";
+                        int nb = cd1.ExecuteNonQuery();
+
+                        OleDbDataReader dr = cd1.ExecuteReader();
+
+
+                        //création et indentation des checkbox générées dynamiquements
+                        if (dr.HasRows)
                         {
-                            CheckBox cbPersonne = new CheckBox();
-                            cbPersonne.Text = dr[nb].ToString() + " " + dr[nb + 1].ToString();
+                            int top = 25;
+                            int left = 15;
+                            int i = 0;
+                            while (dr.Read())
+                            {
+                                CheckBox cbPersonne = new CheckBox();
+                                cbPersonne.Text = dr[nb].ToString() + " " + dr[nb + 1].ToString();
 
-                            cbPersonne.Top = top + i * 10;
-                            cbPersonne.Left = left;
-                            cbPersonne.AutoSize = true;
+                                cbPersonne.Top = top + i * 10;
+                                cbPersonne.Left = left;
+                                cbPersonne.AutoSize = true;
 
-                            i += 2;
-                            grpParticipantsTransa.Controls.Add(cbPersonne);
+                                i += 2;
+                                grpParticipantsTransa.Controls.Add(cbPersonne);
 
+                            }
                         }
                     }
-                }
 
+                }
+                connec.Close();
             }
-            connec.Close();
+            catch (InvalidOperationException erreur)
+            {
+                MessageBox.Show("Erreur de chaine de connexion ! : RemplirParticipant");
+            }
+            catch (OleDbException erreur)
+            {
+                MessageBox.Show("Erreur de requete SQL ! : RemplirParticipant");
+            }
+            finally
+            {
+            }
         }
 
         private void txtMontantTransa_KeyPress(object sender, KeyPressEventArgs e)
