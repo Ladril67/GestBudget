@@ -25,11 +25,12 @@ namespace Pique_Sous
 
         private void frmBudgetMois_Load(object sender, EventArgs e)
         {
+            connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
             remplirParticipants();
             remplirDGV();
             try
             {
-                connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
+                
                 connec.Open();
                 DataTable schema = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
 
@@ -43,18 +44,18 @@ namespace Pique_Sous
 
                 remplitCbo(cboTypeTransa, "TypeTransaction", "libType", "codeType");
 
-                OleDbCommand cd2 = new OleDbCommand("select * from Transaction", connec);
+                OleDbCommand cd2 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction]", connec);
                 lastCodeTransac = (int)cd2.ExecuteNonQuery();
                 MessageBox.Show("" + lastCodeTransac);
                 connec.Close();
             }
             catch (InvalidOperationException erreur)
             {
-                MessageBox.Show("Erreur de chaine de connexion !");
+                MessageBox.Show("Erreur de chaine de connexion ! formLoad");
             }
             catch (OleDbException erreur)
             {
-                MessageBox.Show("Erreur de requete SQL !");
+                MessageBox.Show("Erreur de requete SQL ! formLoad");
             }
             finally
             {
@@ -65,7 +66,6 @@ namespace Pique_Sous
         {
             try
             {
-                connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
                 connec.Open();
 
                 string date = dtpTransa.Value.ToString();
@@ -102,11 +102,11 @@ namespace Pique_Sous
             }
             catch (InvalidOperationException erreur)
             {
-                MessageBox.Show("Erreur de chaine de connexion !");
+                MessageBox.Show("Erreur de chaine de connexion ! ajoutTransa");
             }
             catch (OleDbException erreur)
             {
-                MessageBox.Show("Erreur de requete SQL !");
+                MessageBox.Show("Erreur de requete SQL ! ajoutTransa");
             }
         }
 
@@ -119,7 +119,17 @@ namespace Pique_Sous
 
         private void remplirParticipants()
         {
+<<<<<<< HEAD
             try
+=======
+            //On ouvre la connection
+            connec.Open();
+
+            //On récupère les données de la table pour travailler en mode déconnecté
+            DataTable tbl1 = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
+                new object[] { null, null, null, "TABLE" });
+            foreach (DataRow ds in tbl1.Rows)
+>>>>>>> 6e4eb0f13cd9ed9a84b5af394eca2c7c82737f2e
             {
                 //Mise en place de la connection string et on ouvre la connection
                 connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
@@ -211,41 +221,62 @@ namespace Pique_Sous
 
         private void btnAvant_Click(object sender, EventArgs e)
         {
-
+            init1a1();
         }
 
         private void init1a1()
         {
-            //Remplit la dataGridView dans Suppression d'une transaction
-        }
-
-        private void remplirDGV()
-        {
             try
             {
-                connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
                 connec.Open();
-                OleDbCommand cd1 = new OleDbCommand("select * from Transaction", connec);
+                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction]", connec);
 
                 OleDbDataReader dr = cd1.ExecuteReader();
 
                 DataTable schemaTable = dr.GetSchemaTable();
 
                 DataRow ligne;
-                ligne = schemaTable.Rows[0];
+                ligne = schemaTable.Rows[2];
                 lblCode.Text = ligne[0].ToString();
-
 
                 connec.Close();
 
             }
             catch (InvalidOperationException erreur)
             {
-                MessageBox.Show("Erreur de chaine de connexion !");
+                MessageBox.Show("Erreur de chaine de connexion ! 1a1");
             }
             catch (OleDbException erreur)
             {
-                MessageBox.Show("Erreur de requete SQL !");
+                MessageBox.Show("Erreur de requete SQL ! 1a1");
+            }
+            finally
+            {
+            }
+        }
+
+        private void remplirDGV() //Remplit la dataGridView dans Suppression d'une transaction
+        {
+            try
+            {
+                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction]", connec);
+
+                OleDbDataReader dr = cd1.ExecuteReader();
+
+                DataTable dt = dr.GetSchemaTable();
+
+                dgvTransactions.DataSource = dt;
+                
+                connec.Close();
+
+            }
+            catch (InvalidOperationException erreur)
+            {
+                MessageBox.Show("Erreur de chaine de connexion ! DGV");
+            }
+            catch (OleDbException erreur)
+            {
+                MessageBox.Show("Erreur de requete SQL ! DGV");
             }
             finally
             {

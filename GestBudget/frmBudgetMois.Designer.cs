@@ -59,9 +59,9 @@
             this.dtpTransa = new System.Windows.Forms.DateTimePicker();
             this.lblDateTransa = new System.Windows.Forms.Label();
             this.tpDeleteTransaction = new System.Windows.Forms.TabPage();
+            this.dgvTransactions = new System.Windows.Forms.DataGridView();
             this.tpModifTransaction = new System.Windows.Forms.TabPage();
             this.tpRecap = new System.Windows.Forms.TabPage();
-            this.dgvTransactions = new System.Windows.Forms.DataGridView();
             this.tcBudgetMois.SuspendLayout();
             this.tpAffichage1a1.SuspendLayout();
             this.tpNewTransaction.SuspendLayout();
@@ -82,7 +82,7 @@
             this.tcBudgetMois.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tcBudgetMois.Name = "tcBudgetMois";
             this.tcBudgetMois.SelectedIndex = 0;
-            this.tcBudgetMois.Size = new System.Drawing.Size(694, 418);
+            this.tcBudgetMois.Size = new System.Drawing.Size(650, 453);
             this.tcBudgetMois.TabIndex = 0;
             // 
             // tpAffichage1a1
@@ -103,7 +103,7 @@
             this.tpAffichage1a1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpAffichage1a1.Name = "tpAffichage1a1";
             this.tpAffichage1a1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tpAffichage1a1.Size = new System.Drawing.Size(686, 389);
+            this.tpAffichage1a1.Size = new System.Drawing.Size(631, 424);
             this.tpAffichage1a1.TabIndex = 1;
             this.tpAffichage1a1.Text = "Affichage 1 à 1";
             this.tpAffichage1a1.UseVisualStyleBackColor = true;
@@ -111,20 +111,17 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(23, 147);
-            this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(31, 181);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(535, 199);
+            this.listBox1.Size = new System.Drawing.Size(556, 199);
             this.listBox1.TabIndex = 19;
             // 
             // cboCalendrier
             // 
             this.cboCalendrier.FormattingEnabled = true;
-            this.cboCalendrier.Location = new System.Drawing.Point(368, 19);
-            this.cboCalendrier.Location = new System.Drawing.Point(491, 23);
-            this.cboCalendrier.Margin = new System.Windows.Forms.Padding(4);
+            this.cboCalendrier.Location = new System.Drawing.Point(313, 19);
+            this.cboCalendrier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboCalendrier.Name = "cboCalendrier";
             this.cboCalendrier.Size = new System.Drawing.Size(190, 21);
             this.cboCalendrier.TabIndex = 17;
@@ -132,7 +129,7 @@
             // lblValeur
             // 
             this.lblValeur.AutoSize = true;
-            this.lblValeur.Location = new System.Drawing.Point(422, 72);
+            this.lblValeur.Location = new System.Drawing.Point(235, 72);
             this.lblValeur.Name = "lblValeur";
             this.lblValeur.Size = new System.Drawing.Size(35, 13);
             this.lblValeur.TabIndex = 16;
@@ -141,7 +138,7 @@
             // checkRecette
             // 
             this.checkRecette.AutoSize = true;
-            this.checkRecette.Location = new System.Drawing.Point(494, 68);
+            this.checkRecette.Location = new System.Drawing.Point(313, 72);
             this.checkRecette.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkRecette.Name = "checkRecette";
             this.checkRecette.Size = new System.Drawing.Size(64, 17);
@@ -152,7 +149,7 @@
             // checkPercu
             // 
             this.checkPercu.AutoSize = true;
-            this.checkPercu.Location = new System.Drawing.Point(504, 108);
+            this.checkPercu.Location = new System.Drawing.Point(313, 108);
             this.checkPercu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkPercu.Name = "checkPercu";
             this.checkPercu.Size = new System.Drawing.Size(54, 17);
@@ -163,7 +160,7 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(20, 108);
+            this.lblDescription.Location = new System.Drawing.Point(28, 108);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(35, 13);
             this.lblDescription.TabIndex = 6;
@@ -172,7 +169,7 @@
             // lblType
             // 
             this.lblType.AutoSize = true;
-            this.lblType.Location = new System.Drawing.Point(20, 72);
+            this.lblType.Location = new System.Drawing.Point(28, 72);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(35, 13);
             this.lblType.TabIndex = 5;
@@ -181,7 +178,7 @@
             // lblCode
             // 
             this.lblCode.AutoSize = true;
-            this.lblCode.Location = new System.Drawing.Point(20, 19);
+            this.lblCode.Location = new System.Drawing.Point(28, 27);
             this.lblCode.Name = "lblCode";
             this.lblCode.Size = new System.Drawing.Size(35, 13);
             this.lblCode.TabIndex = 4;
@@ -189,11 +186,8 @@
             // 
             // btnDernier
             // 
-            this.btnDernier.Location = new System.Drawing.Point(425, 355);
-
-            this.btnDernier.Location = new System.Drawing.Point(567, 437);
-            this.btnDernier.Margin = new System.Windows.Forms.Padding(4);
-
+            this.btnDernier.Location = new System.Drawing.Point(454, 388);
+            this.btnDernier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDernier.Name = "btnDernier";
             this.btnDernier.Size = new System.Drawing.Size(133, 26);
             this.btnDernier.TabIndex = 3;
@@ -202,12 +196,8 @@
             // 
             // btnSuivant
             // 
-
-            this.btnSuivant.Location = new System.Drawing.Point(286, 355);
-
-            this.btnSuivant.Location = new System.Drawing.Point(381, 437);
-            this.btnSuivant.Margin = new System.Windows.Forms.Padding(4);
-
+            this.btnSuivant.Location = new System.Drawing.Point(313, 388);
+            this.btnSuivant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSuivant.Name = "btnSuivant";
             this.btnSuivant.Size = new System.Drawing.Size(133, 26);
             this.btnSuivant.TabIndex = 2;
@@ -217,12 +207,8 @@
             // 
             // btnAvant
             // 
-
-            this.btnAvant.Location = new System.Drawing.Point(147, 355);
-
-            this.btnAvant.Location = new System.Drawing.Point(196, 437);
-            this.btnAvant.Margin = new System.Windows.Forms.Padding(4);
-
+            this.btnAvant.Location = new System.Drawing.Point(172, 388);
+            this.btnAvant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAvant.Name = "btnAvant";
             this.btnAvant.Size = new System.Drawing.Size(133, 26);
             this.btnAvant.TabIndex = 1;
@@ -232,12 +218,8 @@
             // 
             // btnPremier
             // 
-
-            this.btnPremier.Location = new System.Drawing.Point(8, 355);
-
-            this.btnPremier.Location = new System.Drawing.Point(11, 437);
-            this.btnPremier.Margin = new System.Windows.Forms.Padding(4);
-
+            this.btnPremier.Location = new System.Drawing.Point(31, 388);
+            this.btnPremier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPremier.Name = "btnPremier";
             this.btnPremier.Size = new System.Drawing.Size(133, 26);
             this.btnPremier.TabIndex = 0;
@@ -264,7 +246,7 @@
             this.tpNewTransaction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpNewTransaction.Name = "tpNewTransaction";
             this.tpNewTransaction.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tpNewTransaction.Size = new System.Drawing.Size(686, 389);
+            this.tpNewTransaction.Size = new System.Drawing.Size(642, 424);
             this.tpNewTransaction.TabIndex = 0;
             this.tpNewTransaction.Text = "Ajout d\'une transaction";
             this.tpNewTransaction.UseVisualStyleBackColor = true;
@@ -293,12 +275,8 @@
             // 
             // btnAjouterPersonneTransa
             // 
-
-            this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(567, 15);
-
-            this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(756, 18);
-            this.btnAjouterPersonneTransa.Margin = new System.Windows.Forms.Padding(4);
-
+            this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(551, 13);
+            this.btnAjouterPersonneTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAjouterPersonneTransa.Name = "btnAjouterPersonneTransa";
             this.btnAjouterPersonneTransa.Size = new System.Drawing.Size(84, 67);
             this.btnAjouterPersonneTransa.TabIndex = 0;
@@ -307,31 +285,19 @@
             // 
             // grpParticipantsTransa
             // 
-
-            this.grpParticipantsTransa.Location = new System.Drawing.Point(369, 15);
-            this.grpParticipantsTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpParticipantsTransa.Location = new System.Drawing.Point(374, 6);
+            this.grpParticipantsTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.grpParticipantsTransa.Name = "grpParticipantsTransa";
-            this.grpParticipantsTransa.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpParticipantsTransa.Size = new System.Drawing.Size(182, 370);
-
-            this.grpParticipantsTransa.Location = new System.Drawing.Point(492, 18);
-            this.grpParticipantsTransa.Margin = new System.Windows.Forms.Padding(5);
-            this.grpParticipantsTransa.Name = "grpParticipantsTransa";
-            this.grpParticipantsTransa.Padding = new System.Windows.Forms.Padding(5);
-            this.grpParticipantsTransa.Size = new System.Drawing.Size(243, 455);
-
+            this.grpParticipantsTransa.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpParticipantsTransa.Size = new System.Drawing.Size(168, 376);
             this.grpParticipantsTransa.TabIndex = 11;
             this.grpParticipantsTransa.TabStop = false;
             this.grpParticipantsTransa.Text = "Participants : ";
             // 
             // btnAjoutTransa
             // 
-
-            this.btnAjoutTransa.Location = new System.Drawing.Point(108, 249);
-
             this.btnAjoutTransa.Location = new System.Drawing.Point(144, 306);
-            this.btnAjoutTransa.Margin = new System.Windows.Forms.Padding(4);
-
+            this.btnAjoutTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAjoutTransa.Name = "btnAjoutTransa";
             this.btnAjoutTransa.Size = new System.Drawing.Size(160, 74);
             this.btnAjoutTransa.TabIndex = 10;
@@ -341,12 +307,8 @@
             // 
             // btnAjoutType
             // 
-
-            this.btnAjoutType.Location = new System.Drawing.Point(244, 187);
-
-            this.btnAjoutType.Location = new System.Drawing.Point(325, 230);
-            this.btnAjoutType.Margin = new System.Windows.Forms.Padding(4);
-
+            this.btnAjoutType.Location = new System.Drawing.Point(328, 187);
+            this.btnAjoutType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAjoutType.Name = "btnAjoutType";
             this.btnAjoutType.Size = new System.Drawing.Size(24, 19);
             this.btnAjoutType.TabIndex = 9;
@@ -356,12 +318,8 @@
             // cboTypeTransa
             // 
             this.cboTypeTransa.FormattingEnabled = true;
-
-            this.cboTypeTransa.Location = new System.Drawing.Point(146, 187);
-
-            this.cboTypeTransa.Location = new System.Drawing.Point(195, 230);
-            this.cboTypeTransa.Margin = new System.Windows.Forms.Padding(4);
-
+            this.cboTypeTransa.Location = new System.Drawing.Point(199, 187);
+            this.cboTypeTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboTypeTransa.Name = "cboTypeTransa";
             this.cboTypeTransa.Size = new System.Drawing.Size(92, 21);
             this.cboTypeTransa.TabIndex = 8;
@@ -377,12 +335,8 @@
             // 
             // txtMontantTransa
             // 
-
-            this.txtMontantTransa.Location = new System.Drawing.Point(149, 97);
-
-            this.txtMontantTransa.Location = new System.Drawing.Point(199, 119);
-            this.txtMontantTransa.Margin = new System.Windows.Forms.Padding(4);
-
+            this.txtMontantTransa.Location = new System.Drawing.Point(199, 101);
+            this.txtMontantTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMontantTransa.Name = "txtMontantTransa";
             this.txtMontantTransa.Size = new System.Drawing.Size(167, 20);
             this.txtMontantTransa.TabIndex = 4;
@@ -399,12 +353,8 @@
             // 
             // txtDescriptionTransa
             // 
-
-            this.txtDescriptionTransa.Location = new System.Drawing.Point(149, 63);
-
-            this.txtDescriptionTransa.Location = new System.Drawing.Point(199, 78);
-            this.txtDescriptionTransa.Margin = new System.Windows.Forms.Padding(4);
-
+            this.txtDescriptionTransa.Location = new System.Drawing.Point(199, 67);
+            this.txtDescriptionTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescriptionTransa.Name = "txtDescriptionTransa";
             this.txtDescriptionTransa.Size = new System.Drawing.Size(167, 20);
             this.txtDescriptionTransa.TabIndex = 3;
@@ -420,12 +370,8 @@
             // 
             // dtpTransa
             // 
-
-            this.dtpTransa.Location = new System.Drawing.Point(149, 28);
-
             this.dtpTransa.Location = new System.Drawing.Point(199, 34);
-            this.dtpTransa.Margin = new System.Windows.Forms.Padding(4);
-
+            this.dtpTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpTransa.Name = "dtpTransa";
             this.dtpTransa.Size = new System.Drawing.Size(167, 20);
             this.dtpTransa.TabIndex = 1;
@@ -441,20 +387,24 @@
             // 
             // tpDeleteTransaction
             // 
-
-            this.tpDeleteTransaction.Location = new System.Drawing.Point(4, 25);
-            this.tpDeleteTransaction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-
             this.tpDeleteTransaction.Controls.Add(this.dgvTransactions);
-            this.tpDeleteTransaction.Location = new System.Drawing.Point(4, 28);
+            this.tpDeleteTransaction.Location = new System.Drawing.Point(4, 25);
             this.tpDeleteTransaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-
             this.tpDeleteTransaction.Name = "tpDeleteTransaction";
             this.tpDeleteTransaction.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpDeleteTransaction.Size = new System.Drawing.Size(686, 389);
             this.tpDeleteTransaction.TabIndex = 1;
             this.tpDeleteTransaction.Text = "Suppression d\'une transaction";
             this.tpDeleteTransaction.UseVisualStyleBackColor = true;
+            // 
+            // dgvTransactions
+            // 
+            this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTransactions.Location = new System.Drawing.Point(8, 8);
+            this.dgvTransactions.Name = "dgvTransactions";
+            this.dgvTransactions.RowTemplate.Height = 24;
+            this.dgvTransactions.Size = new System.Drawing.Size(900, 230);
+            this.dgvTransactions.TabIndex = 0;
             // 
             // tpModifTransaction
             // 
@@ -476,20 +426,11 @@
             this.tpRecap.Text = "Récapitulatif";
             this.tpRecap.UseVisualStyleBackColor = true;
             // 
-            // dgvTransactions
-            // 
-            this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTransactions.Location = new System.Drawing.Point(8, 8);
-            this.dgvTransactions.Name = "dgvTransactions";
-            this.dgvTransactions.RowTemplate.Height = 24;
-            this.dgvTransactions.Size = new System.Drawing.Size(900, 230);
-            this.dgvTransactions.TabIndex = 0;
-            // 
             // frmBudgetMois
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 418);
+            this.ClientSize = new System.Drawing.Size(655, 461);
             this.Controls.Add(this.tcBudgetMois);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
