@@ -192,7 +192,7 @@ namespace Pique_Sous
                     else if (i != 0)
                     {
                         date = 
-                        dt.Value = new DateTime(date.Year,  );
+                        dt.Value = new DateTime(date.Year, date.Month);
                     }
                 }
             }
