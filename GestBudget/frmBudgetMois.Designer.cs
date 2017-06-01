@@ -79,10 +79,10 @@
             this.tcBudgetMois.Controls.Add(this.tpRecap);
             this.tcBudgetMois.Cursor = System.Windows.Forms.Cursors.Default;
             this.tcBudgetMois.Location = new System.Drawing.Point(0, 0);
-            this.tcBudgetMois.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tcBudgetMois.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tcBudgetMois.Name = "tcBudgetMois";
             this.tcBudgetMois.SelectedIndex = 0;
-            this.tcBudgetMois.Size = new System.Drawing.Size(925, 514);
+            this.tcBudgetMois.Size = new System.Drawing.Size(639, 453);
             this.tcBudgetMois.TabIndex = 0;
             // 
             // tpAffichage1a1
@@ -99,11 +99,11 @@
             this.tpAffichage1a1.Controls.Add(this.btnSuivant);
             this.tpAffichage1a1.Controls.Add(this.btnAvant);
             this.tpAffichage1a1.Controls.Add(this.btnPremier);
-            this.tpAffichage1a1.Location = new System.Drawing.Point(4, 28);
-            this.tpAffichage1a1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpAffichage1a1.Location = new System.Drawing.Point(4, 25);
+            this.tpAffichage1a1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpAffichage1a1.Name = "tpAffichage1a1";
-            this.tpAffichage1a1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpAffichage1a1.Size = new System.Drawing.Size(917, 482);
+            this.tpAffichage1a1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpAffichage1a1.Size = new System.Drawing.Size(631, 424);
             this.tpAffichage1a1.TabIndex = 1;
             this.tpAffichage1a1.Text = "Affichage 1 à 1";
             this.tpAffichage1a1.UseVisualStyleBackColor = true;
@@ -111,39 +111,37 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(41, 223);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.listBox1.Location = new System.Drawing.Point(31, 181);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(712, 244);
+            this.listBox1.Size = new System.Drawing.Size(556, 199);
             this.listBox1.TabIndex = 19;
             // 
             // cboCalendrier
             // 
             this.cboCalendrier.FormattingEnabled = true;
-            this.cboCalendrier.Location = new System.Drawing.Point(655, 28);
-            this.cboCalendrier.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cboCalendrier.Location = new System.Drawing.Point(313, 19);
+            this.cboCalendrier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboCalendrier.Name = "cboCalendrier";
-            this.cboCalendrier.Size = new System.Drawing.Size(252, 24);
+            this.cboCalendrier.Size = new System.Drawing.Size(190, 21);
             this.cboCalendrier.TabIndex = 17;
             // 
             // lblValeur
             // 
             this.lblValeur.AutoSize = true;
-            this.lblValeur.Location = new System.Drawing.Point(563, 89);
-            this.lblValeur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblValeur.Location = new System.Drawing.Point(235, 72);
             this.lblValeur.Name = "lblValeur";
-            this.lblValeur.Size = new System.Drawing.Size(46, 17);
+            this.lblValeur.Size = new System.Drawing.Size(35, 13);
             this.lblValeur.TabIndex = 16;
             this.lblValeur.Text = "label1";
             // 
             // checkRecette
             // 
             this.checkRecette.AutoSize = true;
-            this.checkRecette.Location = new System.Drawing.Point(659, 84);
-            this.checkRecette.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkRecette.Location = new System.Drawing.Point(313, 72);
+            this.checkRecette.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkRecette.Name = "checkRecette";
-            this.checkRecette.Size = new System.Drawing.Size(79, 21);
+            this.checkRecette.Size = new System.Drawing.Size(64, 17);
             this.checkRecette.TabIndex = 15;
             this.checkRecette.Text = "Recette";
             this.checkRecette.UseVisualStyleBackColor = true;
@@ -151,10 +149,10 @@
             // checkPercu
             // 
             this.checkPercu.AutoSize = true;
-            this.checkPercu.Location = new System.Drawing.Point(672, 133);
-            this.checkPercu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkPercu.Location = new System.Drawing.Point(313, 108);
+            this.checkPercu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkPercu.Name = "checkPercu";
-            this.checkPercu.Size = new System.Drawing.Size(67, 21);
+            this.checkPercu.Size = new System.Drawing.Size(54, 17);
             this.checkPercu.TabIndex = 14;
             this.checkPercu.Text = "Perçu";
             this.checkPercu.UseVisualStyleBackColor = true;
@@ -162,49 +160,46 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(27, 133);
-            this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescription.Location = new System.Drawing.Point(28, 108);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(46, 17);
+            this.lblDescription.Size = new System.Drawing.Size(35, 13);
             this.lblDescription.TabIndex = 6;
             this.lblDescription.Text = "label3";
             // 
             // lblType
             // 
             this.lblType.AutoSize = true;
-            this.lblType.Location = new System.Drawing.Point(27, 89);
-            this.lblType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblType.Location = new System.Drawing.Point(28, 72);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(46, 17);
+            this.lblType.Size = new System.Drawing.Size(35, 13);
             this.lblType.TabIndex = 5;
             this.lblType.Text = "label2";
             // 
             // lblCode
             // 
             this.lblCode.AutoSize = true;
-            this.lblCode.Location = new System.Drawing.Point(27, 23);
-            this.lblCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCode.Location = new System.Drawing.Point(28, 27);
             this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(46, 17);
+            this.lblCode.Size = new System.Drawing.Size(35, 13);
             this.lblCode.TabIndex = 4;
             this.lblCode.Text = "label1";
             // 
             // btnDernier
             // 
-            this.btnDernier.Location = new System.Drawing.Point(756, 538);
-            this.btnDernier.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnDernier.Location = new System.Drawing.Point(454, 388);
+            this.btnDernier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDernier.Name = "btnDernier";
-            this.btnDernier.Size = new System.Drawing.Size(177, 32);
+            this.btnDernier.Size = new System.Drawing.Size(133, 26);
             this.btnDernier.TabIndex = 3;
             this.btnDernier.Text = ">>";
             this.btnDernier.UseVisualStyleBackColor = true;
             // 
             // btnSuivant
             // 
-            this.btnSuivant.Location = new System.Drawing.Point(508, 538);
-            this.btnSuivant.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnSuivant.Location = new System.Drawing.Point(313, 388);
+            this.btnSuivant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSuivant.Name = "btnSuivant";
-            this.btnSuivant.Size = new System.Drawing.Size(177, 32);
+            this.btnSuivant.Size = new System.Drawing.Size(133, 26);
             this.btnSuivant.TabIndex = 2;
             this.btnSuivant.Text = ">";
             this.btnSuivant.UseVisualStyleBackColor = true;
@@ -212,10 +207,10 @@
             // 
             // btnAvant
             // 
-            this.btnAvant.Location = new System.Drawing.Point(261, 538);
-            this.btnAvant.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnAvant.Location = new System.Drawing.Point(172, 388);
+            this.btnAvant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAvant.Name = "btnAvant";
-            this.btnAvant.Size = new System.Drawing.Size(177, 32);
+            this.btnAvant.Size = new System.Drawing.Size(133, 26);
             this.btnAvant.TabIndex = 1;
             this.btnAvant.Text = "<";
             this.btnAvant.UseVisualStyleBackColor = true;
@@ -223,10 +218,10 @@
             // 
             // btnPremier
             // 
-            this.btnPremier.Location = new System.Drawing.Point(15, 538);
-            this.btnPremier.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnPremier.Location = new System.Drawing.Point(31, 388);
+            this.btnPremier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPremier.Name = "btnPremier";
-            this.btnPremier.Size = new System.Drawing.Size(177, 32);
+            this.btnPremier.Size = new System.Drawing.Size(133, 26);
             this.btnPremier.TabIndex = 0;
             this.btnPremier.Text = "<<";
             this.btnPremier.UseVisualStyleBackColor = true;
@@ -247,11 +242,11 @@
             this.tpNewTransaction.Controls.Add(this.lblDescripionTransa);
             this.tpNewTransaction.Controls.Add(this.dtpTransa);
             this.tpNewTransaction.Controls.Add(this.lblDateTransa);
-            this.tpNewTransaction.Location = new System.Drawing.Point(4, 28);
-            this.tpNewTransaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpNewTransaction.Location = new System.Drawing.Point(4, 25);
+            this.tpNewTransaction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpNewTransaction.Name = "tpNewTransaction";
-            this.tpNewTransaction.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpNewTransaction.Size = new System.Drawing.Size(917, 482);
+            this.tpNewTransaction.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpNewTransaction.Size = new System.Drawing.Size(686, 389);
             this.tpNewTransaction.TabIndex = 0;
             this.tpNewTransaction.Text = "Ajout d\'une transaction";
             this.tpNewTransaction.UseVisualStyleBackColor = true;
@@ -259,10 +254,10 @@
             // chkPercu
             // 
             this.chkPercu.AutoSize = true;
-            this.chkPercu.Location = new System.Drawing.Point(291, 167);
-            this.chkPercu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkPercu.Location = new System.Drawing.Point(218, 136);
+            this.chkPercu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkPercu.Name = "chkPercu";
-            this.chkPercu.Size = new System.Drawing.Size(67, 21);
+            this.chkPercu.Size = new System.Drawing.Size(54, 17);
             this.chkPercu.TabIndex = 13;
             this.chkPercu.Text = "Perçu";
             this.chkPercu.UseVisualStyleBackColor = true;
@@ -270,41 +265,41 @@
             // chkRecette
             // 
             this.chkRecette.AutoSize = true;
-            this.chkRecette.Location = new System.Drawing.Point(112, 167);
-            this.chkRecette.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkRecette.Location = new System.Drawing.Point(84, 136);
+            this.chkRecette.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkRecette.Name = "chkRecette";
-            this.chkRecette.Size = new System.Drawing.Size(79, 21);
+            this.chkRecette.Size = new System.Drawing.Size(64, 17);
             this.chkRecette.TabIndex = 12;
             this.chkRecette.Text = "Recette";
             this.chkRecette.UseVisualStyleBackColor = true;
             // 
             // btnAjouterPersonneTransa
             // 
-            this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(1008, 22);
-            this.btnAjouterPersonneTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(756, 18);
+            this.btnAjouterPersonneTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAjouterPersonneTransa.Name = "btnAjouterPersonneTransa";
-            this.btnAjouterPersonneTransa.Size = new System.Drawing.Size(112, 82);
+            this.btnAjouterPersonneTransa.Size = new System.Drawing.Size(84, 67);
             this.btnAjouterPersonneTransa.TabIndex = 0;
             this.btnAjouterPersonneTransa.Text = "Ajouter une personne";
             this.btnAjouterPersonneTransa.UseVisualStyleBackColor = true;
             // 
             // grpParticipantsTransa
             // 
-            this.grpParticipantsTransa.Location = new System.Drawing.Point(498, 8);
-            this.grpParticipantsTransa.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.grpParticipantsTransa.Location = new System.Drawing.Point(374, 6);
+            this.grpParticipantsTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.grpParticipantsTransa.Name = "grpParticipantsTransa";
-            this.grpParticipantsTransa.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.grpParticipantsTransa.Size = new System.Drawing.Size(224, 463);
+            this.grpParticipantsTransa.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpParticipantsTransa.Size = new System.Drawing.Size(168, 376);
             this.grpParticipantsTransa.TabIndex = 11;
             this.grpParticipantsTransa.TabStop = false;
             this.grpParticipantsTransa.Text = "Participants : ";
             // 
             // btnAjoutTransa
             // 
-            this.btnAjoutTransa.Location = new System.Drawing.Point(192, 377);
-            this.btnAjoutTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnAjoutTransa.Location = new System.Drawing.Point(144, 306);
+            this.btnAjoutTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAjoutTransa.Name = "btnAjoutTransa";
-            this.btnAjoutTransa.Size = new System.Drawing.Size(213, 91);
+            this.btnAjoutTransa.Size = new System.Drawing.Size(160, 74);
             this.btnAjoutTransa.TabIndex = 10;
             this.btnAjoutTransa.Text = "Ajouter";
             this.btnAjoutTransa.UseVisualStyleBackColor = true;
@@ -312,10 +307,10 @@
             // 
             // btnAjoutType
             // 
-            this.btnAjoutType.Location = new System.Drawing.Point(438, 230);
-            this.btnAjoutType.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnAjoutType.Location = new System.Drawing.Point(328, 187);
+            this.btnAjoutType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAjoutType.Name = "btnAjoutType";
-            this.btnAjoutType.Size = new System.Drawing.Size(32, 23);
+            this.btnAjoutType.Size = new System.Drawing.Size(24, 19);
             this.btnAjoutType.TabIndex = 9;
             this.btnAjoutType.Text = "...";
             this.btnAjoutType.UseVisualStyleBackColor = true;
@@ -323,85 +318,81 @@
             // cboTypeTransa
             // 
             this.cboTypeTransa.FormattingEnabled = true;
-            this.cboTypeTransa.Location = new System.Drawing.Point(265, 230);
-            this.cboTypeTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cboTypeTransa.Location = new System.Drawing.Point(199, 187);
+            this.cboTypeTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboTypeTransa.Name = "cboTypeTransa";
-            this.cboTypeTransa.Size = new System.Drawing.Size(121, 24);
+            this.cboTypeTransa.Size = new System.Drawing.Size(92, 21);
             this.cboTypeTransa.TabIndex = 8;
             // 
             // lblTypeTransa
             // 
             this.lblTypeTransa.AutoSize = true;
-            this.lblTypeTransa.Location = new System.Drawing.Point(145, 230);
-            this.lblTypeTransa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTypeTransa.Location = new System.Drawing.Point(109, 187);
             this.lblTypeTransa.Name = "lblTypeTransa";
-            this.lblTypeTransa.Size = new System.Drawing.Size(40, 17);
+            this.lblTypeTransa.Size = new System.Drawing.Size(31, 13);
             this.lblTypeTransa.TabIndex = 7;
             this.lblTypeTransa.Text = "Type";
             // 
             // txtMontantTransa
             // 
-            this.txtMontantTransa.Location = new System.Drawing.Point(265, 124);
-            this.txtMontantTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtMontantTransa.Location = new System.Drawing.Point(199, 101);
+            this.txtMontantTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMontantTransa.Name = "txtMontantTransa";
-            this.txtMontantTransa.Size = new System.Drawing.Size(221, 22);
+            this.txtMontantTransa.Size = new System.Drawing.Size(167, 20);
             this.txtMontantTransa.TabIndex = 4;
             this.txtMontantTransa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontantTransa_KeyPress);
             // 
             // lblMontantTransa
             // 
             this.lblMontantTransa.AutoSize = true;
-            this.lblMontantTransa.Location = new System.Drawing.Point(44, 124);
-            this.lblMontantTransa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMontantTransa.Location = new System.Drawing.Point(33, 101);
             this.lblMontantTransa.Name = "lblMontantTransa";
-            this.lblMontantTransa.Size = new System.Drawing.Size(59, 17);
+            this.lblMontantTransa.Size = new System.Drawing.Size(46, 13);
             this.lblMontantTransa.TabIndex = 3;
             this.lblMontantTransa.Text = "Montant";
             // 
             // txtDescriptionTransa
             // 
-            this.txtDescriptionTransa.Location = new System.Drawing.Point(265, 82);
-            this.txtDescriptionTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtDescriptionTransa.Location = new System.Drawing.Point(199, 67);
+            this.txtDescriptionTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescriptionTransa.Name = "txtDescriptionTransa";
-            this.txtDescriptionTransa.Size = new System.Drawing.Size(221, 22);
+            this.txtDescriptionTransa.Size = new System.Drawing.Size(167, 20);
             this.txtDescriptionTransa.TabIndex = 3;
             // 
             // lblDescripionTransa
             // 
             this.lblDescripionTransa.AutoSize = true;
-            this.lblDescripionTransa.Location = new System.Drawing.Point(44, 82);
-            this.lblDescripionTransa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescripionTransa.Location = new System.Drawing.Point(33, 67);
             this.lblDescripionTransa.Name = "lblDescripionTransa";
-            this.lblDescripionTransa.Size = new System.Drawing.Size(79, 17);
+            this.lblDescripionTransa.Size = new System.Drawing.Size(60, 13);
             this.lblDescripionTransa.TabIndex = 2;
             this.lblDescripionTransa.Text = "Description";
             // 
             // dtpTransa
             // 
-            this.dtpTransa.Location = new System.Drawing.Point(265, 42);
-            this.dtpTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dtpTransa.Location = new System.Drawing.Point(199, 34);
+            this.dtpTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpTransa.Name = "dtpTransa";
-            this.dtpTransa.Size = new System.Drawing.Size(221, 22);
+            this.dtpTransa.Size = new System.Drawing.Size(167, 20);
             this.dtpTransa.TabIndex = 1;
             // 
             // lblDateTransa
             // 
             this.lblDateTransa.AutoSize = true;
-            this.lblDateTransa.Location = new System.Drawing.Point(44, 34);
-            this.lblDateTransa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDateTransa.Location = new System.Drawing.Point(33, 28);
             this.lblDateTransa.Name = "lblDateTransa";
-            this.lblDateTransa.Size = new System.Drawing.Size(147, 17);
+            this.lblDateTransa.Size = new System.Drawing.Size(111, 13);
             this.lblDateTransa.TabIndex = 0;
             this.lblDateTransa.Text = "Date de la transaction";
             // 
             // tpDeleteTransaction
             // 
             this.tpDeleteTransaction.Controls.Add(this.dgvTransactions);
-            this.tpDeleteTransaction.Location = new System.Drawing.Point(4, 28);
-            this.tpDeleteTransaction.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tpDeleteTransaction.Location = new System.Drawing.Point(4, 25);
+            this.tpDeleteTransaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpDeleteTransaction.Name = "tpDeleteTransaction";
-            this.tpDeleteTransaction.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpDeleteTransaction.Size = new System.Drawing.Size(917, 482);
+            this.tpDeleteTransaction.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpDeleteTransaction.Size = new System.Drawing.Size(686, 389);
             this.tpDeleteTransaction.TabIndex = 1;
             this.tpDeleteTransaction.Text = "Suppression d\'une transaction";
             this.tpDeleteTransaction.UseVisualStyleBackColor = true;
@@ -409,41 +400,40 @@
             // dgvTransactions
             // 
             this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTransactions.Location = new System.Drawing.Point(11, 10);
-            this.dgvTransactions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvTransactions.Location = new System.Drawing.Point(8, 8);
             this.dgvTransactions.Name = "dgvTransactions";
             this.dgvTransactions.RowTemplate.Height = 24;
-            this.dgvTransactions.Size = new System.Drawing.Size(1200, 283);
+            this.dgvTransactions.Size = new System.Drawing.Size(900, 230);
             this.dgvTransactions.TabIndex = 0;
             // 
             // tpModifTransaction
             // 
-            this.tpModifTransaction.Location = new System.Drawing.Point(4, 28);
-            this.tpModifTransaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpModifTransaction.Location = new System.Drawing.Point(4, 25);
+            this.tpModifTransaction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpModifTransaction.Name = "tpModifTransaction";
-            this.tpModifTransaction.Size = new System.Drawing.Size(917, 482);
+            this.tpModifTransaction.Size = new System.Drawing.Size(686, 389);
             this.tpModifTransaction.TabIndex = 2;
             this.tpModifTransaction.Text = "Modification d\'une transaction";
             this.tpModifTransaction.UseVisualStyleBackColor = true;
             // 
             // tpRecap
             // 
-            this.tpRecap.Location = new System.Drawing.Point(4, 28);
-            this.tpRecap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpRecap.Location = new System.Drawing.Point(4, 25);
+            this.tpRecap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpRecap.Name = "tpRecap";
-            this.tpRecap.Size = new System.Drawing.Size(917, 482);
+            this.tpRecap.Size = new System.Drawing.Size(686, 389);
             this.tpRecap.TabIndex = 3;
             this.tpRecap.Text = "Récapitulatif";
             this.tpRecap.UseVisualStyleBackColor = true;
             // 
             // frmBudgetMois
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 514);
+            this.ClientSize = new System.Drawing.Size(643, 461);
             this.Controls.Add(this.tcBudgetMois);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmBudgetMois";
             this.Text = "Budget du mois";
             this.Load += new System.EventHandler(this.frmBudgetMois_Load);

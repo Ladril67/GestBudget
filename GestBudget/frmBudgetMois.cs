@@ -197,7 +197,7 @@ namespace Pique_Sous
 
         private void btnAvant_Click(object sender, EventArgs e)
         {
-
+            init1a1();
         }
 
         private void init1a1()
