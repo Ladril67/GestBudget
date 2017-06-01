@@ -50,11 +50,11 @@ namespace Pique_Sous
             }
             catch (InvalidOperationException erreur)
             {
-                MessageBox.Show("Erreur de chaine de connexion !");
+                MessageBox.Show("Erreur de chaine de connexion ! formLoad");
             }
             catch (OleDbException erreur)
             {
-                MessageBox.Show("Erreur de requete SQL !");
+                MessageBox.Show("Erreur de requete SQL ! formLoad");
             }
             finally
             {
@@ -102,11 +102,11 @@ namespace Pique_Sous
             }
             catch (InvalidOperationException erreur)
             {
-                MessageBox.Show("Erreur de chaine de connexion !");
+                MessageBox.Show("Erreur de chaine de connexion ! ajoutTransa");
             }
             catch (OleDbException erreur)
             {
-                MessageBox.Show("Erreur de requete SQL !");
+                MessageBox.Show("Erreur de requete SQL ! ajoutTransa");
             }
         }
 
@@ -222,11 +222,11 @@ namespace Pique_Sous
             }
             catch (InvalidOperationException erreur)
             {
-                MessageBox.Show("Erreur de chaine de connexion !");
+                MessageBox.Show("Erreur de chaine de connexion ! 1a1");
             }
             catch (OleDbException erreur)
             {
-                MessageBox.Show("Erreur de requete SQL !");
+                MessageBox.Show("Erreur de requete SQL ! 1a1");
             }
             finally
             {
@@ -239,7 +239,7 @@ namespace Pique_Sous
             {
                 connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
                 connec.Open();
-                OleDbCommand cd1 = new OleDbCommand("select * from Transaction", connec);
+                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction]", connec);
 
                 OleDbDataReader dr = cd1.ExecuteReader();
 
@@ -255,11 +255,11 @@ namespace Pique_Sous
             }
             catch (InvalidOperationException erreur)
             {
-                MessageBox.Show("Erreur de chaine de connexion !");
+                MessageBox.Show("Erreur de chaine de connexion ! DGV");
             }
             catch (OleDbException erreur)
             {
-                MessageBox.Show("Erreur de requete SQL !");
+                MessageBox.Show("Erreur de requete SQL ! DGV");
             }
             finally
             {
