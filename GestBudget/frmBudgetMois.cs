@@ -213,9 +213,8 @@ namespace Pique_Sous
                 DataTable schemaTable = dr.GetSchemaTable();
 
                 DataRow ligne;
-                ligne = schemaTable.Rows[0];
+                ligne = schemaTable.Rows[2];
                 lblCode.Text = ligne[0].ToString();
-
 
                 connec.Close();
 
