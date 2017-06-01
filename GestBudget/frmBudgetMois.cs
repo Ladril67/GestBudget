@@ -43,7 +43,7 @@ namespace Pique_Sous
 
                 remplitCbo(cboTypeTransa, "TypeTransaction", "libType", "codeType");
 
-                OleDbCommand cd2 = new OleDbCommand("select * from Transaction", connec);
+                OleDbCommand cd2 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction]", connec);
                 lastCodeTransac = (int)cd2.ExecuteNonQuery();
                 MessageBox.Show("" + lastCodeTransac);
                 connec.Close();
@@ -206,7 +206,7 @@ namespace Pique_Sous
             {
                 connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
                 connec.Open();
-                OleDbCommand cd1 = new OleDbCommand("select * from Transaction", connec);
+                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction]", connec);
 
                 OleDbDataReader dr = cd1.ExecuteReader();
 
