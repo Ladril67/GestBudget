@@ -82,7 +82,7 @@
             this.tcBudgetMois.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tcBudgetMois.Name = "tcBudgetMois";
             this.tcBudgetMois.SelectedIndex = 0;
-            this.tcBudgetMois.Size = new System.Drawing.Size(639, 453);
+            this.tcBudgetMois.Size = new System.Drawing.Size(650, 453);
             this.tcBudgetMois.TabIndex = 0;
             // 
             // tpAffichage1a1
@@ -246,7 +246,7 @@
             this.tpNewTransaction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpNewTransaction.Name = "tpNewTransaction";
             this.tpNewTransaction.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tpNewTransaction.Size = new System.Drawing.Size(686, 389);
+            this.tpNewTransaction.Size = new System.Drawing.Size(642, 424);
             this.tpNewTransaction.TabIndex = 0;
             this.tpNewTransaction.Text = "Ajout d\'une transaction";
             this.tpNewTransaction.UseVisualStyleBackColor = true;
@@ -275,7 +275,7 @@
             // 
             // btnAjouterPersonneTransa
             // 
-            this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(756, 18);
+            this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(551, 13);
             this.btnAjouterPersonneTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAjouterPersonneTransa.Name = "btnAjouterPersonneTransa";
             this.btnAjouterPersonneTransa.Size = new System.Drawing.Size(84, 67);
@@ -430,7 +430,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 461);
+            this.ClientSize = new System.Drawing.Size(655, 461);
             this.Controls.Add(this.tcBudgetMois);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
