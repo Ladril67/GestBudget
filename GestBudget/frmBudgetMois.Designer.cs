@@ -130,15 +130,7 @@
             this.listBox1.TabIndex = 19;
             // 
 
-            // cboCalendrier
-            // 
-            this.cboCalendrier.FormattingEnabled = true;
-            this.cboCalendrier.Location = new System.Drawing.Point(417, 23);
-            this.cboCalendrier.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.cboCalendrier.Name = "cboCalendrier";
-            this.cboCalendrier.Size = new System.Drawing.Size(252, 24);
-            this.cboCalendrier.TabIndex = 17;
-            // 
+
 
 
             // lblValeur
