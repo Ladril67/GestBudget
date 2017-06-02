@@ -118,17 +118,8 @@ namespace Pique_Sous
 
         private void remplirParticipants()
         {
-<<<<<<< HEAD
-            try
-=======
-            //On ouvre la connection
-            connec.Open();
 
-            //On récupère les données de la table pour travailler en mode déconnecté
-            DataTable tbl1 = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
-                new object[] { null, null, null, "TABLE" });
-            foreach (DataRow ds in tbl1.Rows)
->>>>>>> 6e4eb0f13cd9ed9a84b5af394eca2c7c82737f2e
+            try
             {
                 //Mise en place de la connection string et on ouvre la connection
                 connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
@@ -227,12 +218,8 @@ namespace Pique_Sous
         {
             try
             {
-<<<<<<< HEAD
+
                 int jointure = 0;
-=======
-                connec.Open();
-                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction]", connec);
->>>>>>> d30e9ea57dd2608cc5de3afe59cb580c83eb244a
 
                 OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction]", connec);
                 connec.Open();
@@ -278,10 +265,8 @@ namespace Pique_Sous
         {
             try
             {
-<<<<<<< HEAD
+
                 connec.Open();
-=======
->>>>>>> d30e9ea57dd2608cc5de3afe59cb580c83eb244a
                 OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction]", connec);
 
                 OleDbDataAdapter da = new OleDbDataAdapter(cd1);
