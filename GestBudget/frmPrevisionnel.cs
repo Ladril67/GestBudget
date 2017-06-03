@@ -158,42 +158,59 @@ namespace Pique_Sous
 
         private void txtPrelevement_TextChanged(object sender, EventArgs e)
         {
-            
+            grpEcheances.Controls.Clear();
+            //Génération dynamique des DateTimePicker en fonction du texte dans txtprelevemen
             int top = 15;
             int left = 15;
             grpEcheances.Show();
             int nb = 0;
-            if(txtPrelevement.Text != "")
+            if (txtPrelevement.Text != "")
             {
                 nb = int.Parse(txtPrelevement.Text);
+                for (int i = 0; i < nb; i++)
+                {
+                    DateTimePicker dt = new DateTimePicker();
+                    dt.Top = 30 * i + top;
+                    dt.Left = left;
+                    grpEcheances.Controls.Add(dt);
+                }
+                RemplirDate();
             }
-            for (int i = 0; i < nb; i++)
-            {
-                DateTimePicker dt = new DateTimePicker();
-                dt.Top = 30 * i + top;
-                dt.Left = left;
-                grpEcheances.Controls.Add(dt);
-            }
-
-            
         }
 
         public void RemplirDate()
         {
             {
-                foreach( DateTimePicker dt in grpEcheances.Controls)
+                //Initialisation de la Date
+                int i = 0;
+                DateTime date = DateTime.Now;
+                int mois = date.Month;
+                int annee = date.Year;
+                foreach ( DateTimePicker dt in grpEcheances.Controls)
                 {
-                    int i = 0;
-                    DateTime date = new DateTime();
                     if (i == 0)
                     {
-                        date = dt.Value;
+                        dt.Value = date;
+                        i = i + 1;
+
                     }
                     else if (i != 0)
                     {
-                        date = 
-                        dt.Value = new DateTime(date.Year, date.Month);
+                        //Gestion de l'incrémentation des mois et du changement éventuel d'année
+                        mois = mois + 1;
+                        if (mois <= 12)
+                        {
+                            dt.Value = new DateTime(annee, mois, date.Day);
+                            i = i + 1;
+                        }
+                        else
+                        {
+                            mois = 1;
+                            annee = annee + 1;
+                            dt.Value = new DateTime(annee, mois, date.Day);
+                        }
                     }
+                    
                 }
             }
 
