@@ -130,7 +130,11 @@
             // lblValeur
             // 
             this.lblValeur.AutoSize = true;
+<<<<<<< HEAD
             this.lblValeur.Location = new System.Drawing.Point(232, 48);
+=======
+            this.lblValeur.Location = new System.Drawing.Point(235, 72);
+>>>>>>> d1350b6f32a8178a8e8d2f740ec14c9587ddd288
             this.lblValeur.Name = "lblValeur";
             this.lblValeur.Size = new System.Drawing.Size(35, 13);
             this.lblValeur.TabIndex = 16;
@@ -140,7 +144,11 @@
             // 
             this.checkRecette.AutoSize = true;
             this.checkRecette.Enabled = false;
+<<<<<<< HEAD
             this.checkRecette.Location = new System.Drawing.Point(235, 72);
+=======
+            this.checkRecette.Location = new System.Drawing.Point(235, 58);
+>>>>>>> d1350b6f32a8178a8e8d2f740ec14c9587ddd288
             this.checkRecette.Margin = new System.Windows.Forms.Padding(2);
             this.checkRecette.Name = "checkRecette";
             this.checkRecette.Size = new System.Drawing.Size(64, 17);
@@ -152,7 +160,11 @@
             // 
             this.checkPercu.AutoSize = true;
             this.checkPercu.Enabled = false;
+<<<<<<< HEAD
             this.checkPercu.Location = new System.Drawing.Point(235, 104);
+=======
+            this.checkPercu.Location = new System.Drawing.Point(235, 88);
+>>>>>>> d1350b6f32a8178a8e8d2f740ec14c9587ddd288
             this.checkPercu.Margin = new System.Windows.Forms.Padding(2);
             this.checkPercu.Name = "checkPercu";
             this.checkPercu.Size = new System.Drawing.Size(54, 17);
