@@ -26,40 +26,7 @@ namespace Pique_Sous
         private void frmBudgetMois_Load(object sender, EventArgs e)
         {
             connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
-            remplirParticipants();
-            remplirDGV();
-            try
-            {
-                
-                connec.Open();
-                DataTable schema = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
-
-
-                string requete = @"select * from TypeTransaction";
-                OleDbCommand cd1 = new OleDbCommand(requete, connec);
-                OleDbDataAdapter da = new OleDbDataAdapter();
-                da.SelectCommand = cd1;
-
-                da.Fill(ds, "TypeTransaction");
-
-                remplitCbo(cboTypeTransa, "TypeTransaction", "libType", "codeType");
-
-                OleDbCommand cd2 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction]", connec);
-                lastCodeTransac = (int)cd2.ExecuteNonQuery();
-                MessageBox.Show("" + lastCodeTransac);
-                connec.Close();
-            }
-            catch (InvalidOperationException erreur)
-            {
-                MessageBox.Show("Erreur de chaine de connexion ! formLoad");
-            }
-            catch (OleDbException erreur)
-            {
-                MessageBox.Show("Erreur de requete SQL ! formLoad");
-            }
-            finally
-            {
-            }
+            MiseAJour();
         }
 
         private void btnAjoutTransa_Click(object sender, EventArgs e)
@@ -67,16 +34,17 @@ namespace Pique_Sous
             try
             {
                 connec.Open();
-                string date = dtpTransa.Value.ToString();
+                DateTime date = dtpTransa.Value;
                 string desc = txtDescriptionTransa.Text;
                 string montant = txtMontantTransa.Text;
                 string recette = chkRecette.Checked.ToString();
                 string percu = chkPercu.Checked.ToString();
                 int type = (int)cboTypeTransa.SelectedValue;
 
-                string requete = "insert into Transaction values (" + (lastCodeTransac + 1) + "," + date + "," + desc + "," + montant + "," + recette + "," + percu + "," + type + ")";
+                lastCodeTransac++;
+                string requete = "INSERT INTO [Transaction] VALUES (" + lastCodeTransac + ",'" + date.ToString() + "', '" + desc + "'," + montant + "," + recette + "," + percu + ",'" + type + "')";
                 OleDbCommand cd1 = new OleDbCommand(requete, connec);
-                int c = (int)cd1.ExecuteScalar();
+                cd1.ExecuteNonQuery();
                 MessageBox.Show(requete);
 
                 foreach (CheckBox chk in grpParticipantsTransa.Controls)
@@ -90,13 +58,14 @@ namespace Pique_Sous
                         int codePerso = (int)cd2.ExecuteScalar();
                         MessageBox.Show(requete);
                         //ajout dans table Bénéficiaires
-                        requete = "insert into Beneficiaires values (" + (lastCodeTransac + 1) + "," + codePerso + ")";
+                        requete = "insert into Beneficiaires values (" + lastCodeTransac + "," + codePerso + ")";
                         OleDbCommand cd3 = new OleDbCommand(requete, connec);
                         cd3.ExecuteNonQuery();
                         MessageBox.Show(requete);
                     }
                 }
                 connec.Close();
+                MiseAJour();
 
             }
             catch (InvalidOperationException erreur)
@@ -182,8 +151,7 @@ namespace Pique_Sous
 
         private void txtMontantTransa_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-            if (!txtMontantTransa.Text.Contains(",") && txtMontantTransa.Text != "")
+            if (!txtMontantTransa.Text.Contains(",") && txtMontantTransa.Text != "" && e.KeyChar == ',')
             {
                 //Gestion de la virgule
                 e.Handled = false;
@@ -230,7 +198,7 @@ namespace Pique_Sous
                     lblCode.Text = dr.GetInt32(0).ToString();
                     dtp1a1.Value = dr.GetDateTime(1);
                     lblDescription.Text = dr.GetString(2);
-                    lblValeur.Text = dr.GetValue(3).ToString();
+                    lblValeur.Text = dr.GetValue(3).ToString() + " €";
                     checkRecette.Checked = dr.GetBoolean(4);
                     chkPercu.Checked = dr.GetBoolean(5);
                     jointure = dr.GetInt32(6);
@@ -261,7 +229,7 @@ namespace Pique_Sous
             }
         }
 
-        private void remplirDGV() //Remplit la dataGridView dans Suppression d'une transaction
+        private void remplirDGV() //Remplit la dataGridView dans Suppression et Modification
         {
             try
             {
@@ -274,6 +242,7 @@ namespace Pique_Sous
 
                 da.Fill(dt);
                 dgvTransactions.DataSource = dt;
+                dgvModifTransa.DataSource = dt;
                 
                 connec.Close();
 
@@ -286,14 +255,41 @@ namespace Pique_Sous
             {
                 MessageBox.Show("Erreur de requete SQL ! DGV");
             }
-            finally
-            {
-            }
         }
 
         private void btnSupprTransac_Click(object sender, EventArgs e)
         {
-
+            DialogResult dR = MessageBox.Show("Voulez vous vraiment supprimer cette transaction ?", "Suppression", MessageBoxButtons.YesNo);
+            if (dR == DialogResult.Yes)
+            {
+                MessageBox.Show("YES");
+                int codeTransa = int.Parse(txtCodeToSuppr.Text);
+                if (codeTransa <= lastCodeTransac)
+                {
+                    try
+                    {
+                        connec.Open();
+                        string requete = "DELETE FROM [Transaction] WHERE [Transaction].CodeTransaction = " + codeTransa;
+                        OleDbCommand cd1 = new OleDbCommand(requete, connec);
+                        cd1.ExecuteNonQuery();
+                        connec.Close();
+                        MiseAJour();
+                        MessageBox.Show("Transaction supprimée");
+                    }
+                    catch (InvalidOperationException erreur)
+                    {
+                        MessageBox.Show("Erreur de chaine de connexion ! DGV");
+                    }
+                    catch (OleDbException erreur)
+                    {
+                        MessageBox.Show("Erreur de requete SQL ! DGV");
+                    }
+                }
+            }
+            else if (dR == DialogResult.No)
+            {
+                MessageBox.Show("Ben soit sûr alors !");
+            }
         }
 
         private void txtCodeToSuppr_KeyPress(object sender, KeyPressEventArgs e)
@@ -309,6 +305,43 @@ namespace Pique_Sous
             else
             {
                 e.Handled = true;
+            }
+        }
+
+        private void MiseAJour()
+        {
+            remplirParticipants();
+            remplirDGV();
+            try
+            {
+
+                connec.Open();
+                DataTable schema = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
+
+
+                string requete = @"select * from TypeTransaction";
+                OleDbCommand cd1 = new OleDbCommand(requete, connec);
+                OleDbDataAdapter da = new OleDbDataAdapter();
+                da.SelectCommand = cd1;
+
+                da.Fill(ds, "TypeTransaction");
+
+                remplitCbo(cboTypeTransa, "TypeTransaction", "libType", "codeType");
+
+                OleDbCommand cd2 = new OleDbCommand("SELECT MAX([Transaction].CodeTransaction) FROM [Transaction]", connec);
+                lastCodeTransac = (int)cd2.ExecuteScalar();
+                connec.Close();
+            }
+            catch (InvalidOperationException erreur)
+            {
+                MessageBox.Show("Erreur de chaine de connexion ! formLoad");
+            }
+            catch (OleDbException erreur)
+            {
+                MessageBox.Show("Erreur de requete SQL ! formLoad");
+            }
+            finally
+            {
             }
         }
     }
