@@ -182,8 +182,7 @@ namespace Pique_Sous
 
         private void txtMontantTransa_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-            if (!txtMontantTransa.Text.Contains(",") && txtMontantTransa.Text != "")
+            if (!txtMontantTransa.Text.Contains(",") && txtMontantTransa.Text != "" && e.KeyChar == ',')
             {
                 //Gestion de la virgule
                 e.Handled = false;
@@ -230,7 +229,7 @@ namespace Pique_Sous
                     lblCode.Text = dr.GetInt32(0).ToString();
                     dtp1a1.Value = dr.GetDateTime(1);
                     lblDescription.Text = dr.GetString(2);
-                    lblValeur.Text = dr.GetValue(3).ToString();
+                    lblValeur.Text = dr.GetValue(3).ToString() + " €";
                     checkRecette.Checked = dr.GetBoolean(4);
                     chkPercu.Checked = dr.GetBoolean(5);
                     jointure = dr.GetInt32(6);
