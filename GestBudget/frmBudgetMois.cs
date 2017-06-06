@@ -229,7 +229,7 @@ namespace Pique_Sous
             }
         }
 
-        private void remplirDGV() //Remplit la dataGridView dans Suppression d'une transaction
+        private void remplirDGV() //Remplit la dataGridView dans Suppression et Modification
         {
             try
             {
@@ -242,6 +242,7 @@ namespace Pique_Sous
 
                 da.Fill(dt);
                 dgvTransactions.DataSource = dt;
+                dgvModifTransa.DataSource = dt;
                 
                 connec.Close();
 

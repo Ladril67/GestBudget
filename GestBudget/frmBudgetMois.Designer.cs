@@ -65,11 +65,14 @@
             this.dgvTransactions = new System.Windows.Forms.DataGridView();
             this.tpModifTransaction = new System.Windows.Forms.TabPage();
             this.tpRecap = new System.Windows.Forms.TabPage();
+            this.dgvModifTransa = new System.Windows.Forms.DataGridView();
             this.tcBudgetMois.SuspendLayout();
             this.tpAffichage1a1.SuspendLayout();
             this.tpNewTransaction.SuspendLayout();
             this.tpDeleteTransaction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
+            this.tpModifTransaction.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvModifTransa)).BeginInit();
             this.SuspendLayout();
             // 
             // tcBudgetMois
@@ -416,10 +419,10 @@
             // 
             // btnSupprTransac
             // 
-            this.btnSupprTransac.Location = new System.Drawing.Point(372, 345);
+            this.btnSupprTransac.Location = new System.Drawing.Point(372, 341);
             this.btnSupprTransac.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSupprTransac.Name = "btnSupprTransac";
-            this.btnSupprTransac.Size = new System.Drawing.Size(96, 23);
+            this.btnSupprTransac.Size = new System.Drawing.Size(96, 30);
             this.btnSupprTransac.TabIndex = 3;
             this.btnSupprTransac.Text = "Supprimer";
             this.btnSupprTransac.UseVisualStyleBackColor = true;
@@ -455,6 +458,7 @@
             // 
             // tpModifTransaction
             // 
+            this.tpModifTransaction.Controls.Add(this.dgvModifTransa);
             this.tpModifTransaction.Location = new System.Drawing.Point(4, 28);
             this.tpModifTransaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpModifTransaction.Name = "tpModifTransaction";
@@ -472,6 +476,16 @@
             this.tpRecap.TabIndex = 3;
             this.tpRecap.Text = "Récapitulatif";
             this.tpRecap.UseVisualStyleBackColor = true;
+            // 
+            // dgvModifTransa
+            // 
+            this.dgvModifTransa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvModifTransa.Location = new System.Drawing.Point(9, 4);
+            this.dgvModifTransa.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvModifTransa.Name = "dgvModifTransa";
+            this.dgvModifTransa.RowTemplate.Height = 24;
+            this.dgvModifTransa.Size = new System.Drawing.Size(841, 283);
+            this.dgvModifTransa.TabIndex = 1;
             // 
             // frmBudgetMois
             // 
@@ -492,6 +506,8 @@
             this.tpDeleteTransaction.ResumeLayout(false);
             this.tpDeleteTransaction.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
+            this.tpModifTransaction.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvModifTransa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -536,7 +552,7 @@
         private System.Windows.Forms.Button btnSupprTransac;
 
         private System.Windows.Forms.DateTimePicker dtp1a1;
-
+        private System.Windows.Forms.DataGridView dgvModifTransa;
     }
 }
 
