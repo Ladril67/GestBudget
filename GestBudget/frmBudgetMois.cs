@@ -327,6 +327,7 @@ namespace Pique_Sous
                 da.Fill(ds, "TypeTransaction");
 
                 remplitCbo(cboTypeTransa, "TypeTransaction", "libType", "codeType");
+                remplitCbo(cboModType, "TypeTransaction", "libType", "codeType");
 
                 OleDbCommand cd2 = new OleDbCommand("SELECT MAX([Transaction].CodeTransaction) FROM [Transaction]", connec);
                 lastCodeTransac = (int)cd2.ExecuteScalar();
@@ -340,9 +341,83 @@ namespace Pique_Sous
             {
                 MessageBox.Show("Erreur de requete SQL ! formLoad");
             }
-            finally
+        }
+
+        private void txtCodeToMod_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCodeToMod.Text != "" && int.Parse(txtCodeToMod.Text) <= lastCodeTransac)
             {
+                try
+                {
+                    int codeType = 0;
+
+                    connec.Open();
+                    string requete = "SELECT [Transaction].* FROM [Transaction] WHERE [CodeTransaction] = " + txtCodeToMod.Text;
+                    OleDbCommand cd1 = new OleDbCommand(requete, connec);
+                    OleDbDataReader dr = cd1.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        txtModCode.Text = dr.GetInt32(0).ToString();
+                        dtpModDate.Value = dr.GetDateTime(1);
+                        txtModDesc.Text = dr.GetString(2);
+                        txtModMontant.Text = dr.GetValue(3).ToString();
+                        chkModRecette.Checked = dr.GetBoolean(4);
+                        chkModPercu.Checked = dr.GetBoolean(5);
+                        codeType = dr.GetInt32(6);
+                    }
+                    connec.Close();
+
+                    cboModType.SelectedIndex = codeType - 1;
+                }
+                catch (InvalidOperationException erreur)
+                {
+                    MessageBox.Show("Erreur de chaine de connexion ! formLoad");
+                }
+                catch (OleDbException erreur)
+                {
+                    MessageBox.Show("Erreur de requete SQL ! formLoad");
+                }
             }
+            else
+            {
+                txtModCode.Text = "";
+                dtpModDate.Value = DateTime.Now;
+                txtModDesc.Text = "";
+                txtModMontant.Text = "";
+                chkModRecette.Checked = false;
+                chkModPercu.Checked = false;
+            }
+        }
+
+        private void btnValidMod_Click(object sender, EventArgs e)
+        {
+            if (txtCodeToMod.Text != "")
+            {
+                string requete = "UPDATE [Transaction] SET [CodeTransaction] = "+txtModCode.Text+", [dateTransaction] = '"+dtpModDate.Value+"', [description] = '"+txtModDesc.Text+"', [montant] = "+txtModMontant.Text+", [recetteON] = "+chkModRecette.Checked.ToString()+", [percuON] = "+chkModPercu.Checked.ToString()+", [type] = "+cboModType.SelectedValue+" WHERE [CodeTransaction] = " + txtCodeToMod.Text;
+                try
+                {
+                    connec.Open();
+                    OleDbCommand cd1 = new OleDbCommand(requete, connec);
+                    cd1.ExecuteNonQuery();
+                    connec.Close();
+                    MessageBox.Show("Transaction modifiée");
+                    MiseAJour();
+                }
+                catch (InvalidOperationException erreur)
+                {
+                    MessageBox.Show("Erreur de chaine de connexion ! formLoad");
+                }
+                catch (OleDbException erreur)
+                {
+                    MessageBox.Show("Erreur de requete SQL ! formLoad");
+                }
+            }
+        }
+
+        private void btnAnnulerMod_Click(object sender, EventArgs e)
+        {
+            txtCodeToMod_TextChanged(sender, e);
         }
     }
 }
