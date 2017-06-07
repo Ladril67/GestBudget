@@ -280,7 +280,7 @@ namespace Pique_Sous
                     OleDbDataReader dr4 = cd4.ExecuteReader();
                     while (dr4.Read())
                     {
-                        lvPersonne.Items.Add(dr4.GetString(0) + " " + dr4.GetString(1));
+                        lvPersonne.Items.Add(dr4.GetString(0) + dr4.GetString(1));
                     }
                 }
 
