@@ -471,19 +471,13 @@ namespace Pique_Sous
             {
                 try
                 {
-                    OleDbTransaction transac;
                     string requete = "UPDATE [Beneficiaires] SET [codeTransaction] = " + txtModCode.Text + " WHERE [codeTransaction] = " + txtCodeToMod.Text;
                     connec.Open();
-                    transac = connec.BeginTransaction();
                     OleDbCommand cd1 = new OleDbCommand(requete, connec);
-                    cd1.Transaction = transac;
                     cd1.ExecuteNonQuery();
                     requete = "UPDATE [Transaction] SET [codeTransaction] = " + txtModCode.Text + ", [dateTransaction] = '" + dtpModDate.Value + "', [description] = '" + txtModDesc.Text + "', [montant] = " + txtModMontant.Text + ", [recetteON] = " + chkModRecette.Checked.ToString() + ", [percuON] = " + chkModPercu.Checked.ToString() + ", [type] = " + cboModType.SelectedValue + " WHERE [codeTransaction] = " + txtCodeToMod.Text;
-                    cd1.CommandText = requete;
-                    /*OleDbCommand cd2 = new OleDbCommand(requete, connec);
-                    cd2.ExecuteNonQuery();*/
-                    cd1.ExecuteNonQuery();
-                    transac.Commit();
+                    OleDbCommand cd2 = new OleDbCommand(requete, connec);
+                    cd2.ExecuteNonQuery();
                     connec.Close();
                     MessageBox.Show("Transaction modifiée");
                     MiseAJour();
