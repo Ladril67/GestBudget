@@ -18,6 +18,9 @@ namespace Pique_Sous
         DataSet dsTransac = new DataSet();
         int lastCodeTransac = 0;
 
+        //Pour Onglet 1a1
+        int ligneTable = 0;
+
         public frmBudgetMois()
         {
             InitializeComponent();
@@ -172,36 +175,91 @@ namespace Pique_Sous
                 e.Handled = true;
             }
         }
+
+
+        //Onglet  1a1
+        private void btnDernier_Click(object sender, EventArgs e)
+        {
+            init1a1(2);
+        }
+
+        private void btnPremier_Click(object sender, EventArgs e)
+        {
+            init1a1(-2);
+        }
+
         private void btnSuivant_Click(object sender, EventArgs e)
         {
-            init1a1();
+            init1a1(1);
         }
 
         private void btnAvant_Click(object sender, EventArgs e)
         {
-            init1a1();
+            init1a1(-1);
         }
 
-        private void init1a1()
+        private void init1a1(int ligne)
         {
             try
             {
-
+                int max = 0;
                 int jointure = 0;
-
-                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction]", connec);
+                OleDbCommand cd0 = new OleDbCommand("SELECT [codeTransaction] FROM[Transaction]", connec);
                 connec.Open();
-                OleDbDataReader dr = cd1.ExecuteReader();
-
-                while (dr.Read())
+                OleDbDataReader dr0 = cd0.ExecuteReader();
+                while (dr0.Read())
                 {
-                    lblCode.Text = dr.GetInt32(0).ToString();
-                    dtp1a1.Value = dr.GetDateTime(1);
-                    lblDescription.Text = dr.GetString(2);
-                    lblValeur.Text = dr.GetValue(3).ToString() + " €";
-                    checkRecette.Checked = dr.GetBoolean(4);
-                    chkPercu.Checked = dr.GetBoolean(5);
-                    jointure = dr.GetInt32(6);
+                    max = dr0.GetInt32(0);
+                }
+
+                if(ligne == -2)
+                {
+                    ligne = 1;
+                    ligneTable = 1;
+                }
+                else if(ligne == -1)
+                {
+                    if(ligneTable == 1)
+                    {
+                        ligne = 1;
+                    }
+                    else
+                    {
+                        ligneTable--;
+                        ligne = ligneTable;
+                    }
+                }
+                else if(ligne == 1)
+                {
+                    if(ligneTable == max)
+                    {
+                        ligne = max;
+                    }
+                    else
+                    {
+                        ligneTable++;
+                        ligne = ligneTable;
+                    }
+                }
+                else
+                {
+                    ligne = max;
+                    ligneTable = max;
+                }
+
+                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction] where [codeTransaction] = " + ligne, connec);
+                OleDbDataReader dr1 = cd1.ExecuteReader();
+                
+
+                while (dr1.Read())
+                {
+                    lblCode.Text = dr1.GetInt32(0).ToString();
+                    dtp1a1.Value = dr1.GetDateTime(1);
+                    lblDescription.Text = dr1.GetString(2);
+                    lblValeur.Text = dr1.GetValue(3).ToString() + " €";
+                    checkRecette.Checked = dr1.GetBoolean(4);
+                    chkPercu.Checked = dr1.GetBoolean(5);
+                    jointure = dr1.GetInt32(6);
                 }
                 connec.Close();
 
@@ -228,6 +286,9 @@ namespace Pique_Sous
             {
             }
         }
+
+
+
 
         private void remplirDGV() //Remplit la dataGridView dans Suppression et Modification
         {
@@ -310,6 +371,7 @@ namespace Pique_Sous
 
         private void MiseAJour()
         {
+            init1a1(1);
             remplirParticipants();
             remplirDGV();
             try
