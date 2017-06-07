@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBudgetMois));
             this.tcBudgetMois = new System.Windows.Forms.TabControl();
             this.tpAffichage1a1 = new System.Windows.Forms.TabPage();
+            this.lvPersonne = new System.Windows.Forms.ListView();
             this.dtp1a1 = new System.Windows.Forms.DateTimePicker();
             this.lblValeur = new System.Windows.Forms.Label();
             this.checkRecette = new System.Windows.Forms.CheckBox();
@@ -84,7 +85,6 @@
             this.lblCodeToMod = new System.Windows.Forms.Label();
             this.dgvModifTransa = new System.Windows.Forms.DataGridView();
             this.tpRecap = new System.Windows.Forms.TabPage();
-            this.lvPersonne = new System.Windows.Forms.ListView();
             this.tcBudgetMois.SuspendLayout();
             this.tpAffichage1a1.SuspendLayout();
             this.tpNewTransaction.SuspendLayout();
@@ -133,6 +133,16 @@
             this.tpAffichage1a1.TabIndex = 1;
             this.tpAffichage1a1.Text = "Affichage 1 à 1";
             this.tpAffichage1a1.UseVisualStyleBackColor = true;
+            // 
+            // lvPersonne
+            // 
+            this.lvPersonne.Alignment = System.Windows.Forms.ListViewAlignment.Left;
+            this.lvPersonne.AutoArrange = false;
+            this.lvPersonne.Location = new System.Drawing.Point(31, 127);
+            this.lvPersonne.Name = "lvPersonne";
+            this.lvPersonne.Size = new System.Drawing.Size(556, 254);
+            this.lvPersonne.TabIndex = 100;
+            this.lvPersonne.UseCompatibleStateImageBehavior = false;
             // 
             // dtp1a1
             // 
@@ -717,14 +727,6 @@
             this.tpRecap.TabIndex = 3;
             this.tpRecap.Text = "Récapitulatif";
             this.tpRecap.UseVisualStyleBackColor = true;
-            // 
-            // lvPersonne
-            // 
-            this.lvPersonne.Location = new System.Drawing.Point(31, 127);
-            this.lvPersonne.Name = "lvPersonne";
-            this.lvPersonne.Size = new System.Drawing.Size(556, 254);
-            this.lvPersonne.TabIndex = 21;
-            this.lvPersonne.UseCompatibleStateImageBehavior = false;
             // 
             // frmBudgetMois
             // 
