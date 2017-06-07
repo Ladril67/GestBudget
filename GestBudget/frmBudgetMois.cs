@@ -522,13 +522,47 @@ namespace Pique_Sous
 
         private void btnCreeReca_Click(object sender, EventArgs e)
         {
-            pdfDocument myDoc = new pdfDocument("TUTORIAL", "ME");
-            pdfPage myPage = myDoc.addPage();
-            myPage.addText("Hello World!", 200, 450, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
-            myDoc.createPDF(@"C:\Users\Miniyeti67\Desktop\Mini Projet\test.pdf");
-            myPage = null;
-            myDoc = null;
+            try
+            {
+                string mois = dtpReca.Text.ToString();
+                string text = "";
+                int montant = 0;
+                int recette = 0;
+                int percu = 0;
+                pdfDocument myDoc = new pdfDocument("TUTORIAL", "ME");
+                pdfPage myPage = myDoc.addPage();
+
+                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM [Transaction] WHERE [dateTransaction] =" + dtpReca, connec);
+                OleDbDataReader dr1 = cd1.ExecuteReader();
+                List<Boolean> nbTransaction = new List<Boolean>();
+                while (dr1.Read())
+                {
+                    nbTransaction.Add(dr1.GetBoolean(4));
+                    if (dr1.GetBoolean(4) == true)
+                    {
+                        recette++;
+                    }
+                    if (dr1.GetBoolean(5) == true)
+                    {
+                        percu++;
+                    }
+                    montant = montant + dr1.GetInt32(3);
+                }
+
+                text = "Recette : " + recette.ToString() + " Depenses : " + montant.ToString() + "Reste a persevoir : " + percu.ToString() + "Somme total dépensée : -" + montant.ToString() + "nombres de transactions : " + nbTransaction.Count.ToString(); 
+                myPage.addText(text, 200, 450, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myDoc.createPDF(@"C:\Users\Miniyeti67\Desktop\Mini Projet\" + mois + ".pdf");
+                myPage = null;
+                myDoc = null;
+            }
+            catch (InvalidOperationException erreur)
+            {
+                MessageBox.Show("Erreur de chaine de connexion ! validMod");
+            }
+            catch (OleDbException erreur)
+            {
+                MessageBox.Show("Erreur de requete SQL ! ValidMod");
+            }
         }
     }
 }
-
