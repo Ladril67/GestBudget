@@ -42,6 +42,8 @@
             this.lblPeriodicite = new System.Windows.Forms.Label();
             this.lblPoste = new System.Windows.Forms.Label();
             this.tpPostePonctuel = new System.Windows.Forms.TabPage();
+            this.lblEcheance = new System.Windows.Forms.Label();
+            this.flpEcheance = new System.Windows.Forms.FlowLayoutPanel();
             this.txtPrelevement = new System.Windows.Forms.TextBox();
             this.lblPrelevements = new System.Windows.Forms.Label();
             this.txtCommentaire = new System.Windows.Forms.TextBox();
@@ -58,8 +60,6 @@
             this.lblMontantRevenu = new System.Windows.Forms.Label();
             this.lblBenef = new System.Windows.Forms.Label();
             this.lblQuelPoste = new System.Windows.Forms.Label();
-            this.flpEcheance = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblEcheance = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tpPosteFixe.SuspendLayout();
             this.tpPostePonctuel.SuspendLayout();
@@ -219,6 +219,22 @@
             this.tpPostePonctuel.Text = "Poste Ponctuel ";
             this.tpPostePonctuel.UseVisualStyleBackColor = true;
             // 
+            // lblEcheance
+            // 
+            this.lblEcheance.AutoSize = true;
+            this.lblEcheance.Location = new System.Drawing.Point(44, 194);
+            this.lblEcheance.Name = "lblEcheance";
+            this.lblEcheance.Size = new System.Drawing.Size(141, 17);
+            this.lblEcheance.TabIndex = 0;
+            this.lblEcheance.Text = "Echéances prévues :";
+            // 
+            // flpEcheance
+            // 
+            this.flpEcheance.Location = new System.Drawing.Point(32, 214);
+            this.flpEcheance.Name = "flpEcheance";
+            this.flpEcheance.Size = new System.Drawing.Size(614, 276);
+            this.flpEcheance.TabIndex = 6;
+            // 
             // txtPrelevement
             // 
             this.txtPrelevement.Location = new System.Drawing.Point(211, 139);
@@ -374,22 +390,6 @@
             this.lblQuelPoste.TabIndex = 0;
             this.lblQuelPoste.Text = "Quel poste ?";
             // 
-            // flpEcheance
-            // 
-            this.flpEcheance.Location = new System.Drawing.Point(32, 214);
-            this.flpEcheance.Name = "flpEcheance";
-            this.flpEcheance.Size = new System.Drawing.Size(614, 276);
-            this.flpEcheance.TabIndex = 6;
-            // 
-            // lblEcheance
-            // 
-            this.lblEcheance.AutoSize = true;
-            this.lblEcheance.Location = new System.Drawing.Point(44, 194);
-            this.lblEcheance.Name = "lblEcheance";
-            this.lblEcheance.Size = new System.Drawing.Size(141, 17);
-            this.lblEcheance.TabIndex = 0;
-            this.lblEcheance.Text = "Echéances prévues :";
-            // 
             // frmPrevisionnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -398,7 +398,7 @@
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmPrevisionnel";
-            this.Text = "frmPrevisionnel";
+            this.Text = "Budget prévisionnel";
             this.Load += new System.EventHandler(this.frmPrevisionnel_Load);
             this.tabControl1.ResumeLayout(false);
             this.tpPosteFixe.ResumeLayout(false);
