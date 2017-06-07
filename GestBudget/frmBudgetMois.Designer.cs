@@ -32,7 +32,6 @@
             this.tcBudgetMois = new System.Windows.Forms.TabControl();
             this.tpAffichage1a1 = new System.Windows.Forms.TabPage();
             this.dtp1a1 = new System.Windows.Forms.DateTimePicker();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.lblValeur = new System.Windows.Forms.Label();
             this.checkRecette = new System.Windows.Forms.CheckBox();
             this.checkPercu = new System.Windows.Forms.CheckBox();
@@ -85,6 +84,7 @@
             this.lblCodeToMod = new System.Windows.Forms.Label();
             this.dgvModifTransa = new System.Windows.Forms.DataGridView();
             this.tpRecap = new System.Windows.Forms.TabPage();
+            this.lvPersonne = new System.Windows.Forms.ListView();
             this.tcBudgetMois.SuspendLayout();
             this.tpAffichage1a1.SuspendLayout();
             this.tpNewTransaction.SuspendLayout();
@@ -105,7 +105,7 @@
             this.tcBudgetMois.Controls.Add(this.tpRecap);
             this.tcBudgetMois.Cursor = System.Windows.Forms.Cursors.Default;
             this.tcBudgetMois.Location = new System.Drawing.Point(0, 0);
-            this.tcBudgetMois.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tcBudgetMois.Margin = new System.Windows.Forms.Padding(2);
             this.tcBudgetMois.Name = "tcBudgetMois";
             this.tcBudgetMois.SelectedIndex = 0;
             this.tcBudgetMois.Size = new System.Drawing.Size(650, 453);
@@ -113,8 +113,8 @@
             // 
             // tpAffichage1a1
             // 
+            this.tpAffichage1a1.Controls.Add(this.lvPersonne);
             this.tpAffichage1a1.Controls.Add(this.dtp1a1);
-            this.tpAffichage1a1.Controls.Add(this.listBox1);
             this.tpAffichage1a1.Controls.Add(this.lblValeur);
             this.tpAffichage1a1.Controls.Add(this.checkRecette);
             this.tpAffichage1a1.Controls.Add(this.checkPercu);
@@ -126,9 +126,9 @@
             this.tpAffichage1a1.Controls.Add(this.btnAvant);
             this.tpAffichage1a1.Controls.Add(this.btnPremier);
             this.tpAffichage1a1.Location = new System.Drawing.Point(4, 25);
-            this.tpAffichage1a1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpAffichage1a1.Margin = new System.Windows.Forms.Padding(2);
             this.tpAffichage1a1.Name = "tpAffichage1a1";
-            this.tpAffichage1a1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpAffichage1a1.Padding = new System.Windows.Forms.Padding(2);
             this.tpAffichage1a1.Size = new System.Drawing.Size(642, 424);
             this.tpAffichage1a1.TabIndex = 1;
             this.tpAffichage1a1.Text = "Affichage 1 à 1";
@@ -141,15 +141,6 @@
             this.dtp1a1.Name = "dtp1a1";
             this.dtp1a1.Size = new System.Drawing.Size(126, 20);
             this.dtp1a1.TabIndex = 20;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(31, 181);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(556, 199);
-            this.listBox1.TabIndex = 19;
             // 
             // lblValeur
             // 
@@ -165,7 +156,7 @@
             this.checkRecette.AutoSize = true;
             this.checkRecette.Enabled = false;
             this.checkRecette.Location = new System.Drawing.Point(235, 72);
-            this.checkRecette.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkRecette.Margin = new System.Windows.Forms.Padding(2);
             this.checkRecette.Name = "checkRecette";
             this.checkRecette.Size = new System.Drawing.Size(64, 17);
             this.checkRecette.TabIndex = 15;
@@ -177,7 +168,7 @@
             this.checkPercu.AutoSize = true;
             this.checkPercu.Enabled = false;
             this.checkPercu.Location = new System.Drawing.Point(235, 105);
-            this.checkPercu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkPercu.Margin = new System.Windows.Forms.Padding(2);
             this.checkPercu.Name = "checkPercu";
             this.checkPercu.Size = new System.Drawing.Size(54, 17);
             this.checkPercu.TabIndex = 14;
@@ -214,7 +205,7 @@
             // btnDernier
             // 
             this.btnDernier.Location = new System.Drawing.Point(454, 388);
-            this.btnDernier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDernier.Margin = new System.Windows.Forms.Padding(4);
             this.btnDernier.Name = "btnDernier";
             this.btnDernier.Size = new System.Drawing.Size(133, 26);
             this.btnDernier.TabIndex = 3;
@@ -225,7 +216,7 @@
             // btnSuivant
             // 
             this.btnSuivant.Location = new System.Drawing.Point(313, 388);
-            this.btnSuivant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSuivant.Margin = new System.Windows.Forms.Padding(4);
             this.btnSuivant.Name = "btnSuivant";
             this.btnSuivant.Size = new System.Drawing.Size(133, 26);
             this.btnSuivant.TabIndex = 2;
@@ -236,7 +227,7 @@
             // btnAvant
             // 
             this.btnAvant.Location = new System.Drawing.Point(172, 388);
-            this.btnAvant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAvant.Margin = new System.Windows.Forms.Padding(4);
             this.btnAvant.Name = "btnAvant";
             this.btnAvant.Size = new System.Drawing.Size(133, 26);
             this.btnAvant.TabIndex = 1;
@@ -247,7 +238,7 @@
             // btnPremier
             // 
             this.btnPremier.Location = new System.Drawing.Point(31, 388);
-            this.btnPremier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPremier.Margin = new System.Windows.Forms.Padding(4);
             this.btnPremier.Name = "btnPremier";
             this.btnPremier.Size = new System.Drawing.Size(133, 26);
             this.btnPremier.TabIndex = 0;
@@ -272,9 +263,9 @@
             this.tpNewTransaction.Controls.Add(this.dtpTransa);
             this.tpNewTransaction.Controls.Add(this.lblDateTransa);
             this.tpNewTransaction.Location = new System.Drawing.Point(4, 25);
-            this.tpNewTransaction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpNewTransaction.Margin = new System.Windows.Forms.Padding(2);
             this.tpNewTransaction.Name = "tpNewTransaction";
-            this.tpNewTransaction.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpNewTransaction.Padding = new System.Windows.Forms.Padding(2);
             this.tpNewTransaction.Size = new System.Drawing.Size(642, 424);
             this.tpNewTransaction.TabIndex = 0;
             this.tpNewTransaction.Text = "Ajout d\'une transaction";
@@ -284,7 +275,7 @@
             // 
             this.chkPercu.AutoSize = true;
             this.chkPercu.Location = new System.Drawing.Point(218, 136);
-            this.chkPercu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkPercu.Margin = new System.Windows.Forms.Padding(2);
             this.chkPercu.Name = "chkPercu";
             this.chkPercu.Size = new System.Drawing.Size(54, 17);
             this.chkPercu.TabIndex = 13;
@@ -295,7 +286,7 @@
             // 
             this.chkRecette.AutoSize = true;
             this.chkRecette.Location = new System.Drawing.Point(84, 136);
-            this.chkRecette.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkRecette.Margin = new System.Windows.Forms.Padding(2);
             this.chkRecette.Name = "chkRecette";
             this.chkRecette.Size = new System.Drawing.Size(64, 17);
             this.chkRecette.TabIndex = 12;
@@ -305,7 +296,7 @@
             // btnAjouterPersonneTransa
             // 
             this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(551, 13);
-            this.btnAjouterPersonneTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAjouterPersonneTransa.Margin = new System.Windows.Forms.Padding(4);
             this.btnAjouterPersonneTransa.Name = "btnAjouterPersonneTransa";
             this.btnAjouterPersonneTransa.Size = new System.Drawing.Size(84, 67);
             this.btnAjouterPersonneTransa.TabIndex = 0;
@@ -315,9 +306,9 @@
             // grpParticipantsTransa
             // 
             this.grpParticipantsTransa.Location = new System.Drawing.Point(374, 6);
-            this.grpParticipantsTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpParticipantsTransa.Margin = new System.Windows.Forms.Padding(5);
             this.grpParticipantsTransa.Name = "grpParticipantsTransa";
-            this.grpParticipantsTransa.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpParticipantsTransa.Padding = new System.Windows.Forms.Padding(5);
             this.grpParticipantsTransa.Size = new System.Drawing.Size(168, 376);
             this.grpParticipantsTransa.TabIndex = 11;
             this.grpParticipantsTransa.TabStop = false;
@@ -326,7 +317,7 @@
             // btnAjoutTransa
             // 
             this.btnAjoutTransa.Location = new System.Drawing.Point(144, 306);
-            this.btnAjoutTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAjoutTransa.Margin = new System.Windows.Forms.Padding(4);
             this.btnAjoutTransa.Name = "btnAjoutTransa";
             this.btnAjoutTransa.Size = new System.Drawing.Size(160, 74);
             this.btnAjoutTransa.TabIndex = 10;
@@ -337,7 +328,7 @@
             // btnAjoutType
             // 
             this.btnAjoutType.Location = new System.Drawing.Point(328, 187);
-            this.btnAjoutType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAjoutType.Margin = new System.Windows.Forms.Padding(4);
             this.btnAjoutType.Name = "btnAjoutType";
             this.btnAjoutType.Size = new System.Drawing.Size(24, 19);
             this.btnAjoutType.TabIndex = 9;
@@ -348,7 +339,7 @@
             // 
             this.cboTypeTransa.FormattingEnabled = true;
             this.cboTypeTransa.Location = new System.Drawing.Point(199, 187);
-            this.cboTypeTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboTypeTransa.Margin = new System.Windows.Forms.Padding(4);
             this.cboTypeTransa.Name = "cboTypeTransa";
             this.cboTypeTransa.Size = new System.Drawing.Size(92, 21);
             this.cboTypeTransa.TabIndex = 8;
@@ -365,7 +356,7 @@
             // txtMontantTransa
             // 
             this.txtMontantTransa.Location = new System.Drawing.Point(199, 101);
-            this.txtMontantTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMontantTransa.Margin = new System.Windows.Forms.Padding(4);
             this.txtMontantTransa.Name = "txtMontantTransa";
             this.txtMontantTransa.Size = new System.Drawing.Size(167, 20);
             this.txtMontantTransa.TabIndex = 4;
@@ -383,7 +374,7 @@
             // txtDescriptionTransa
             // 
             this.txtDescriptionTransa.Location = new System.Drawing.Point(199, 67);
-            this.txtDescriptionTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescriptionTransa.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescriptionTransa.Name = "txtDescriptionTransa";
             this.txtDescriptionTransa.Size = new System.Drawing.Size(167, 20);
             this.txtDescriptionTransa.TabIndex = 3;
@@ -400,7 +391,7 @@
             // dtpTransa
             // 
             this.dtpTransa.Location = new System.Drawing.Point(199, 34);
-            this.dtpTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpTransa.Margin = new System.Windows.Forms.Padding(4);
             this.dtpTransa.Name = "dtpTransa";
             this.dtpTransa.Size = new System.Drawing.Size(167, 20);
             this.dtpTransa.TabIndex = 1;
@@ -423,7 +414,7 @@
             this.tpDeleteTransaction.Location = new System.Drawing.Point(4, 25);
             this.tpDeleteTransaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpDeleteTransaction.Name = "tpDeleteTransaction";
-            this.tpDeleteTransaction.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpDeleteTransaction.Padding = new System.Windows.Forms.Padding(2);
             this.tpDeleteTransaction.Size = new System.Drawing.Size(642, 424);
             this.tpDeleteTransaction.TabIndex = 1;
             this.tpDeleteTransaction.Text = "Suppression d\'une transaction";
@@ -432,7 +423,7 @@
             // btnSupprTransac
             // 
             this.btnSupprTransac.Location = new System.Drawing.Point(279, 277);
-            this.btnSupprTransac.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSupprTransac.Margin = new System.Windows.Forms.Padding(2);
             this.btnSupprTransac.Name = "btnSupprTransac";
             this.btnSupprTransac.Size = new System.Drawing.Size(72, 24);
             this.btnSupprTransac.TabIndex = 3;
@@ -443,7 +434,7 @@
             // txtCodeToSuppr
             // 
             this.txtCodeToSuppr.Location = new System.Drawing.Point(188, 280);
-            this.txtCodeToSuppr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodeToSuppr.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodeToSuppr.Name = "txtCodeToSuppr";
             this.txtCodeToSuppr.Size = new System.Drawing.Size(26, 20);
             this.txtCodeToSuppr.TabIndex = 2;
@@ -477,7 +468,7 @@
             this.tpModifTransaction.Controls.Add(this.lblCodeToMod);
             this.tpModifTransaction.Controls.Add(this.dgvModifTransa);
             this.tpModifTransaction.Location = new System.Drawing.Point(4, 25);
-            this.tpModifTransaction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpModifTransaction.Margin = new System.Windows.Forms.Padding(2);
             this.tpModifTransaction.Name = "tpModifTransaction";
             this.tpModifTransaction.Size = new System.Drawing.Size(642, 424);
             this.tpModifTransaction.TabIndex = 2;
@@ -487,7 +478,7 @@
             // btnAnnulerMod
             // 
             this.btnAnnulerMod.Location = new System.Drawing.Point(518, 250);
-            this.btnAnnulerMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnnulerMod.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnnulerMod.Name = "btnAnnulerMod";
             this.btnAnnulerMod.Size = new System.Drawing.Size(56, 19);
             this.btnAnnulerMod.TabIndex = 19;
@@ -498,7 +489,7 @@
             // btnValidMod
             // 
             this.btnValidMod.Location = new System.Drawing.Point(578, 250);
-            this.btnValidMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnValidMod.Margin = new System.Windows.Forms.Padding(2);
             this.btnValidMod.Name = "btnValidMod";
             this.btnValidMod.Size = new System.Drawing.Size(56, 19);
             this.btnValidMod.TabIndex = 18;
@@ -510,7 +501,7 @@
             // 
             this.txtCodeToMod.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCodeToMod.Location = new System.Drawing.Point(178, 250);
-            this.txtCodeToMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodeToMod.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodeToMod.Name = "txtCodeToMod";
             this.txtCodeToMod.Size = new System.Drawing.Size(26, 20);
             this.txtCodeToMod.TabIndex = 17;
@@ -542,7 +533,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtModDesc, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.cboModType, 6, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(7, 288);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -554,7 +545,7 @@
             // 
             this.txtModMontant.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtModMontant.Location = new System.Drawing.Point(332, 85);
-            this.txtModMontant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtModMontant.Margin = new System.Windows.Forms.Padding(2);
             this.txtModMontant.Name = "txtModMontant";
             this.txtModMontant.Size = new System.Drawing.Size(76, 20);
             this.txtModMontant.TabIndex = 15;
@@ -564,7 +555,7 @@
             // 
             this.txtModCode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtModCode.Location = new System.Drawing.Point(9, 85);
-            this.txtModCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtModCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtModCode.Name = "txtModCode";
             this.txtModCode.Size = new System.Drawing.Size(76, 20);
             this.txtModCode.TabIndex = 14;
@@ -652,7 +643,7 @@
             this.chkModRecette.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkModRecette.AutoSize = true;
             this.chkModRecette.Location = new System.Drawing.Point(428, 88);
-            this.chkModRecette.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkModRecette.Margin = new System.Windows.Forms.Padding(2);
             this.chkModRecette.Name = "chkModRecette";
             this.chkModRecette.Size = new System.Drawing.Size(15, 14);
             this.chkModRecette.TabIndex = 10;
@@ -663,7 +654,7 @@
             this.chkModPercu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkModPercu.AutoSize = true;
             this.chkModPercu.Location = new System.Drawing.Point(473, 88);
-            this.chkModPercu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkModPercu.Margin = new System.Windows.Forms.Padding(2);
             this.chkModPercu.Name = "chkModPercu";
             this.chkModPercu.Size = new System.Drawing.Size(15, 14);
             this.chkModPercu.TabIndex = 11;
@@ -674,7 +665,7 @@
             this.dtpModDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpModDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpModDate.Location = new System.Drawing.Point(96, 85);
-            this.dtpModDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpModDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpModDate.Name = "dtpModDate";
             this.dtpModDate.Size = new System.Drawing.Size(86, 20);
             this.dtpModDate.TabIndex = 12;
@@ -683,7 +674,7 @@
             // 
             this.txtModDesc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtModDesc.Location = new System.Drawing.Point(187, 85);
-            this.txtModDesc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtModDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtModDesc.Name = "txtModDesc";
             this.txtModDesc.Size = new System.Drawing.Size(140, 20);
             this.txtModDesc.TabIndex = 13;
@@ -693,7 +684,7 @@
             this.cboModType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboModType.FormattingEnabled = true;
             this.cboModType.Location = new System.Drawing.Point(522, 84);
-            this.cboModType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboModType.Margin = new System.Windows.Forms.Padding(2);
             this.cboModType.Name = "cboModType";
             this.cboModType.Size = new System.Drawing.Size(86, 21);
             this.cboModType.TabIndex = 16;
@@ -720,12 +711,20 @@
             // tpRecap
             // 
             this.tpRecap.Location = new System.Drawing.Point(4, 25);
-            this.tpRecap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpRecap.Margin = new System.Windows.Forms.Padding(2);
             this.tpRecap.Name = "tpRecap";
             this.tpRecap.Size = new System.Drawing.Size(642, 424);
             this.tpRecap.TabIndex = 3;
             this.tpRecap.Text = "Récapitulatif";
             this.tpRecap.UseVisualStyleBackColor = true;
+            // 
+            // lvPersonne
+            // 
+            this.lvPersonne.Location = new System.Drawing.Point(31, 127);
+            this.lvPersonne.Name = "lvPersonne";
+            this.lvPersonne.Size = new System.Drawing.Size(556, 254);
+            this.lvPersonne.TabIndex = 21;
+            this.lvPersonne.UseCompatibleStateImageBehavior = false;
             // 
             // frmBudgetMois
             // 
@@ -734,7 +733,7 @@
             this.ClientSize = new System.Drawing.Size(655, 461);
             this.Controls.Add(this.tcBudgetMois);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmBudgetMois";
             this.Text = "Budget du mois";
             this.Load += new System.EventHandler(this.frmBudgetMois_Load);
@@ -786,7 +785,6 @@
         private System.Windows.Forms.Label lblCode;
         private System.Windows.Forms.CheckBox checkRecette;
         private System.Windows.Forms.CheckBox checkPercu;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label lblValeur;
         private System.Windows.Forms.DataGridView dgvTransactions;
 
@@ -815,6 +813,7 @@
         private System.Windows.Forms.Button btnAnnulerMod;
         private System.Windows.Forms.Button btnValidMod;
         private System.Windows.Forms.TextBox txtCodeToMod;
+        private System.Windows.Forms.ListView lvPersonne;
     }
 }
 
