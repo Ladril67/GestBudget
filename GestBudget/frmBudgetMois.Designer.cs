@@ -95,6 +95,9 @@
             this.lblRecaS = new System.Windows.Forms.Label();
             this.lblRecaP = new System.Windows.Forms.Label();
             this.lblRecaD = new System.Windows.Forms.Label();
+            this.lblRecaMois = new System.Windows.Forms.Label();
+            this.lblRecaM = new System.Windows.Forms.Label();
+            this.btnCreeReca = new System.Windows.Forms.Button();
             this.tcBudgetMois.SuspendLayout();
             this.tpAffichage1a1.SuspendLayout();
             this.tpNewTransaction.SuspendLayout();
@@ -732,6 +735,9 @@
             // 
             // tpRecap
             // 
+            this.tpRecap.Controls.Add(this.btnCreeReca);
+            this.tpRecap.Controls.Add(this.lblRecaM);
+            this.tpRecap.Controls.Add(this.lblRecaMois);
             this.tpRecap.Controls.Add(this.lblRecaD);
             this.tpRecap.Controls.Add(this.lblRecaP);
             this.tpRecap.Controls.Add(this.lblRecaS);
@@ -753,7 +759,7 @@
             // lblRecaRecette
             // 
             this.lblRecaRecette.AutoSize = true;
-            this.lblRecaRecette.Location = new System.Drawing.Point(8, 134);
+            this.lblRecaRecette.Location = new System.Drawing.Point(9, 246);
             this.lblRecaRecette.Name = "lblRecaRecette";
             this.lblRecaRecette.Size = new System.Drawing.Size(51, 13);
             this.lblRecaRecette.TabIndex = 0;
@@ -762,7 +768,7 @@
             // lblRecaDepenser
             // 
             this.lblRecaDepenser.AutoSize = true;
-            this.lblRecaDepenser.Location = new System.Drawing.Point(8, 246);
+            this.lblRecaDepenser.Location = new System.Drawing.Point(9, 358);
             this.lblRecaDepenser.Name = "lblRecaDepenser";
             this.lblRecaDepenser.Size = new System.Drawing.Size(121, 13);
             this.lblRecaDepenser.TabIndex = 1;
@@ -771,7 +777,7 @@
             // lblRecaDepenses
             // 
             this.lblRecaDepenses.AutoSize = true;
-            this.lblRecaDepenses.Location = new System.Drawing.Point(8, 170);
+            this.lblRecaDepenses.Location = new System.Drawing.Point(9, 282);
             this.lblRecaDepenses.Name = "lblRecaDepenses";
             this.lblRecaDepenses.Size = new System.Drawing.Size(61, 13);
             this.lblRecaDepenses.TabIndex = 2;
@@ -780,7 +786,7 @@
             // lblRecaTransaction
             // 
             this.lblRecaTransaction.AutoSize = true;
-            this.lblRecaTransaction.Location = new System.Drawing.Point(8, 288);
+            this.lblRecaTransaction.Location = new System.Drawing.Point(9, 400);
             this.lblRecaTransaction.Name = "lblRecaTransaction";
             this.lblRecaTransaction.Size = new System.Drawing.Size(125, 13);
             this.lblRecaTransaction.TabIndex = 3;
@@ -789,7 +795,7 @@
             // lblRecaPersevoir
             // 
             this.lblRecaPersevoir.AutoSize = true;
-            this.lblRecaPersevoir.Location = new System.Drawing.Point(8, 206);
+            this.lblRecaPersevoir.Location = new System.Drawing.Point(9, 318);
             this.lblRecaPersevoir.Name = "lblRecaPersevoir";
             this.lblRecaPersevoir.Size = new System.Drawing.Size(96, 13);
             this.lblRecaPersevoir.TabIndex = 4;
@@ -798,7 +804,7 @@
             // lblRecaR
             // 
             this.lblRecaR.AutoSize = true;
-            this.lblRecaR.Location = new System.Drawing.Point(65, 134);
+            this.lblRecaR.Location = new System.Drawing.Point(66, 246);
             this.lblRecaR.Name = "lblRecaR";
             this.lblRecaR.Size = new System.Drawing.Size(35, 13);
             this.lblRecaR.TabIndex = 5;
@@ -807,7 +813,7 @@
             // lblRecaT
             // 
             this.lblRecaT.AutoSize = true;
-            this.lblRecaT.Location = new System.Drawing.Point(139, 288);
+            this.lblRecaT.Location = new System.Drawing.Point(140, 400);
             this.lblRecaT.Name = "lblRecaT";
             this.lblRecaT.Size = new System.Drawing.Size(35, 13);
             this.lblRecaT.TabIndex = 6;
@@ -816,7 +822,7 @@
             // lblRecaS
             // 
             this.lblRecaS.AutoSize = true;
-            this.lblRecaS.Location = new System.Drawing.Point(135, 246);
+            this.lblRecaS.Location = new System.Drawing.Point(136, 358);
             this.lblRecaS.Name = "lblRecaS";
             this.lblRecaS.Size = new System.Drawing.Size(35, 13);
             this.lblRecaS.TabIndex = 7;
@@ -825,7 +831,7 @@
             // lblRecaP
             // 
             this.lblRecaP.AutoSize = true;
-            this.lblRecaP.Location = new System.Drawing.Point(110, 206);
+            this.lblRecaP.Location = new System.Drawing.Point(111, 318);
             this.lblRecaP.Name = "lblRecaP";
             this.lblRecaP.Size = new System.Drawing.Size(35, 13);
             this.lblRecaP.TabIndex = 8;
@@ -834,11 +840,39 @@
             // lblRecaD
             // 
             this.lblRecaD.AutoSize = true;
-            this.lblRecaD.Location = new System.Drawing.Point(75, 170);
+            this.lblRecaD.Location = new System.Drawing.Point(76, 282);
             this.lblRecaD.Name = "lblRecaD";
             this.lblRecaD.Size = new System.Drawing.Size(35, 13);
             this.lblRecaD.TabIndex = 9;
             this.lblRecaD.Text = "label9";
+            // 
+            // lblRecaMois
+            // 
+            this.lblRecaMois.AutoSize = true;
+            this.lblRecaMois.Location = new System.Drawing.Point(9, 9);
+            this.lblRecaMois.Name = "lblRecaMois";
+            this.lblRecaMois.Size = new System.Drawing.Size(111, 13);
+            this.lblRecaMois.TabIndex = 10;
+            this.lblRecaMois.Text = "Recapitulatif du mois :";
+            // 
+            // lblRecaM
+            // 
+            this.lblRecaM.AutoSize = true;
+            this.lblRecaM.Location = new System.Drawing.Point(126, 9);
+            this.lblRecaM.Name = "lblRecaM";
+            this.lblRecaM.Size = new System.Drawing.Size(35, 13);
+            this.lblRecaM.TabIndex = 11;
+            this.lblRecaM.Text = "label2";
+            // 
+            // btnCreeReca
+            // 
+            this.btnCreeReca.Location = new System.Drawing.Point(129, 126);
+            this.btnCreeReca.Name = "btnCreeReca";
+            this.btnCreeReca.Size = new System.Drawing.Size(301, 43);
+            this.btnCreeReca.TabIndex = 12;
+            this.btnCreeReca.Text = "Crée Recapitulatif";
+            this.btnCreeReca.UseVisualStyleBackColor = true;
+            this.btnCreeReca.Click += new System.EventHandler(this.btnCreeReca_Click);
             // 
             // frmBudgetMois
             // 
@@ -940,6 +974,9 @@
         private System.Windows.Forms.Label lblRecaDepenses;
         private System.Windows.Forms.Label lblRecaDepenser;
         private System.Windows.Forms.Label lblRecaRecette;
+        private System.Windows.Forms.Button btnCreeReca;
+        private System.Windows.Forms.Label lblRecaM;
+        private System.Windows.Forms.Label lblRecaMois;
     }
 }
 

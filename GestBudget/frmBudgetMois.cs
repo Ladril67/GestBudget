@@ -1,4 +1,6 @@
-﻿using System;
+﻿using sharpPDF;
+using sharpPDF.Enumerators;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -516,6 +518,16 @@ namespace Pique_Sous
         private void btnAnnulerMod_Click(object sender, EventArgs e)
         {
             txtCodeToMod_TextChanged(sender, e);
+        }
+
+        private void btnCreeReca_Click(object sender, EventArgs e)
+        {
+            pdfDocument myDoc = new pdfDocument("TUTORIAL", "ME");
+            pdfPage myPage = myDoc.addPage();
+            myPage.addText("Hello World!", 200, 450, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+            myDoc.createPDF(@"C:\Users\Miniyeti67\Desktop\Mini Projet\test.pdf");
+            myPage = null;
+            myDoc = null;
         }
     }
 }
