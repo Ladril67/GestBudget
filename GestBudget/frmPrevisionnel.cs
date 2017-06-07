@@ -246,8 +246,19 @@ namespace Pique_Sous
                     mois = mois + 1;
                     if (mois <= 12)
                     {
-                        dt.Value = new DateTime(annee, mois, date.Day);
-                        i = i + 1;
+                        if(mois == 2)
+                        {
+                            if (date.Day >= 28)
+                            {
+                                dt.Value = new DateTime(annee, mois, 28);
+                            }
+                            else { }
+                        }
+                        else
+                        {
+                            dt.Value = new DateTime(annee, mois, date.Day);
+                            i = i + 1;
+                        }
                     }
                     else
                     {
