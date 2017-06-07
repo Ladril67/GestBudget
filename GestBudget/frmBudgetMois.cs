@@ -45,25 +45,24 @@ namespace Pique_Sous
                 string requete = "INSERT INTO [Transaction] VALUES (" + lastCodeTransac + ",'" + date.ToString() + "', '" + desc + "'," + montant + "," + recette + "," + percu + ",'" + type + "')";
                 OleDbCommand cd1 = new OleDbCommand(requete, connec);
                 cd1.ExecuteNonQuery();
-                MessageBox.Show(requete);
 
                 foreach (CheckBox chk in grpParticipantsTransa.Controls)
                 {
                     if (chk.Checked)
                     {
                         //recupération codePersonne
-                        string[] perso = chk.Text.ToLower().Split(' ');
-                        requete = "select codePersonne from Personne where lower(pnPersonne) = '" + perso[0] + "' and lower(nomPersonne) = '" + perso[1] + "'";
+                        string[] perso = chk.Text.Split(' ');
+                        requete = "SELECT [Personne].[codePersonne] FROM [Personne] WHERE [pnPersonne] = '" + perso[0] + "' AND [nomPersonne] = '" + perso[1] + "'";
                         OleDbCommand cd2 = new OleDbCommand(requete, connec);
                         int codePerso = (int)cd2.ExecuteScalar();
-                        MessageBox.Show(requete);
                         //ajout dans table Bénéficiaires
-                        requete = "insert into Beneficiaires values (" + lastCodeTransac + "," + codePerso + ")";
+                        requete = "INSERT INTO [Beneficiaires] VALUES (" + lastCodeTransac + "," + codePerso + ")";
                         OleDbCommand cd3 = new OleDbCommand(requete, connec);
                         cd3.ExecuteNonQuery();
                     }
                 }
                 connec.Close();
+                MessageBox.Show("Transaction ajoutée !");
                 MiseAJour();
 
             }
@@ -86,7 +85,6 @@ namespace Pique_Sous
 
         private void remplirParticipants()
         {
-
             try
             {
                 //Mise en place de la connection string et on ouvre la connection
@@ -266,23 +264,23 @@ namespace Pique_Sous
                     try
                     {
                         connec.Open();
-                        string requete = "DELETE FROM [Transaction] WHERE [Transaction].CodeTransaction = " + codeTransa;
+                        string requete = "DELETE FROM [Beneficiaires] WHERE [Beneficiaires].[codeTransaction] = " + codeTransa;
                         OleDbCommand cd1 = new OleDbCommand(requete, connec);
                         cd1.ExecuteNonQuery();
-                        requete = "DELETE FROM [Beneficiaires] WHERE [Beneficiaires].CodeTransaction = " + codeTransa;
+                        requete = "DELETE FROM [Transaction] WHERE [Transaction].codeTransaction = " + codeTransa;
                         OleDbCommand cd2 = new OleDbCommand(requete, connec);
-                        cd1.ExecuteNonQuery();
+                        cd2.ExecuteNonQuery();
                         connec.Close();
                         MiseAJour();
                         MessageBox.Show("Transaction supprimée");
                     }
                     catch (InvalidOperationException erreur)
                     {
-                        MessageBox.Show("Erreur de chaine de connexion ! DGV");
+                        MessageBox.Show("Erreur de chaine de connexion ! Suppr");
                     }
                     catch (OleDbException erreur)
                     {
-                        MessageBox.Show("Erreur de requete SQL ! DGV");
+                        MessageBox.Show("Erreur de requete SQL ! Suppr");
                     }
                 }
             }
@@ -316,9 +314,8 @@ namespace Pique_Sous
             {
 
                 connec.Open();
-                DataTable schema = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
 
-
+                ds.Clear();
                 string requete = @"select * from TypeTransaction";
                 OleDbCommand cd1 = new OleDbCommand(requete, connec);
                 OleDbDataAdapter da = new OleDbDataAdapter();
@@ -335,11 +332,11 @@ namespace Pique_Sous
             }
             catch (InvalidOperationException erreur)
             {
-                MessageBox.Show("Erreur de chaine de connexion ! formLoad");
+                MessageBox.Show("Erreur de chaine de connexion ! miseajour");
             }
             catch (OleDbException erreur)
             {
-                MessageBox.Show("Erreur de requete SQL ! formLoad");
+                MessageBox.Show("Erreur de requete SQL ! miseajour");
             }
         }
 
@@ -372,11 +369,11 @@ namespace Pique_Sous
                 }
                 catch (InvalidOperationException erreur)
                 {
-                    MessageBox.Show("Erreur de chaine de connexion ! formLoad");
+                    MessageBox.Show("Erreur de chaine de connexion ! modAffichage");
                 }
                 catch (OleDbException erreur)
                 {
-                    MessageBox.Show("Erreur de requete SQL ! formLoad");
+                    MessageBox.Show("Erreur de requete SQL ! modAffichage");
                 }
             }
             else
@@ -396,11 +393,11 @@ namespace Pique_Sous
             {
                 try
                 {
-                    string requete = "UPDATE [Transaction] SET [codeTransaction] = " + txtModCode.Text + ", [dateTransaction] = '" + dtpModDate.Value + "', [description] = '" + txtModDesc.Text + "', [montant] = " + txtModMontant.Text + ", [recetteON] = " + chkModRecette.Checked.ToString() + ", [percuON] = " + chkModPercu.Checked.ToString() + ", [type] = " + cboModType.SelectedValue + " WHERE [codeTransaction] = " + txtCodeToMod.Text;
+                    string requete = "UPDATE [Beneficiaires] SET [codeTransaction] = " + txtModCode.Text + " WHERE [codeTransaction] = " + txtCodeToMod.Text;
                     connec.Open();
                     OleDbCommand cd1 = new OleDbCommand(requete, connec);
                     cd1.ExecuteNonQuery();
-                    requete = "UPDATE [Beneficiaires] SET [codeTransaction] = "+ txtModCode.Text+" WHERE [codeTransaction] = "+txtCodeToMod.Text;
+                    requete = "UPDATE [Transaction] SET [codeTransaction] = " + txtModCode.Text + ", [dateTransaction] = '" + dtpModDate.Value + "', [description] = '" + txtModDesc.Text + "', [montant] = " + txtModMontant.Text + ", [recetteON] = " + chkModRecette.Checked.ToString() + ", [percuON] = " + chkModPercu.Checked.ToString() + ", [type] = " + cboModType.SelectedValue + " WHERE [codeTransaction] = " + txtCodeToMod.Text;
                     OleDbCommand cd2 = new OleDbCommand(requete, connec);
                     cd2.ExecuteNonQuery();
                     connec.Close();
@@ -409,11 +406,11 @@ namespace Pique_Sous
                 }
                 catch (InvalidOperationException erreur)
                 {
-                    MessageBox.Show("Erreur de chaine de connexion ! formLoad");
+                    MessageBox.Show("Erreur de chaine de connexion ! validMod");
                 }
                 catch (OleDbException erreur)
                 {
-                    MessageBox.Show("Erreur de requete SQL ! formLoad");
+                    MessageBox.Show("Erreur de requete SQL ! ValidMod");
                 }
             }
         }
