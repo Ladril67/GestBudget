@@ -472,13 +472,32 @@ namespace Pique_Sous
             {
                 try
                 {
-                    string requete = "UPDATE [Beneficiaires] SET [codeTransaction] = " + txtModCode.Text + " WHERE [codeTransaction] = " + txtCodeToMod.Text;
                     connec.Open();
+                    string requete = "CREATE TABLE [temp] AS SELECT [Beneficiaires].* FROM [Beneficiaires] WHERE [Beneficiaires].[codeTransaction] =" + txtCodeToMod.Text;
                     OleDbCommand cd1 = new OleDbCommand(requete, connec);
                     cd1.ExecuteNonQuery();
-                    requete = "UPDATE [Transaction] SET [codeTransaction] = " + txtModCode.Text + ", [dateTransaction] = '" + dtpModDate.Value + "', [description] = '" + txtModDesc.Text + "', [montant] = " + txtModMontant.Text + ", [recetteON] = " + chkModRecette.Checked.ToString() + ", [percuON] = " + chkModPercu.Checked.ToString() + ", [type] = " + cboModType.SelectedValue + " WHERE [codeTransaction] = " + txtCodeToMod.Text;
+                    MessageBox.Show("1er");
+                    requete = "DELETE FROM [Beneficiaires] WHERE [Beneficiaires].[codeTransaction] = " + txtCodeToMod.Text;
                     OleDbCommand cd2 = new OleDbCommand(requete, connec);
                     cd2.ExecuteNonQuery();
+                    MessageBox.Show("2e");
+                    requete = "UPDATE [temp] SET [codeTransaction] = " + txtModCode.Text;
+                    OleDbCommand cd3 = new OleDbCommand(requete, connec);
+                    cd3.ExecuteNonQuery();
+                    MessageBox.Show("3e");
+                    requete = "INSERT INTO [Beneficiaires] SELECT * FROM [temp]";
+                    OleDbCommand cd4 = new OleDbCommand(requete, connec);
+                    cd4.ExecuteNonQuery();
+                    MessageBox.Show("4e");
+                    requete = "DROP TABLE [temp]";
+                    OleDbCommand cd5 = new OleDbCommand(requete, connec);
+                    cd5.ExecuteNonQuery();
+                    MessageBox.Show("Benef done");
+
+                    requete = "UPDATE [Transaction] SET [codeTransaction] = " + txtModCode.Text + ", [dateTransaction] = '" + dtpModDate.Value + "', [description] = '" + txtModDesc.Text + "', [montant] = " + txtModMontant.Text + ", [recetteON] = " + chkModRecette.Checked.ToString() + ", [percuON] = " + chkModPercu.Checked.ToString() + ", [type] = " + cboModType.SelectedValue + " WHERE [codeTransaction] = " + txtCodeToMod.Text;
+                    OleDbCommand cd6 = new OleDbCommand(requete, connec);
+                    cd6.ExecuteNonQuery();
+                    MessageBox.Show("second update done");
                     connec.Close();
                     MessageBox.Show("Transaction modifiée");
                     MiseAJour();
