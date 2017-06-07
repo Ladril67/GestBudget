@@ -64,7 +64,6 @@ namespace Pique_Sous
                         requete = "insert into Beneficiaires values (" + lastCodeTransac + "," + codePerso + ")";
                         OleDbCommand cd3 = new OleDbCommand(requete, connec);
                         cd3.ExecuteNonQuery();
-                        MessageBox.Show(requete);
                     }
                 }
                 connec.Close();
@@ -94,7 +93,6 @@ namespace Pique_Sous
             try
             {
                 //Mise en place de la connection string et on ouvre la connection
-                connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
                 connec.Open();
 
                 //On récupère les données de la table pour travailler en mode déconnecté
@@ -323,7 +321,6 @@ namespace Pique_Sous
             DialogResult dR = MessageBox.Show("Voulez vous vraiment supprimer cette transaction ?", "Suppression", MessageBoxButtons.YesNo);
             if (dR == DialogResult.Yes)
             {
-                MessageBox.Show("YES");
                 int codeTransa = int.Parse(txtCodeToSuppr.Text);
                 if (codeTransa <= lastCodeTransac)
                 {
@@ -332,6 +329,9 @@ namespace Pique_Sous
                         connec.Open();
                         string requete = "DELETE FROM [Transaction] WHERE [Transaction].CodeTransaction = " + codeTransa;
                         OleDbCommand cd1 = new OleDbCommand(requete, connec);
+                        cd1.ExecuteNonQuery();
+                        requete = "DELETE FROM [Beneficiaires] WHERE [Beneficiaires].CodeTransaction = " + codeTransa;
+                        OleDbCommand cd2 = new OleDbCommand(requete, connec);
                         cd1.ExecuteNonQuery();
                         connec.Close();
                         MiseAJour();
@@ -456,12 +456,15 @@ namespace Pique_Sous
         {
             if (txtCodeToMod.Text != "")
             {
-                string requete = "UPDATE [Transaction] SET [CodeTransaction] = "+txtModCode.Text+", [dateTransaction] = '"+dtpModDate.Value+"', [description] = '"+txtModDesc.Text+"', [montant] = "+txtModMontant.Text+", [recetteON] = "+chkModRecette.Checked.ToString()+", [percuON] = "+chkModPercu.Checked.ToString()+", [type] = "+cboModType.SelectedValue+" WHERE [CodeTransaction] = " + txtCodeToMod.Text;
                 try
                 {
+                    string requete = "UPDATE [Transaction] SET [codeTransaction] = " + txtModCode.Text + ", [dateTransaction] = '" + dtpModDate.Value + "', [description] = '" + txtModDesc.Text + "', [montant] = " + txtModMontant.Text + ", [recetteON] = " + chkModRecette.Checked.ToString() + ", [percuON] = " + chkModPercu.Checked.ToString() + ", [type] = " + cboModType.SelectedValue + " WHERE [codeTransaction] = " + txtCodeToMod.Text;
                     connec.Open();
                     OleDbCommand cd1 = new OleDbCommand(requete, connec);
                     cd1.ExecuteNonQuery();
+                    requete = "UPDATE [Beneficiaires] SET [codeTransaction] = "+ txtModCode.Text+" WHERE [codeTransaction] = "+txtCodeToMod.Text;
+                    OleDbCommand cd2 = new OleDbCommand(requete, connec);
+                    cd2.ExecuteNonQuery();
                     connec.Close();
                     MessageBox.Show("Transaction modifiée");
                     MiseAJour();
