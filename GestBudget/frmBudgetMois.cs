@@ -94,7 +94,6 @@ namespace Pique_Sous
                     int codePers = (int)cd.ExecuteScalar() + 1;
 
                     requete = "INSERT INTO [Personne] VALUES (" + codePers + ",'" + txtNomNewPers.Text + "','" + txtPrenomNewPers.Text + "', null)";
-                    MessageBox.Show(requete);
                     OleDbCommand cd1 = new OleDbCommand(requete, connec);
                     cd1.ExecuteNonQuery();
                     connec.Close();
@@ -116,7 +115,47 @@ namespace Pique_Sous
             {
                 MessageBox.Show("Ben faut être sûr");
             }
-            
+        }
+
+        private void btnSupprPers_Click(object sender, EventArgs e)
+        {
+            DialogResult dR = MessageBox.Show("Voulez vous vraiment supprimer la/les personne(s) ?", "Suppression", MessageBoxButtons.YesNo);
+            if (dR == DialogResult.Yes)
+            {
+                try
+                {
+                    connec.Open();
+                    string requete = "";
+                    foreach (CheckBox chk in grpParticipantsTransa.Controls)
+                    {
+                        if (chk.Checked)
+                        {
+                            //recupération codePersonne
+                            string[] perso = chk.Text.Split(' ');
+                            requete = "DELETE FROM [Personne] WHERE [nomPersonne] = '"+perso[1]+"' AND [pnPersonne] = '"+perso[0]+"'";
+                            OleDbCommand cd2 = new OleDbCommand(requete, connec);
+                            cd2.ExecuteNonQuery();
+                        }
+                    }
+                    connec.Close();
+                    MessageBox.Show("Personne(s) supprimée(s) !");
+                    MiseAJour();
+                }
+                catch (InvalidOperationException erreur)
+                {
+                    MessageBox.Show("Erreur de chaine de connexion ! supprPers");
+                    MessageBox.Show(erreur.Message);
+                }
+                catch (OleDbException erreur)
+                {
+                    MessageBox.Show("Erreur de requete SQL ! supprPers");
+                    MessageBox.Show(erreur.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ben faut être sûr");
+            }
         }
 
         private void remplitCbo(ComboBox cb, string nomTable, string champAffiche, string champCache)

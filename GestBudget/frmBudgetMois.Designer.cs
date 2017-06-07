@@ -91,6 +91,8 @@
             this.lblPrenomNewPers = new System.Windows.Forms.Label();
             this.txtNomNewPers = new System.Windows.Forms.TextBox();
             this.txtPrenomNewPers = new System.Windows.Forms.TextBox();
+            this.btnSupprPers = new System.Windows.Forms.Button();
+            this.lblSupprPers = new System.Windows.Forms.Label();
             this.tcBudgetMois.SuspendLayout();
             this.tpAffichage1a1.SuspendLayout();
             this.tpNewTransaction.SuspendLayout();
@@ -272,6 +274,8 @@
             // 
             // tpNewTransaction
             // 
+            this.tpNewTransaction.Controls.Add(this.lblSupprPers);
+            this.tpNewTransaction.Controls.Add(this.btnSupprPers);
             this.tpNewTransaction.Controls.Add(this.txtPrenomNewPers);
             this.tpNewTransaction.Controls.Add(this.txtNomNewPers);
             this.tpNewTransaction.Controls.Add(this.lblPrenomNewPers);
@@ -326,7 +330,7 @@
             this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(734, 155);
             this.btnAjouterPersonneTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnAjouterPersonneTransa.Name = "btnAjouterPersonneTransa";
-            this.btnAjouterPersonneTransa.Size = new System.Drawing.Size(112, 82);
+            this.btnAjouterPersonneTransa.Size = new System.Drawing.Size(112, 58);
             this.btnAjouterPersonneTransa.TabIndex = 0;
             this.btnAjouterPersonneTransa.Text = "Ajouter une personne";
             this.btnAjouterPersonneTransa.UseVisualStyleBackColor = true;
@@ -797,6 +801,25 @@
             this.txtPrenomNewPers.Size = new System.Drawing.Size(113, 22);
             this.txtPrenomNewPers.TabIndex = 17;
             // 
+            // btnSupprPers
+            // 
+            this.btnSupprPers.Location = new System.Drawing.Point(733, 299);
+            this.btnSupprPers.Margin = new System.Windows.Forms.Padding(5);
+            this.btnSupprPers.Name = "btnSupprPers";
+            this.btnSupprPers.Size = new System.Drawing.Size(112, 58);
+            this.btnSupprPers.TabIndex = 18;
+            this.btnSupprPers.Text = "Supprimer une personne";
+            this.btnSupprPers.UseVisualStyleBackColor = true;
+            this.btnSupprPers.Click += new System.EventHandler(this.btnSupprPers_Click);
+            // 
+            // lblSupprPers
+            // 
+            this.lblSupprPers.Location = new System.Drawing.Point(730, 237);
+            this.lblSupprPers.Name = "lblSupprPers";
+            this.lblSupprPers.Size = new System.Drawing.Size(116, 57);
+            this.lblSupprPers.TabIndex = 19;
+            this.lblSupprPers.Text = "Supprime toutes les personnes selectionnées :";
+            // 
             // frmBudgetMois
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -892,6 +915,8 @@
         private System.Windows.Forms.TextBox txtNomNewPers;
         private System.Windows.Forms.Label lblPrenomNewPers;
         private System.Windows.Forms.Label lblNomNewPers;
+        private System.Windows.Forms.Label lblSupprPers;
+        private System.Windows.Forms.Button btnSupprPers;
     }
 }
 
