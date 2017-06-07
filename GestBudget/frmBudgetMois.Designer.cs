@@ -85,6 +85,8 @@
             this.lblCodeToMod = new System.Windows.Forms.Label();
             this.dgvModifTransa = new System.Windows.Forms.DataGridView();
             this.tpRecap = new System.Windows.Forms.TabPage();
+            this.btnCreeReca = new System.Windows.Forms.Button();
+            this.dtpReca = new System.Windows.Forms.DateTimePicker();
             this.tcBudgetMois.SuspendLayout();
             this.tpAffichage1a1.SuspendLayout();
             this.tpNewTransaction.SuspendLayout();
@@ -93,6 +95,7 @@
             this.tpModifTransaction.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModifTransa)).BeginInit();
+            this.tpRecap.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcBudgetMois
@@ -136,8 +139,9 @@
             // 
             // lvPersonne
             // 
+            this.lvPersonne.Activation = System.Windows.Forms.ItemActivation.TwoClick;
             this.lvPersonne.Alignment = System.Windows.Forms.ListViewAlignment.Left;
-            this.lvPersonne.AutoArrange = false;
+            this.lvPersonne.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvPersonne.Location = new System.Drawing.Point(31, 127);
             this.lvPersonne.Name = "lvPersonne";
             this.lvPersonne.Size = new System.Drawing.Size(556, 254);
@@ -720,6 +724,8 @@
             // 
             // tpRecap
             // 
+            this.tpRecap.Controls.Add(this.dtpReca);
+            this.tpRecap.Controls.Add(this.btnCreeReca);
             this.tpRecap.Location = new System.Drawing.Point(4, 25);
             this.tpRecap.Margin = new System.Windows.Forms.Padding(2);
             this.tpRecap.Name = "tpRecap";
@@ -727,6 +733,23 @@
             this.tpRecap.TabIndex = 3;
             this.tpRecap.Text = "Récapitulatif";
             this.tpRecap.UseVisualStyleBackColor = true;
+            // 
+            // btnCreeReca
+            // 
+            this.btnCreeReca.Location = new System.Drawing.Point(209, 107);
+            this.btnCreeReca.Name = "btnCreeReca";
+            this.btnCreeReca.Size = new System.Drawing.Size(160, 27);
+            this.btnCreeReca.TabIndex = 12;
+            this.btnCreeReca.Text = "Crée Recapitulatif";
+            this.btnCreeReca.UseVisualStyleBackColor = true;
+            this.btnCreeReca.Click += new System.EventHandler(this.btnCreeReca_Click);
+            // 
+            // dtpReca
+            // 
+            this.dtpReca.Location = new System.Drawing.Point(209, 81);
+            this.dtpReca.Name = "dtpReca";
+            this.dtpReca.Size = new System.Drawing.Size(160, 20);
+            this.dtpReca.TabIndex = 13;
             // 
             // frmBudgetMois
             // 
@@ -752,6 +775,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModifTransa)).EndInit();
+            this.tpRecap.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -816,6 +840,8 @@
         private System.Windows.Forms.Button btnValidMod;
         private System.Windows.Forms.TextBox txtCodeToMod;
         private System.Windows.Forms.ListView lvPersonne;
+        private System.Windows.Forms.Button btnCreeReca;
+        private System.Windows.Forms.DateTimePicker dtpReca;
     }
 }
 

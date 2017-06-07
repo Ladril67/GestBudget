@@ -1,4 +1,6 @@
-﻿using System;
+﻿using sharpPDF;
+using sharpPDF.Enumerators;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -203,7 +205,7 @@ namespace Pique_Sous
             try
             {
                 lvPersonne.Items.Clear();
-                int max = 0;
+                List<int> max = new List<int>();
                 int jointure = 0;
                 int codeTransaction = 0;
                 List<int> Personne = new List<int>();
@@ -212,7 +214,7 @@ namespace Pique_Sous
                 OleDbDataReader dr0 = cd0.ExecuteReader();
                 while (dr0.Read())
                 {
-                    max = dr0.GetInt32(0);
+                    max.Add(dr0.GetInt32(0));
                 }
 
                 if(ligne == -2)
@@ -234,9 +236,9 @@ namespace Pique_Sous
                 }
                 else if(ligne == 1)
                 {
-                    if(ligneTable == max)
+                    if(ligneTable == max.Count)
                     {
-                        ligne = max;
+                        ligne = max.Count;
                     }
                     else
                     {
@@ -246,8 +248,8 @@ namespace Pique_Sous
                 }
                 else
                 {
-                    ligne = max;
-                    ligneTable = max;
+                    ligne = max.Count;
+                    ligneTable = max.Count;
                 }
 
                 OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction] where [codeTransaction] = " + ligne, connec);
@@ -284,7 +286,7 @@ namespace Pique_Sous
                     OleDbDataReader dr4 = cd4.ExecuteReader();
                     while (dr4.Read())
                     {
-                        lvPersonne.Items.Add(dr4.GetString(0) + " " + dr4.GetString(1));
+                        lvPersonne.Items.Add(dr4.GetString(0) + dr4.GetString(1));
                     }
                 }
 
@@ -524,6 +526,50 @@ namespace Pique_Sous
         {
             txtCodeToMod_TextChanged(sender, e);
         }
+
+        private void btnCreeReca_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string mois = dtpReca.Text.ToString();
+                string text = "";
+                int montant = 0;
+                int recette = 0;
+                int percu = 0;
+                pdfDocument myDoc = new pdfDocument("TUTORIAL", "ME");
+                pdfPage myPage = myDoc.addPage();
+
+                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM [Transaction] WHERE [dateTransaction] =" + dtpReca, connec);
+                OleDbDataReader dr1 = cd1.ExecuteReader();
+                List<Boolean> nbTransaction = new List<Boolean>();
+                while (dr1.Read())
+                {
+                    nbTransaction.Add(dr1.GetBoolean(4));
+                    if (dr1.GetBoolean(4) == true)
+                    {
+                        recette++;
+                    }
+                    if (dr1.GetBoolean(5) == true)
+                    {
+                        percu++;
+                    }
+                    montant = montant + dr1.GetInt32(3);
+                }
+
+                text = "Recette : " + recette.ToString() + " Depenses : " + montant.ToString() + "Reste a persevoir : " + percu.ToString() + "Somme total dépensée : -" + montant.ToString() + "nombres de transactions : " + nbTransaction.Count.ToString(); 
+                myPage.addText(text, 200, 450, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myDoc.createPDF(@"C:\Users\Miniyeti67\Desktop\Mini Projet\" + mois + ".pdf");
+                myPage = null;
+                myDoc = null;
+            }
+            catch (InvalidOperationException erreur)
+            {
+                MessageBox.Show("Erreur de chaine de connexion ! validMod");
+            }
+            catch (OleDbException erreur)
+            {
+                MessageBox.Show("Erreur de requete SQL ! ValidMod");
+            }
+        }
     }
 }
-
