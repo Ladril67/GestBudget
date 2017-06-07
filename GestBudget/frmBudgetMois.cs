@@ -199,7 +199,7 @@ namespace Pique_Sous
             try
             {
                 lvPersonne.Items.Clear();
-                int max = 0;
+                List<int> max = new List<int>();
                 int jointure = 0;
                 int codeTransaction = 0;
                 List<int> Personne = new List<int>();
@@ -208,7 +208,7 @@ namespace Pique_Sous
                 OleDbDataReader dr0 = cd0.ExecuteReader();
                 while (dr0.Read())
                 {
-                    max = dr0.GetInt32(0);
+                    max.Add(dr0.GetInt32(0));
                 }
 
                 if(ligne == -2)
@@ -230,9 +230,9 @@ namespace Pique_Sous
                 }
                 else if(ligne == 1)
                 {
-                    if(ligneTable == max)
+                    if(ligneTable == max.Count)
                     {
-                        ligne = max;
+                        ligne = max.Count;
                     }
                     else
                     {
@@ -242,8 +242,8 @@ namespace Pique_Sous
                 }
                 else
                 {
-                    ligne = max;
-                    ligneTable = max;
+                    ligne = max.Count;
+                    ligneTable = max.Count;
                 }
 
                 OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction] where [codeTransaction] = " + ligne, connec);
