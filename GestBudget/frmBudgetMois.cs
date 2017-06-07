@@ -198,6 +198,7 @@ namespace Pique_Sous
         {
             try
             {
+                lvPersonne.Items.Clear();
                 int max = 0;
                 int jointure = 0;
                 int codeTransaction = 0;
