@@ -30,6 +30,10 @@ namespace Pique_Sous
         {
             connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
             MiseAJour();
+            connec.Open();
+            OleDbCommand cd = new OleDbCommand("DROP TABLE [temp]", connec);
+            cd.ExecuteNonQuery();
+            connec.Close();
         }
 
         private void btnAjoutTransa_Click(object sender, EventArgs e)
@@ -295,9 +299,6 @@ namespace Pique_Sous
             {
                 MessageBox.Show("Erreur de requete SQL ! 1a1");
             }
-            finally
-            {
-            }
         }
 
 
@@ -473,31 +474,35 @@ namespace Pique_Sous
                 try
                 {
                     connec.Open();
-                    string requete = "CREATE TABLE [temp] AS SELECT [Beneficiaires].* FROM [Beneficiaires] WHERE [Beneficiaires].[codeTransaction] =" + txtCodeToMod.Text;
+                    string requete = "SELECT * INTO temp FROM Beneficiaires WHERE codeTransaction = " + txtCodeToMod.Text;
                     OleDbCommand cd1 = new OleDbCommand(requete, connec);
                     cd1.ExecuteNonQuery();
-                    MessageBox.Show("1er");
                     requete = "DELETE FROM [Beneficiaires] WHERE [Beneficiaires].[codeTransaction] = " + txtCodeToMod.Text;
                     OleDbCommand cd2 = new OleDbCommand(requete, connec);
                     cd2.ExecuteNonQuery();
-                    MessageBox.Show("2e");
                     requete = "UPDATE [temp] SET [codeTransaction] = " + txtModCode.Text;
                     OleDbCommand cd3 = new OleDbCommand(requete, connec);
                     cd3.ExecuteNonQuery();
-                    MessageBox.Show("3e");
-                    requete = "INSERT INTO [Beneficiaires] SELECT * FROM [temp]";
-                    OleDbCommand cd4 = new OleDbCommand(requete, connec);
-                    cd4.ExecuteNonQuery();
-                    MessageBox.Show("4e");
-                    requete = "DROP TABLE [temp]";
-                    OleDbCommand cd5 = new OleDbCommand(requete, connec);
-                    cd5.ExecuteNonQuery();
-                    MessageBox.Show("Benef done");
 
                     requete = "UPDATE [Transaction] SET [codeTransaction] = " + txtModCode.Text + ", [dateTransaction] = '" + dtpModDate.Value + "', [description] = '" + txtModDesc.Text + "', [montant] = " + txtModMontant.Text + ", [recetteON] = " + chkModRecette.Checked.ToString() + ", [percuON] = " + chkModPercu.Checked.ToString() + ", [type] = " + cboModType.SelectedValue + " WHERE [codeTransaction] = " + txtCodeToMod.Text;
                     OleDbCommand cd6 = new OleDbCommand(requete, connec);
                     cd6.ExecuteNonQuery();
-                    MessageBox.Show("second update done");
+
+                    OleDbCommand cd4 = new OleDbCommand("SELECT * from temp",connec);
+                    OleDbDataReader dr = cd4.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        int codePers = dr.GetInt32(1);
+                        requete = "INSERT INTO Beneficiaires VALUES ("+txtModCode.Text+", "+codePers+")";
+                        OleDbCommand cd = new OleDbCommand(requete, connec);
+                        cd.ExecuteNonQuery();
+                    }
+                    dr.Close();
+
+                    requete = "DROP TABLE [temp]";
+                    OleDbCommand cd5 = new OleDbCommand(requete, connec);
+                    cd5.ExecuteNonQuery();
+                    
                     connec.Close();
                     MessageBox.Show("Transaction modifiée");
                     MiseAJour();
@@ -505,10 +510,12 @@ namespace Pique_Sous
                 catch (InvalidOperationException erreur)
                 {
                     MessageBox.Show("Erreur de chaine de connexion ! validMod");
+                    MessageBox.Show(erreur.Message);
                 }
                 catch (OleDbException erreur)
                 {
                     MessageBox.Show("Erreur de requete SQL ! ValidMod");
+                    MessageBox.Show(erreur.Message);
                 }
             }
         }
