@@ -24,7 +24,10 @@ namespace Pique_Sous
         {
             remplircboPoste();
             remplircboPeriodicite();
-            grpEcheances.Hide();
+            flpEcheance.Hide();
+            lblEcheance.Hide();
+            flpEcheance.AutoScroll = true;
+            remplirBeneficiaire();
         }
 
         private void tboMontant_KeyPress(object sender, KeyPressEventArgs e)
@@ -158,11 +161,12 @@ namespace Pique_Sous
 
         private void txtPrelevement_TextChanged(object sender, EventArgs e)
         {
-            grpEcheances.Controls.Clear();
+            flpEcheance.Controls.Clear();
+            lblEcheance.Show();
             //Génération dynamique des éléments dans la groupbox selon le texte de txtPrelevement
             int top = 15;
             int left = 15;
-            grpEcheances.Show();
+            flpEcheance.Show();
             int nb = 0;
             if (txtPrelevement.Text != "")
             {
@@ -171,24 +175,21 @@ namespace Pique_Sous
                 {
                     if (i == 0)
                     {
+                        
                         DateTimePicker dtPremier = new DateTimePicker();
                         dtPremier.ValueChanged += new System.EventHandler(dtPremier_ValueChanged);
                         dtPremier.Top = 30 * i + top;
                         dtPremier.Left = left + 85;
-                        grpEcheances.Controls.Add(dtPremier);
-                        dtPremier.Top = 30 * i + top;
-                        dtPremier.Left = left + 85;
-                        grpEcheances.Controls.Add(dtPremier);
+                        flpEcheance.Controls.Add(dtPremier);
+
+
                     }
                     else
                     {
                         DateTimePicker dt = new DateTimePicker();
                         dt.Top = 30 * i + top;
                         dt.Left = left + 85;
-                        grpEcheances.Controls.Add(dt);
-                        dt.Top = 30 * i + top;
-                        dt.Left = left + 85;
-                        grpEcheances.Controls.Add(dt);
+                        flpEcheance.Controls.Add(dt);
                     }
 
                     int n = i + 1;
@@ -198,7 +199,7 @@ namespace Pique_Sous
                     lbl.Text = "Echéance n°" + n;
                     lbl.Top = 30 * i + top;
                     lbl.Left = left;
-                    grpEcheances.Controls.Add(lbl);
+                    flpEcheance.Controls.Add(lbl);
 
                     //Génération des textboxs
                     if (i == 0)
@@ -209,7 +210,7 @@ namespace Pique_Sous
                         txtPremier.KeyPress += new System.Windows.Forms.KeyPressEventHandler(TextBoxPonctuel_KeyPress);
                         txtPremier.Top = 30 * i + top;
                         txtPremier.Left = left + 300;
-                        grpEcheances.Controls.Add(txtPremier);
+                        flpEcheance.Controls.Add(txtPremier);
                     }
                     else
                     {
@@ -217,7 +218,7 @@ namespace Pique_Sous
                         txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(TextBoxPonctuel_KeyPress);
                         txt.Top = 30 * i + top;
                         txt.Left = left + 300;
-                        grpEcheances.Controls.Add(txt);
+                        flpEcheance.Controls.Add(txt);
                     }
 
                 }
@@ -232,7 +233,7 @@ namespace Pique_Sous
             int i = 0;
             int mois = date.Month;
             int annee = date.Year;
-            foreach (DateTimePicker dt in grpEcheances.Controls.OfType<DateTimePicker>())
+            foreach (DateTimePicker dt in flpEcheance.Controls.OfType<DateTimePicker>())
             {
                 if (i == 0)
                 {
@@ -291,7 +292,7 @@ namespace Pique_Sous
                int i = 0;
                int mois = date.Month;
                int annee = date.Year;
-               foreach ( DateTimePicker dt in grpEcheances.Controls.OfType<DateTimePicker>())
+               foreach ( DateTimePicker dt in flpEcheance.Controls.OfType<DateTimePicker>())
                {
                     if (i == 0)
                     {
@@ -322,7 +323,7 @@ namespace Pique_Sous
         public void RemplirTxtMontant()
         {
             int i = 0;
-            foreach(TextBox txt in grpEcheances.Controls.OfType<TextBox>())
+            foreach(TextBox txt in flpEcheance.Controls.OfType<TextBox>())
             {
                 if (i == 0)
                 {
@@ -335,7 +336,7 @@ namespace Pique_Sous
         {
             int i = 0;
             string montant = "";
-            foreach(TextBox txt in grpEcheances.Controls.OfType<TextBox>())
+            foreach(TextBox txt in flpEcheance.Controls.OfType<TextBox>())
             {
                 if (i == 0)
                 {
@@ -349,9 +350,9 @@ namespace Pique_Sous
             }
         }
 
-        /*public void remplirParticipants()
+        public void remplirBeneficiaire()
         {
-            ry
+            try
             {
                 //Mise en place de la connection string et on ouvre la connection
                 connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
@@ -377,21 +378,10 @@ namespace Pique_Sous
                         //création et indentation des checkbox générées dynamiquements
                         if (dr.HasRows)
                         {
-                            int top = 25;
-                            int left = 15;
-                            int i = 0;
                             while (dr.Read())
                             {
-                                CheckBox cbPersonne = new CheckBox();
-                                cbPersonne.Text = dr[nb].ToString() + " " + dr[nb + 1].ToString();
-
-                                cbPersonne.Top = top + i * 10;
-                                cbPersonne.Left = left;
-                                cbPersonne.AutoSize = true;
-
-                                i += 2;
-                                c.Controls.Add(cbPersonne);
-
+                                 string cbPersonne = dr[nb].ToString() + " " + dr[nb + 1].ToString();
+                                cboBeneficiaire.Items.Add(cbPersonne);
                             }
                         }
                     }
@@ -410,7 +400,7 @@ namespace Pique_Sous
             finally
             {
             }
-        }*/
+        }
     }
 }
 

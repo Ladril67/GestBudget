@@ -42,7 +42,6 @@
             this.lblPeriodicite = new System.Windows.Forms.Label();
             this.lblPoste = new System.Windows.Forms.Label();
             this.tpPostePonctuel = new System.Windows.Forms.TabPage();
-            this.grpEcheances = new System.Windows.Forms.GroupBox();
             this.txtPrelevement = new System.Windows.Forms.TextBox();
             this.lblPrelevements = new System.Windows.Forms.Label();
             this.txtCommentaire = new System.Windows.Forms.TextBox();
@@ -51,7 +50,7 @@
             this.lblIntitule = new System.Windows.Forms.Label();
             this.tpRevenu = new System.Windows.Forms.TabPage();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboBeneficiaire = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtJourDuMois = new System.Windows.Forms.TextBox();
             this.lblJourDuMois = new System.Windows.Forms.Label();
@@ -59,6 +58,8 @@
             this.lblMontantRevenu = new System.Windows.Forms.Label();
             this.lblBenef = new System.Windows.Forms.Label();
             this.lblQuelPoste = new System.Windows.Forms.Label();
+            this.flpEcheance = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblEcheance = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tpPosteFixe.SuspendLayout();
             this.tpPostePonctuel.SuspendLayout();
@@ -201,7 +202,8 @@
             // 
             // tpPostePonctuel
             // 
-            this.tpPostePonctuel.Controls.Add(this.grpEcheances);
+            this.tpPostePonctuel.Controls.Add(this.lblEcheance);
+            this.tpPostePonctuel.Controls.Add(this.flpEcheance);
             this.tpPostePonctuel.Controls.Add(this.txtPrelevement);
             this.tpPostePonctuel.Controls.Add(this.lblPrelevements);
             this.tpPostePonctuel.Controls.Add(this.txtCommentaire);
@@ -216,17 +218,6 @@
             this.tpPostePonctuel.TabIndex = 1;
             this.tpPostePonctuel.Text = "Poste Ponctuel ";
             this.tpPostePonctuel.UseVisualStyleBackColor = true;
-            // 
-            // grpEcheances
-            // 
-            this.grpEcheances.Location = new System.Drawing.Point(32, 186);
-            this.grpEcheances.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpEcheances.Name = "grpEcheances";
-            this.grpEcheances.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpEcheances.Size = new System.Drawing.Size(608, 293);
-            this.grpEcheances.TabIndex = 6;
-            this.grpEcheances.TabStop = false;
-            this.grpEcheances.Text = "Echéances prévues";
             // 
             // txtPrelevement
             // 
@@ -284,7 +275,7 @@
             // tpRevenu
             // 
             this.tpRevenu.Controls.Add(this.textBox2);
-            this.tpRevenu.Controls.Add(this.comboBox1);
+            this.tpRevenu.Controls.Add(this.cboBeneficiaire);
             this.tpRevenu.Controls.Add(this.textBox1);
             this.tpRevenu.Controls.Add(this.txtJourDuMois);
             this.tpRevenu.Controls.Add(this.lblJourDuMois);
@@ -308,14 +299,14 @@
             this.textBox2.Size = new System.Drawing.Size(115, 22);
             this.textBox2.TabIndex = 8;
             // 
-            // comboBox1
+            // cboBeneficiaire
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(140, 97);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 24);
-            this.comboBox1.TabIndex = 7;
+            this.cboBeneficiaire.FormattingEnabled = true;
+            this.cboBeneficiaire.Location = new System.Drawing.Point(140, 97);
+            this.cboBeneficiaire.Margin = new System.Windows.Forms.Padding(4);
+            this.cboBeneficiaire.Name = "cboBeneficiaire";
+            this.cboBeneficiaire.Size = new System.Drawing.Size(160, 24);
+            this.cboBeneficiaire.TabIndex = 7;
             // 
             // textBox1
             // 
@@ -383,6 +374,22 @@
             this.lblQuelPoste.TabIndex = 0;
             this.lblQuelPoste.Text = "Quel poste ?";
             // 
+            // flpEcheance
+            // 
+            this.flpEcheance.Location = new System.Drawing.Point(32, 214);
+            this.flpEcheance.Name = "flpEcheance";
+            this.flpEcheance.Size = new System.Drawing.Size(614, 276);
+            this.flpEcheance.TabIndex = 6;
+            // 
+            // lblEcheance
+            // 
+            this.lblEcheance.AutoSize = true;
+            this.lblEcheance.Location = new System.Drawing.Point(44, 194);
+            this.lblEcheance.Name = "lblEcheance";
+            this.lblEcheance.Size = new System.Drawing.Size(141, 17);
+            this.lblEcheance.TabIndex = 0;
+            this.lblEcheance.Text = "Echéances prévues :";
+            // 
             // frmPrevisionnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -427,15 +434,16 @@
         private System.Windows.Forms.TextBox txtIntitule;
         private System.Windows.Forms.Label lblCommentaire;
         private System.Windows.Forms.TextBox txtPrelevement;
-        private System.Windows.Forms.GroupBox grpEcheances;
         private System.Windows.Forms.Label lblJourMois;
         private System.Windows.Forms.Label lblMontantRevenu;
         private System.Windows.Forms.Label lblBenef;
         private System.Windows.Forms.Label lblQuelPoste;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboBeneficiaire;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtJourDuMois;
         private System.Windows.Forms.Label lblJourDuMois;
+        private System.Windows.Forms.FlowLayoutPanel flpEcheance;
+        private System.Windows.Forms.Label lblEcheance;
     }
 }
