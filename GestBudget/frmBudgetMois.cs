@@ -32,10 +32,6 @@ namespace Pique_Sous
         {
             connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
             MiseAJour();
-            connec.Open();
-            OleDbCommand cd = new OleDbCommand("DROP TABLE [temp]", connec);
-            cd.ExecuteNonQuery();
-            connec.Close();
         }
 
         private void btnAjoutTransa_Click(object sender, EventArgs e)
@@ -85,6 +81,44 @@ namespace Pique_Sous
             }
         }
 
+        private void btnAjouterPersonneTransa_Click(object sender, EventArgs e)
+        {
+            DialogResult dR = MessageBox.Show("Voulez vous vraiment ajouter cette transaction ?", "Ajout", MessageBoxButtons.YesNo);
+            if (dR == DialogResult.Yes)
+            {
+                try
+                {
+                    connec.Open();
+                    string requete = "SELECT MAX(codePersonne) FROM Personne";
+                    OleDbCommand cd = new OleDbCommand(requete, connec);
+                    int codePers = (int)cd.ExecuteScalar() + 1;
+
+                    requete = "INSERT INTO [Personne] VALUES (" + codePers + ",'" + txtNomNewPers.Text + "','" + txtPrenomNewPers.Text + "', null)";
+                    MessageBox.Show(requete);
+                    OleDbCommand cd1 = new OleDbCommand(requete, connec);
+                    cd1.ExecuteNonQuery();
+                    connec.Close();
+                    MessageBox.Show("Personne ajoutée !");
+                    MiseAJour();
+                }
+                catch (InvalidOperationException erreur)
+                {
+                    MessageBox.Show("Erreur de chaine de connexion ! ajoutPers");
+                    MessageBox.Show(erreur.Message);
+                }
+                catch (OleDbException erreur)
+                {
+                    MessageBox.Show("Erreur de requete SQL ! ajoutPers");
+                    MessageBox.Show(erreur.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ben faut être sûr");
+            }
+            
+        }
+
         private void remplitCbo(ComboBox cb, string nomTable, string champAffiche, string champCache)
         {
             cb.DataSource = ds.Tables[nomTable];
@@ -94,6 +128,7 @@ namespace Pique_Sous
 
         private void remplirParticipants()
         {
+            grpParticipantsTransa.Controls.Clear();
             try
             {
                 //Mise en place de la connection string et on ouvre la connection
@@ -571,5 +606,7 @@ namespace Pique_Sous
                 MessageBox.Show("Erreur de requete SQL ! ValidMod");
             }
         }
+
+        
     }
 }
