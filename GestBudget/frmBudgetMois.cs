@@ -202,6 +202,8 @@ namespace Pique_Sous
             {
                 int max = 0;
                 int jointure = 0;
+                int codeTransaction = 0;
+                List<int> Personne = new List<int>();
                 OleDbCommand cd0 = new OleDbCommand("SELECT [codeTransaction] FROM[Transaction]", connec);
                 connec.Open();
                 OleDbDataReader dr0 = cd0.ExecuteReader();
@@ -248,10 +250,10 @@ namespace Pique_Sous
                 OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction] where [codeTransaction] = " + ligne, connec);
                 OleDbDataReader dr1 = cd1.ExecuteReader();
                 
-
                 while (dr1.Read())
                 {
                     lblCode.Text = dr1.GetInt32(0).ToString();
+                    codeTransaction = dr1.GetInt32(0);
                     dtp1a1.Value = dr1.GetDateTime(1);
                     lblDescription.Text = dr1.GetString(2);
                     lblValeur.Text = dr1.GetValue(3).ToString() + " €";
@@ -259,16 +261,30 @@ namespace Pique_Sous
                     chkPercu.Checked = dr1.GetBoolean(5);
                     jointure = dr1.GetInt32(6);
                 }
-                connec.Close();
-
                 //Pour eviter de faire une requette avec une jointure
                 OleDbCommand cd2 = new OleDbCommand("SELECT [TypeTransaction].* FROM [TypeTransaction] where [codeType] = " + jointure, connec);
-                connec.Open();
                 OleDbDataReader dr2 = cd2.ExecuteReader();
                 while (dr2.Read())
                 {
                     lblType.Text = dr2.GetString(1);
                 }
+
+                OleDbCommand cd3 = new OleDbCommand("SELECT [CodePersonne] FROM[Beneficiaires] where [codeTransaction] =" + codeTransaction, connec);
+                OleDbDataReader dr3 = cd3.ExecuteReader();
+                while (dr3.Read())
+                {
+                    Personne.Add(dr3.GetInt32(0));
+                }
+                for(int i=0;i< Personne.Count(); i++)
+                {
+                    OleDbCommand cd4 = new OleDbCommand("SELECT [nomPersonne],[pnPersonne] FROM[Personne] where [codePersonne] =" + Personne[i].ToString(), connec);
+                    OleDbDataReader dr4 = cd4.ExecuteReader();
+                    while (dr4.Read())
+                    {
+                        lvPersonne.Items.Add(dr4.GetString(0) + " " + dr4.GetString(1));
+                    }
+                }
+
                 connec.Close();
 
             }
