@@ -54,6 +54,7 @@ namespace Pique_Sous
                     dgvPrevisionnelAnnuel.Rows[c].Cells[1].Value = dr.GetInt32(0);
                     c++;
                 }
+
             }
             catch (InvalidOperationException erreur)
             {
