@@ -729,14 +729,14 @@ namespace Pique_Sous
                 FolderBrowserDialog fbd = new FolderBrowserDialog();
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
-<<<<<<< HEAD
  
-=======
-<<<<<<< HEAD
+ 
+ 
+ 
                     myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois + "_" + annee +".pdf");
-=======
-<<<<<<< HEAD
->>>>>>> 52ee49c805a4a9bed93798597f5634f27cbbe49b
+ 
+ 
+ 
  
                     myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois +".pdf");
  
@@ -744,12 +744,12 @@ namespace Pique_Sous
  
  
                     myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois +".pdf");
-<<<<<<< HEAD
  
-=======
->>>>>>> 0dfed3e5cefb0362ea5bbc9b748037ebcddd4591
->>>>>>> 2c3d02ab320beae2dca54413d5ab00671e955f67
->>>>>>> 52ee49c805a4a9bed93798597f5634f27cbbe49b
+ 
+ 
+ 
+ 
+ 
                 }
                 myPage = null;
                 myDoc = null;

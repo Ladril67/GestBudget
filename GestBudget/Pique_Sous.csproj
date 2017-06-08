@@ -101,6 +101,9 @@
     <EmbeddedResource Include="frmBudgetMois.resx">
       <DependentUpon>frmBudgetMois.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBudgetPrevisionnelAnnuel.resx">
+      <DependentUpon>frmBudgetPrevisionnelAnnuel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
