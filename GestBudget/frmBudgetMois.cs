@@ -617,8 +617,9 @@ namespace Pique_Sous
             {
                 connec.Open();
                 string mois = dtpReca.Value.Month.ToString();
-                string text = "";
-                int montant = 0;
+                string annee = dtpReca.Value.ToShortDateString();
+                string text = "____________________________________________________";
+                float montant = 0;
                 int recette = 0;
                 int percu = 0;
                 pdfDocument myDoc = new pdfDocument("Recapitulatif_" + mois, "Pique_Sous");
@@ -640,16 +641,30 @@ namespace Pique_Sous
                     {
                         percu++;
                     }
-                    montant = montant + dr1.GetInt32(3);
+                    montant = montant + dr1.GetFloat(3);
                 }
 
-                text = "Recette : " + recette.ToString() + " Depenses : " + montant.ToString() + "Reste a persevoir : " + percu.ToString() + "Somme total dépensée : -" + montant.ToString() + "nombres de transactions : " + nbTransaction.Count.ToString();
-                myPage.addText(text, 200, 450, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                int indentation = 20;
+                myPage.addText("Recapitulatif du mois :" + mois, indentation, 720, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText(text, indentation, 700, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText("Dépenses", indentation, 675, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText(text, indentation, 315, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText("Recette : " + recette.ToString(), indentation, 285, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText(text, indentation, 255, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText(" Depenses : " + montant.ToString(), indentation, 225, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText(text, indentation, 195, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText("Reste a persevoir : " + percu.ToString(), indentation, 165, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText(text, indentation, 135, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText("Somme total dépensée : -" + montant.ToString(), indentation, 105, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText(text, indentation, 75, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText("nombres de transactions : " + nbTransaction.Count.ToString(), indentation, 45, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText(text, indentation, 15, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+
                 FolderBrowserDialog fbd = new FolderBrowserDialog();
                 fbd.ShowDialog();
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
-                    myDoc.createPDF(fbd.SelectedPath);
+                    myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois +".pdf");
                 }
                 //myDoc.createPDF(@"C:\Users\Miniyeti67\Desktop\Mini Projet\" + mois + ".pdf");
                 //myDoc.createPDF(@"C:\Users\ladri\Desktop" + mois + ".pdf");
