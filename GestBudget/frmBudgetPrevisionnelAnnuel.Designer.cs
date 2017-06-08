@@ -63,7 +63,7 @@
             this.dgvPrevisionnelAnnuel.Location = new System.Drawing.Point(0, 2);
             this.dgvPrevisionnelAnnuel.Name = "dgvPrevisionnelAnnuel";
             this.dgvPrevisionnelAnnuel.RowTemplate.Height = 24;
-            this.dgvPrevisionnelAnnuel.Size = new System.Drawing.Size(859, 499);
+            this.dgvPrevisionnelAnnuel.Size = new System.Drawing.Size(1137, 656);
             this.dgvPrevisionnelAnnuel.TabIndex = 0;
             // 
             // Poste
@@ -131,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 671);
+            this.ClientSize = new System.Drawing.Size(1149, 670);
             this.Controls.Add(this.dgvPrevisionnelAnnuel);
             this.Name = "frmBudgetPrevisionnelAnnuel";
             this.Text = "frmBudgetPrevisionnelAnnuel";
