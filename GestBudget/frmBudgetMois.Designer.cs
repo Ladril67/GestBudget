@@ -132,7 +132,7 @@
             this.tcBudgetMois.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tcBudgetMois.Name = "tcBudgetMois";
             this.tcBudgetMois.SelectedIndex = 0;
-            this.tcBudgetMois.Size = new System.Drawing.Size(872, 553);
+            this.tcBudgetMois.Size = new System.Drawing.Size(872, 572);
             this.tcBudgetMois.TabIndex = 0;
             // 
             // tpAffichage1a1
@@ -153,7 +153,7 @@
             this.tpAffichage1a1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpAffichage1a1.Name = "tpAffichage1a1";
             this.tpAffichage1a1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpAffichage1a1.Size = new System.Drawing.Size(864, 521);
+            this.tpAffichage1a1.Size = new System.Drawing.Size(864, 540);
             this.tpAffichage1a1.TabIndex = 1;
             this.tpAffichage1a1.Text = "Affichage 1 à 1";
             this.tpAffichage1a1.UseVisualStyleBackColor = true;
@@ -163,60 +163,27 @@
             this.lvPersonne.Activation = System.Windows.Forms.ItemActivation.TwoClick;
             this.lvPersonne.Alignment = System.Windows.Forms.ListViewAlignment.Left;
             this.lvPersonne.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvPersonne.Location = new System.Drawing.Point(10, 160);
+            this.lvPersonne.Location = new System.Drawing.Point(61, 168);
             this.lvPersonne.Margin = new System.Windows.Forms.Padding(5);
             this.lvPersonne.Name = "lvPersonne";
-            this.lvPersonne.Size = new System.Drawing.Size(750, 309);
+            this.lvPersonne.Size = new System.Drawing.Size(738, 309);
             this.lvPersonne.TabIndex = 100;
             this.lvPersonne.UseCompatibleStateImageBehavior = false;
             // 
             // dtp1a1
             // 
             this.dtp1a1.Enabled = false;
-<<<<<<< HEAD
-            this.dtp1a1.Location = new System.Drawing.Point(417, 25);
-            this.dtp1a1.Margin = new System.Windows.Forms.Padding(5);
-=======
- 
-            this.dtp1a1.Location = new System.Drawing.Point(235, 16);
- 
             this.dtp1a1.Location = new System.Drawing.Point(313, 20);
-            this.dtp1a1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
+            this.dtp1a1.Margin = new System.Windows.Forms.Padding(4);
             this.dtp1a1.Name = "dtp1a1";
             this.dtp1a1.Size = new System.Drawing.Size(167, 22);
             this.dtp1a1.TabIndex = 20;
             // 
-<<<<<<< HEAD
-            // lblValeur
-            // 
-            this.lblValeur.AutoSize = true;
-            this.lblValeur.Location = new System.Drawing.Point(414, 63);
-            this.lblValeur.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-=======
- 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(31, 181);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(556, 199);
-            this.listBox1.TabIndex = 19;
-            // 
-            // lblValeur
-            // 
-            this.lblValeur.AutoSize = true;
-            this.lblValeur.Location = new System.Drawing.Point(232, 48);
- 
             // lblValeur
             // 
             this.lblValeur.AutoSize = true;
             this.lblValeur.Location = new System.Drawing.Point(309, 59);
             this.lblValeur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
             this.lblValeur.Name = "lblValeur";
             this.lblValeur.Size = new System.Drawing.Size(46, 17);
             this.lblValeur.TabIndex = 16;
@@ -226,18 +193,8 @@
             // 
             this.checkRecette.AutoSize = true;
             this.checkRecette.Enabled = false;
-<<<<<<< HEAD
-            this.checkRecette.Location = new System.Drawing.Point(417, 92);
-            this.checkRecette.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-=======
- 
-            this.checkRecette.Location = new System.Drawing.Point(235, 72);
-            this.checkRecette.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
- 
             this.checkRecette.Location = new System.Drawing.Point(313, 89);
             this.checkRecette.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
             this.checkRecette.Name = "checkRecette";
             this.checkRecette.Size = new System.Drawing.Size(79, 21);
             this.checkRecette.TabIndex = 15;
@@ -248,7 +205,7 @@
             // 
             this.checkPercu.AutoSize = true;
             this.checkPercu.Enabled = false;
-            this.checkPercu.Location = new System.Drawing.Point(417, 132);
+            this.checkPercu.Location = new System.Drawing.Point(312, 129);
             this.checkPercu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkPercu.Name = "checkPercu";
             this.checkPercu.Size = new System.Drawing.Size(67, 21);
@@ -288,18 +245,8 @@
             // 
             // btnDernier
             // 
-<<<<<<< HEAD
-            this.btnDernier.Location = new System.Drawing.Point(583, 480);
-            this.btnDernier.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-=======
- 
-            this.btnDernier.Location = new System.Drawing.Point(454, 388);
-            this.btnDernier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
- 
-            this.btnDernier.Location = new System.Drawing.Point(605, 478);
-            this.btnDernier.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
+            this.btnDernier.Location = new System.Drawing.Point(622, 487);
+            this.btnDernier.Margin = new System.Windows.Forms.Padding(5);
             this.btnDernier.Name = "btnDernier";
             this.btnDernier.Size = new System.Drawing.Size(177, 32);
             this.btnDernier.TabIndex = 3;
@@ -309,18 +256,8 @@
             // 
             // btnSuivant
             // 
-<<<<<<< HEAD
-            this.btnSuivant.Location = new System.Drawing.Point(392, 480);
-            this.btnSuivant.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-=======
- 
-            this.btnSuivant.Location = new System.Drawing.Point(313, 388);
-            this.btnSuivant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
- 
-            this.btnSuivant.Location = new System.Drawing.Point(417, 478);
-            this.btnSuivant.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
+            this.btnSuivant.Location = new System.Drawing.Point(435, 487);
+            this.btnSuivant.Margin = new System.Windows.Forms.Padding(5);
             this.btnSuivant.Name = "btnSuivant";
             this.btnSuivant.Size = new System.Drawing.Size(177, 32);
             this.btnSuivant.TabIndex = 2;
@@ -330,18 +267,8 @@
             // 
             // btnAvant
             // 
-<<<<<<< HEAD
-            this.btnAvant.Location = new System.Drawing.Point(201, 480);
-            this.btnAvant.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-=======
- 
-            this.btnAvant.Location = new System.Drawing.Point(172, 388);
-            this.btnAvant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
- 
-            this.btnAvant.Location = new System.Drawing.Point(229, 478);
-            this.btnAvant.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
+            this.btnAvant.Location = new System.Drawing.Point(248, 487);
+            this.btnAvant.Margin = new System.Windows.Forms.Padding(5);
             this.btnAvant.Name = "btnAvant";
             this.btnAvant.Size = new System.Drawing.Size(177, 32);
             this.btnAvant.TabIndex = 1;
@@ -351,18 +278,8 @@
             // 
             // btnPremier
             // 
-<<<<<<< HEAD
-            this.btnPremier.Location = new System.Drawing.Point(10, 481);
-            this.btnPremier.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-=======
- 
-            this.btnPremier.Location = new System.Drawing.Point(31, 388);
-            this.btnPremier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
- 
-            this.btnPremier.Location = new System.Drawing.Point(41, 478);
-            this.btnPremier.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
+            this.btnPremier.Location = new System.Drawing.Point(61, 487);
+            this.btnPremier.Margin = new System.Windows.Forms.Padding(5);
             this.btnPremier.Name = "btnPremier";
             this.btnPremier.Size = new System.Drawing.Size(177, 32);
             this.btnPremier.TabIndex = 0;
@@ -396,14 +313,14 @@
             this.tpNewTransaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpNewTransaction.Name = "tpNewTransaction";
             this.tpNewTransaction.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpNewTransaction.Size = new System.Drawing.Size(864, 521);
+            this.tpNewTransaction.Size = new System.Drawing.Size(864, 540);
             this.tpNewTransaction.TabIndex = 0;
             this.tpNewTransaction.Text = "Ajout d\'une transaction";
             this.tpNewTransaction.UseVisualStyleBackColor = true;
             // 
             // lblSupprPers
             // 
-            this.lblSupprPers.Location = new System.Drawing.Point(667, 300);
+            this.lblSupprPers.Location = new System.Drawing.Point(668, 276);
             this.lblSupprPers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSupprPers.Name = "lblSupprPers";
             this.lblSupprPers.Size = new System.Drawing.Size(155, 70);
@@ -412,7 +329,7 @@
             // 
             // btnSupprPers
             // 
-            this.btnSupprPers.Location = new System.Drawing.Point(671, 376);
+            this.btnSupprPers.Location = new System.Drawing.Point(672, 352);
             this.btnSupprPers.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnSupprPers.Name = "btnSupprPers";
             this.btnSupprPers.Size = new System.Drawing.Size(149, 71);
@@ -481,24 +398,10 @@
             // 
             // btnAjouterPersonneTransa
             // 
-<<<<<<< HEAD
-            this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(673, 199);
-            this.btnAjouterPersonneTransa.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(671, 189);
+            this.btnAjouterPersonneTransa.Margin = new System.Windows.Forms.Padding(5);
             this.btnAjouterPersonneTransa.Name = "btnAjouterPersonneTransa";
-            this.btnAjouterPersonneTransa.Size = new System.Drawing.Size(149, 71);
-=======
- 
-            this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(551, 13);
-            this.btnAjouterPersonneTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnAjouterPersonneTransa.Name = "btnAjouterPersonneTransa";
-            this.btnAjouterPersonneTransa.Size = new System.Drawing.Size(84, 67);
- 
-            this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(734, 155);
-            this.btnAjouterPersonneTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.btnAjouterPersonneTransa.Name = "btnAjouterPersonneTransa";
-            this.btnAjouterPersonneTransa.Size = new System.Drawing.Size(112, 58);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
+            this.btnAjouterPersonneTransa.Size = new System.Drawing.Size(149, 65);
             this.btnAjouterPersonneTransa.TabIndex = 0;
             this.btnAjouterPersonneTransa.Text = "Ajouter une personne";
             this.btnAjouterPersonneTransa.UseVisualStyleBackColor = true;
@@ -517,18 +420,8 @@
             // 
             // btnAjoutTransa
             // 
-<<<<<<< HEAD
-            this.btnAjoutTransa.Location = new System.Drawing.Point(148, 316);
-            this.btnAjoutTransa.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-=======
- 
-            this.btnAjoutTransa.Location = new System.Drawing.Point(144, 306);
-            this.btnAjoutTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
- 
-            this.btnAjoutTransa.Location = new System.Drawing.Point(192, 377);
-            this.btnAjoutTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
+            this.btnAjoutTransa.Location = new System.Drawing.Point(121, 308);
+            this.btnAjoutTransa.Margin = new System.Windows.Forms.Padding(5);
             this.btnAjoutTransa.Name = "btnAjoutTransa";
             this.btnAjoutTransa.Size = new System.Drawing.Size(213, 91);
             this.btnAjoutTransa.TabIndex = 10;
@@ -538,18 +431,8 @@
             // 
             // btnAjoutType
             // 
-<<<<<<< HEAD
-            this.btnAjoutType.Location = new System.Drawing.Point(583, 283);
-            this.btnAjoutType.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-=======
- 
-            this.btnAjoutType.Location = new System.Drawing.Point(328, 187);
-            this.btnAjoutType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
- 
-            this.btnAjoutType.Location = new System.Drawing.Point(437, 230);
-            this.btnAjoutType.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
+            this.btnAjoutType.Location = new System.Drawing.Point(373, 227);
+            this.btnAjoutType.Margin = new System.Windows.Forms.Padding(5);
             this.btnAjoutType.Name = "btnAjoutType";
             this.btnAjoutType.Size = new System.Drawing.Size(32, 23);
             this.btnAjoutType.TabIndex = 9;
@@ -559,18 +442,8 @@
             // cboTypeTransa
             // 
             this.cboTypeTransa.FormattingEnabled = true;
-<<<<<<< HEAD
-            this.cboTypeTransa.Location = new System.Drawing.Point(223, 223);
-            this.cboTypeTransa.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-=======
- 
-            this.cboTypeTransa.Location = new System.Drawing.Point(199, 187);
-            this.cboTypeTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
- 
-            this.cboTypeTransa.Location = new System.Drawing.Point(265, 230);
-            this.cboTypeTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
+            this.cboTypeTransa.Location = new System.Drawing.Point(213, 227);
+            this.cboTypeTransa.Margin = new System.Windows.Forms.Padding(5);
             this.cboTypeTransa.Name = "cboTypeTransa";
             this.cboTypeTransa.Size = new System.Drawing.Size(121, 24);
             this.cboTypeTransa.TabIndex = 8;
@@ -587,18 +460,8 @@
             // 
             // txtMontantTransa
             // 
-<<<<<<< HEAD
-            this.txtMontantTransa.Location = new System.Drawing.Point(223, 119);
-            this.txtMontantTransa.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-=======
- 
-            this.txtMontantTransa.Location = new System.Drawing.Point(199, 101);
-            this.txtMontantTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
- 
-            this.txtMontantTransa.Location = new System.Drawing.Point(265, 124);
-            this.txtMontantTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
+            this.txtMontantTransa.Location = new System.Drawing.Point(213, 121);
+            this.txtMontantTransa.Margin = new System.Windows.Forms.Padding(5);
             this.txtMontantTransa.Name = "txtMontantTransa";
             this.txtMontantTransa.Size = new System.Drawing.Size(221, 22);
             this.txtMontantTransa.TabIndex = 4;
@@ -616,18 +479,8 @@
             // 
             // txtDescriptionTransa
             // 
-<<<<<<< HEAD
-            this.txtDescriptionTransa.Location = new System.Drawing.Point(223, 77);
-            this.txtDescriptionTransa.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-=======
- 
-            this.txtDescriptionTransa.Location = new System.Drawing.Point(199, 67);
-            this.txtDescriptionTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
- 
-            this.txtDescriptionTransa.Location = new System.Drawing.Point(265, 82);
-            this.txtDescriptionTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
+            this.txtDescriptionTransa.Location = new System.Drawing.Point(213, 79);
+            this.txtDescriptionTransa.Margin = new System.Windows.Forms.Padding(5);
             this.txtDescriptionTransa.Name = "txtDescriptionTransa";
             this.txtDescriptionTransa.Size = new System.Drawing.Size(221, 22);
             this.txtDescriptionTransa.TabIndex = 3;
@@ -644,18 +497,8 @@
             // 
             // dtpTransa
             // 
-<<<<<<< HEAD
-            this.dtpTransa.Location = new System.Drawing.Point(223, 29);
-            this.dtpTransa.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-=======
- 
-            this.dtpTransa.Location = new System.Drawing.Point(199, 34);
-            this.dtpTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
- 
-            this.dtpTransa.Location = new System.Drawing.Point(265, 42);
-            this.dtpTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
+            this.dtpTransa.Location = new System.Drawing.Point(213, 34);
+            this.dtpTransa.Margin = new System.Windows.Forms.Padding(5);
             this.dtpTransa.Name = "dtpTransa";
             this.dtpTransa.Size = new System.Drawing.Size(221, 22);
             this.dtpTransa.TabIndex = 1;
@@ -680,7 +523,7 @@
             this.tpDeleteTransaction.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tpDeleteTransaction.Name = "tpDeleteTransaction";
             this.tpDeleteTransaction.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpDeleteTransaction.Size = new System.Drawing.Size(864, 521);
+            this.tpDeleteTransaction.Size = new System.Drawing.Size(864, 540);
             this.tpDeleteTransaction.TabIndex = 1;
             this.tpDeleteTransaction.Text = "Suppression d\'une transaction";
             this.tpDeleteTransaction.UseVisualStyleBackColor = true;
@@ -718,17 +561,8 @@
             // 
             this.dgvTransactions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-<<<<<<< HEAD
-            this.dgvTransactions.Location = new System.Drawing.Point(15, 12);
-            this.dgvTransactions.Margin = new System.Windows.Forms.Padding(5);
-=======
- 
-            this.dgvTransactions.Location = new System.Drawing.Point(8, 8);
- 
             this.dgvTransactions.Location = new System.Drawing.Point(11, 10);
-            this.dgvTransactions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
+            this.dgvTransactions.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTransactions.Name = "dgvTransactions";
             this.dgvTransactions.RowTemplate.Height = 24;
             this.dgvTransactions.Size = new System.Drawing.Size(841, 283);
@@ -745,25 +579,15 @@
             this.tpModifTransaction.Location = new System.Drawing.Point(4, 28);
             this.tpModifTransaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpModifTransaction.Name = "tpModifTransaction";
-            this.tpModifTransaction.Size = new System.Drawing.Size(864, 521);
+            this.tpModifTransaction.Size = new System.Drawing.Size(864, 540);
             this.tpModifTransaction.TabIndex = 2;
             this.tpModifTransaction.Text = "Modification d\'une transaction";
             this.tpModifTransaction.UseVisualStyleBackColor = true;
             // 
             // btnAnnulerMod
             // 
-<<<<<<< HEAD
-            this.btnAnnulerMod.Location = new System.Drawing.Point(671, 305);
-            this.btnAnnulerMod.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-=======
- 
-            this.btnAnnulerMod.Location = new System.Drawing.Point(518, 250);
-            this.btnAnnulerMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
- 
             this.btnAnnulerMod.Location = new System.Drawing.Point(691, 308);
             this.btnAnnulerMod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
             this.btnAnnulerMod.Name = "btnAnnulerMod";
             this.btnAnnulerMod.Size = new System.Drawing.Size(75, 23);
             this.btnAnnulerMod.TabIndex = 19;
@@ -773,18 +597,8 @@
             // 
             // btnValidMod
             // 
-<<<<<<< HEAD
-            this.btnValidMod.Location = new System.Drawing.Point(778, 305);
-            this.btnValidMod.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-=======
- 
-            this.btnValidMod.Location = new System.Drawing.Point(578, 250);
-            this.btnValidMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
- 
             this.btnValidMod.Location = new System.Drawing.Point(771, 308);
             this.btnValidMod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
             this.btnValidMod.Name = "btnValidMod";
             this.btnValidMod.Size = new System.Drawing.Size(75, 23);
             this.btnValidMod.TabIndex = 18;
@@ -795,24 +609,10 @@
             // txtCodeToMod
             // 
             this.txtCodeToMod.Anchor = System.Windows.Forms.AnchorStyles.None;
-<<<<<<< HEAD
-            this.txtCodeToMod.Location = new System.Drawing.Point(239, 308);
-            this.txtCodeToMod.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.txtCodeToMod.Name = "txtCodeToMod";
-            this.txtCodeToMod.Size = new System.Drawing.Size(43, 22);
-=======
- 
-            this.txtCodeToMod.Location = new System.Drawing.Point(178, 250);
-            this.txtCodeToMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtCodeToMod.Name = "txtCodeToMod";
-            this.txtCodeToMod.Size = new System.Drawing.Size(26, 20);
- 
-            this.txtCodeToMod.Location = new System.Drawing.Point(237, 308);
+            this.txtCodeToMod.Location = new System.Drawing.Point(238, 311);
             this.txtCodeToMod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCodeToMod.Name = "txtCodeToMod";
             this.txtCodeToMod.Size = new System.Drawing.Size(33, 22);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
             this.txtCodeToMod.TabIndex = 17;
             this.txtCodeToMod.TextChanged += new System.EventHandler(this.txtCodeToMod_TextChanged);
             // 
@@ -841,18 +641,8 @@
             this.tableLayoutPanel1.Controls.Add(this.dtpModDate, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtModDesc, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.cboModType, 6, 1);
-<<<<<<< HEAD
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(11, 354);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-=======
- 
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(7, 288);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
- 
             this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 354);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -863,18 +653,8 @@
             // txtModMontant
             // 
             this.txtModMontant.Anchor = System.Windows.Forms.AnchorStyles.None;
-<<<<<<< HEAD
-            this.txtModMontant.Location = new System.Drawing.Point(504, 105);
-            this.txtModMontant.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-=======
- 
-            this.txtModMontant.Location = new System.Drawing.Point(332, 85);
-            this.txtModMontant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
- 
             this.txtModMontant.Location = new System.Drawing.Point(439, 105);
             this.txtModMontant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
             this.txtModMontant.Name = "txtModMontant";
             this.txtModMontant.Size = new System.Drawing.Size(100, 22);
             this.txtModMontant.TabIndex = 15;
@@ -883,18 +663,8 @@
             // txtModCode
             // 
             this.txtModCode.Anchor = System.Windows.Forms.AnchorStyles.None;
-<<<<<<< HEAD
-            this.txtModCode.Location = new System.Drawing.Point(12, 105);
-            this.txtModCode.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-=======
- 
-            this.txtModCode.Location = new System.Drawing.Point(9, 85);
-            this.txtModCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
- 
             this.txtModCode.Location = new System.Drawing.Point(12, 105);
             this.txtModCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
             this.txtModCode.Name = "txtModCode";
             this.txtModCode.Size = new System.Drawing.Size(100, 22);
             this.txtModCode.TabIndex = 14;
@@ -914,7 +684,7 @@
             // 
             this.lblModDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblModDate.AutoSize = true;
-            this.lblModDate.Location = new System.Drawing.Point(128, 30);
+            this.lblModDate.Location = new System.Drawing.Point(127, 30);
             this.lblModDate.Name = "lblModDate";
             this.lblModDate.Size = new System.Drawing.Size(113, 17);
             this.lblModDate.TabIndex = 4;
@@ -924,7 +694,7 @@
             // 
             this.lblModDesc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblModDesc.AutoSize = true;
-            this.lblModDesc.Location = new System.Drawing.Point(333, 30);
+            this.lblModDesc.Location = new System.Drawing.Point(300, 30);
             this.lblModDesc.Name = "lblModDesc";
             this.lblModDesc.Size = new System.Drawing.Size(79, 17);
             this.lblModDesc.TabIndex = 5;
@@ -934,16 +704,8 @@
             // 
             this.lblModMontant.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblModMontant.AutoSize = true;
-<<<<<<< HEAD
-            this.lblModMontant.Location = new System.Drawing.Point(524, 30);
-=======
- 
-            this.lblModMontant.Location = new System.Drawing.Point(347, 25);
-            this.lblModMontant.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
- 
             this.lblModMontant.Location = new System.Drawing.Point(459, 30);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
+            this.lblModMontant.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblModMontant.Name = "lblModMontant";
             this.lblModMontant.Size = new System.Drawing.Size(59, 17);
             this.lblModMontant.TabIndex = 6;
@@ -953,16 +715,8 @@
             // 
             this.lblModRecette.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblModRecette.AutoSize = true;
-<<<<<<< HEAD
-            this.lblModRecette.Location = new System.Drawing.Point(612, 30);
-=======
- 
-            this.lblModRecette.Location = new System.Drawing.Point(413, 25);
+            this.lblModRecette.Location = new System.Drawing.Point(545, 30);
             this.lblModRecette.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
- 
-            this.lblModRecette.Location = new System.Drawing.Point(546, 30);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
             this.lblModRecette.Name = "lblModRecette";
             this.lblModRecette.Size = new System.Drawing.Size(57, 17);
             this.lblModRecette.TabIndex = 7;
@@ -972,16 +726,8 @@
             // 
             this.lblModPercu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblModPercu.AutoSize = true;
-<<<<<<< HEAD
-            this.lblModPercu.Location = new System.Drawing.Point(676, 30);
-=======
- 
-            this.lblModPercu.Location = new System.Drawing.Point(463, 25);
+            this.lblModPercu.Location = new System.Drawing.Point(607, 30);
             this.lblModPercu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
- 
-            this.lblModPercu.Location = new System.Drawing.Point(610, 30);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
             this.lblModPercu.Name = "lblModPercu";
             this.lblModPercu.Size = new System.Drawing.Size(45, 17);
             this.lblModPercu.TabIndex = 8;
@@ -991,16 +737,8 @@
             // 
             this.lblModType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblModType.AutoSize = true;
-<<<<<<< HEAD
-            this.lblModType.Location = new System.Drawing.Point(765, 30);
-=======
- 
-            this.lblModType.Location = new System.Drawing.Point(550, 25);
+            this.lblModType.Location = new System.Drawing.Point(727, 30);
             this.lblModType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
- 
-            this.lblModType.Location = new System.Drawing.Point(729, 30);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
             this.lblModType.Name = "lblModType";
             this.lblModType.Size = new System.Drawing.Size(40, 17);
             this.lblModType.TabIndex = 9;
@@ -1010,18 +748,8 @@
             // 
             this.chkModRecette.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkModRecette.AutoSize = true;
-<<<<<<< HEAD
-            this.chkModRecette.Location = new System.Drawing.Point(631, 108);
-            this.chkModRecette.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-=======
- 
-            this.chkModRecette.Location = new System.Drawing.Point(428, 88);
-            this.chkModRecette.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
- 
-            this.chkModRecette.Location = new System.Drawing.Point(565, 108);
+            this.chkModRecette.Location = new System.Drawing.Point(564, 108);
             this.chkModRecette.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
             this.chkModRecette.Name = "chkModRecette";
             this.chkModRecette.Size = new System.Drawing.Size(18, 17);
             this.chkModRecette.TabIndex = 10;
@@ -1031,18 +759,8 @@
             // 
             this.chkModPercu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkModPercu.AutoSize = true;
-<<<<<<< HEAD
-            this.chkModPercu.Location = new System.Drawing.Point(689, 108);
-            this.chkModPercu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-=======
- 
-            this.chkModPercu.Location = new System.Drawing.Point(473, 88);
-            this.chkModPercu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
- 
-            this.chkModPercu.Location = new System.Drawing.Point(623, 108);
+            this.chkModPercu.Location = new System.Drawing.Point(620, 108);
             this.chkModPercu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
             this.chkModPercu.Name = "chkModPercu";
             this.chkModPercu.Size = new System.Drawing.Size(18, 17);
             this.chkModPercu.TabIndex = 11;
@@ -1052,18 +770,8 @@
             // 
             this.dtpModDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpModDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-<<<<<<< HEAD
-            this.dtpModDate.Location = new System.Drawing.Point(128, 105);
-            this.dtpModDate.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-=======
- 
-            this.dtpModDate.Location = new System.Drawing.Point(96, 85);
-            this.dtpModDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
- 
             this.dtpModDate.Location = new System.Drawing.Point(127, 105);
             this.dtpModDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
             this.dtpModDate.Name = "dtpModDate";
             this.dtpModDate.Size = new System.Drawing.Size(113, 22);
             this.dtpModDate.TabIndex = 12;
@@ -1071,42 +779,18 @@
             // txtModDesc
             // 
             this.txtModDesc.Anchor = System.Windows.Forms.AnchorStyles.None;
-<<<<<<< HEAD
-            this.txtModDesc.Location = new System.Drawing.Point(250, 105);
-            this.txtModDesc.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.txtModDesc.Name = "txtModDesc";
-            this.txtModDesc.Size = new System.Drawing.Size(245, 22);
-=======
- 
-            this.txtModDesc.Location = new System.Drawing.Point(187, 85);
-            this.txtModDesc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtModDesc.Name = "txtModDesc";
-            this.txtModDesc.Size = new System.Drawing.Size(140, 20);
- 
             this.txtModDesc.Location = new System.Drawing.Point(247, 105);
             this.txtModDesc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtModDesc.Name = "txtModDesc";
             this.txtModDesc.Size = new System.Drawing.Size(185, 22);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
             this.txtModDesc.TabIndex = 13;
             // 
             // cboModType
             // 
             this.cboModType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboModType.FormattingEnabled = true;
-<<<<<<< HEAD
-            this.cboModType.Location = new System.Drawing.Point(729, 104);
-            this.cboModType.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-=======
- 
-            this.cboModType.Location = new System.Drawing.Point(522, 84);
-            this.cboModType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
- 
-            this.cboModType.Location = new System.Drawing.Point(693, 104);
+            this.cboModType.Location = new System.Drawing.Point(691, 104);
             this.cboModType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
             this.cboModType.Name = "cboModType";
             this.cboModType.Size = new System.Drawing.Size(113, 24);
             this.cboModType.TabIndex = 16;
@@ -1124,17 +808,8 @@
             // 
             this.dgvModifTransa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvModifTransa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-<<<<<<< HEAD
-            this.dgvModifTransa.Location = new System.Drawing.Point(12, 5);
-            this.dgvModifTransa.Margin = new System.Windows.Forms.Padding(5);
-=======
- 
-            this.dgvModifTransa.Location = new System.Drawing.Point(7, 3);
- 
             this.dgvModifTransa.Location = new System.Drawing.Point(9, 4);
-            this.dgvModifTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
+            this.dgvModifTransa.Margin = new System.Windows.Forms.Padding(4);
             this.dgvModifTransa.Name = "dgvModifTransa";
             this.dgvModifTransa.RowTemplate.Height = 24;
             this.dgvModifTransa.Size = new System.Drawing.Size(841, 283);
@@ -1142,26 +817,14 @@
             // 
             // tpRecap
             // 
-<<<<<<< HEAD
-=======
- 
-            this.tpRecap.Location = new System.Drawing.Point(4, 25);
-            this.tpRecap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
             this.tpRecap.Controls.Add(this.grpCriteres);
             this.tpRecap.Controls.Add(this.dgvRecapitulatif);
             this.tpRecap.Controls.Add(this.dtpReca);
             this.tpRecap.Controls.Add(this.btnCreeReca);
             this.tpRecap.Location = new System.Drawing.Point(4, 28);
-<<<<<<< HEAD
-            this.tpRecap.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-=======
             this.tpRecap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
- 
->>>>>>> be6c30e50477ac460412fe441bd2ff8f6c499331
             this.tpRecap.Name = "tpRecap";
-            this.tpRecap.Size = new System.Drawing.Size(864, 599);
+            this.tpRecap.Size = new System.Drawing.Size(864, 540);
             this.tpRecap.TabIndex = 3;
             this.tpRecap.Text = "Récapitulatif";
             this.tpRecap.UseVisualStyleBackColor = true;
@@ -1183,7 +846,7 @@
             this.grpCriteres.Margin = new System.Windows.Forms.Padding(4);
             this.grpCriteres.Name = "grpCriteres";
             this.grpCriteres.Padding = new System.Windows.Forms.Padding(4);
-            this.grpCriteres.Size = new System.Drawing.Size(845, 168);
+            this.grpCriteres.Size = new System.Drawing.Size(845, 161);
             this.grpCriteres.TabIndex = 16;
             this.grpCriteres.TabStop = false;
             this.grpCriteres.Text = "Liste des critères";
@@ -1338,7 +1001,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 555);
+            this.ClientSize = new System.Drawing.Size(876, 576);
             this.Controls.Add(this.tcBudgetMois);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
