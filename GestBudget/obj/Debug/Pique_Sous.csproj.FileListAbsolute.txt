@@ -40,4 +40,8 @@ D:\Documents\DUT\S2\A21\MiniProjet\GestBudget\GestBudget\obj\Debug\Pique_Sous.fr
 C:\Users\Miniyeti67\Desktop\Mini Projet\GestBudget\GestBudget\obj\Debug\Pique_Sous.frmBudgetPrevisionnelAnnuel.resources
 C:\Users\Miniyeti67\Desktop\Mini Projet\GestBudget\GestBudget\obj\Debug\Pique_Sous.frmModificationPoste.resources
 >>>>>>> 43a6ff8a42041901dfe16965a6abd842f6171c92
+<<<<<<< HEAD
+D:\Documents\DUT\S2\A21\MiniProjet\GestBudget\GestBudget\obj\Debug\Pique_Sous.frmModifBox.resources
+=======
 C:\Users\ladri\DUT\A21\MINI_PROJET\GestBudget\GestBudget\obj\Debug\Pique_Sous.frmBudgetPrevisionnelAnnuel.resources
+>>>>>>> 501d6c81e60666e4ecd0395d5f5dbf6d96ec9e87
