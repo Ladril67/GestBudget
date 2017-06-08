@@ -621,7 +621,11 @@ namespace Pique_Sous
                 pdfDocument myDoc = new pdfDocument("Recapitulatif_"+mois, "Pique_Sous");
                 pdfPage myPage = myDoc.addPage();
 
+<<<<<<< HEAD
+                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM [Transaction] WHERE [dateTransaction] = dateValue('" + dtpReca.Value.ToShortDateString() + "')", connec);
+=======
                 OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM [Transaction] WHERE [dateTransaction] ='" + dtpReca.Value.ToShortDateString() +"'", connec);
+>>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
                 OleDbDataReader dr1 = cd1.ExecuteReader();
                 List<Boolean> nbTransaction = new List<Boolean>();
                 while (dr1.Read())
