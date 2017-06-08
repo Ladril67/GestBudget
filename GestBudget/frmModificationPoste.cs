@@ -24,12 +24,19 @@ namespace Pique_Sous
         private void frmModificationPoste_Load(object sender, EventArgs e)
         {
             connec.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "\\budget.mdb";
+            initContextMenu();
             MiseAJour();
         }
 
         private void MiseAJour()
         {
             remplirDGV();
+        }
+
+        private void initContextMenu()
+        {
+            dgvPeriod.ContextMenuStrip = cmsPeriod;
+            dgvRevenu.ContextMenuStrip = cmsRevenu;
         }
 
         private void remplirDGV() //Remplit les dataGridView
