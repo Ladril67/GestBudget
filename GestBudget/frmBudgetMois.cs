@@ -764,16 +764,16 @@ namespace Pique_Sous
                 FolderBrowserDialog fbd = new FolderBrowserDialog();
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
-<<<<<<< HEAD
+ 
                     myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_"+mois+".pdf");
                     myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois +".pdf");
                 }
                 //myDoc.createPDF(@"C:\Users\Miniyeti67\Desktop\Mini Projet\" + mois + ".pdf");
                 //myDoc.createPDF(@"C:\Users\ladri\Desktop\" + mois + ".pdf");
-=======
+ 
                     myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois + "_" + annee +".pdf");
-                }
->>>>>>> 43a6ff8a42041901dfe16965a6abd842f6171c92
+                
+ 
                 myPage = null;
                 myDoc = null;
                 connec.Close();
