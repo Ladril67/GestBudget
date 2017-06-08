@@ -36,17 +36,13 @@
             this.dgvPeriod = new System.Windows.Forms.DataGridView();
             this.dgvRevenu = new System.Windows.Forms.DataGridView();
             this.dgvEcheance = new System.Windows.Forms.DataGridView();
-            this.cmsPeriod = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsPoste = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmsRevenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.modifierToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.supprimerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeriod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRevenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEcheance)).BeginInit();
-            this.cmsPeriod.SuspendLayout();
-            this.cmsRevenu.SuspendLayout();
+            this.cmsPoste.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPostePeriod
@@ -78,24 +74,29 @@
             // 
             // dgvPeriod
             // 
+            this.dgvPeriod.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPeriod.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPeriod.Location = new System.Drawing.Point(15, 29);
             this.dgvPeriod.Name = "dgvPeriod";
             this.dgvPeriod.RowTemplate.Height = 24;
             this.dgvPeriod.Size = new System.Drawing.Size(558, 253);
             this.dgvPeriod.TabIndex = 3;
+            this.dgvPeriod.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPeriod_CellMouseClick);
             // 
             // dgvRevenu
             // 
+            this.dgvRevenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRevenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRevenu.Location = new System.Drawing.Point(15, 310);
+            this.dgvRevenu.Location = new System.Drawing.Point(12, 305);
             this.dgvRevenu.Name = "dgvRevenu";
             this.dgvRevenu.RowTemplate.Height = 24;
             this.dgvRevenu.Size = new System.Drawing.Size(558, 253);
             this.dgvRevenu.TabIndex = 4;
+            this.dgvRevenu.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvRevenu_CellMouseClick);
             // 
             // dgvEcheance
             // 
+            this.dgvEcheance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEcheance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEcheance.Location = new System.Drawing.Point(596, 29);
             this.dgvEcheance.Name = "dgvEcheance";
@@ -103,47 +104,28 @@
             this.dgvEcheance.Size = new System.Drawing.Size(558, 253);
             this.dgvEcheance.TabIndex = 5;
             // 
-            // cmsPeriod
+            // cmsPoste
             // 
-            this.cmsPeriod.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.cmsPeriod.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsPoste.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmsPoste.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.modifierToolStripMenuItem,
             this.supprimerToolStripMenuItem});
-            this.cmsPeriod.Name = "cmsPeriod";
-            this.cmsPeriod.Size = new System.Drawing.Size(154, 56);
+            this.cmsPoste.Name = "cmsPeriod";
+            this.cmsPoste.Size = new System.Drawing.Size(182, 84);
             // 
             // modifierToolStripMenuItem
             // 
             this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
             this.modifierToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
             this.modifierToolStripMenuItem.Text = "Modifier";
+            this.modifierToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
             // 
             // supprimerToolStripMenuItem
             // 
             this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
-            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.supprimerToolStripMenuItem.Text = "Supprimer";
-            // 
-            // cmsRevenu
-            // 
-            this.cmsRevenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.cmsRevenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.modifierToolStripMenuItem1,
-            this.supprimerToolStripMenuItem1});
-            this.cmsRevenu.Name = "cmsRevenu";
-            this.cmsRevenu.Size = new System.Drawing.Size(182, 84);
-            // 
-            // modifierToolStripMenuItem1
-            // 
-            this.modifierToolStripMenuItem1.Name = "modifierToolStripMenuItem1";
-            this.modifierToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
-            this.modifierToolStripMenuItem1.Text = "Modifier";
-            // 
-            // supprimerToolStripMenuItem1
-            // 
-            this.supprimerToolStripMenuItem1.Name = "supprimerToolStripMenuItem1";
-            this.supprimerToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
-            this.supprimerToolStripMenuItem1.Text = "Supprimer";
+            this.supprimerToolStripMenuItem.Click += new System.EventHandler(this.supprimerToolStripMenuItem_Click);
             // 
             // frmModificationPoste
             // 
@@ -163,8 +145,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeriod)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRevenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEcheance)).EndInit();
-            this.cmsPeriod.ResumeLayout(false);
-            this.cmsRevenu.ResumeLayout(false);
+            this.cmsPoste.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,11 +159,8 @@
         private System.Windows.Forms.DataGridView dgvPeriod;
         private System.Windows.Forms.DataGridView dgvRevenu;
         private System.Windows.Forms.DataGridView dgvEcheance;
-        private System.Windows.Forms.ContextMenuStrip cmsPeriod;
+        private System.Windows.Forms.ContextMenuStrip cmsPoste;
         private System.Windows.Forms.ToolStripMenuItem modifierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip cmsRevenu;
-        private System.Windows.Forms.ToolStripMenuItem modifierToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem1;
     }
 }
