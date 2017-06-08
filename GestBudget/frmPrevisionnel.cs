@@ -489,34 +489,34 @@ namespace Pique_Sous
             }
             MessageBox.Show("Poste ponctuel intitulé : '" + txtIntitule.Text + "' à été effectée avec succès");
 
-            try
-            {
+            /*try
+            {*/
                 int k = 0;
-                foreach(Control c in flpEcheance.Controls)
-                {
-                    //Déclaration des controls
-                    DateTimePicker dtTransa = new DateTimePicker();
-                    Label lblTransa = new Label();
-                    TextBox txtTransa = new TextBox();
+                int compteur = -2;
+                //Déclaration des controls
+                DateTimePicker dtTransa = new DateTimePicker();
+                Label lblTransa = new Label();
+                TextBox txtTransa = new TextBox();
 
-                    int pos = (k * 3);
-                    if (((int)c.Tag) == pos + 1)
+                foreach (Control c in flpEcheance.Controls)
+                {
+                    if (((int)c.Tag)%3 == 1)
                     {
                         dtTransa = ((DateTimePicker)c);
                     }
-                    else if( ((int)c.Tag) == pos + 2)
+                    else if( ((int)c.Tag)%3 == 2)
                     {
                         lblTransa = ((Label)c);
                     }
-                    else
+                    else if (((int)c.Tag)%3 == 0)
                     {
                         txtTransa = ((TextBox)c);
                     }
 
-                    if (k % 3 == 0 && k < int.Parse(txtPrelevement.Text))
+                    if (compteur % 3 == 0 &&  compteur>=0)
                     {
-                        int codeTransaction = getID("Transaction");
-                        string rqtTransa = "INSERT INTO [Transaction] VALUES(" + codeTransaction + ",'" + dtTransa.Value.ToString() + "','" + txtCommentaire.Text + "'," + int.Parse(txtTransa.Text) + ", false , false," + codePoste + ")";
+                        int codeTransaction = getID("Transaction")+1;
+                        string rqtTransa = "INSERT INTO [Transaction] VALUES(" + codeTransaction + ",'" + dtTransa.Value.ToString() + "','" + txtCommentaire.Text + "'," + int.Parse(txtTransa.Text) + ", false , false,NULL)";
                         MessageBox.Show(rqtTransa);
                         OleDbCommand cdTransa = new OleDbCommand(rqtTransa, connec);
                         cdTransa.ExecuteNonQuery();
@@ -524,8 +524,9 @@ namespace Pique_Sous
                     else { }
 
                     k = k + 1;
+                    compteur = compteur + 1;
                 }
-            }
+            /*}
             catch (InvalidOperationException erreur)
             {
                 MessageBox.Show("Erreur de chaine de connexion ! ValiderPonctuel_Click : Insert transaction");
@@ -533,7 +534,7 @@ namespace Pique_Sous
             catch (OleDbException erreur)
             {
                 MessageBox.Show("Erreur de requete SQL ! ValiderPonctuel_Click : insert transaction");
-            }
+            }*/
             MessageBox.Show("Poste ponctuel intitulé : '" + txtIntitule.Text + "' à été effectée avec succès");
             connec.Close();
         }
