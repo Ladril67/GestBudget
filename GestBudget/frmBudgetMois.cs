@@ -600,12 +600,6 @@ namespace Pique_Sous
         {
             txtCodeToMod_TextChanged(sender, e);
         }
-<<<<<<< HEAD
-
-    }
-}
-=======
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
 
         //Onglet Recapitulatif
         private void btnCreeReca_Click(object sender, EventArgs e)
@@ -618,14 +612,12 @@ namespace Pique_Sous
                 int montant = 0;
                 int recette = 0;
                 int percu = 0;
-                pdfDocument myDoc = new pdfDocument("Recapitulatif_"+mois, "Pique_Sous");
+                pdfDocument myDoc = new pdfDocument("Recapitulatif_" + mois, "Pique_Sous");
                 pdfPage myPage = myDoc.addPage();
 
-<<<<<<< HEAD
+
                 OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM [Transaction] WHERE [dateTransaction] = dateValue('" + dtpReca.Value.ToShortDateString() + "')", connec);
-=======
-                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM [Transaction] WHERE [dateTransaction] ='" + dtpReca.Value.ToShortDateString() +"'", connec);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+
                 OleDbDataReader dr1 = cd1.ExecuteReader();
                 List<Boolean> nbTransaction = new List<Boolean>();
                 while (dr1.Read())
@@ -642,7 +634,7 @@ namespace Pique_Sous
                     montant = montant + dr1.GetInt32(3);
                 }
 
-                text = "Recette : " + recette.ToString() + " Depenses : " + montant.ToString() + "Reste a persevoir : " + percu.ToString() + "Somme total dépensée : -" + montant.ToString() + "nombres de transactions : " + nbTransaction.Count.ToString(); 
+                text = "Recette : " + recette.ToString() + " Depenses : " + montant.ToString() + "Reste a persevoir : " + percu.ToString() + "Somme total dépensée : -" + montant.ToString() + "nombres de transactions : " + nbTransaction.Count.ToString();
                 myPage.addText(text, 200, 450, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
                 FolderBrowserDialog fbd = new FolderBrowserDialog();
                 fbd.ShowDialog();
@@ -752,6 +744,6 @@ namespace Pique_Sous
                 MessageBox.Show(erreur.Message);
             }
         }
-
     }
 }
+        
