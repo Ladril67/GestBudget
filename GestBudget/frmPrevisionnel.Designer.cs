@@ -65,11 +65,14 @@
             this.lblQuelPoste = new System.Windows.Forms.Label();
             this.tpModificationPoste = new System.Windows.Forms.TabPage();
             this.btnModPoste = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpPosteFixe.SuspendLayout();
             this.tpPostePonctuel.SuspendLayout();
             this.tpRevenu.SuspendLayout();
             this.tpModificationPoste.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -78,6 +81,7 @@
             this.tabControl1.Controls.Add(this.tpPostePonctuel);
             this.tabControl1.Controls.Add(this.tpRevenu);
             this.tabControl1.Controls.Add(this.tpModificationPoste);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
@@ -333,7 +337,7 @@
             // Valider
             // 
             this.Valider.Location = new System.Drawing.Point(417, 369);
-            this.Valider.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Valider.Margin = new System.Windows.Forms.Padding(4);
             this.Valider.Name = "Valider";
             this.Valider.Size = new System.Drawing.Size(100, 28);
             this.Valider.TabIndex = 9;
@@ -344,7 +348,7 @@
             // txtPosteRevenu
             // 
             this.txtPosteRevenu.Location = new System.Drawing.Point(185, 33);
-            this.txtPosteRevenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPosteRevenu.Margin = new System.Windows.Forms.Padding(4);
             this.txtPosteRevenu.Name = "txtPosteRevenu";
             this.txtPosteRevenu.Size = new System.Drawing.Size(115, 22);
             this.txtPosteRevenu.TabIndex = 8;
@@ -353,7 +357,7 @@
             // 
             this.cboBeneficiaire.FormattingEnabled = true;
             this.cboBeneficiaire.Location = new System.Drawing.Point(140, 97);
-            this.cboBeneficiaire.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboBeneficiaire.Margin = new System.Windows.Forms.Padding(4);
             this.cboBeneficiaire.Name = "cboBeneficiaire";
             this.cboBeneficiaire.Size = new System.Drawing.Size(160, 24);
             this.cboBeneficiaire.TabIndex = 7;
@@ -361,7 +365,7 @@
             // txtMontantRevenu
             // 
             this.txtMontantRevenu.Location = new System.Drawing.Point(185, 181);
-            this.txtMontantRevenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMontantRevenu.Margin = new System.Windows.Forms.Padding(4);
             this.txtMontantRevenu.Name = "txtMontantRevenu";
             this.txtMontantRevenu.Size = new System.Drawing.Size(115, 22);
             this.txtMontantRevenu.TabIndex = 6;
@@ -370,7 +374,7 @@
             // txtJourDuMois
             // 
             this.txtJourDuMois.Location = new System.Drawing.Point(207, 244);
-            this.txtJourDuMois.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtJourDuMois.Margin = new System.Windows.Forms.Padding(4);
             this.txtJourDuMois.Name = "txtJourDuMois";
             this.txtJourDuMois.Size = new System.Drawing.Size(40, 22);
             this.txtJourDuMois.TabIndex = 5;
@@ -447,6 +451,26 @@
             this.btnModPoste.UseVisualStyleBackColor = true;
             this.btnModPoste.Click += new System.EventHandler(this.btnModPoste_Click);
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(691, 517);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Budget prévisionnel sur l\'année";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(688, 508);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmPrevisionnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -466,6 +490,7 @@
             this.tpRevenu.ResumeLayout(false);
             this.tpRevenu.PerformLayout();
             this.tpModificationPoste.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -508,5 +533,7 @@
         private System.Windows.Forms.Button Valider;
         private System.Windows.Forms.TabPage tpModificationPoste;
         private System.Windows.Forms.Button btnModPoste;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button button1;
     }
 }

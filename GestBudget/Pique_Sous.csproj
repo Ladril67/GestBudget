@@ -72,6 +72,12 @@
     <Compile Include="frmBudgetMois.Designer.cs">
       <DependentUpon>frmBudgetMois.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBudgetPrevisionnelAnnuel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBudgetPrevisionnelAnnuel.Designer.cs">
+      <DependentUpon>frmBudgetPrevisionnelAnnuel.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBudgetMois.resx">
       <DependentUpon>frmBudgetMois.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBudgetPrevisionnelAnnuel.resx">
+      <DependentUpon>frmBudgetPrevisionnelAnnuel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>

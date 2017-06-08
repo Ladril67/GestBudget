@@ -483,8 +483,8 @@ namespace Pique_Sous
                 MessageBox.Show("Erreur de requete SQL ! ValiderPonctuel_Click : insert poste \n" + erreur.Message);
             }
             MessageBox.Show("Poste ponctuel intitulé : '" + txtIntitule.Text + "' à été effectée avec succès");
-
-            /*try*/
+        
+            try
             {
 
                 //Déclaration de la variable qui serviraa déclencher la requete SQL après avoir récupérer les 3 controles indispensables pour la requête
@@ -520,14 +520,14 @@ namespace Pique_Sous
                     compteur = compteur + 1;
                 }
             }
-            /*catch (InvalidOperationException erreur)
+            catch (InvalidOperationException erreur)
             {
                 MessageBox.Show("Erreur de chaine de connexion ! ValiderPonctuel_Click : Insert transaction \n" + erreur.Message);
             }
             catch (OleDbException erreur)
             {
                 MessageBox.Show("Erreur de requete SQL ! ValiderPonctuel_Click : insert transaction \n" + erreur.Message);
-            }*/
+            }
             MessageBox.Show("Poste ponctuel intitulé : '" + txtIntitule.Text + "' à été effectée avec succès");
             connec.Close();
         }
@@ -561,7 +561,7 @@ namespace Pique_Sous
             int max = 0;
 
 
-            /*try*/
+            try
             { 
 
                 string requete = "SELECT " +  colonne + " FROM [" + Table + "]";
@@ -590,14 +590,14 @@ namespace Pique_Sous
                     }
                 }
             }
-            /*catch (InvalidOperationException erreur)
+            catch (InvalidOperationException erreur)
             {
                 MessageBox.Show("Erreur de chaine de connexion ! GetID \n "+ erreur.Message);
             }
             catch (OleDbException erreur)
             {
                 MessageBox.Show("Erreur de requete SQL ! GetID \n" + erreur.Message );
-            }*/
+            }
             return max;
             
         }
@@ -667,12 +667,13 @@ namespace Pique_Sous
                 int nb2 = cdCodePoste.ExecuteNonQuery();
 
                 OleDbDataReader drCodePoste = cdCodePoste.ExecuteReader();
-
+                int MontantUpdate = Montant + int.Parse(txtMontantRevenu.Text);
                 if (drPoste.HasRows)
                 {
                     while (drCodePoste.Read())
                     {
-                        string rqtUpdate = "UPDATE PostePonctuel SET montant = montant + " + int.Parse(txtMontantRevenu.Text) + " WHERE codePoste = " + drCodePoste.GetInt32(0);
+                        int codePosteUpdate = drCodePoste.GetInt32(0);
+                        string rqtUpdate = "UPDATE [PosteRevenu] SET [montant] = "+MontantUpdate+ " WHERE [codePoste] = " + codePosteUpdate;
                         OleDbCommand cdUpdate = new OleDbCommand(rqtUpdate, connec);
                         cdUpdate.ExecuteNonQuery();
                         MessageBox.Show("Mis a jour du montant du poste existant");
@@ -755,6 +756,12 @@ namespace Pique_Sous
         private void btnModPoste_Click(object sender, EventArgs e)
         {
             frmModificationPoste frm = new frmModificationPoste();
+            frm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmBudgetPrevisionnelAnnuel frm = new frmBudgetPrevisionnelAnnuel();
             frm.ShowDialog();
         }
     }
