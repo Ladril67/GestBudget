@@ -629,9 +629,12 @@ namespace Pique_Sous
                 string mois = dtpReca.Value.Month.ToString();
                 string annee = dtpReca.Value.Year.ToString();
                 string text = "____________________________________________________";
+                string typeNull = "Type NULL";
                 float montant = 0;
                 int recette = 0;
                 int percu = 0;
+                int indentation = 20;
+                int hauteurDesLignes = 720;
                 List<string> un = new List<string>();
                 List<string> de = new List<string>();
                 List<string> tr = new List<string>();
@@ -660,41 +663,74 @@ namespace Pique_Sous
                     }
                     montant = montant + dr1.GetFloat(3);
 
-                    un.Add(dr1[1].ToString());
+                    un.Add(dr1[1].ToString().Substring(0,11));
                     de.Add(dr1[2].ToString());
                     tr.Add(dr1[3].ToString());
                     qu.Add(dr1[4].ToString());
                     ci.Add(dr1[5].ToString());
-                    si.Add(dr1[6].ToString());
+
+                    if (dr1[6].ToString() != "")
+                    {
+                        si.Add(dr1[6].ToString());
+                    }
+                    else
+                    {
+                        si.Add(typeNull);
+                    }
+                }
+                for (int i = 0; i < si.Count; i++)
+                {
+                    if (si[i] != typeNull)
+                    {
+                        //Pour eviter de faire une requette avec une jointure
+                        OleDbCommand cd2 = new OleDbCommand("SELECT [TypeTransaction].* FROM [TypeTransaction] where [codeType] = " + si[i], connec);
+                        OleDbDataReader dr2 = cd2.ExecuteReader();
+                        while (dr2.Read())
+                        {
+                            si[i] = dr2[1].ToString();
+                        }
+                    }
                 }
 
                 //Creation du text dans le PDF
-                int indentation = 20;
-                myPage.addText("Recapitulatif du mois : " + mois + "_" + annee, indentation, 720, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
-                myPage.addText(text, indentation, 700, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
-                myPage.addText("Dépenses", indentation, 675, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
-                myPage.addText(text, indentation, 315, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
-                myPage.addText("Recette : " + recette.ToString(), indentation, 285, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
-                myPage.addText(text, indentation, 255, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
-                myPage.addText(" Depenses : " + montant.ToString(), indentation, 225, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
-                myPage.addText(text, indentation, 195, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
-                myPage.addText("Reste a persevoir : " + percu.ToString(), indentation, 165, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
-                myPage.addText(text, indentation, 135, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
-                myPage.addText("Somme total dépensée : -" + montant.ToString(), indentation, 105, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
-                myPage.addText(text, indentation, 75, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
-                myPage.addText("nombres de transactions : " + nbTransaction.Count.ToString(), indentation, 45, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
-                myPage.addText(text, indentation, 15, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText("Recapitulatif du : " + mois + "_" + annee, indentation, hauteurDesLignes, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                hauteurDesLignes = hauteurDesLignes - 30;
+                myPage.addText(text, indentation, hauteurDesLignes, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                hauteurDesLignes = hauteurDesLignes - 30;
+                myPage.addText("Dépenses", indentation, hauteurDesLignes, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                hauteurDesLignes = hauteurDesLignes - (30 + 25 * un.Count);
+                myPage.addText(text, indentation, hauteurDesLignes, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                hauteurDesLignes = hauteurDesLignes - 30;
+                myPage.addText("Recette : " + recette.ToString(), indentation, hauteurDesLignes, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                hauteurDesLignes = hauteurDesLignes - 30;
+                myPage.addText(text, indentation, hauteurDesLignes, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                hauteurDesLignes = hauteurDesLignes - 30;
+                myPage.addText(" Depenses : " + montant.ToString(), indentation, hauteurDesLignes, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                hauteurDesLignes = hauteurDesLignes - 30;
+                myPage.addText(text, indentation, hauteurDesLignes, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                hauteurDesLignes = hauteurDesLignes - 30;
+                myPage.addText("Reste a persevoir : " + percu.ToString(), indentation, hauteurDesLignes, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                hauteurDesLignes = hauteurDesLignes - 30;
+                myPage.addText(text, indentation, hauteurDesLignes, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                hauteurDesLignes = hauteurDesLignes - 30;
+                myPage.addText("Somme total dépensée : -" + montant.ToString(), indentation, hauteurDesLignes, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                hauteurDesLignes = hauteurDesLignes - 30;
+                myPage.addText(text, indentation, hauteurDesLignes, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                hauteurDesLignes = hauteurDesLignes - 30;
+                myPage.addText("nombres de transactions : " + nbTransaction.Count.ToString(), indentation, hauteurDesLignes, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                hauteurDesLignes = hauteurDesLignes - 30;
+                myPage.addText(text, indentation, hauteurDesLignes, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
                 
                 //Initiallisation tableau PDF
                 pdfTable myTable = new pdfTable(myDoc);
                 myTable.borderSize = 1;
                 myTable.borderColor = sharpPDF.pdfColor.Black;
-                myTable.tableHeader.addColumn(80);
+                myTable.tableHeader.addColumn(90);
                 myTable.tableHeader.addColumn(120);
-                myTable.tableHeader.addColumn(90);
-                myTable.tableHeader.addColumn(90);
-                myTable.tableHeader.addColumn(90);
-                myTable.tableHeader.addColumn(90);
+                myTable.tableHeader.addColumn(70);
+                myTable.tableHeader.addColumn(70);
+                myTable.tableHeader.addColumn(70);
+                myTable.tableHeader.addColumn(110);
                 pdfTableRow myRow = myTable.createRow();
 
                 //Remplissage de la première ligne du tableau
@@ -717,11 +753,10 @@ namespace Pique_Sous
                     myRow[4].addText(ci[i]);
                     myRow[5].addText(si[i]);
                     myTable.addRow(myRow);
-                    MessageBox.Show(un[i]);
                 }
 
                 //Place le tableau
-                myTable.coordY = 670;
+                myTable.coordY = 650;
                 myTable.coordX = 20;
                 myPage.addTable(myTable);
                 
@@ -729,27 +764,7 @@ namespace Pique_Sous
                 FolderBrowserDialog fbd = new FolderBrowserDialog();
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
- 
- 
- 
- 
                     myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois + "_" + annee +".pdf");
- 
- 
- 
- 
-                    myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois +".pdf");
- 
-                    myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_"+mois+".pdf");
- 
- 
-                    myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois +".pdf");
- 
- 
- 
- 
- 
- 
                 }
                 myPage = null;
                 myDoc = null;
