@@ -316,7 +316,7 @@ namespace Pique_Sous
             {
                 lvPersonne.Items.Clear();
                 List<int> max = new List<int>();
-                int jointure = 0;
+                string jointure = "";
                 int codeTransaction = 0;
                 List<int> Personne = new List<int>();
                 OleDbCommand cd0 = new OleDbCommand("SELECT [codeTransaction] FROM[Transaction]", connec);
@@ -364,7 +364,7 @@ namespace Pique_Sous
 
                 OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction] where [codeTransaction] = " + ligne, connec);
                 OleDbDataReader dr1 = cd1.ExecuteReader();
-                
+
                 while (dr1.Read())
                 {
                     lblCode.Text = dr1.GetInt32(0).ToString();
@@ -374,15 +374,32 @@ namespace Pique_Sous
                     lblValeur.Text = dr1.GetValue(3).ToString() + " €";
                     checkRecette.Checked = dr1.GetBoolean(4);
                     chkPercu.Checked = dr1.GetBoolean(5);
-                    jointure = dr1.GetInt32(6);
+                    if (dr1[6].ToString() == "")
+                    {
+                        jointure = "";
+                    }
+                    else
+                    {
+                        jointure = dr1.GetInt32(6).ToString();
+
+                    }
                 }
-                //Pour eviter de faire une requette avec une jointure
-                OleDbCommand cd2 = new OleDbCommand("SELECT [TypeTransaction].* FROM [TypeTransaction] where [codeType] = " + jointure, connec);
-                OleDbDataReader dr2 = cd2.ExecuteReader();
-                while (dr2.Read())
+
+                if (jointure != "")
                 {
-                    lblType.Text = dr2.GetString(1);
+                    //Pour eviter de faire une requette avec une jointure
+                    OleDbCommand cd2 = new OleDbCommand("SELECT [TypeTransaction].* FROM [TypeTransaction] where [codeType] = " + jointure, connec);
+                    OleDbDataReader dr2 = cd2.ExecuteReader();
+                    while (dr2.Read())
+                    {
+                        lblType.Text = dr2.GetString(1);
+                    }
                 }
+                else
+                {
+                    lblType.Text = "Type NULL";
+                }
+                
 
                 OleDbCommand cd3 = new OleDbCommand("SELECT [CodePersonne] FROM[Beneficiaires] where [codeTransaction] =" + codeTransaction, connec);
                 OleDbDataReader dr3 = cd3.ExecuteReader();
@@ -608,8 +625,9 @@ namespace Pique_Sous
             {
                 connec.Open();
                 string mois = dtpReca.Value.Month.ToString();
-                string text = "";
-                int montant = 0;
+                string annee = dtpReca.Value.ToShortDateString();
+                string text = "____________________________________________________";
+                float montant = 0;
                 int recette = 0;
                 int percu = 0;
                 pdfDocument myDoc = new pdfDocument("Recapitulatif_" + mois, "Pique_Sous");
@@ -631,15 +649,33 @@ namespace Pique_Sous
                     {
                         percu++;
                     }
-                    montant = montant + dr1.GetInt32(3);
+                    montant = montant + dr1.GetFloat(3);
                 }
 
-                text = "Recette : " + recette.ToString() + " Depenses : " + montant.ToString() + "Reste a persevoir : " + percu.ToString() + "Somme total dépensée : -" + montant.ToString() + "nombres de transactions : " + nbTransaction.Count.ToString();
-                myPage.addText(text, 200, 450, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                int indentation = 20;
+                myPage.addText("Recapitulatif du mois :" + mois, indentation, 720, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText(text, indentation, 700, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText("Dépenses", indentation, 675, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText(text, indentation, 315, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText("Recette : " + recette.ToString(), indentation, 285, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText(text, indentation, 255, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText(" Depenses : " + montant.ToString(), indentation, 225, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText(text, indentation, 195, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText("Reste a persevoir : " + percu.ToString(), indentation, 165, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText(text, indentation, 135, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText("Somme total dépensée : -" + montant.ToString(), indentation, 105, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText(text, indentation, 75, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText("nombres de transactions : " + nbTransaction.Count.ToString(), indentation, 45, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText(text, indentation, 15, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+
                 FolderBrowserDialog fbd = new FolderBrowserDialog();
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
+<<<<<<< HEAD
+                    myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois +".pdf");
+=======
                     myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_"+mois+".pdf");
+>>>>>>> 08f1b8b8b9932c11e2242c1404ba5a47b68b361a
                 }
                 //myDoc.createPDF(@"C:\Users\Miniyeti67\Desktop\Mini Projet\" + mois + ".pdf");
                 //myDoc.createPDF(@"C:\Users\ladri\Desktop\" + mois + ".pdf");
