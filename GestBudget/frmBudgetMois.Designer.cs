@@ -93,6 +93,19 @@
             this.txtPrenomNewPers = new System.Windows.Forms.TextBox();
             this.btnSupprPers = new System.Windows.Forms.Button();
             this.lblSupprPers = new System.Windows.Forms.Label();
+            this.dgvRecapitulatif = new System.Windows.Forms.DataGridView();
+            this.btnRechercher = new System.Windows.Forms.Button();
+            this.grpCriteres = new System.Windows.Forms.GroupBox();
+            this.chkRecapDate = new System.Windows.Forms.CheckBox();
+            this.chkRecapLibelle = new System.Windows.Forms.CheckBox();
+            this.chkRecapMontant = new System.Windows.Forms.CheckBox();
+            this.chkRecapPercu = new System.Windows.Forms.CheckBox();
+            this.chkRecapRecette = new System.Windows.Forms.CheckBox();
+            this.dtpRecapDate = new System.Windows.Forms.DateTimePicker();
+            this.cboRecapLib = new System.Windows.Forms.ComboBox();
+            this.txtRecapMontant = new System.Windows.Forms.TextBox();
+            this.cboRecapPercu = new System.Windows.Forms.ComboBox();
+            this.cboRecapRecette = new System.Windows.Forms.ComboBox();
             this.tcBudgetMois.SuspendLayout();
             this.tpAffichage1a1.SuspendLayout();
             this.tpNewTransaction.SuspendLayout();
@@ -102,6 +115,8 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModifTransa)).BeginInit();
             this.tpRecap.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecapitulatif)).BeginInit();
+            this.grpCriteres.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcBudgetMois
@@ -488,6 +503,7 @@
             // 
             // dgvTransactions
             // 
+            this.dgvTransactions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTransactions.Location = new System.Drawing.Point(11, 10);
             this.dgvTransactions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -730,6 +746,7 @@
             // 
             // dgvModifTransa
             // 
+            this.dgvModifTransa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvModifTransa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvModifTransa.Location = new System.Drawing.Point(9, 4);
             this.dgvModifTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -740,6 +757,9 @@
             // 
             // tpRecap
             // 
+            this.tpRecap.Controls.Add(this.grpCriteres);
+            this.tpRecap.Controls.Add(this.btnRechercher);
+            this.tpRecap.Controls.Add(this.dgvRecapitulatif);
             this.tpRecap.Controls.Add(this.dtpReca);
             this.tpRecap.Controls.Add(this.btnCreeReca);
             this.tpRecap.Location = new System.Drawing.Point(4, 28);
@@ -752,7 +772,7 @@
             // 
             // dtpReca
             // 
-            this.dtpReca.Location = new System.Drawing.Point(279, 100);
+            this.dtpReca.Location = new System.Drawing.Point(4, 4);
             this.dtpReca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpReca.Name = "dtpReca";
             this.dtpReca.Size = new System.Drawing.Size(212, 22);
@@ -760,7 +780,7 @@
             // 
             // btnCreeReca
             // 
-            this.btnCreeReca.Location = new System.Drawing.Point(279, 132);
+            this.btnCreeReca.Location = new System.Drawing.Point(4, 36);
             this.btnCreeReca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreeReca.Name = "btnCreeReca";
             this.btnCreeReca.Size = new System.Drawing.Size(213, 33);
@@ -820,6 +840,141 @@
             this.lblSupprPers.TabIndex = 19;
             this.lblSupprPers.Text = "Supprime toutes les personnes selectionnées :";
             // 
+            // dgvRecapitulatif
+            // 
+            this.dgvRecapitulatif.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRecapitulatif.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRecapitulatif.Location = new System.Drawing.Point(8, 76);
+            this.dgvRecapitulatif.Name = "dgvRecapitulatif";
+            this.dgvRecapitulatif.RowTemplate.Height = 24;
+            this.dgvRecapitulatif.Size = new System.Drawing.Size(839, 223);
+            this.dgvRecapitulatif.TabIndex = 14;
+            // 
+            // btnRechercher
+            // 
+            this.btnRechercher.Location = new System.Drawing.Point(758, 490);
+            this.btnRechercher.Name = "btnRechercher";
+            this.btnRechercher.Size = new System.Drawing.Size(98, 33);
+            this.btnRechercher.TabIndex = 15;
+            this.btnRechercher.Text = "Rechercher";
+            this.btnRechercher.UseVisualStyleBackColor = true;
+            this.btnRechercher.Click += new System.EventHandler(this.btnRechercher_Click);
+            // 
+            // grpCriteres
+            // 
+            this.grpCriteres.Controls.Add(this.cboRecapRecette);
+            this.grpCriteres.Controls.Add(this.cboRecapPercu);
+            this.grpCriteres.Controls.Add(this.txtRecapMontant);
+            this.grpCriteres.Controls.Add(this.cboRecapLib);
+            this.grpCriteres.Controls.Add(this.dtpRecapDate);
+            this.grpCriteres.Controls.Add(this.chkRecapRecette);
+            this.grpCriteres.Controls.Add(this.chkRecapPercu);
+            this.grpCriteres.Controls.Add(this.chkRecapMontant);
+            this.grpCriteres.Controls.Add(this.chkRecapLibelle);
+            this.grpCriteres.Controls.Add(this.chkRecapDate);
+            this.grpCriteres.Location = new System.Drawing.Point(8, 305);
+            this.grpCriteres.Name = "grpCriteres";
+            this.grpCriteres.Size = new System.Drawing.Size(839, 185);
+            this.grpCriteres.TabIndex = 16;
+            this.grpCriteres.TabStop = false;
+            this.grpCriteres.Text = "Liste des critères";
+            // 
+            // chkRecapDate
+            // 
+            this.chkRecapDate.AutoSize = true;
+            this.chkRecapDate.Location = new System.Drawing.Point(23, 33);
+            this.chkRecapDate.Name = "chkRecapDate";
+            this.chkRecapDate.Size = new System.Drawing.Size(68, 21);
+            this.chkRecapDate.TabIndex = 0;
+            this.chkRecapDate.Text = "Date :";
+            this.chkRecapDate.UseVisualStyleBackColor = true;
+            // 
+            // chkRecapLibelle
+            // 
+            this.chkRecapLibelle.AutoSize = true;
+            this.chkRecapLibelle.Location = new System.Drawing.Point(23, 82);
+            this.chkRecapLibelle.Name = "chkRecapLibelle";
+            this.chkRecapLibelle.Size = new System.Drawing.Size(79, 21);
+            this.chkRecapLibelle.TabIndex = 1;
+            this.chkRecapLibelle.Text = "Libellé :";
+            this.chkRecapLibelle.UseVisualStyleBackColor = true;
+            // 
+            // chkRecapMontant
+            // 
+            this.chkRecapMontant.AutoSize = true;
+            this.chkRecapMontant.Location = new System.Drawing.Point(23, 133);
+            this.chkRecapMontant.Name = "chkRecapMontant";
+            this.chkRecapMontant.Size = new System.Drawing.Size(89, 21);
+            this.chkRecapMontant.TabIndex = 2;
+            this.chkRecapMontant.Text = "Montant :";
+            this.chkRecapMontant.UseVisualStyleBackColor = true;
+            // 
+            // chkRecapPercu
+            // 
+            this.chkRecapPercu.AutoSize = true;
+            this.chkRecapPercu.Location = new System.Drawing.Point(391, 33);
+            this.chkRecapPercu.Name = "chkRecapPercu";
+            this.chkRecapPercu.Size = new System.Drawing.Size(75, 21);
+            this.chkRecapPercu.TabIndex = 3;
+            this.chkRecapPercu.Text = "Perçu :";
+            this.chkRecapPercu.UseVisualStyleBackColor = true;
+            // 
+            // chkRecapRecette
+            // 
+            this.chkRecapRecette.AutoSize = true;
+            this.chkRecapRecette.Location = new System.Drawing.Point(391, 82);
+            this.chkRecapRecette.Name = "chkRecapRecette";
+            this.chkRecapRecette.Size = new System.Drawing.Size(87, 21);
+            this.chkRecapRecette.TabIndex = 4;
+            this.chkRecapRecette.Text = "Recette :";
+            this.chkRecapRecette.UseVisualStyleBackColor = true;
+            // 
+            // dtpRecapDate
+            // 
+            this.dtpRecapDate.Location = new System.Drawing.Point(97, 32);
+            this.dtpRecapDate.Name = "dtpRecapDate";
+            this.dtpRecapDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpRecapDate.TabIndex = 5;
+            // 
+            // cboRecapLib
+            // 
+            this.cboRecapLib.FormattingEnabled = true;
+            this.cboRecapLib.Location = new System.Drawing.Point(110, 80);
+            this.cboRecapLib.Margin = new System.Windows.Forms.Padding(5);
+            this.cboRecapLib.Name = "cboRecapLib";
+            this.cboRecapLib.Size = new System.Drawing.Size(187, 24);
+            this.cboRecapLib.TabIndex = 9;
+            // 
+            // txtRecapMontant
+            // 
+            this.txtRecapMontant.Location = new System.Drawing.Point(118, 131);
+            this.txtRecapMontant.Name = "txtRecapMontant";
+            this.txtRecapMontant.Size = new System.Drawing.Size(179, 22);
+            this.txtRecapMontant.TabIndex = 10;
+            this.txtRecapMontant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontantTransa_KeyPress);
+            // 
+            // cboRecapPercu
+            // 
+            this.cboRecapPercu.FormattingEnabled = true;
+            this.cboRecapPercu.Items.AddRange(new object[] {
+            "True",
+            "False"});
+            this.cboRecapPercu.Location = new System.Drawing.Point(472, 34);
+            this.cboRecapPercu.Name = "cboRecapPercu";
+            this.cboRecapPercu.Size = new System.Drawing.Size(168, 24);
+            this.cboRecapPercu.TabIndex = 11;
+            // 
+            // cboRecapRecette
+            // 
+            this.cboRecapRecette.FormattingEnabled = true;
+            this.cboRecapRecette.Items.AddRange(new object[] {
+            "True",
+            "False"});
+            this.cboRecapRecette.Location = new System.Drawing.Point(484, 79);
+            this.cboRecapRecette.Name = "cboRecapRecette";
+            this.cboRecapRecette.Size = new System.Drawing.Size(156, 24);
+            this.cboRecapRecette.TabIndex = 12;
+            // 
             // frmBudgetMois
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -845,6 +1000,9 @@
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModifTransa)).EndInit();
             this.tpRecap.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecapitulatif)).EndInit();
+            this.grpCriteres.ResumeLayout(false);
+            this.grpCriteres.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -917,6 +1075,19 @@
         private System.Windows.Forms.Label lblNomNewPers;
         private System.Windows.Forms.Label lblSupprPers;
         private System.Windows.Forms.Button btnSupprPers;
+        private System.Windows.Forms.DataGridView dgvRecapitulatif;
+        private System.Windows.Forms.Button btnRechercher;
+        private System.Windows.Forms.GroupBox grpCriteres;
+        private System.Windows.Forms.CheckBox chkRecapRecette;
+        private System.Windows.Forms.CheckBox chkRecapPercu;
+        private System.Windows.Forms.CheckBox chkRecapMontant;
+        private System.Windows.Forms.CheckBox chkRecapLibelle;
+        private System.Windows.Forms.CheckBox chkRecapDate;
+        private System.Windows.Forms.TextBox txtRecapMontant;
+        private System.Windows.Forms.ComboBox cboRecapLib;
+        private System.Windows.Forms.DateTimePicker dtpRecapDate;
+        private System.Windows.Forms.ComboBox cboRecapPercu;
+        private System.Windows.Forms.ComboBox cboRecapRecette;
     }
 }
 

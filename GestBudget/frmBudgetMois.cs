@@ -34,6 +34,113 @@ namespace Pique_Sous
             MiseAJour();
         }
 
+        private void remplitCbo(ComboBox cb, string nomTable, string champAffiche, string champCache)
+        {
+            cb.DataSource = ds.Tables[nomTable];
+            cb.DisplayMember = champAffiche;
+            cb.ValueMember = champCache;
+        }
+
+        private void remplirParticipants()
+        {
+            grpParticipantsTransa.Controls.Clear();
+            try
+            {
+                //Mise en place de la connection string et on ouvre la connection
+                connec.Open();
+
+                //On récupère les données de la table pour travailler en mode déconnecté
+                DataTable tbl1 = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
+                    new object[] { null, null, null, "TABLE" });
+                foreach (DataRow ds in tbl1.Rows)
+                {
+                    if (ds[2].ToString() == "Personne")
+                    {
+                        //Création et execution de la requête SQL permettant de récupérer les noms et prénoms des participants
+                        OleDbCommand cd1 = new OleDbCommand();
+                        cd1.Connection = connec;
+                        cd1.CommandType = CommandType.Text;
+                        cd1.CommandText = "Select pnPersonne,nomPersonne from Personne";
+                        int nb = cd1.ExecuteNonQuery();
+
+                        OleDbDataReader dr = cd1.ExecuteReader();
+
+
+                        //création et indentation des checkbox générées dynamiquements
+                        if (dr.HasRows)
+                        {
+                            int top = 25;
+                            int left = 15;
+                            int i = 0;
+                            while (dr.Read())
+                            {
+                                CheckBox cbPersonne = new CheckBox();
+                                cbPersonne.Text = dr[nb].ToString() + " " + dr[nb + 1].ToString();
+
+                                cbPersonne.Top = top + i * 10;
+                                cbPersonne.Left = left;
+                                cbPersonne.AutoSize = true;
+
+                                i += 2;
+                                grpParticipantsTransa.Controls.Add(cbPersonne);
+
+                            }
+                        }
+                    }
+
+                }
+                connec.Close();
+            }
+            catch (InvalidOperationException erreur)
+            {
+                MessageBox.Show("Erreur de chaine de connexion ! : RemplirParticipant");
+            }
+            catch (OleDbException erreur)
+            {
+                MessageBox.Show("Erreur de requete SQL ! : RemplirParticipant");
+            }
+            finally
+            {
+            }
+        }
+
+        private void MiseAJour()
+        {
+            init1a1(1);
+            remplirParticipants();
+            remplirDGV();
+            try
+            {
+
+                connec.Open();
+
+                ds.Clear();
+                string requete = @"select * from TypeTransaction";
+                OleDbCommand cd1 = new OleDbCommand(requete, connec);
+                OleDbDataAdapter da = new OleDbDataAdapter();
+                da.SelectCommand = cd1;
+
+                da.Fill(ds, "TypeTransaction");
+
+                remplitCbo(cboTypeTransa, "TypeTransaction", "libType", "codeType");
+                remplitCbo(cboModType, "TypeTransaction", "libType", "codeType");
+                remplitCbo(cboRecapLib, "TypeTransaction", "libType", "codeType");
+
+                OleDbCommand cd2 = new OleDbCommand("SELECT MAX([Transaction].CodeTransaction) FROM [Transaction]", connec);
+                lastCodeTransac = (int)cd2.ExecuteScalar();
+                connec.Close();
+            }
+            catch (InvalidOperationException erreur)
+            {
+                MessageBox.Show("Erreur de chaine de connexion ! miseajour");
+            }
+            catch (OleDbException erreur)
+            {
+                MessageBox.Show("Erreur de requete SQL ! miseajour");
+            }
+        }
+
+        //Onglet AjouterTransaction
         private void btnAjoutTransa_Click(object sender, EventArgs e)
         {
             try
@@ -157,77 +264,7 @@ namespace Pique_Sous
                 MessageBox.Show("Ben faut être sûr");
             }
         }
-
-        private void remplitCbo(ComboBox cb, string nomTable, string champAffiche, string champCache)
-        {
-            cb.DataSource = ds.Tables[nomTable];
-            cb.DisplayMember = champAffiche;
-            cb.ValueMember = champCache;
-        }
-
-        private void remplirParticipants()
-        {
-            grpParticipantsTransa.Controls.Clear();
-            try
-            {
-                //Mise en place de la connection string et on ouvre la connection
-                connec.Open();
-
-                //On récupère les données de la table pour travailler en mode déconnecté
-                DataTable tbl1 = connec.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
-                    new object[] { null, null, null, "TABLE" });
-                foreach (DataRow ds in tbl1.Rows)
-                {
-                    if (ds[2].ToString() == "Personne")
-                    {
-                        //Création et execution de la requête SQL permettant de récupérer les noms et prénoms des participants
-                        OleDbCommand cd1 = new OleDbCommand();
-                        cd1.Connection = connec;
-                        cd1.CommandType = CommandType.Text;
-                        cd1.CommandText = "Select pnPersonne,nomPersonne from Personne";
-                        int nb = cd1.ExecuteNonQuery();
-
-                        OleDbDataReader dr = cd1.ExecuteReader();
-
-
-                        //création et indentation des checkbox générées dynamiquements
-                        if (dr.HasRows)
-                        {
-                            int top = 25;
-                            int left = 15;
-                            int i = 0;
-                            while (dr.Read())
-                            {
-                                CheckBox cbPersonne = new CheckBox();
-                                cbPersonne.Text = dr[nb].ToString() + " " + dr[nb + 1].ToString();
-
-                                cbPersonne.Top = top + i * 10;
-                                cbPersonne.Left = left;
-                                cbPersonne.AutoSize = true;
-
-                                i += 2;
-                                grpParticipantsTransa.Controls.Add(cbPersonne);
-
-                            }
-                        }
-                    }
-
-                }
-                connec.Close();
-            }
-            catch (InvalidOperationException erreur)
-            {
-                MessageBox.Show("Erreur de chaine de connexion ! : RemplirParticipant");
-            }
-            catch (OleDbException erreur)
-            {
-                MessageBox.Show("Erreur de requete SQL ! : RemplirParticipant");
-            }
-            finally
-            {
-            }
-        }
-
+        
         private void txtMontantTransa_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!txtMontantTransa.Text.Contains(",") && txtMontantTransa.Text != "" && e.KeyChar == ',')
@@ -251,8 +288,7 @@ namespace Pique_Sous
                 e.Handled = true;
             }
         }
-
-
+        
         //Onglet  1a1
         private void btnDernier_Click(object sender, EventArgs e)
         {
@@ -376,10 +412,8 @@ namespace Pique_Sous
                 MessageBox.Show("Erreur de requete SQL ! 1a1");
             }
         }
-
-
-
-
+        
+        //Onglet SuppressionTransaction
         private void remplirDGV() //Remplit la dataGridView dans Suppression et Modification
         {
             try
@@ -460,42 +494,8 @@ namespace Pique_Sous
                 e.Handled = true;
             }
         }
-
-        private void MiseAJour()
-        {
-            init1a1(1);
-            remplirParticipants();
-            remplirDGV();
-            try
-            {
-
-                connec.Open();
-
-                ds.Clear();
-                string requete = @"select * from TypeTransaction";
-                OleDbCommand cd1 = new OleDbCommand(requete, connec);
-                OleDbDataAdapter da = new OleDbDataAdapter();
-                da.SelectCommand = cd1;
-
-                da.Fill(ds, "TypeTransaction");
-
-                remplitCbo(cboTypeTransa, "TypeTransaction", "libType", "codeType");
-                remplitCbo(cboModType, "TypeTransaction", "libType", "codeType");
-
-                OleDbCommand cd2 = new OleDbCommand("SELECT MAX([Transaction].CodeTransaction) FROM [Transaction]", connec);
-                lastCodeTransac = (int)cd2.ExecuteScalar();
-                connec.Close();
-            }
-            catch (InvalidOperationException erreur)
-            {
-                MessageBox.Show("Erreur de chaine de connexion ! miseajour");
-            }
-            catch (OleDbException erreur)
-            {
-                MessageBox.Show("Erreur de requete SQL ! miseajour");
-            }
-        }
-
+        
+        //Onglet ModifierTransaction
         private void txtCodeToMod_TextChanged(object sender, EventArgs e)
         {
             if (txtCodeToMod.Text != "" && int.Parse(txtCodeToMod.Text) <= lastCodeTransac)
@@ -601,6 +601,7 @@ namespace Pique_Sous
             txtCodeToMod_TextChanged(sender, e);
         }
 
+        //Onglet Recapitulatif
         private void btnCreeReca_Click(object sender, EventArgs e)
         {
             try
@@ -646,6 +647,89 @@ namespace Pique_Sous
             }
         }
 
-        
+        private void btnRechercher_Click(object sender, EventArgs e)
+        {
+            string requete = "SELECT [Transaction].*, [TypeTransaction].libType FROM [Transaction], [TypeTransaction] WHERE [Transaction].type = [TypeTransaction].codeType AND ";
+            if (chkRecapDate.Checked)
+            {
+                if (requete.EndsWith("AND "))
+                {
+                    requete += "[dateTransaction] >= '" + dtpRecapDate.Value + "' AND [dateTransaction] <= '" + (dtpRecapDate.Value.AddDays(1)) + "'";
+                }
+                else
+                {
+                    requete += "AND [dateTransaction] = '" + dtpRecapDate.Value + "' AND [dateTransaction] <= '" + (dtpRecapDate.Value.AddDays(1)) + "'";
+                }
+            }
+            if (chkRecapLibelle.Checked)
+            {
+                if (requete.EndsWith("AND "))
+                {
+                    requete += "[type] = " + cboRecapLib.SelectedValue;
+                }
+                else
+                {
+                    requete += "AND [type] = " + cboRecapLib.SelectedValue;
+                }
+            }
+            if (chkRecapMontant.Checked)
+            {
+                if (requete.EndsWith("AND "))
+                {
+                    requete += "[montant] = " + txtRecapMontant.Text;
+                }
+                else
+                {
+                    requete += "AND [montant] = " + txtRecapMontant.Text;
+                }
+            }
+            if (chkRecapPercu.Checked)
+            {
+                if (requete.EndsWith("AND "))
+                {
+                    requete += "[percuON] = " + cboRecapPercu.SelectedItem.ToString();
+                }
+                else
+                {
+                    requete += "AND [percuON] = " + cboRecapPercu.SelectedItem.ToString();
+                }
+            }
+            if (chkRecapRecette.Checked)
+            {
+                if (requete.EndsWith("AND "))
+                {
+                    requete += "[recetteON] = " + cboRecapRecette.SelectedItem.ToString();
+                }
+                else
+                {
+                    requete += "AND [recetteON] = " + cboRecapRecette.SelectedItem.ToString();
+                }
+            }
+            if (requete.EndsWith("AND "))
+            {
+                requete = "SELECT [Transaction].*, [TypeTransaction].libType FROM [Transaction], [TypeTransaction] WHERE [Transaction].type = [TypeTransaction].codeType";
+            }
+            try
+            {
+                connec.Open();
+                MessageBox.Show(requete);
+                OleDbCommand cd1 = new OleDbCommand(requete, connec);
+                OleDbDataAdapter da = new OleDbDataAdapter(cd1);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgvRecapitulatif.DataSource = dt;
+                connec.Close();
+            }
+            catch (InvalidOperationException erreur)
+            {
+                MessageBox.Show("Erreur de chaine de connexion ! Recap");
+            }
+            catch (OleDbException erreur)
+            {
+                MessageBox.Show("Erreur de requete SQL ! Recap");
+                MessageBox.Show(erreur.Message);
+            }
+        }
+
     }
 }
