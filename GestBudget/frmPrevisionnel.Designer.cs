@@ -63,10 +63,13 @@
             this.lblMontantRevenu = new System.Windows.Forms.Label();
             this.lblBenef = new System.Windows.Forms.Label();
             this.lblQuelPoste = new System.Windows.Forms.Label();
+            this.tpModificationPoste = new System.Windows.Forms.TabPage();
+            this.btnModPoste = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpPosteFixe.SuspendLayout();
             this.tpPostePonctuel.SuspendLayout();
             this.tpRevenu.SuspendLayout();
+            this.tpModificationPoste.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -74,6 +77,7 @@
             this.tabControl1.Controls.Add(this.tpPosteFixe);
             this.tabControl1.Controls.Add(this.tpPostePonctuel);
             this.tabControl1.Controls.Add(this.tpRevenu);
+            this.tabControl1.Controls.Add(this.tpModificationPoste);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
@@ -321,7 +325,7 @@
             this.tpRevenu.Location = new System.Drawing.Point(4, 25);
             this.tpRevenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpRevenu.Name = "tpRevenu";
-            this.tpRevenu.Size = new System.Drawing.Size(688, 517);
+            this.tpRevenu.Size = new System.Drawing.Size(691, 517);
             this.tpRevenu.TabIndex = 2;
             this.tpRevenu.Text = "Revenu";
             this.tpRevenu.UseVisualStyleBackColor = true;
@@ -423,6 +427,26 @@
             this.lblQuelPoste.TabIndex = 0;
             this.lblQuelPoste.Text = "Quel poste ?";
             // 
+            // tpModificationPoste
+            // 
+            this.tpModificationPoste.Controls.Add(this.btnModPoste);
+            this.tpModificationPoste.Location = new System.Drawing.Point(4, 25);
+            this.tpModificationPoste.Name = "tpModificationPoste";
+            this.tpModificationPoste.Size = new System.Drawing.Size(691, 517);
+            this.tpModificationPoste.TabIndex = 3;
+            this.tpModificationPoste.Text = "Modification poste";
+            this.tpModificationPoste.UseVisualStyleBackColor = true;
+            // 
+            // btnModPoste
+            // 
+            this.btnModPoste.Location = new System.Drawing.Point(137, 123);
+            this.btnModPoste.Name = "btnModPoste";
+            this.btnModPoste.Size = new System.Drawing.Size(379, 221);
+            this.btnModPoste.TabIndex = 0;
+            this.btnModPoste.Text = "ACCES A LA MODIFICATION DES POSTES";
+            this.btnModPoste.UseVisualStyleBackColor = true;
+            this.btnModPoste.Click += new System.EventHandler(this.btnModPoste_Click);
+            // 
             // frmPrevisionnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -441,6 +465,7 @@
             this.tpPostePonctuel.PerformLayout();
             this.tpRevenu.ResumeLayout(false);
             this.tpRevenu.PerformLayout();
+            this.tpModificationPoste.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -481,5 +506,7 @@
         private System.Windows.Forms.Label lblEcheance;
         private System.Windows.Forms.Button btnValidePonctuel;
         private System.Windows.Forms.Button Valider;
+        private System.Windows.Forms.TabPage tpModificationPoste;
+        private System.Windows.Forms.Button btnModPoste;
     }
 }

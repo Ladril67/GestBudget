@@ -561,6 +561,7 @@
             // 
             this.dgvTransactions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTransactions.Enabled = false;
             this.dgvTransactions.Location = new System.Drawing.Point(11, 10);
             this.dgvTransactions.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTransactions.Name = "dgvTransactions";
