@@ -750,6 +750,13 @@ namespace Pique_Sous
         {
 
         }
+
+        //Onglet Modification
+        private void btnModPoste_Click(object sender, EventArgs e)
+        {
+            frmModificationPoste frm = new frmModificationPoste();
+            frm.ShowDialog();
+        }
     }
 }
 
