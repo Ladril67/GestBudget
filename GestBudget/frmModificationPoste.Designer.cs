@@ -103,6 +103,7 @@
             this.dgvEcheance.RowTemplate.Height = 24;
             this.dgvEcheance.Size = new System.Drawing.Size(558, 253);
             this.dgvEcheance.TabIndex = 5;
+            this.dgvEcheance.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEcheance_CellClick);
             // 
             // cmsPoste
             // 
@@ -111,7 +112,7 @@
             this.modifierToolStripMenuItem,
             this.supprimerToolStripMenuItem});
             this.cmsPoste.Name = "cmsPeriod";
-            this.cmsPoste.Size = new System.Drawing.Size(182, 84);
+            this.cmsPoste.Size = new System.Drawing.Size(154, 56);
             // 
             // modifierToolStripMenuItem
             // 
@@ -123,7 +124,7 @@
             // supprimerToolStripMenuItem
             // 
             this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
-            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
             this.supprimerToolStripMenuItem.Text = "Supprimer";
             this.supprimerToolStripMenuItem.Click += new System.EventHandler(this.supprimerToolStripMenuItem_Click);
             // 
