@@ -378,8 +378,6 @@
             this.txtJourDuMois.Name = "txtJourDuMois";
             this.txtJourDuMois.Size = new System.Drawing.Size(40, 22);
             this.txtJourDuMois.TabIndex = 5;
-            this.txtJourDuMois.TextChanged += new System.EventHandler(this.txtJourDuMois_TextChanged);
-            this.txtJourDuMois.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJourDuMois_KeyPress);
             // 
             // lblJourDuMois
             // 
@@ -463,11 +461,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Location = new System.Drawing.Point(97, 153);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(688, 508);
+            this.button1.Size = new System.Drawing.Size(479, 178);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Afficher Le budget Prévisionnel Annuel";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

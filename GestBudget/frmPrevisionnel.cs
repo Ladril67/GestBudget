@@ -12,7 +12,8 @@ using System.Windows.Forms;
 namespace Pique_Sous
 {
     public partial class frmPrevisionnel : Form
-    {
+    { 
+    
         OleDbConnection connec = new OleDbConnection();
 
         public frmPrevisionnel()
@@ -54,6 +55,7 @@ namespace Pique_Sous
             }
         }
 
+        //Fonction qui remplit la comboBox des postes
         public void remplircboPoste()
         {
             //Mise en place de la connection string et on ouvre la connection
@@ -97,6 +99,8 @@ namespace Pique_Sous
             connec.Close();
         }
 
+
+        //Remplissage de la comboBox des périodicités d'une transaction
         public void remplircboPeriodicite()
         {
             //Mise en place de la connection string et on ouvre la connection
@@ -139,7 +143,6 @@ namespace Pique_Sous
             connec.Close();
         }
 
-
         private void txtPrelevement_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
@@ -159,6 +162,7 @@ namespace Pique_Sous
             }
         }
 
+        //Fonction qui va générer dynamiquement les controles dans PostePonctuel
         private void txtPrelevement_TextChanged(object sender, EventArgs e)
         {
             flpEcheance.Controls.Clear();
@@ -236,6 +240,7 @@ namespace Pique_Sous
             RemplirDate();
         }
 
+        //Fonction qui va changer la valeur des dates des DateTimePickers en fonction de celle du premier
         public void dtPremier_ValueChanged(Object sender, EventArgs e)
         {
             //Initialisation de la Date
@@ -281,6 +286,7 @@ namespace Pique_Sous
             }
         }
 
+        //bloque tous les caractères sauf virgule et chiffres
         public void TextBoxPonctuel_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!((TextBox)sender).Text.Contains(",") && ((TextBox)sender).Text != "" && e.KeyChar == ',')
@@ -305,53 +311,42 @@ namespace Pique_Sous
             }
         }
 
-            public void RemplirDate()
+        //Remplissage de la date des DateTimePickers dans Echeances
+        public void RemplirDate()
         {
-                //Initialisation de la Date
-                DateTime date = DateTime.Now;
-               int i = 0;
-               int mois = date.Month;
-               int annee = date.Year;
-               foreach ( DateTimePicker dt in flpEcheance.Controls.OfType<DateTimePicker>())
-               {
-                    if (i == 0)
-                    {
-                        dt.Value = date;
-                        i = i + 1;
-
-                    }
-                    else if (i != 0)
-                    {
-                        //Gestion de l'incrémentation des mois et du changement éventuel d'année
-                        mois = mois + 1;
-                        if (mois <= 12)
-                        {
-                            dt.Value = new DateTime(annee, mois, date.Day);
-                            i = i + 1;
-                        }
-                        else
-                        {
-                            mois = 1;
-                            annee = annee + 1;
-                            dt.Value = new DateTime(annee, mois, date.Day);
-                        }
-                    }
-                    
-                }
-        }
-
-        public void RemplirTxtMontant()
-        {
+            //Initialisation de la Date
+            DateTime date = DateTime.Now;
             int i = 0;
-            foreach(TextBox txt in flpEcheance.Controls.OfType<TextBox>())
+            int mois = date.Month;
+            int annee = date.Year;
+            foreach (DateTimePicker dt in flpEcheance.Controls.OfType<DateTimePicker>())
             {
                 if (i == 0)
                 {
-                    
+                    dt.Value = date;
+                    i = i + 1;
                 }
+                else if (i != 0)
+                {
+                    //Gestion de l'incrémentation des mois et du changement éventuel d'année
+                    mois = mois + 1;
+                    if (mois <= 12)
+                    {
+                        dt.Value = new DateTime(annee, mois, date.Day);
+                        i = i + 1;
+                    }
+                    else
+                    {
+                        mois = 1;
+                        annee = annee + 1;
+                        dt.Value = new DateTime(annee, mois, date.Day);
+                    }
+                }
+
             }
         }
 
+        //Permet de changer automatiquement le texte des TextBox en fonction de la valeur de la première TextBox
         private void txtPremier_TextChanged(object sender, EventArgs e)
         {
             int i = 0;
@@ -370,6 +365,7 @@ namespace Pique_Sous
             }
         }
 
+        //Fonction qui remplit la ComboBox bénéficiaires avec les personnes présentent dans la base de donnée
         public void remplirBeneficiaire()
         {
             try
@@ -421,6 +417,7 @@ namespace Pique_Sous
             }
         }
 
+        //Créer le poste dans PosteFixe
         private void btnValider_Click(object sender, EventArgs e)
         {
             try
@@ -461,6 +458,7 @@ namespace Pique_Sous
             MessageBox.Show("Insertion du poste intitulé : '" + cboPoste.SelectedItem.ToString() + "' à été effectuée avec succès");
         }
 
+        //Créer le poste Ponctuel 
         private void btnValiderPonctuel_Click(object sender, EventArgs e)
         {
             //Mise en place de la connection string et on ouvre la connection
@@ -512,7 +510,6 @@ namespace Pique_Sous
                     if (compteur % 3 == 0 &&  compteur>=0)
                     {
                         string rqtTransa = "INSERT INTO Echeances VALUES(" + codePoste + ",'" + dtTransa.Value.ToString() + "'," + int.Parse(txtTransa.Text) + ")";
-                        MessageBox.Show(rqtTransa);
                         OleDbCommand cdTransa = new OleDbCommand(rqtTransa, connec);
                         cdTransa.ExecuteNonQuery();
                     }
@@ -532,10 +529,10 @@ namespace Pique_Sous
             connec.Close();
         }
 
-
+        //Fonction appelée pour créer un poste dans la base Poste
         public int creerPoste(String poste)
         {
-
+            //Création du poste passé en paramètre
             string table = "Poste";
             int IDPoste = getID(table,"code"+table) + 1;
             try
@@ -556,6 +553,8 @@ namespace Pique_Sous
             return IDPoste;
         }
 
+
+        //Récupère l'index le plus élevé de la colonne de la table passée en paramètre
         public int getID(string Table, string colonne)
         {
             int max = 0;
@@ -565,7 +564,6 @@ namespace Pique_Sous
             { 
 
                 string requete = "SELECT " +  colonne + " FROM [" + Table + "]";
-                MessageBox.Show(requete);
                 OleDbCommand cd1 = new OleDbCommand(requete, connec);
                 cd1.ExecuteNonQuery();
 
@@ -602,6 +600,7 @@ namespace Pique_Sous
             
         }
 
+        //Créer le poste revenu
         private void Valider_Click(object sender, EventArgs e)
         {
            //Mise en place de la connection string et on ouvre la connection
@@ -685,7 +684,6 @@ namespace Pique_Sous
                 {
                     //Requête SQL principale d'insertion dans la base revenu
                     string requete = "INSERT INTO PosteRevenu VALUES (" + codePoste + "," + Montant + "," + codePersonne + "," + jour + ")";
-                    MessageBox.Show(requete);
                     OleDbCommand cd1 = new OleDbCommand(requete, connec);
                     cd1.ExecuteNonQuery();
                 }
@@ -706,6 +704,7 @@ namespace Pique_Sous
             connec.Close();
         }
 
+        //Permet d'insérer un autre poste dans la comboBox
         private void btnAutre_Click(object sender, EventArgs e)
         {
             //Mise en place de la connection string et on ouvre la connection
@@ -715,6 +714,7 @@ namespace Pique_Sous
             connec.Close();
         }
 
+       //bloque tous les caractères sauf virgule et chiffres
         private void txtMontantRevenu_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!txtMontantRevenu.Text.Contains(",") && txtMontantRevenu.Text != "" && e.KeyChar == ',')
@@ -739,18 +739,6 @@ namespace Pique_Sous
             }
         }
 
-        private void txtJourDuMois_TextChanged(object sender, EventArgs e)
-        {
-            /*if (int.Parse(txtJourDuMois.Text) >= 31)
-            {
-                
-            }*/
-        }
-
-        private void txtJourDuMois_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
 
         //Onglet Modification
         private void btnModPoste_Click(object sender, EventArgs e)
@@ -758,7 +746,7 @@ namespace Pique_Sous
             frmModificationPoste frm = new frmModificationPoste();
             frm.ShowDialog();
         }
-
+        //Onglet de budgetPrévisionnelAnnuel
         private void button1_Click(object sender, EventArgs e)
         {
             frmBudgetPrevisionnelAnnuel frm = new frmBudgetPrevisionnelAnnuel();
