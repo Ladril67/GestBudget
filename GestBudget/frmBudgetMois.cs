@@ -35,6 +35,7 @@ namespace Pique_Sous
             MiseAJour();
         }
 
+        //Remplit la comboBox
         private void remplitCbo(ComboBox cb, string nomTable, string champAffiche, string champCache)
         {
             cb.DataSource = ds.Tables[nomTable];
@@ -42,6 +43,7 @@ namespace Pique_Sous
             cb.ValueMember = champCache;
         }
 
+        //Ajout des Partisipants
         private void remplirParticipants()
         {
             grpParticipantsTransa.Controls.Clear();
@@ -105,6 +107,7 @@ namespace Pique_Sous
             }
         }
 
+        //Met a jour les onglets
         private void MiseAJour()
         {
             init1a1(1);
@@ -189,6 +192,7 @@ namespace Pique_Sous
             }
         }
 
+        //Ajout des personnes
         private void btnAjouterPersonneTransa_Click(object sender, EventArgs e)
         {
             DialogResult dR = MessageBox.Show("Voulez vous vraiment ajouter cette transaction ?", "Ajout", MessageBoxButtons.YesNo);
@@ -225,6 +229,7 @@ namespace Pique_Sous
             }
         }
 
+        //Suppression des personnes
         private void btnSupprPers_Click(object sender, EventArgs e)
         {
             DialogResult dR = MessageBox.Show("Voulez vous vraiment supprimer la/les personne(s) ?", "Suppression", MessageBoxButtons.YesNo);
@@ -266,6 +271,7 @@ namespace Pique_Sous
             }
         }
         
+        //Key Press Chiffres
         private void txtMontantTransa_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!txtMontantTransa.Text.Contains(",") && txtMontantTransa.Text != "" && e.KeyChar == ',')
@@ -290,27 +296,31 @@ namespace Pique_Sous
             }
         }
         
-        //Onglet  1a1
+        //Update de l'onglet 1a1
         private void btnDernier_Click(object sender, EventArgs e)
         {
             init1a1(2);
         }
 
+        //Update de l'onglet 1a1
         private void btnPremier_Click(object sender, EventArgs e)
         {
             init1a1(-2);
         }
 
+        //Update de l'onglet 1a1
         private void btnSuivant_Click(object sender, EventArgs e)
         {
             init1a1(1);
         }
 
+        //Update de l'onglet 1a1
         private void btnAvant_Click(object sender, EventArgs e)
         {
             init1a1(-1);
         }
 
+        //Onglet  1a1
         private void init1a1(int ligne)
         {
             try
@@ -460,6 +470,7 @@ namespace Pique_Sous
             }
         }
 
+        //Suprime transaction
         private void btnSupprTransac_Click(object sender, EventArgs e)
         {
             DialogResult dR = MessageBox.Show("Voulez vous vraiment supprimer cette transaction ?", "Suppression", MessageBoxButtons.YesNo);
@@ -497,6 +508,7 @@ namespace Pique_Sous
             }
         }
 
+        //Key Press de supression
         private void txtCodeToSuppr_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
@@ -561,6 +573,7 @@ namespace Pique_Sous
             }
         }
 
+        //Boutton Modifications
         private void btnValidMod_Click(object sender, EventArgs e)
         {
             if (txtCodeToMod.Text != "")
@@ -614,6 +627,7 @@ namespace Pique_Sous
             }
         }
 
+        //Bouton Annuler modifications
         private void btnAnnulerMod_Click(object sender, EventArgs e)
         {
             txtCodeToMod_TextChanged(sender, e);
@@ -783,6 +797,7 @@ namespace Pique_Sous
             }
         }
 
+        //Boutton cherche dans le récapitulatif
         private void btnRechercher_Click(object sender, EventArgs e)
         {
             string requete = "SELECT [Transaction].*, [TypeTransaction].libType FROM [Transaction], [TypeTransaction] WHERE [Transaction].type = [TypeTransaction].codeType AND ";
