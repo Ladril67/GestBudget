@@ -1062,11 +1062,9 @@
         private System.Windows.Forms.CheckBox checkPercu;
         private System.Windows.Forms.Label lblValeur;
         private System.Windows.Forms.DataGridView dgvTransactions;
-
         private System.Windows.Forms.TextBox txtCodeToSuppr;
         private System.Windows.Forms.Label lblCodeToSuppr;
         private System.Windows.Forms.Button btnSupprTransac;
-
         private System.Windows.Forms.DateTimePicker dtp1a1;
         private System.Windows.Forms.DataGridView dgvModifTransa;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
