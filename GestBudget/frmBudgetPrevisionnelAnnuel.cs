@@ -36,12 +36,14 @@ namespace Pique_Sous
             {
                 String rqtPoste = "SELECT libPoste FROM Poste";
                 OleDbCommand cdPoste = new OleDbCommand(rqtPoste, connec);
-
-                OleDbDataAdapter da = new OleDbDataAdapter(cdPoste);
-                DataTable dt = new DataTable();
-
-                da.Fill(dt);
-                dgvPrevisionnelAnnuel.DataSource = dt;
+                OleDbDataReader dr = cdPoste.ExecuteReader();
+                int c = 0;
+                while (dr.Read())
+                {
+                    dgvPrevisionnelAnnuel.Rows.Add();
+                    dgvPrevisionnelAnnuel.Rows[c].Cells[0].Value = dr.GetString(0);
+                    c++;
+                }
             }
             catch (InvalidOperationException erreur)
             {

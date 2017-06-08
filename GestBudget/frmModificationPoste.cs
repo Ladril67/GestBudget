@@ -213,7 +213,7 @@ namespace Pique_Sous
         private void dgvEcheance_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewCell cell = dgvEcheance.Rows[e.RowIndex].Cells[e.ColumnIndex];
-
+            MessageBox.Show("Well you saw nothing");
         }
     }
 }
