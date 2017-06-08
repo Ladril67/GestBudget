@@ -49,14 +49,7 @@ namespace Pique_Sous
             }
             catch (OleDbException erreur)
             {
-<<<<<<< HEAD
-                while (drPoste.Read())
-                {
-                    
-                }
-=======
                 MessageBox.Show("Erreur de requete SQL ! DGV \n " + erreur.Message);
->>>>>>> b96233da8362f83c3b15002a1808719841b04be3
             }
 
         }
