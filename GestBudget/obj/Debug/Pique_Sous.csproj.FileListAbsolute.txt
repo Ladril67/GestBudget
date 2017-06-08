@@ -31,3 +31,4 @@ D:\Documents\DUT\S2\A21\MiniProjet\GestBudget\GestBudget\obj\Debug\Pique_Sous.fr
 C:\Users\Miniyeti67\Desktop\Mini Projet\GestBudget\GestBudget\obj\Debug\Pique_Sous.frmBudgetMois.resources
 C:\Users\Miniyeti67\Desktop\Mini Projet\GestBudget\GestBudget\obj\Debug\Pique_Sous.frmMenu.resources
 C:\Users\Miniyeti67\Desktop\Mini Projet\GestBudget\GestBudget\obj\Debug\Pique_Sous.frmPrevisionnel.resources
+C:\Users\ladri\DUT\A21\MINI_PROJET\GestBudget\GestBudget\obj\Debug\Pique_Sous.frmModificationPoste.resources

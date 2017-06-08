@@ -405,17 +405,16 @@ namespace Pique_Sous
                             }
                         }
                     }
-
                 }
                 connec.Close();
             }
             catch (InvalidOperationException erreur)
             {
-                MessageBox.Show("Erreur de chaine de connexion ! : RemplirParticipant");
+                MessageBox.Show("Erreur de chaine de connexion ! : RemplirParticipant\n" + erreur.Message);
             }
             catch (OleDbException erreur)
             {
-                MessageBox.Show("Erreur de requete SQL ! : RemplirParticipant");
+                MessageBox.Show("Erreur de requete SQL ! : RemplirParticipant \n" + erreur.Message);
             }
             finally
             {
@@ -453,11 +452,11 @@ namespace Pique_Sous
             }
             catch (InvalidOperationException erreur)
             {
-                MessageBox.Show("Erreur de chaine de connexion ! btnValider_click");
+                MessageBox.Show("Erreur de chaine de connexion ! btnValider_click \n" + erreur.Message);
             }
             catch (OleDbException erreur)
             {
-                MessageBox.Show("Erreur de requete SQL ! btnValider_click");
+                MessageBox.Show("Erreur de requete SQL ! btnValider_click \n" + erreur.Message);
             }
             MessageBox.Show("Insertion du poste intitulé : '" + cboPoste.SelectedItem.ToString() + "' à été effectuée avec succès");
         }
@@ -474,66 +473,61 @@ namespace Pique_Sous
                 string requete = "INSERT INTO PostePonctuel VALUES (" + codePoste + ",'" + txtIntitule.Text + ": " + txtCommentaire.Text + "')";
                 OleDbCommand insertPonctuel = new OleDbCommand(requete, connec);
                 insertPonctuel.ExecuteNonQuery();
-
-
-
-
             }
             catch (InvalidOperationException erreur)
             {
-                MessageBox.Show("Erreur de chaine de connexion ! ValiderPonctuel_Click : insert poste");
+                MessageBox.Show("Erreur de chaine de connexion ! ValiderPonctuel_Click : insert poste \n" + erreur.Message);
             }
             catch (OleDbException erreur)
             {
-                MessageBox.Show("Erreur de requete SQL ! ValiderPonctuel_Click : insert poste");
+                MessageBox.Show("Erreur de requete SQL ! ValiderPonctuel_Click : insert poste \n" + erreur.Message);
             }
             MessageBox.Show("Poste ponctuel intitulé : '" + txtIntitule.Text + "' à été effectée avec succès");
 
-            try
+            /*try*/
             {
-                int k = 0;
-                foreach(Control c in flpEcheance.Controls)
-                {
-                    //Déclaration des controls
-                    DateTimePicker dtTransa = new DateTimePicker();
-                    Label lblTransa = new Label();
-                    TextBox txtTransa = new TextBox();
 
-                    int pos = (k * 3);
-                    if (((int)c.Tag) == pos + 1)
+                //Déclaration de la variable qui serviraa déclencher la requete SQL après avoir récupérer les 3 controles indispensables pour la requête
+                int compteur = -2;
+                //Déclaration des controls
+                DateTimePicker dtTransa = new DateTimePicker();
+                Label lblTransa = new Label();
+                TextBox txtTransa = new TextBox();
+
+                foreach (Control c in flpEcheance.Controls)
+                {
+                    if (((int)c.Tag)%3 == 1)
                     {
                         dtTransa = ((DateTimePicker)c);
                     }
-                    else if( ((int)c.Tag) == pos + 2)
+                    else if( ((int)c.Tag)%3 == 2)
                     {
                         lblTransa = ((Label)c);
                     }
-                    else
+                    else if (((int)c.Tag)%3 == 0)
                     {
                         txtTransa = ((TextBox)c);
                     }
 
-                    if (k % 3 == 0 && k < int.Parse(txtPrelevement.Text))
+                    if (compteur % 3 == 0 &&  compteur>=0)
                     {
-                        int codeTransaction = getID("Transaction");
-                        string rqtTransa = "INSERT INTO [Transaction] VALUES(" + codeTransaction + ",'" + dtTransa.Value.ToString() + "','" + txtCommentaire.Text + "'," + int.Parse(txtTransa.Text) + ", false , false," + codePoste + ")";
+                        string rqtTransa = "INSERT INTO Echeances VALUES(" + codePoste + ",'" + dtTransa.Value.ToString() + "'," + int.Parse(txtTransa.Text) + ")";
                         MessageBox.Show(rqtTransa);
                         OleDbCommand cdTransa = new OleDbCommand(rqtTransa, connec);
                         cdTransa.ExecuteNonQuery();
                     }
                     else { }
-
-                    k = k + 1;
+                    compteur = compteur + 1;
                 }
             }
-            catch (InvalidOperationException erreur)
+            /*catch (InvalidOperationException erreur)
             {
-                MessageBox.Show("Erreur de chaine de connexion ! ValiderPonctuel_Click : Insert transaction");
+                MessageBox.Show("Erreur de chaine de connexion ! ValiderPonctuel_Click : Insert transaction \n" + erreur.Message);
             }
             catch (OleDbException erreur)
             {
-                MessageBox.Show("Erreur de requete SQL ! ValiderPonctuel_Click : insert transaction");
-            }
+                MessageBox.Show("Erreur de requete SQL ! ValiderPonctuel_Click : insert transaction \n" + erreur.Message);
+            }*/
             MessageBox.Show("Poste ponctuel intitulé : '" + txtIntitule.Text + "' à été effectée avec succès");
             connec.Close();
         }
@@ -543,7 +537,7 @@ namespace Pique_Sous
         {
 
             string table = "Poste";
-            int IDPoste = getID(table) + 1;
+            int IDPoste = getID(table,"code"+table) + 1;
             try
             {
                 string requete = "INSERT INTO Poste VALUES (" + IDPoste + ",'" + poste + "')";
@@ -552,25 +546,25 @@ namespace Pique_Sous
             }
             catch (InvalidOperationException erreur)
             {
-                MessageBox.Show("Erreur de chaine de connexion ! CreerPoste");
+                MessageBox.Show("Erreur de chaine de connexion ! CreerPoste \n" + erreur.Message);
             }
             catch (OleDbException erreur)
             {
-                MessageBox.Show("Erreur de requete SQL ! CreerPoste");
+                MessageBox.Show("Erreur de requete SQL ! CreerPoste \n" + erreur.Message);
             }
             MessageBox.Show("Insertion du Poste n°" + IDPoste + " et de nom : '" + poste + "' à été effectuée avec succès");
             return IDPoste;
         }
 
-        public int getID(string Table)
+        public int getID(string Table, string colonne)
         {
             int max = 0;
 
 
-            /*try
-            { */
+            /*try*/
+            { 
 
-                string requete = "SELECT code"+Table+" FROM [" + Table + "]";
+                string requete = "SELECT " +  colonne + " FROM [" + Table + "]";
                 MessageBox.Show(requete);
                 OleDbCommand cd1 = new OleDbCommand(requete, connec);
                 cd1.ExecuteNonQuery();
@@ -595,14 +589,14 @@ namespace Pique_Sous
                         max = Listcode[i];
                     }
                 }
-            /*}
-            catch (InvalidOperationException erreur)
+            }
+            /*catch (InvalidOperationException erreur)
             {
-                MessageBox.Show("Erreur de chaine de connexion ! GetID");
+                MessageBox.Show("Erreur de chaine de connexion ! GetID \n "+ erreur.Message);
             }
             catch (OleDbException erreur)
             {
-                MessageBox.Show("Erreur de requete SQL ! GetID");
+                MessageBox.Show("Erreur de requete SQL ! GetID \n" + erreur.Message );
             }*/
             return max;
             
@@ -676,7 +670,14 @@ namespace Pique_Sous
 
                 if (drPoste.HasRows)
                 {
-                        MessageBox.Show("Il n'est pas possible de créer un poste de revenu avec un codePoste qui existe déja");
+                    while (drCodePoste.Read())
+                    {
+                        string rqtUpdate = "UPDATE PostePonctuel SET montant = montant + " + int.Parse(txtMontantRevenu.Text) + " WHERE codePoste = " + drCodePoste.GetInt32(0);
+                        OleDbCommand cdUpdate = new OleDbCommand(rqtUpdate, connec);
+                        cdUpdate.ExecuteNonQuery();
+                        MessageBox.Show("Mis a jour du montant du poste existant");
+                    }
+                 
 
                 }
                 else
@@ -695,11 +696,11 @@ namespace Pique_Sous
             }
             catch (InvalidOperationException erreur)
             {
-                MessageBox.Show("Erreur de chaine de connexion ! Valider_click");
+                MessageBox.Show("Erreur de chaine de connexion ! Valider_click \n " + erreur.Message);
             }
             catch (OleDbException erreur)
             {
-                MessageBox.Show("Erreur de requete SQL ! Valider_click");
+                MessageBox.Show("Erreur de requete SQL ! Valider_click \n " + erreur.Message);
             }
             connec.Close();
         }
@@ -748,6 +749,13 @@ namespace Pique_Sous
         private void txtJourDuMois_KeyPress(object sender, KeyPressEventArgs e)
         {
 
+        }
+
+        //Onglet Modification
+        private void btnModPoste_Click(object sender, EventArgs e)
+        {
+            frmModificationPoste frm = new frmModificationPoste();
+            frm.ShowDialog();
         }
     }
 }
