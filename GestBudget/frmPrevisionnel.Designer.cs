@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrevisionnel));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpPosteFixe = new System.Windows.Forms.TabPage();
             this.btnValider = new System.Windows.Forms.Button();
@@ -42,17 +43,7 @@
             this.lblPeriodicite = new System.Windows.Forms.Label();
             this.lblPoste = new System.Windows.Forms.Label();
             this.tpPostePonctuel = new System.Windows.Forms.TabPage();
-
-
             this.btnValidePonctuel = new System.Windows.Forms.Button();
-
-
-
- 
-            this.btnValidePonctuel = new System.Windows.Forms.Button();
- 
- 
-
             this.lblEcheance = new System.Windows.Forms.Label();
             this.flpEcheance = new System.Windows.Forms.FlowLayoutPanel();
             this.txtPrelevement = new System.Windows.Forms.TextBox();
@@ -62,6 +53,7 @@
             this.lblCommentaire = new System.Windows.Forms.Label();
             this.lblIntitule = new System.Windows.Forms.Label();
             this.tpRevenu = new System.Windows.Forms.TabPage();
+            this.Valider = new System.Windows.Forms.Button();
             this.txtPosteRevenu = new System.Windows.Forms.TextBox();
             this.cboBeneficiaire = new System.Windows.Forms.ComboBox();
             this.txtMontantRevenu = new System.Windows.Forms.TextBox();
@@ -71,17 +63,6 @@
             this.lblMontantRevenu = new System.Windows.Forms.Label();
             this.lblBenef = new System.Windows.Forms.Label();
             this.lblQuelPoste = new System.Windows.Forms.Label();
-
-
-            this.Valider = new System.Windows.Forms.Button();
-
-
-
- 
-            this.Valider = new System.Windows.Forms.Button();
- 
- 
-
             this.tabControl1.SuspendLayout();
             this.tpPosteFixe.SuspendLayout();
             this.tpPostePonctuel.SuspendLayout();
@@ -94,10 +75,10 @@
             this.tabControl1.Controls.Add(this.tpPostePonctuel);
             this.tabControl1.Controls.Add(this.tpRevenu);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(524, 444);
+            this.tabControl1.Size = new System.Drawing.Size(699, 546);
             this.tabControl1.TabIndex = 0;
             // 
             // tpPosteFixe
@@ -113,21 +94,21 @@
             this.tpPosteFixe.Controls.Add(this.lblJour);
             this.tpPosteFixe.Controls.Add(this.lblPeriodicite);
             this.tpPosteFixe.Controls.Add(this.lblPoste);
-            this.tpPosteFixe.Location = new System.Drawing.Point(4, 22);
-            this.tpPosteFixe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpPosteFixe.Location = new System.Drawing.Point(4, 25);
+            this.tpPosteFixe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpPosteFixe.Name = "tpPosteFixe";
-            this.tpPosteFixe.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tpPosteFixe.Size = new System.Drawing.Size(516, 418);
+            this.tpPosteFixe.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpPosteFixe.Size = new System.Drawing.Size(691, 517);
             this.tpPosteFixe.TabIndex = 0;
             this.tpPosteFixe.Text = "Poste Fixe";
             this.tpPosteFixe.UseVisualStyleBackColor = true;
             // 
             // btnValider
             // 
-            this.btnValider.Location = new System.Drawing.Point(359, 251);
-            this.btnValider.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnValider.Location = new System.Drawing.Point(479, 309);
+            this.btnValider.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(85, 24);
+            this.btnValider.Size = new System.Drawing.Size(113, 30);
             this.btnValider.TabIndex = 10;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = true;
@@ -135,46 +116,45 @@
             // 
             // txtMontant
             // 
-            this.txtMontant.Location = new System.Drawing.Point(131, 202);
-            this.txtMontant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMontant.Location = new System.Drawing.Point(175, 249);
+            this.txtMontant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMontant.Name = "txtMontant";
-            this.txtMontant.Size = new System.Drawing.Size(74, 20);
+            this.txtMontant.Size = new System.Drawing.Size(97, 22);
             this.txtMontant.TabIndex = 9;
             this.txtMontant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboMontant_KeyPress);
             // 
             // tboJour
             // 
-            this.tboJour.Location = new System.Drawing.Point(152, 147);
-            this.tboJour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tboJour.Location = new System.Drawing.Point(203, 181);
+            this.tboJour.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tboJour.Name = "tboJour";
-            this.tboJour.Size = new System.Drawing.Size(26, 20);
+            this.tboJour.Size = new System.Drawing.Size(33, 22);
             this.tboJour.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(129, 150);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(172, 185);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.Size = new System.Drawing.Size(129, 17);
             this.label1.TabIndex = 7;
             this.label1.Text = "Le              du mois";
             // 
             // cboPeriodicite
             // 
             this.cboPeriodicite.FormattingEnabled = true;
-            this.cboPeriodicite.Location = new System.Drawing.Point(131, 95);
-            this.cboPeriodicite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboPeriodicite.Location = new System.Drawing.Point(175, 117);
+            this.cboPeriodicite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboPeriodicite.Name = "cboPeriodicite";
-            this.cboPeriodicite.Size = new System.Drawing.Size(177, 21);
+            this.cboPeriodicite.Size = new System.Drawing.Size(235, 24);
             this.cboPeriodicite.TabIndex = 6;
             // 
             // btnAutre
             // 
-            this.btnAutre.Location = new System.Drawing.Point(329, 32);
-            this.btnAutre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAutre.Location = new System.Drawing.Point(439, 39);
+            this.btnAutre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAutre.Name = "btnAutre";
-            this.btnAutre.Size = new System.Drawing.Size(56, 19);
+            this.btnAutre.Size = new System.Drawing.Size(75, 23);
             this.btnAutre.TabIndex = 5;
             this.btnAutre.Text = "Autre";
             this.btnAutre.UseVisualStyleBackColor = true;
@@ -183,49 +163,45 @@
             // cboPoste
             // 
             this.cboPoste.FormattingEnabled = true;
-            this.cboPoste.Location = new System.Drawing.Point(131, 32);
-            this.cboPoste.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboPoste.Location = new System.Drawing.Point(175, 39);
+            this.cboPoste.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboPoste.Name = "cboPoste";
-            this.cboPoste.Size = new System.Drawing.Size(177, 21);
+            this.cboPoste.Size = new System.Drawing.Size(235, 24);
             this.cboPoste.TabIndex = 4;
             // 
             // lblMontant
             // 
             this.lblMontant.AutoSize = true;
-            this.lblMontant.Location = new System.Drawing.Point(28, 204);
-            this.lblMontant.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMontant.Location = new System.Drawing.Point(37, 251);
             this.lblMontant.Name = "lblMontant";
-            this.lblMontant.Size = new System.Drawing.Size(52, 13);
+            this.lblMontant.Size = new System.Drawing.Size(67, 17);
             this.lblMontant.TabIndex = 3;
             this.lblMontant.Text = "Montant :";
             // 
             // lblJour
             // 
             this.lblJour.AutoSize = true;
-            this.lblJour.Location = new System.Drawing.Point(28, 150);
-            this.lblJour.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblJour.Location = new System.Drawing.Point(37, 185);
             this.lblJour.Name = "lblJour";
-            this.lblJour.Size = new System.Drawing.Size(75, 13);
+            this.lblJour.Size = new System.Drawing.Size(101, 17);
             this.lblJour.TabIndex = 2;
             this.lblJour.Text = "Jour du mois : ";
             // 
             // lblPeriodicite
             // 
             this.lblPeriodicite.AutoSize = true;
-            this.lblPeriodicite.Location = new System.Drawing.Point(28, 101);
-            this.lblPeriodicite.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPeriodicite.Location = new System.Drawing.Point(37, 124);
             this.lblPeriodicite.Name = "lblPeriodicite";
-            this.lblPeriodicite.Size = new System.Drawing.Size(62, 13);
+            this.lblPeriodicite.Size = new System.Drawing.Size(82, 17);
             this.lblPeriodicite.TabIndex = 1;
             this.lblPeriodicite.Text = "Périodicité :";
             // 
             // lblPoste
             // 
             this.lblPoste.AutoSize = true;
-            this.lblPoste.Location = new System.Drawing.Point(28, 35);
-            this.lblPoste.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPoste.Location = new System.Drawing.Point(37, 43);
             this.lblPoste.Name = "lblPoste";
-            this.lblPoste.Size = new System.Drawing.Size(70, 13);
+            this.lblPoste.Size = new System.Drawing.Size(93, 17);
             this.lblPoste.TabIndex = 0;
             this.lblPoste.Text = "Quel poste ? ";
             // 
@@ -240,26 +216,21 @@
             this.tpPostePonctuel.Controls.Add(this.txtIntitule);
             this.tpPostePonctuel.Controls.Add(this.lblCommentaire);
             this.tpPostePonctuel.Controls.Add(this.lblIntitule);
-            this.tpPostePonctuel.Location = new System.Drawing.Point(4, 22);
-            this.tpPostePonctuel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpPostePonctuel.Location = new System.Drawing.Point(4, 25);
+            this.tpPostePonctuel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpPostePonctuel.Name = "tpPostePonctuel";
-            this.tpPostePonctuel.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tpPostePonctuel.Size = new System.Drawing.Size(516, 418);
+            this.tpPostePonctuel.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpPostePonctuel.Size = new System.Drawing.Size(691, 517);
             this.tpPostePonctuel.TabIndex = 1;
             this.tpPostePonctuel.Text = "Poste Ponctuel ";
             this.tpPostePonctuel.UseVisualStyleBackColor = true;
             // 
-
-
-
- 
-
             // btnValidePonctuel
             // 
-            this.btnValidePonctuel.Location = new System.Drawing.Point(406, 394);
-            this.btnValidePonctuel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnValidePonctuel.Location = new System.Drawing.Point(596, 486);
+            this.btnValidePonctuel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnValidePonctuel.Name = "btnValidePonctuel";
-            this.btnValidePonctuel.Size = new System.Drawing.Size(56, 19);
+            this.btnValidePonctuel.Size = new System.Drawing.Size(75, 23);
             this.btnValidePonctuel.TabIndex = 0;
             this.btnValidePonctuel.Text = "Valider";
             this.btnValidePonctuel.UseVisualStyleBackColor = true;
@@ -268,61 +239,26 @@
             // lblEcheance
             // 
             this.lblEcheance.AutoSize = true;
-            this.lblEcheance.Location = new System.Drawing.Point(33, 158);
-            this.lblEcheance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblEcheance.Name = "lblEcheance";
-            this.lblEcheance.Size = new System.Drawing.Size(108, 13);
-
-
-
- 
-
-            // lblEcheance
-            // 
-            this.lblEcheance.AutoSize = true;
-            this.lblEcheance.Location = new System.Drawing.Point(44, 194);
+            this.lblEcheance.Location = new System.Drawing.Point(34, 177);
             this.lblEcheance.Name = "lblEcheance";
             this.lblEcheance.Size = new System.Drawing.Size(141, 17);
-
-
-
- 
-
             this.lblEcheance.TabIndex = 0;
             this.lblEcheance.Text = "Echéances prévues :";
             // 
             // flpEcheance
             // 
-
-
-
- 
-
-            this.flpEcheance.Location = new System.Drawing.Point(24, 174);
-            this.flpEcheance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpEcheance.Location = new System.Drawing.Point(18, 201);
+            this.flpEcheance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpEcheance.Name = "flpEcheance";
-            this.flpEcheance.Size = new System.Drawing.Size(460, 208);
-
-
-            this.flpEcheance.Location = new System.Drawing.Point(32, 214);
-            this.flpEcheance.Name = "flpEcheance";
-            this.flpEcheance.Size = new System.Drawing.Size(614, 276);
-
-
- 
-            this.flpEcheance.Location = new System.Drawing.Point(32, 214);
-            this.flpEcheance.Name = "flpEcheance";
-            this.flpEcheance.Size = new System.Drawing.Size(614, 276);
- 
-
+            this.flpEcheance.Size = new System.Drawing.Size(653, 280);
             this.flpEcheance.TabIndex = 6;
             // 
             // txtPrelevement
             // 
-            this.txtPrelevement.Location = new System.Drawing.Point(158, 113);
-            this.txtPrelevement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrelevement.Location = new System.Drawing.Point(211, 139);
+            this.txtPrelevement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrelevement.Name = "txtPrelevement";
-            this.txtPrelevement.Size = new System.Drawing.Size(33, 20);
+            this.txtPrelevement.Size = new System.Drawing.Size(43, 22);
             this.txtPrelevement.TabIndex = 5;
             this.txtPrelevement.TextChanged += new System.EventHandler(this.txtPrelevement_TextChanged);
             this.txtPrelevement.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrelevement_KeyPress);
@@ -330,46 +266,43 @@
             // lblPrelevements
             // 
             this.lblPrelevements.AutoSize = true;
-            this.lblPrelevements.Location = new System.Drawing.Point(22, 115);
-            this.lblPrelevements.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPrelevements.Location = new System.Drawing.Point(29, 142);
             this.lblPrelevements.Name = "lblPrelevements";
-            this.lblPrelevements.Size = new System.Drawing.Size(131, 13);
+            this.lblPrelevements.Size = new System.Drawing.Size(175, 17);
             this.lblPrelevements.TabIndex = 4;
             this.lblPrelevements.Text = "Nombre de prélèvements :";
             // 
             // txtCommentaire
             // 
-            this.txtCommentaire.Location = new System.Drawing.Point(115, 64);
-            this.txtCommentaire.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCommentaire.Location = new System.Drawing.Point(153, 79);
+            this.txtCommentaire.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCommentaire.Name = "txtCommentaire";
-            this.txtCommentaire.Size = new System.Drawing.Size(76, 20);
+            this.txtCommentaire.Size = new System.Drawing.Size(100, 22);
             this.txtCommentaire.TabIndex = 3;
             // 
             // txtIntitule
             // 
-            this.txtIntitule.Location = new System.Drawing.Point(115, 27);
-            this.txtIntitule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIntitule.Location = new System.Drawing.Point(153, 33);
+            this.txtIntitule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIntitule.Name = "txtIntitule";
-            this.txtIntitule.Size = new System.Drawing.Size(76, 20);
+            this.txtIntitule.Size = new System.Drawing.Size(100, 22);
             this.txtIntitule.TabIndex = 2;
             // 
             // lblCommentaire
             // 
             this.lblCommentaire.AutoSize = true;
-            this.lblCommentaire.Location = new System.Drawing.Point(22, 67);
-            this.lblCommentaire.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCommentaire.Location = new System.Drawing.Point(29, 82);
             this.lblCommentaire.Name = "lblCommentaire";
-            this.lblCommentaire.Size = new System.Drawing.Size(77, 13);
+            this.lblCommentaire.Size = new System.Drawing.Size(103, 17);
             this.lblCommentaire.TabIndex = 1;
             this.lblCommentaire.Text = "Commentaire : ";
             // 
             // lblIntitule
             // 
             this.lblIntitule.AutoSize = true;
-            this.lblIntitule.Location = new System.Drawing.Point(22, 29);
-            this.lblIntitule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblIntitule.Location = new System.Drawing.Point(29, 36);
             this.lblIntitule.Name = "lblIntitule";
-            this.lblIntitule.Size = new System.Drawing.Size(47, 13);
+            this.lblIntitule.Size = new System.Drawing.Size(61, 17);
             this.lblIntitule.TabIndex = 0;
             this.lblIntitule.Text = "Intitulé : ";
             // 
@@ -385,42 +318,57 @@
             this.tpRevenu.Controls.Add(this.lblMontantRevenu);
             this.tpRevenu.Controls.Add(this.lblBenef);
             this.tpRevenu.Controls.Add(this.lblQuelPoste);
-            this.tpRevenu.Location = new System.Drawing.Point(4, 22);
-            this.tpRevenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpRevenu.Location = new System.Drawing.Point(4, 25);
+            this.tpRevenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpRevenu.Name = "tpRevenu";
-            this.tpRevenu.Size = new System.Drawing.Size(516, 418);
+            this.tpRevenu.Size = new System.Drawing.Size(688, 517);
             this.tpRevenu.TabIndex = 2;
             this.tpRevenu.Text = "Revenu";
             this.tpRevenu.UseVisualStyleBackColor = true;
             // 
+            // Valider
+            // 
+            this.Valider.Location = new System.Drawing.Point(417, 369);
+            this.Valider.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Valider.Name = "Valider";
+            this.Valider.Size = new System.Drawing.Size(100, 28);
+            this.Valider.TabIndex = 9;
+            this.Valider.Text = "Valider";
+            this.Valider.UseVisualStyleBackColor = true;
+            this.Valider.Click += new System.EventHandler(this.Valider_Click);
+            // 
             // txtPosteRevenu
             // 
-            this.txtPosteRevenu.Location = new System.Drawing.Point(139, 27);
+            this.txtPosteRevenu.Location = new System.Drawing.Point(185, 33);
+            this.txtPosteRevenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPosteRevenu.Name = "txtPosteRevenu";
-            this.txtPosteRevenu.Size = new System.Drawing.Size(87, 20);
+            this.txtPosteRevenu.Size = new System.Drawing.Size(115, 22);
             this.txtPosteRevenu.TabIndex = 8;
             // 
             // cboBeneficiaire
             // 
             this.cboBeneficiaire.FormattingEnabled = true;
-            this.cboBeneficiaire.Location = new System.Drawing.Point(105, 79);
+            this.cboBeneficiaire.Location = new System.Drawing.Point(140, 97);
+            this.cboBeneficiaire.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboBeneficiaire.Name = "cboBeneficiaire";
-            this.cboBeneficiaire.Size = new System.Drawing.Size(121, 21);
+            this.cboBeneficiaire.Size = new System.Drawing.Size(160, 24);
             this.cboBeneficiaire.TabIndex = 7;
             // 
             // txtMontantRevenu
             // 
-            this.txtMontantRevenu.Location = new System.Drawing.Point(139, 147);
+            this.txtMontantRevenu.Location = new System.Drawing.Point(185, 181);
+            this.txtMontantRevenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMontantRevenu.Name = "txtMontantRevenu";
-            this.txtMontantRevenu.Size = new System.Drawing.Size(87, 20);
+            this.txtMontantRevenu.Size = new System.Drawing.Size(115, 22);
             this.txtMontantRevenu.TabIndex = 6;
             this.txtMontantRevenu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontantRevenu_KeyPress);
             // 
             // txtJourDuMois
             // 
-            this.txtJourDuMois.Location = new System.Drawing.Point(155, 198);
+            this.txtJourDuMois.Location = new System.Drawing.Point(207, 244);
+            this.txtJourDuMois.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtJourDuMois.Name = "txtJourDuMois";
-            this.txtJourDuMois.Size = new System.Drawing.Size(31, 20);
+            this.txtJourDuMois.Size = new System.Drawing.Size(40, 22);
             this.txtJourDuMois.TabIndex = 5;
             this.txtJourDuMois.TextChanged += new System.EventHandler(this.txtJourDuMois_TextChanged);
             this.txtJourDuMois.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJourDuMois_KeyPress);
@@ -428,77 +376,61 @@
             // lblJourDuMois
             // 
             this.lblJourDuMois.AutoSize = true;
-            this.lblJourDuMois.Location = new System.Drawing.Point(136, 201);
+            this.lblJourDuMois.Location = new System.Drawing.Point(181, 247);
+            this.lblJourDuMois.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblJourDuMois.Name = "lblJourDuMois";
-            this.lblJourDuMois.Size = new System.Drawing.Size(96, 13);
+            this.lblJourDuMois.Size = new System.Drawing.Size(128, 17);
             this.lblJourDuMois.TabIndex = 4;
             this.lblJourDuMois.Text = "le               du mois";
             // 
             // lblJourMois
             // 
             this.lblJourMois.AutoSize = true;
-            this.lblJourMois.Location = new System.Drawing.Point(28, 201);
+            this.lblJourMois.Location = new System.Drawing.Point(37, 247);
+            this.lblJourMois.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblJourMois.Name = "lblJourMois";
-            this.lblJourMois.Size = new System.Drawing.Size(72, 13);
+            this.lblJourMois.Size = new System.Drawing.Size(97, 17);
             this.lblJourMois.TabIndex = 3;
             this.lblJourMois.Text = "Jour du mois :";
             // 
             // lblMontantRevenu
             // 
             this.lblMontantRevenu.AutoSize = true;
-            this.lblMontantRevenu.Location = new System.Drawing.Point(28, 150);
+            this.lblMontantRevenu.Location = new System.Drawing.Point(37, 185);
+            this.lblMontantRevenu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMontantRevenu.Name = "lblMontantRevenu";
-            this.lblMontantRevenu.Size = new System.Drawing.Size(52, 13);
+            this.lblMontantRevenu.Size = new System.Drawing.Size(67, 17);
             this.lblMontantRevenu.TabIndex = 2;
             this.lblMontantRevenu.Text = "Montant :";
             // 
             // lblBenef
             // 
             this.lblBenef.AutoSize = true;
-            this.lblBenef.Location = new System.Drawing.Point(28, 82);
+            this.lblBenef.Location = new System.Drawing.Point(37, 101);
+            this.lblBenef.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBenef.Name = "lblBenef";
-            this.lblBenef.Size = new System.Drawing.Size(68, 13);
+            this.lblBenef.Size = new System.Drawing.Size(90, 17);
             this.lblBenef.TabIndex = 1;
             this.lblBenef.Text = "Bénéficiaire :";
             // 
             // lblQuelPoste
             // 
             this.lblQuelPoste.AutoSize = true;
-            this.lblQuelPoste.Location = new System.Drawing.Point(28, 30);
+            this.lblQuelPoste.Location = new System.Drawing.Point(37, 37);
+            this.lblQuelPoste.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuelPoste.Name = "lblQuelPoste";
-            this.lblQuelPoste.Size = new System.Drawing.Size(67, 13);
+            this.lblQuelPoste.Size = new System.Drawing.Size(89, 17);
             this.lblQuelPoste.TabIndex = 0;
             this.lblQuelPoste.Text = "Quel poste ?";
             // 
-
-
-
- 
-
-            // Valider
-            // 
-            this.Valider.Location = new System.Drawing.Point(313, 300);
-            this.Valider.Name = "Valider";
-            this.Valider.Size = new System.Drawing.Size(75, 23);
-            this.Valider.TabIndex = 9;
-            this.Valider.Text = "Valider";
-            this.Valider.UseVisualStyleBackColor = true;
-            this.Valider.Click += new System.EventHandler(this.Valider_Click);
-            // 
-
-
-
-
- 
- 
-
             // frmPrevisionnel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 443);
+            this.ClientSize = new System.Drawing.Size(687, 545);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmPrevisionnel";
             this.Text = "Budget prévisionnel";
             this.Load += new System.EventHandler(this.frmPrevisionnel_Load);
