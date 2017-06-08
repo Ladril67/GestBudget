@@ -209,5 +209,11 @@ namespace Pique_Sous
             }
             MiseAJour();
         }
+
+        private void dgvEcheance_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewCell cell = dgvEcheance.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+        }
     }
 }
