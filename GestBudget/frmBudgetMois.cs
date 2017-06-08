@@ -600,12 +600,12 @@ namespace Pique_Sous
         {
             txtCodeToMod_TextChanged(sender, e);
         }
-<<<<<<< HEAD
+ 
 
-    }
-}
-=======
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+    
+
+ 
+ 
 
         //Onglet Recapitulatif
         private void btnCreeReca_Click(object sender, EventArgs e)

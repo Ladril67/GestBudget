@@ -491,6 +491,7 @@ namespace Pique_Sous
 
             try
             {
+                int k = 0;
                 foreach(Control c in flpEcheance.Controls)
                 {
                     //Déclaration des controls
@@ -498,7 +499,6 @@ namespace Pique_Sous
                     Label lblTransa = new Label();
                     TextBox txtTransa = new TextBox();
 
-                    int k = 0;
                     int pos = (k * 3);
                     if (((int)c.Tag) == pos + 1)
                     {
@@ -521,6 +521,7 @@ namespace Pique_Sous
                         OleDbCommand cdTransa = new OleDbCommand(rqtTransa, connec);
                         cdTransa.ExecuteNonQuery();
                     }
+                    else { }
 
                     k = k + 1;
                 }

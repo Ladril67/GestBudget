@@ -173,17 +173,17 @@
             // dtp1a1
             // 
             this.dtp1a1.Enabled = false;
-<<<<<<< HEAD
+ 
             this.dtp1a1.Location = new System.Drawing.Point(235, 16);
-=======
+ 
             this.dtp1a1.Location = new System.Drawing.Point(313, 20);
             this.dtp1a1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.dtp1a1.Name = "dtp1a1";
             this.dtp1a1.Size = new System.Drawing.Size(126, 20);
             this.dtp1a1.TabIndex = 20;
             // 
-<<<<<<< HEAD
+ 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -197,13 +197,13 @@
             // 
             this.lblValeur.AutoSize = true;
             this.lblValeur.Location = new System.Drawing.Point(232, 48);
-=======
+ 
             // lblValeur
             // 
             this.lblValeur.AutoSize = true;
             this.lblValeur.Location = new System.Drawing.Point(309, 59);
             this.lblValeur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.lblValeur.Name = "lblValeur";
             this.lblValeur.Size = new System.Drawing.Size(35, 13);
             this.lblValeur.TabIndex = 16;
@@ -213,13 +213,13 @@
             // 
             this.checkRecette.AutoSize = true;
             this.checkRecette.Enabled = false;
-<<<<<<< HEAD
+ 
             this.checkRecette.Location = new System.Drawing.Point(235, 72);
             this.checkRecette.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+ 
             this.checkRecette.Location = new System.Drawing.Point(313, 89);
             this.checkRecette.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.checkRecette.Name = "checkRecette";
             this.checkRecette.Size = new System.Drawing.Size(64, 17);
             this.checkRecette.TabIndex = 15;
@@ -267,13 +267,13 @@
             // 
             // btnDernier
             // 
-<<<<<<< HEAD
+ 
             this.btnDernier.Location = new System.Drawing.Point(454, 388);
             this.btnDernier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
+ 
             this.btnDernier.Location = new System.Drawing.Point(605, 478);
             this.btnDernier.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.btnDernier.Name = "btnDernier";
             this.btnDernier.Size = new System.Drawing.Size(133, 26);
             this.btnDernier.TabIndex = 3;
@@ -283,13 +283,13 @@
             // 
             // btnSuivant
             // 
-<<<<<<< HEAD
+ 
             this.btnSuivant.Location = new System.Drawing.Point(313, 388);
             this.btnSuivant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
+ 
             this.btnSuivant.Location = new System.Drawing.Point(417, 478);
             this.btnSuivant.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.btnSuivant.Name = "btnSuivant";
             this.btnSuivant.Size = new System.Drawing.Size(133, 26);
             this.btnSuivant.TabIndex = 2;
@@ -299,13 +299,13 @@
             // 
             // btnAvant
             // 
-<<<<<<< HEAD
+ 
             this.btnAvant.Location = new System.Drawing.Point(172, 388);
             this.btnAvant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
+ 
             this.btnAvant.Location = new System.Drawing.Point(229, 478);
             this.btnAvant.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.btnAvant.Name = "btnAvant";
             this.btnAvant.Size = new System.Drawing.Size(133, 26);
             this.btnAvant.TabIndex = 1;
@@ -315,13 +315,13 @@
             // 
             // btnPremier
             // 
-<<<<<<< HEAD
+ 
             this.btnPremier.Location = new System.Drawing.Point(31, 388);
             this.btnPremier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
+ 
             this.btnPremier.Location = new System.Drawing.Point(41, 478);
             this.btnPremier.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.btnPremier.Name = "btnPremier";
             this.btnPremier.Size = new System.Drawing.Size(133, 26);
             this.btnPremier.TabIndex = 0;
@@ -384,17 +384,17 @@
             // 
             // btnAjouterPersonneTransa
             // 
-<<<<<<< HEAD
+ 
             this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(551, 13);
             this.btnAjouterPersonneTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAjouterPersonneTransa.Name = "btnAjouterPersonneTransa";
             this.btnAjouterPersonneTransa.Size = new System.Drawing.Size(84, 67);
-=======
+ 
             this.btnAjouterPersonneTransa.Location = new System.Drawing.Point(734, 155);
             this.btnAjouterPersonneTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnAjouterPersonneTransa.Name = "btnAjouterPersonneTransa";
             this.btnAjouterPersonneTransa.Size = new System.Drawing.Size(112, 58);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.btnAjouterPersonneTransa.TabIndex = 0;
             this.btnAjouterPersonneTransa.Text = "Ajouter une personne";
             this.btnAjouterPersonneTransa.UseVisualStyleBackColor = true;
@@ -413,13 +413,13 @@
             // 
             // btnAjoutTransa
             // 
-<<<<<<< HEAD
+ 
             this.btnAjoutTransa.Location = new System.Drawing.Point(144, 306);
             this.btnAjoutTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
+ 
             this.btnAjoutTransa.Location = new System.Drawing.Point(192, 377);
             this.btnAjoutTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.btnAjoutTransa.Name = "btnAjoutTransa";
             this.btnAjoutTransa.Size = new System.Drawing.Size(160, 74);
             this.btnAjoutTransa.TabIndex = 10;
@@ -429,13 +429,13 @@
             // 
             // btnAjoutType
             // 
-<<<<<<< HEAD
+ 
             this.btnAjoutType.Location = new System.Drawing.Point(328, 187);
             this.btnAjoutType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
+ 
             this.btnAjoutType.Location = new System.Drawing.Point(437, 230);
             this.btnAjoutType.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.btnAjoutType.Name = "btnAjoutType";
             this.btnAjoutType.Size = new System.Drawing.Size(24, 19);
             this.btnAjoutType.TabIndex = 9;
@@ -445,13 +445,13 @@
             // cboTypeTransa
             // 
             this.cboTypeTransa.FormattingEnabled = true;
-<<<<<<< HEAD
+ 
             this.cboTypeTransa.Location = new System.Drawing.Point(199, 187);
             this.cboTypeTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
+ 
             this.cboTypeTransa.Location = new System.Drawing.Point(265, 230);
             this.cboTypeTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.cboTypeTransa.Name = "cboTypeTransa";
             this.cboTypeTransa.Size = new System.Drawing.Size(92, 21);
             this.cboTypeTransa.TabIndex = 8;
@@ -467,13 +467,13 @@
             // 
             // txtMontantTransa
             // 
-<<<<<<< HEAD
+ 
             this.txtMontantTransa.Location = new System.Drawing.Point(199, 101);
             this.txtMontantTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
+ 
             this.txtMontantTransa.Location = new System.Drawing.Point(265, 124);
             this.txtMontantTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.txtMontantTransa.Name = "txtMontantTransa";
             this.txtMontantTransa.Size = new System.Drawing.Size(167, 20);
             this.txtMontantTransa.TabIndex = 4;
@@ -490,13 +490,13 @@
             // 
             // txtDescriptionTransa
             // 
-<<<<<<< HEAD
+ 
             this.txtDescriptionTransa.Location = new System.Drawing.Point(199, 67);
             this.txtDescriptionTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
+ 
             this.txtDescriptionTransa.Location = new System.Drawing.Point(265, 82);
             this.txtDescriptionTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.txtDescriptionTransa.Name = "txtDescriptionTransa";
             this.txtDescriptionTransa.Size = new System.Drawing.Size(167, 20);
             this.txtDescriptionTransa.TabIndex = 3;
@@ -512,13 +512,13 @@
             // 
             // dtpTransa
             // 
-<<<<<<< HEAD
+ 
             this.dtpTransa.Location = new System.Drawing.Point(199, 34);
             this.dtpTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
+ 
             this.dtpTransa.Location = new System.Drawing.Point(265, 42);
             this.dtpTransa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.dtpTransa.Name = "dtpTransa";
             this.dtpTransa.Size = new System.Drawing.Size(167, 20);
             this.dtpTransa.TabIndex = 1;
@@ -581,12 +581,12 @@
             // 
             this.dgvTransactions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-<<<<<<< HEAD
+ 
             this.dgvTransactions.Location = new System.Drawing.Point(8, 8);
-=======
+ 
             this.dgvTransactions.Location = new System.Drawing.Point(11, 10);
             this.dgvTransactions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.dgvTransactions.Name = "dgvTransactions";
             this.dgvTransactions.RowTemplate.Height = 24;
             this.dgvTransactions.Size = new System.Drawing.Size(631, 230);
@@ -610,13 +610,13 @@
             // 
             // btnAnnulerMod
             // 
-<<<<<<< HEAD
+ 
             this.btnAnnulerMod.Location = new System.Drawing.Point(518, 250);
             this.btnAnnulerMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+ 
             this.btnAnnulerMod.Location = new System.Drawing.Point(691, 308);
             this.btnAnnulerMod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.btnAnnulerMod.Name = "btnAnnulerMod";
             this.btnAnnulerMod.Size = new System.Drawing.Size(56, 19);
             this.btnAnnulerMod.TabIndex = 19;
@@ -626,13 +626,13 @@
             // 
             // btnValidMod
             // 
-<<<<<<< HEAD
+ 
             this.btnValidMod.Location = new System.Drawing.Point(578, 250);
             this.btnValidMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+ 
             this.btnValidMod.Location = new System.Drawing.Point(771, 308);
             this.btnValidMod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.btnValidMod.Name = "btnValidMod";
             this.btnValidMod.Size = new System.Drawing.Size(56, 19);
             this.btnValidMod.TabIndex = 18;
@@ -643,17 +643,17 @@
             // txtCodeToMod
             // 
             this.txtCodeToMod.Anchor = System.Windows.Forms.AnchorStyles.None;
-<<<<<<< HEAD
+ 
             this.txtCodeToMod.Location = new System.Drawing.Point(178, 250);
             this.txtCodeToMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCodeToMod.Name = "txtCodeToMod";
             this.txtCodeToMod.Size = new System.Drawing.Size(26, 20);
-=======
+ 
             this.txtCodeToMod.Location = new System.Drawing.Point(237, 308);
             this.txtCodeToMod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCodeToMod.Name = "txtCodeToMod";
             this.txtCodeToMod.Size = new System.Drawing.Size(33, 22);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.txtCodeToMod.TabIndex = 17;
             this.txtCodeToMod.TextChanged += new System.EventHandler(this.txtCodeToMod_TextChanged);
             // 
@@ -682,13 +682,13 @@
             this.tableLayoutPanel1.Controls.Add(this.dtpModDate, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtModDesc, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.cboModType, 6, 1);
-<<<<<<< HEAD
+ 
             this.tableLayoutPanel1.Location = new System.Drawing.Point(7, 288);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+ 
             this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 354);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -699,13 +699,13 @@
             // txtModMontant
             // 
             this.txtModMontant.Anchor = System.Windows.Forms.AnchorStyles.None;
-<<<<<<< HEAD
+ 
             this.txtModMontant.Location = new System.Drawing.Point(332, 85);
             this.txtModMontant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+ 
             this.txtModMontant.Location = new System.Drawing.Point(439, 105);
             this.txtModMontant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.txtModMontant.Name = "txtModMontant";
             this.txtModMontant.Size = new System.Drawing.Size(76, 20);
             this.txtModMontant.TabIndex = 15;
@@ -714,13 +714,13 @@
             // txtModCode
             // 
             this.txtModCode.Anchor = System.Windows.Forms.AnchorStyles.None;
-<<<<<<< HEAD
+ 
             this.txtModCode.Location = new System.Drawing.Point(9, 85);
             this.txtModCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+ 
             this.txtModCode.Location = new System.Drawing.Point(12, 105);
             this.txtModCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.txtModCode.Name = "txtModCode";
             this.txtModCode.Size = new System.Drawing.Size(76, 20);
             this.txtModCode.TabIndex = 14;
@@ -763,12 +763,12 @@
             // 
             this.lblModMontant.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblModMontant.AutoSize = true;
-<<<<<<< HEAD
+ 
             this.lblModMontant.Location = new System.Drawing.Point(347, 25);
             this.lblModMontant.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-=======
+ 
             this.lblModMontant.Location = new System.Drawing.Point(459, 30);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.lblModMontant.Name = "lblModMontant";
             this.lblModMontant.Size = new System.Drawing.Size(46, 13);
             this.lblModMontant.TabIndex = 6;
@@ -778,12 +778,12 @@
             // 
             this.lblModRecette.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblModRecette.AutoSize = true;
-<<<<<<< HEAD
+ 
             this.lblModRecette.Location = new System.Drawing.Point(413, 25);
             this.lblModRecette.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-=======
+ 
             this.lblModRecette.Location = new System.Drawing.Point(546, 30);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.lblModRecette.Name = "lblModRecette";
             this.lblModRecette.Size = new System.Drawing.Size(45, 13);
             this.lblModRecette.TabIndex = 7;
@@ -793,12 +793,12 @@
             // 
             this.lblModPercu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblModPercu.AutoSize = true;
-<<<<<<< HEAD
+ 
             this.lblModPercu.Location = new System.Drawing.Point(463, 25);
             this.lblModPercu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-=======
+ 
             this.lblModPercu.Location = new System.Drawing.Point(610, 30);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.lblModPercu.Name = "lblModPercu";
             this.lblModPercu.Size = new System.Drawing.Size(35, 13);
             this.lblModPercu.TabIndex = 8;
@@ -808,12 +808,12 @@
             // 
             this.lblModType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblModType.AutoSize = true;
-<<<<<<< HEAD
+ 
             this.lblModType.Location = new System.Drawing.Point(550, 25);
             this.lblModType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-=======
+ 
             this.lblModType.Location = new System.Drawing.Point(729, 30);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.lblModType.Name = "lblModType";
             this.lblModType.Size = new System.Drawing.Size(31, 13);
             this.lblModType.TabIndex = 9;
@@ -823,13 +823,13 @@
             // 
             this.chkModRecette.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkModRecette.AutoSize = true;
-<<<<<<< HEAD
+ 
             this.chkModRecette.Location = new System.Drawing.Point(428, 88);
             this.chkModRecette.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+ 
             this.chkModRecette.Location = new System.Drawing.Point(565, 108);
             this.chkModRecette.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.chkModRecette.Name = "chkModRecette";
             this.chkModRecette.Size = new System.Drawing.Size(15, 14);
             this.chkModRecette.TabIndex = 10;
@@ -839,13 +839,13 @@
             // 
             this.chkModPercu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkModPercu.AutoSize = true;
-<<<<<<< HEAD
+ 
             this.chkModPercu.Location = new System.Drawing.Point(473, 88);
             this.chkModPercu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+ 
             this.chkModPercu.Location = new System.Drawing.Point(623, 108);
             this.chkModPercu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.chkModPercu.Name = "chkModPercu";
             this.chkModPercu.Size = new System.Drawing.Size(15, 14);
             this.chkModPercu.TabIndex = 11;
@@ -855,13 +855,13 @@
             // 
             this.dtpModDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpModDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-<<<<<<< HEAD
+ 
             this.dtpModDate.Location = new System.Drawing.Point(96, 85);
             this.dtpModDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+ 
             this.dtpModDate.Location = new System.Drawing.Point(127, 105);
             this.dtpModDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.dtpModDate.Name = "dtpModDate";
             this.dtpModDate.Size = new System.Drawing.Size(86, 20);
             this.dtpModDate.TabIndex = 12;
@@ -869,30 +869,30 @@
             // txtModDesc
             // 
             this.txtModDesc.Anchor = System.Windows.Forms.AnchorStyles.None;
-<<<<<<< HEAD
+ 
             this.txtModDesc.Location = new System.Drawing.Point(187, 85);
             this.txtModDesc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtModDesc.Name = "txtModDesc";
             this.txtModDesc.Size = new System.Drawing.Size(140, 20);
-=======
+ 
             this.txtModDesc.Location = new System.Drawing.Point(247, 105);
             this.txtModDesc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtModDesc.Name = "txtModDesc";
             this.txtModDesc.Size = new System.Drawing.Size(185, 22);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.txtModDesc.TabIndex = 13;
             // 
             // cboModType
             // 
             this.cboModType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboModType.FormattingEnabled = true;
-<<<<<<< HEAD
+ 
             this.cboModType.Location = new System.Drawing.Point(522, 84);
             this.cboModType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+ 
             this.cboModType.Location = new System.Drawing.Point(693, 104);
             this.cboModType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.cboModType.Name = "cboModType";
             this.cboModType.Size = new System.Drawing.Size(86, 21);
             this.cboModType.TabIndex = 16;
@@ -911,12 +911,12 @@
             // 
             this.dgvModifTransa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvModifTransa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-<<<<<<< HEAD
+ 
             this.dgvModifTransa.Location = new System.Drawing.Point(7, 3);
-=======
+ 
             this.dgvModifTransa.Location = new System.Drawing.Point(9, 4);
             this.dgvModifTransa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.dgvModifTransa.Name = "dgvModifTransa";
             this.dgvModifTransa.RowTemplate.Height = 24;
             this.dgvModifTransa.Size = new System.Drawing.Size(631, 230);
@@ -924,10 +924,10 @@
             // 
             // tpRecap
             // 
-<<<<<<< HEAD
+ 
             this.tpRecap.Location = new System.Drawing.Point(4, 25);
             this.tpRecap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+ 
             this.tpRecap.Controls.Add(this.grpCriteres);
             this.tpRecap.Controls.Add(this.btnRechercher);
             this.tpRecap.Controls.Add(this.dgvRecapitulatif);
@@ -935,7 +935,7 @@
             this.tpRecap.Controls.Add(this.btnCreeReca);
             this.tpRecap.Location = new System.Drawing.Point(4, 28);
             this.tpRecap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
+ 
             this.tpRecap.Name = "tpRecap";
             this.tpRecap.Size = new System.Drawing.Size(642, 424);
             this.tpRecap.TabIndex = 3;
