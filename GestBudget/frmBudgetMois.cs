@@ -671,11 +671,7 @@ namespace Pique_Sous
                 FolderBrowserDialog fbd = new FolderBrowserDialog();
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
-<<<<<<< HEAD
                     myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois +".pdf");
-=======
-                    myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_"+mois+".pdf");
->>>>>>> 08f1b8b8b9932c11e2242c1404ba5a47b68b361a
                 }
                 //myDoc.createPDF(@"C:\Users\Miniyeti67\Desktop\Mini Projet\" + mois + ".pdf");
                 //myDoc.createPDF(@"C:\Users\ladri\Desktop\" + mois + ".pdf");
