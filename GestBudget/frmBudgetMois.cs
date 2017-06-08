@@ -600,16 +600,7 @@ namespace Pique_Sous
         {
             txtCodeToMod_TextChanged(sender, e);
         }
-
-
- 
-
-    
-
- 
- 
-
-
+        
         //Onglet Recapitulatif
         private void btnCreeReca_Click(object sender, EventArgs e)
         {
@@ -735,7 +726,6 @@ namespace Pique_Sous
             try
             {
                 connec.Open();
-                MessageBox.Show(requete);
                 OleDbCommand cd1 = new OleDbCommand(requete, connec);
                 OleDbDataAdapter da = new OleDbDataAdapter(cd1);
                 DataTable dt = new DataTable();
