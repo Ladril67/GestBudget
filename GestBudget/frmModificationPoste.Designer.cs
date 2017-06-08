@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmModificationPoste));
             this.lblPostePeriod = new System.Windows.Forms.Label();
             this.lblPosteEcheance = new System.Windows.Forms.Label();
@@ -35,9 +36,17 @@
             this.dgvPeriod = new System.Windows.Forms.DataGridView();
             this.dgvRevenu = new System.Windows.Forms.DataGridView();
             this.dgvEcheance = new System.Windows.Forms.DataGridView();
+            this.cmsPeriod = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsRevenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.modifierToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.supprimerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeriod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRevenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEcheance)).BeginInit();
+            this.cmsPeriod.SuspendLayout();
+            this.cmsRevenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPostePeriod
@@ -94,6 +103,48 @@
             this.dgvEcheance.Size = new System.Drawing.Size(558, 253);
             this.dgvEcheance.TabIndex = 5;
             // 
+            // cmsPeriod
+            // 
+            this.cmsPeriod.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmsPeriod.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modifierToolStripMenuItem,
+            this.supprimerToolStripMenuItem});
+            this.cmsPeriod.Name = "cmsPeriod";
+            this.cmsPeriod.Size = new System.Drawing.Size(154, 56);
+            // 
+            // modifierToolStripMenuItem
+            // 
+            this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
+            this.modifierToolStripMenuItem.Text = "Modifier";
+            // 
+            // supprimerToolStripMenuItem
+            // 
+            this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
+            this.supprimerToolStripMenuItem.Text = "Supprimer";
+            // 
+            // cmsRevenu
+            // 
+            this.cmsRevenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmsRevenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modifierToolStripMenuItem1,
+            this.supprimerToolStripMenuItem1});
+            this.cmsRevenu.Name = "cmsRevenu";
+            this.cmsRevenu.Size = new System.Drawing.Size(182, 84);
+            // 
+            // modifierToolStripMenuItem1
+            // 
+            this.modifierToolStripMenuItem1.Name = "modifierToolStripMenuItem1";
+            this.modifierToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.modifierToolStripMenuItem1.Text = "Modifier";
+            // 
+            // supprimerToolStripMenuItem1
+            // 
+            this.supprimerToolStripMenuItem1.Name = "supprimerToolStripMenuItem1";
+            this.supprimerToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.supprimerToolStripMenuItem1.Text = "Supprimer";
+            // 
             // frmModificationPoste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -112,6 +163,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeriod)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRevenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEcheance)).EndInit();
+            this.cmsPeriod.ResumeLayout(false);
+            this.cmsRevenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +178,11 @@
         private System.Windows.Forms.DataGridView dgvPeriod;
         private System.Windows.Forms.DataGridView dgvRevenu;
         private System.Windows.Forms.DataGridView dgvEcheance;
+        private System.Windows.Forms.ContextMenuStrip cmsPeriod;
+        private System.Windows.Forms.ToolStripMenuItem modifierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip cmsRevenu;
+        private System.Windows.Forms.ToolStripMenuItem modifierToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem1;
     }
 }

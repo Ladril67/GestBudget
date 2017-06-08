@@ -1,5 +1,6 @@
 ﻿using sharpPDF;
 using sharpPDF.Enumerators;
+using sharpPDF.Tables;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -623,21 +624,29 @@ namespace Pique_Sous
         {
             try
             {
+                //Initialisation des variables
                 connec.Open();
                 string mois = dtpReca.Value.Month.ToString();
-                string annee = dtpReca.Value.ToShortDateString();
+                string annee = dtpReca.Value.Year.ToString();
                 string text = "____________________________________________________";
                 float montant = 0;
                 int recette = 0;
                 int percu = 0;
-                pdfDocument myDoc = new pdfDocument("Recapitulatif_" + mois, "Pique_Sous");
-                pdfPage myPage = myDoc.addPage();
-
-
-                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM [Transaction] WHERE [dateTransaction] = dateValue('" + dtpReca.Value.ToShortDateString() + "')", connec);
-
-                OleDbDataReader dr1 = cd1.ExecuteReader();
+                List<string> un = new List<string>();
+                List<string> de = new List<string>();
+                List<string> tr = new List<string>();
+                List<string> qu = new List<string>();
+                List<string> ci = new List<string>();
+                List<string> si = new List<string>();
                 List<Boolean> nbTransaction = new List<Boolean>();
+                pdfDocument myDoc = new pdfDocument("Recapitulatif_" + mois + "_" + annee, "Pique_Sous");
+                pdfPage myPage = myDoc.addPage();
+                
+                //SQL
+                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM [Transaction] WHERE MONTH([dateTransaction]) = " + dtpReca.Value.Month.ToString(), connec);
+                OleDbDataReader dr1 = cd1.ExecuteReader();
+                
+                //Lecture de la base
                 while (dr1.Read())
                 {
                     nbTransaction.Add(dr1.GetBoolean(4));
@@ -650,10 +659,18 @@ namespace Pique_Sous
                         percu++;
                     }
                     montant = montant + dr1.GetFloat(3);
+
+                    un.Add(dr1[1].ToString());
+                    de.Add(dr1[2].ToString());
+                    tr.Add(dr1[3].ToString());
+                    qu.Add(dr1[4].ToString());
+                    ci.Add(dr1[5].ToString());
+                    si.Add(dr1[6].ToString());
                 }
 
+                //Creation du text dans le PDF
                 int indentation = 20;
-                myPage.addText("Recapitulatif du mois :" + mois, indentation, 720, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                myPage.addText("Recapitulatif du mois : " + mois + "_" + annee, indentation, 720, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
                 myPage.addText(text, indentation, 700, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
                 myPage.addText("Dépenses", indentation, 675, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
                 myPage.addText(text, indentation, 315, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
@@ -667,11 +684,59 @@ namespace Pique_Sous
                 myPage.addText(text, indentation, 75, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
                 myPage.addText("nombres de transactions : " + nbTransaction.Count.ToString(), indentation, 45, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
                 myPage.addText(text, indentation, 15, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                
+                //Initiallisation tableau PDF
+                pdfTable myTable = new pdfTable(myDoc);
+                myTable.borderSize = 1;
+                myTable.borderColor = sharpPDF.pdfColor.Black;
+                myTable.tableHeader.addColumn(80);
+                myTable.tableHeader.addColumn(120);
+                myTable.tableHeader.addColumn(90);
+                myTable.tableHeader.addColumn(90);
+                myTable.tableHeader.addColumn(90);
+                myTable.tableHeader.addColumn(90);
+                pdfTableRow myRow = myTable.createRow();
 
+                //Remplissage de la première ligne du tableau
+                myRow[0].addText("Date Transaction");
+                myRow[1].addText("Description");
+                myRow[2].addText("Montant");
+                myRow[3].addText("Recette ?");
+                myRow[4].addText("Perçu ?");
+                myRow[5].addText("Type de dépence ?");
+                myTable.addRow(myRow);
+
+                //Remplissage des ligne du tableau
+                for( int i = 0; i< un.Count; i++)
+                {
+                    myRow = myTable.createRow();
+                    myRow[0].addText(un[i]);
+                    myRow[1].addText(de[i]);
+                    myRow[2].addText(tr[i]);
+                    myRow[3].addText(qu[i]);
+                    myRow[4].addText(ci[i]);
+                    myRow[5].addText(si[i]);
+                    myTable.addRow(myRow);
+                    MessageBox.Show(un[i]);
+                }
+
+                //Place le tableau
+                myTable.coordY = 670;
+                myTable.coordX = 20;
+                myPage.addTable(myTable);
+                
+                //creer le PDF
                 FolderBrowserDialog fbd = new FolderBrowserDialog();
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
+<<<<<<< HEAD
  
+=======
+<<<<<<< HEAD
+                    myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois + "_" + annee +".pdf");
+=======
+<<<<<<< HEAD
+>>>>>>> 52ee49c805a4a9bed93798597f5634f27cbbe49b
  
                     myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois +".pdf");
  
@@ -679,10 +744,13 @@ namespace Pique_Sous
  
  
                     myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois +".pdf");
+<<<<<<< HEAD
  
+=======
+>>>>>>> 0dfed3e5cefb0362ea5bbc9b748037ebcddd4591
+>>>>>>> 2c3d02ab320beae2dca54413d5ab00671e955f67
+>>>>>>> 52ee49c805a4a9bed93798597f5634f27cbbe49b
                 }
-                //myDoc.createPDF(@"C:\Users\Miniyeti67\Desktop\Mini Projet\" + mois + ".pdf");
-                //myDoc.createPDF(@"C:\Users\ladri\Desktop\" + mois + ".pdf");
                 myPage = null;
                 myDoc = null;
                 connec.Close();
