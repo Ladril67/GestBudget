@@ -422,6 +422,7 @@ namespace Pique_Sous
         {
             txtCodeToMod_TextChanged(sender, e);
         }
+
     }
 }
 
