@@ -34,7 +34,7 @@ namespace Pique_Sous
 
             try
             {
-                String rqtPoste = "SELECT libPoste FROM Poste";
+                string rqtPoste = "SELECT libPoste FROM Poste";
                 OleDbCommand cdPoste = new OleDbCommand(rqtPoste, connec);
                 OleDbDataReader dr = cdPoste.ExecuteReader();
                 int c = 0;
@@ -42,6 +42,16 @@ namespace Pique_Sous
                 {
                     dgvPrevisionnelAnnuel.Rows.Add();
                     dgvPrevisionnelAnnuel.Rows[c].Cells[0].Value = dr.GetString(0);
+                    c++;
+                }
+
+                string requete = "SELECT SUM(montant) FROM [PosteRevenu] GROUP BY [codePoste]";
+                OleDbCommand cd2 = new OleDbCommand(requete, connec);
+                OleDbDataReader dr2 = cd2.ExecuteReader();
+                c = 0;
+                while (dr.Read())
+                {
+                    dgvPrevisionnelAnnuel.Rows[c].Cells[1].Value = dr.GetInt32(0);
                     c++;
                 }
             }
