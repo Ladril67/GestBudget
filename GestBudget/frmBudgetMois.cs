@@ -316,7 +316,7 @@ namespace Pique_Sous
             {
                 lvPersonne.Items.Clear();
                 List<int> max = new List<int>();
-                int jointure = 0;
+                string jointure = "";
                 int codeTransaction = 0;
                 List<int> Personne = new List<int>();
                 OleDbCommand cd0 = new OleDbCommand("SELECT [codeTransaction] FROM[Transaction]", connec);
@@ -364,7 +364,7 @@ namespace Pique_Sous
 
                 OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM[Transaction] where [codeTransaction] = " + ligne, connec);
                 OleDbDataReader dr1 = cd1.ExecuteReader();
-                
+
                 while (dr1.Read())
                 {
                     lblCode.Text = dr1.GetInt32(0).ToString();
@@ -374,15 +374,32 @@ namespace Pique_Sous
                     lblValeur.Text = dr1.GetValue(3).ToString() + " €";
                     checkRecette.Checked = dr1.GetBoolean(4);
                     chkPercu.Checked = dr1.GetBoolean(5);
-                    jointure = dr1.GetInt32(6);
+                    if (dr1[6].ToString() == "")
+                    {
+                        jointure = "";
+                    }
+                    else
+                    {
+                        jointure = dr1.GetInt32(6).ToString();
+
+                    }
                 }
-                //Pour eviter de faire une requette avec une jointure
-                OleDbCommand cd2 = new OleDbCommand("SELECT [TypeTransaction].* FROM [TypeTransaction] where [codeType] = " + jointure, connec);
-                OleDbDataReader dr2 = cd2.ExecuteReader();
-                while (dr2.Read())
+
+                if (jointure != "")
                 {
-                    lblType.Text = dr2.GetString(1);
+                    //Pour eviter de faire une requette avec une jointure
+                    OleDbCommand cd2 = new OleDbCommand("SELECT [TypeTransaction].* FROM [TypeTransaction] where [codeType] = " + jointure, connec);
+                    OleDbDataReader dr2 = cd2.ExecuteReader();
+                    while (dr2.Read())
+                    {
+                        lblType.Text = dr2.GetString(1);
+                    }
                 }
+                else
+                {
+                    lblType.Text = "Type NULL";
+                }
+                
 
                 OleDbCommand cd3 = new OleDbCommand("SELECT [CodePersonne] FROM[Beneficiaires] where [codeTransaction] =" + codeTransaction, connec);
                 OleDbDataReader dr3 = cd3.ExecuteReader();
