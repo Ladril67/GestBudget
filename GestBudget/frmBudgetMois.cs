@@ -618,7 +618,7 @@ namespace Pique_Sous
         {
             txtCodeToMod_TextChanged(sender, e);
         }
-        
+
         //Onglet Recapitulatif
         private void btnCreeReca_Click(object sender, EventArgs e)
         {
@@ -644,11 +644,11 @@ namespace Pique_Sous
                 List<Boolean> nbTransaction = new List<Boolean>();
                 pdfDocument myDoc = new pdfDocument("Recapitulatif_" + mois + "_" + annee, "Pique_Sous");
                 pdfPage myPage = myDoc.addPage();
-                
+
                 //SQL
                 OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM [Transaction] WHERE MONTH([dateTransaction]) = " + dtpReca.Value.Month.ToString(), connec);
                 OleDbDataReader dr1 = cd1.ExecuteReader();
-                
+
                 //Lecture de la base
                 while (dr1.Read())
                 {
@@ -663,7 +663,7 @@ namespace Pique_Sous
                     }
                     montant = montant + dr1.GetFloat(3);
 
-                    un.Add(dr1[1].ToString().Substring(0,11));
+                    un.Add(dr1[1].ToString().Substring(0, 11));
                     de.Add(dr1[2].ToString());
                     tr.Add(dr1[3].ToString());
                     qu.Add(dr1[4].ToString());
@@ -720,7 +720,7 @@ namespace Pique_Sous
                 myPage.addText("nombres de transactions : " + nbTransaction.Count.ToString(), indentation, hauteurDesLignes, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
                 hauteurDesLignes = hauteurDesLignes - 30;
                 myPage.addText(text, indentation, hauteurDesLignes, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
-                
+
                 //Initiallisation tableau PDF
                 pdfTable myTable = new pdfTable(myDoc);
                 myTable.borderSize = 1;
@@ -743,7 +743,7 @@ namespace Pique_Sous
                 myTable.addRow(myRow);
 
                 //Remplissage des ligne du tableau
-                for( int i = 0; i< un.Count; i++)
+                for (int i = 0; i < un.Count; i++)
                 {
                     myRow = myTable.createRow();
                     myRow[0].addText(un[i]);
@@ -759,11 +759,12 @@ namespace Pique_Sous
                 myTable.coordY = 650;
                 myTable.coordX = 20;
                 myPage.addTable(myTable);
-                
+
                 //creer le PDF
                 FolderBrowserDialog fbd = new FolderBrowserDialog();
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
+<<<<<<< HEAD
  
                     myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_"+mois+".pdf");
                     myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois +".pdf");
@@ -774,6 +775,16 @@ namespace Pique_Sous
                     myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois + "_" + annee +".pdf");
                 
  
+=======
+
+                    myDoc.createPDF(fbd.SelectedPath + @"\Recapitulatif_" + mois + ".pdf");
+                }
+                //myDoc.createPDF(@"C:\Users\Miniyeti67\Desktop\Mini Projet\" + mois + ".pdf");
+                //myDoc.createPDF(@"C:\Users\ladri\Desktop\" + mois + ".pdf");
+
+                myDoc.createPDF(fbd.SelectedPath + @"\Recapitulatif_" + mois + "_" + annee + ".pdf");
+
+>>>>>>> 501d6c81e60666e4ecd0395d5f5dbf6d96ec9e87
                 myPage = null;
                 myDoc = null;
                 connec.Close();
