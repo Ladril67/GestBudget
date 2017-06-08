@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrevisionnel));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpPosteFixe = new System.Windows.Forms.TabPage();
             this.btnValider = new System.Windows.Forms.Button();
@@ -428,6 +429,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 545);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmPrevisionnel";
             this.Text = "Budget prévisionnel";
