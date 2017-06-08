@@ -615,7 +615,11 @@ namespace Pique_Sous
                 pdfDocument myDoc = new pdfDocument("Recapitulatif_"+mois, "Pique_Sous");
                 pdfPage myPage = myDoc.addPage();
 
+<<<<<<< HEAD
                 OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM [Transaction] WHERE [dateTransaction] = dateValue('" + dtpReca.Value.ToShortDateString() + "')", connec);
+=======
+                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM [Transaction] WHERE [dateTransaction] ='" + dtpReca.Value.ToShortDateString() +"'", connec);
+>>>>>>> f178c3d0ba8ece6791ad7d45f36a8a647337fce4
                 OleDbDataReader dr1 = cd1.ExecuteReader();
                 List<Boolean> nbTransaction = new List<Boolean>();
                 while (dr1.Read())
@@ -666,11 +670,11 @@ namespace Pique_Sous
             {
                 if (requete.EndsWith("AND "))
                 {
-                    requete += "[dateTransaction] >= '" + dtpRecapDate.Value + "' AND [dateTransaction] <= '" + (dtpRecapDate.Value.AddDays(1)) + "'";
+                    requete += "[dateTransaction] = DateValue('" + dtpRecapDate.Value.ToShortDateString() + "')";
                 }
                 else
                 {
-                    requete += "AND [dateTransaction] = '" + dtpRecapDate.Value + "' AND [dateTransaction] <= '" + (dtpRecapDate.Value.AddDays(1)) + "'";
+                    requete += " AND [dateTransaction] = DateValue('" + dtpRecapDate.Value.ToShortDateString() + "')";
                 }
             }
             if (chkRecapLibelle.Checked)
@@ -681,7 +685,7 @@ namespace Pique_Sous
                 }
                 else
                 {
-                    requete += "AND [type] = " + cboRecapLib.SelectedValue;
+                    requete += " AND [type] = " + cboRecapLib.SelectedValue;
                 }
             }
             if (chkRecapMontant.Checked)
@@ -692,7 +696,7 @@ namespace Pique_Sous
                 }
                 else
                 {
-                    requete += "AND [montant] = " + txtRecapMontant.Text;
+                    requete += " AND [montant] = " + txtRecapMontant.Text;
                 }
             }
             if (chkRecapPercu.Checked)
@@ -703,7 +707,7 @@ namespace Pique_Sous
                 }
                 else
                 {
-                    requete += "AND [percuON] = " + cboRecapPercu.SelectedItem.ToString();
+                    requete += " AND [percuON] = " + cboRecapPercu.SelectedItem.ToString();
                 }
             }
             if (chkRecapRecette.Checked)
@@ -714,7 +718,7 @@ namespace Pique_Sous
                 }
                 else
                 {
-                    requete += "AND [recetteON] = " + cboRecapRecette.SelectedItem.ToString();
+                    requete += " AND [recetteON] = " + cboRecapRecette.SelectedItem.ToString();
                 }
             }
             if (requete.EndsWith("AND "))
