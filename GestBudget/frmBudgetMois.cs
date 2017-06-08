@@ -693,7 +693,6 @@ namespace Pique_Sous
                 }
 
                 //Creation du text dans le PDF
-                
                 myPage.addText("Recapitulatif du : " + mois + "_" + annee, indentation, hauteurDesLignes, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
                 hauteurDesLignes = hauteurDesLignes - 30;
                 myPage.addText(text, indentation, hauteurDesLignes, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
