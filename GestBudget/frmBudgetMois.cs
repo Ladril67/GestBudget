@@ -606,15 +606,16 @@ namespace Pique_Sous
         {
             try
             {
-                string mois = dtpReca.Text.ToString();
+                connec.Open();
+                string mois = dtpReca.Value.Month.ToString();
                 string text = "";
                 int montant = 0;
                 int recette = 0;
                 int percu = 0;
-                pdfDocument myDoc = new pdfDocument("TUTORIAL", "ME");
+                pdfDocument myDoc = new pdfDocument("Recapitulatif_"+mois, "Pique_Sous");
                 pdfPage myPage = myDoc.addPage();
 
-                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM [Transaction] WHERE [dateTransaction] =" + dtpReca, connec);
+                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM [Transaction] WHERE [dateTransaction] ='" + dtpReca.Value +"'", connec);
                 OleDbDataReader dr1 = cd1.ExecuteReader();
                 List<Boolean> nbTransaction = new List<Boolean>();
                 while (dr1.Read())
@@ -633,17 +634,22 @@ namespace Pique_Sous
 
                 text = "Recette : " + recette.ToString() + " Depenses : " + montant.ToString() + "Reste a persevoir : " + percu.ToString() + "Somme total dépensée : -" + montant.ToString() + "nombres de transactions : " + nbTransaction.Count.ToString(); 
                 myPage.addText(text, 200, 450, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
-                myDoc.createPDF(@"C:\Users\Miniyeti67\Desktop\Mini Projet\" + mois + ".pdf");
+                //myDoc.createPDF(@"C:\Users\Miniyeti67\Desktop\Mini Projet\" + mois + ".pdf");
+                myDoc.createPDF(@"C:\Users\ladri\Desktop" + mois + ".pdf");
                 myPage = null;
                 myDoc = null;
+                connec.Close();
+                MessageBox.Show("PDF créé");
             }
             catch (InvalidOperationException erreur)
             {
-                MessageBox.Show("Erreur de chaine de connexion ! validMod");
+                MessageBox.Show("Erreur de chaine de connexion ! pdf");
+                MessageBox.Show(erreur.Message);
             }
             catch (OleDbException erreur)
             {
-                MessageBox.Show("Erreur de requete SQL ! ValidMod");
+                MessageBox.Show("Erreur de requete SQL ! pdf");
+                MessageBox.Show(erreur.Message);
             }
         }
 
