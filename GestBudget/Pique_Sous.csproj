@@ -72,6 +72,12 @@
     <Compile Include="frmBudgetMois.Designer.cs">
       <DependentUpon>frmBudgetMois.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBudgetPrevisionnelAnnuel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBudgetPrevisionnelAnnuel.Designer.cs">
+      <DependentUpon>frmBudgetPrevisionnelAnnuel.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
