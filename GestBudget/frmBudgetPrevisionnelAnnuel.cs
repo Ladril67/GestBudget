@@ -42,7 +42,7 @@ namespace Pique_Sous
             {
                 while (drPoste.Read())
                 {
-                    dgvPrevisionnelAnnuel.get = drPoste.GetInt32(k);
+                    
                 }
             }
         }
