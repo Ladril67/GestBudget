@@ -764,27 +764,8 @@ namespace Pique_Sous
                 FolderBrowserDialog fbd = new FolderBrowserDialog();
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
-<<<<<<< HEAD
- 
-                    myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_"+mois+".pdf");
-                    myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois +".pdf");
+                    myDoc.createPDF(fbd.SelectedPath + @"\Recapitulatif_" + mois + "_" + annee + ".pdf");
                 }
-                //myDoc.createPDF(@"C:\Users\Miniyeti67\Desktop\Mini Projet\" + mois + ".pdf");
-                //myDoc.createPDF(@"C:\Users\ladri\Desktop\" + mois + ".pdf");
- 
-                    myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois + "_" + annee +".pdf");
-                
- 
-=======
-
-                    myDoc.createPDF(fbd.SelectedPath + @"\Recapitulatif_" + mois + ".pdf");
-                }
-                //myDoc.createPDF(@"C:\Users\Miniyeti67\Desktop\Mini Projet\" + mois + ".pdf");
-                //myDoc.createPDF(@"C:\Users\ladri\Desktop\" + mois + ".pdf");
-
-                myDoc.createPDF(fbd.SelectedPath + @"\Recapitulatif_" + mois + "_" + annee + ".pdf");
-
->>>>>>> 501d6c81e60666e4ecd0395d5f5dbf6d96ec9e87
                 myPage = null;
                 myDoc = null;
                 connec.Close();
