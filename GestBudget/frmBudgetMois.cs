@@ -615,7 +615,7 @@ namespace Pique_Sous
                 pdfDocument myDoc = new pdfDocument("Recapitulatif_"+mois, "Pique_Sous");
                 pdfPage myPage = myDoc.addPage();
 
-                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM [Transaction] WHERE [dateTransaction] ='" + dtpReca.Value +"'", connec);
+                OleDbCommand cd1 = new OleDbCommand("SELECT [Transaction].* FROM [Transaction] WHERE [dateTransaction] ='" + dtpReca.Value. +"'", connec);
                 OleDbDataReader dr1 = cd1.ExecuteReader();
                 List<Boolean> nbTransaction = new List<Boolean>();
                 while (dr1.Read())
@@ -634,8 +634,14 @@ namespace Pique_Sous
 
                 text = "Recette : " + recette.ToString() + " Depenses : " + montant.ToString() + "Reste a persevoir : " + percu.ToString() + "Somme total dépensée : -" + montant.ToString() + "nombres de transactions : " + nbTransaction.Count.ToString(); 
                 myPage.addText(text, 200, 450, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
+                FolderBrowserDialog fbd = new FolderBrowserDialog();
+                fbd.ShowDialog();
+                if (fbd.ShowDialog() == DialogResult.OK)
+                {
+                    myDoc.createPDF(fbd.SelectedPath);
+                }
                 //myDoc.createPDF(@"C:\Users\Miniyeti67\Desktop\Mini Projet\" + mois + ".pdf");
-                myDoc.createPDF(@"C:\Users\ladri\Desktop" + mois + ".pdf");
+                //myDoc.createPDF(@"C:\Users\ladri\Desktop" + mois + ".pdf");
                 myPage = null;
                 myDoc = null;
                 connec.Close();
