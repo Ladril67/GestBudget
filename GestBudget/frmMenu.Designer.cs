@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.btnBudgetMois = new System.Windows.Forms.Button();
             this.btnPrevisionnel = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
@@ -83,6 +84,7 @@
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnPrevisionnel);
             this.Controls.Add(this.btnBudgetMois);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMenu";
             this.Text = "Menu";
             this.ResumeLayout(false);

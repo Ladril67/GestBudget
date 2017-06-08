@@ -600,16 +600,7 @@ namespace Pique_Sous
         {
             txtCodeToMod_TextChanged(sender, e);
         }
-
-
- 
-
-    
-
- 
- 
-
-
+        
         //Onglet Recapitulatif
         private void btnCreeReca_Click(object sender, EventArgs e)
         {
@@ -661,13 +652,16 @@ namespace Pique_Sous
                 myPage.addText(text, indentation, 15, myDoc.getFontReference(predefinedFont.csHelvetica), 20);
 
                 FolderBrowserDialog fbd = new FolderBrowserDialog();
-                fbd.ShowDialog();
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
+<<<<<<< HEAD
                     myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_" + mois +".pdf");
+=======
+                    myDoc.createPDF(fbd.SelectedPath+@"\Recapitulatif_"+mois+".pdf");
+>>>>>>> 08f1b8b8b9932c11e2242c1404ba5a47b68b361a
                 }
                 //myDoc.createPDF(@"C:\Users\Miniyeti67\Desktop\Mini Projet\" + mois + ".pdf");
-                //myDoc.createPDF(@"C:\Users\ladri\Desktop" + mois + ".pdf");
+                //myDoc.createPDF(@"C:\Users\ladri\Desktop\" + mois + ".pdf");
                 myPage = null;
                 myDoc = null;
                 connec.Close();
@@ -750,7 +744,6 @@ namespace Pique_Sous
             try
             {
                 connec.Open();
-                MessageBox.Show(requete);
                 OleDbCommand cd1 = new OleDbCommand(requete, connec);
                 OleDbDataAdapter da = new OleDbDataAdapter(cd1);
                 DataTable dt = new DataTable();
