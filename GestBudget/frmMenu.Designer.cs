@@ -84,7 +84,7 @@
             this.Controls.Add(this.btnPrevisionnel);
             this.Controls.Add(this.btnBudgetMois);
             this.Name = "frmMenu";
-            this.Text = "frmMenu";
+            this.Text = "Menu";
             this.ResumeLayout(false);
             this.PerformLayout();
 
